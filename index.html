@@ -77,12 +77,15 @@
 
   async function cargarMarcador() {
     try {
-      const respuesta = await fetch(URL + "?t=" + Date.now());
+      const respuesta = await fetch(URL + "?t=" + Date.now(), {
+  method: "GET",
+  cache: "no-store"
+});
 
-      if (!respuesta.ok) {
-        document.getElementById("estado").innerText = "Firebase no responde";
-        return;
-      }
+    if (!respuesta || !respuesta.ok) {
+      document.getElementById("estado").innerText = "Firebase bloqueado";
+      return;
+    }
 
       const data = await respuesta.json() || {};
 
