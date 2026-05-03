@@ -67,7 +67,7 @@
       align-items: stretch;
     }
 
-    .panel {
+        .panel {
       border: 4px solid gold;
       border-radius: 22px;
       min-height: 330px;
@@ -80,6 +80,19 @@
       overflow: hidden;
     }
 
+        .panel-rojo {
+      background: linear-gradient(135deg, #380000, #120000 55%, #050000);
+    }
+
+    .panel-azul {
+      background: linear-gradient(135deg, #001f55, #000b24 55%, #00030a);
+    }
+
+    .lider {
+      box-shadow: 0 0 35px gold, 0 0 60px rgba(255,215,0,0.5);
+      transform: scale(1.02);
+      transition: all 0.2s ease;
+    }
     .panel::before {
       content: "";
       position: absolute;
@@ -111,9 +124,9 @@
     }
 
     @keyframes bump {
-      0% { transform: scale(1); text-shadow: none; }
-      50% { transform: scale(1.13); text-shadow: 0 0 25px gold; }
-      100% { transform: scale(1); text-shadow: none; }
+      0% { transform: scale(1); }
+      40% { transform: scale(1.25); text-shadow: 0 0 30px gold; }
+      100% { transform: scale(1); }
     }
 
     .center {
@@ -283,18 +296,18 @@
   </div>
 
   <div class="main">
-    <div class="panel">
+    <div class="panel panel-rojo">
       <div id="rojo_nombre" class="name rojo">---</div>
       <div id="rojo_puntos" class="score rojo">0</div>
     </div>
-
+  
     <div class="center">
       <div id="estado_combate" class="status">EN VIVO</div>
       <div id="reloj" class="timer">00:00</div>
       <div id="periodo" class="periodo">R1</div>
     </div>
-
-    <div class="panel">
+  
+    <div class="panel panel-azul">
       <div id="azul_nombre" class="name azul">---</div>
       <div id="azul_puntos" class="score azul">0</div>
     </div>
@@ -345,6 +358,18 @@
         const rojoPts = data.rojo_puntos ?? 0;
         const azulPts = data.azul_puntos ?? 0;
 
+        const panelRojo = document.querySelector(".panel-rojo");
+        const panelAzul = document.querySelector(".panel-azul");
+
+        panelRojo.classList.remove("lider");
+        panelAzul.classList.remove("lider");
+
+        if (rojoPts > azulPts) {
+          panelRojo.classList.add("lider");
+        } else if (azulPts > rojoPts) {
+          panelAzul.classList.add("lider");
+        }
+
         animarSiCambio("rojo_puntos", rojoPts, puntosRojoAnterior);
         animarSiCambio("azul_puntos", azulPts, puntosAzulAnterior);
 
@@ -353,7 +378,7 @@
 
         setText("evento_nombre", data.evento_nombre, "COPA HABANA 2026");
 
-        const tatami = data.tatami || "Tatami 1";
+        const tatami = data.tapiz || data.tatami || "Tapiz 1";
         const categoria = data.categoria || "U13/15";
         const peso = data.peso || "32 KG";
         const estilo = data.estilo || "Libre";
