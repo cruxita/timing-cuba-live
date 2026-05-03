@@ -61,48 +61,24 @@
 <div id="estado">Conectando...</div>
 
 <script>
-const URL = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/marcador.json";
+  const URL = "https://script.google.com/macros/s/AKfycbwZTsD8afCQeHofxLRF7spa3Y6letC7HIRakEA407zUosKIqO8fXqE3-i87zXe05jve/exec";
 
-async function cargarMarcador() {
-  try {
-    const respuesta = await fetch(URL);
+  async function cargarMarcador() {
+    try {
+      const respuesta = await fetch(URL + "?t=" + Date.now());
+      const data = await respuesta.json();
 
-    const texto = await respuesta.text();
-
-    if (!texto) {
-      document.getElementById("estado").innerText = "Sin datos";
-      return;
+      document.getElementById("rojo_nombre").innerText = data.rojo_nombre || "---";
+      document.getElementById("azul_nombre").innerText = data.azul_nombre || "---";
+      document.getElementById("rojo_puntos").innerText = data.rojo_puntos ?? 0;
+      document.getElementById("azul_puntos").innerText = data.azul_puntos ?? 0;
+      document.getElementById("reloj").innerText = data.reloj || "00:00";
+      document.getElementById("periodo").innerText = data.periodo || "R1";
+      document.getElementById("estado").innerText = "EN VIVO";
+    } catch (error) {
+      document.getElementById("estado").innerText = "Error leyendo Google Script";
+      console.log(error);
     }
-
-    const data = JSON.parse(texto);
-
-    document.getElementById("rojo_nombre").innerText = data.rojo_nombre || "---";
-    document.getElementById("azul_nombre").innerText = data.azul_nombre || "---";
-    document.getElementById("rojo_puntos").innerText = data.rojo_puntos ?? 0;
-    document.getElementById("azul_puntos").innerText = data.azul_puntos ?? 0;
-    document.getElementById("reloj").innerText = data.reloj || "00:00";
-    document.getElementById("periodo").innerText = data.periodo || "R1";
-    document.getElementById("estado").innerText = "EN VIVO";
-
-  } catch (error) {
-    document.getElementById("estado").innerText = "Error conexión";
-    console.log(error);
-  }
-}
-
-  function cargarMarcador() {
-    const viejo = document.getElementById("firebase_jsonp");
-    if (viejo) viejo.remove();
-
-    const script = document.createElement("script");
-    script.id = "firebase_jsonp";
-    script.src = URL + "?callback=recibirMarcador&t=" + Date.now();
-
-    script.onerror = function() {
-      document.getElementById("estado").innerText = "Firebase bloqueado en este móvil";
-    };
-
-    document.body.appendChild(script);
   }
 
   cargarMarcador();
