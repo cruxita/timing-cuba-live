@@ -4,60 +4,11 @@
   let puntosRojoAnterior = null;
   let puntosAzulAnterior = null;
 
-  let relojBaseSegundos = null;
-  let relojBaseMomento = Date.now();
-  let relojCorreLocal = false;
-
   function setText(id, valor, defecto) {
     const el = document.getElementById(id);
     if (el) {
       el.innerText = valor || defecto;
     }
-  }
-
-  function parseReloj(txt) {
-    txt = String(txt || "00:00").trim();
-
-    if (txt.includes(".")) {
-      txt = txt.split(".")[0];
-    }
-
-    const partes = txt.split(":");
-
-    if (partes.length !== 2) {
-      return 0;
-    }
-
-    const min = Number(partes[0]) || 0;
-    const seg = Number(partes[1]) || 0;
-
-    return Math.max(0, (min * 60) + seg);
-  }
-
-  function formatoReloj(segundos) {
-    segundos = Math.max(0, Math.ceil(Number(segundos) || 0));
-
-    const min = Math.floor(segundos / 60);
-    const seg = segundos % 60;
-
-    return String(min).padStart(2, "0") + ":" + String(seg).padStart(2, "0");
-  }
-
-  function actualizarRelojLocal() {
-    const relojEl = document.getElementById("reloj");
-    if (!relojEl) return;
-
-    if (relojBaseSegundos === null) return;
-
-    if (!relojCorreLocal) {
-      relojEl.innerText = formatoReloj(relojBaseSegundos);
-      return;
-    }
-
-    const pasado = (Date.now() - relojBaseMomento) / 1000;
-    const actual = Math.max(0, relojBaseSegundos - pasado);
-
-    relojEl.innerText = formatoReloj(actual);
   }
 
   function animarSiCambio(id, nuevo, anterior) {
@@ -105,12 +56,10 @@
           panelRojo.classList.add("lider");
         } else if (rojoPts === azulPts && ventajaLado === "BLUE") {
           panelAzul.classList.add("lider");
-        } else {
-          if (rojoPts > azulPts) {
-            panelRojo.classList.add("lider");
-          } else if (azulPts > rojoPts) {
-            panelAzul.classList.add("lider");
-          }
+        } else if (rojoPts > azulPts) {
+          panelRojo.classList.add("lider");
+        } else if (azulPts > rojoPts) {
+          panelAzul.classList.add("lider");
         }
       }
 
@@ -138,45 +87,7 @@
       setText("rojo_puntos", rojoPts, "0");
       setText("azul_puntos", azulPts, "0");
 
-      const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
-
-      let segundosServidor = null;
-
-      if (data.reloj_segundos !== undefined && data.reloj_segundos !== null && data.reloj_segundos !== "") {
-        segundosServidor = Number(data.reloj_segundos);
-      }
-
-      if (!Number.isFinite(segundosServidor)) {
-        segundosServidor = parseReloj(data.reloj || "00:00");
-      }
-
-      relojCorreLocal = (
-        data.reloj_corriendo === true ||
-        data.reloj_corriendo === "true" ||
-        estadoActual === "EN VIVO" ||
-        estadoActual === "LIVE" ||
-        estadoActual === "CORRIENDO"
-      );
-
-      let momentoBase = Date.now();
-
-      if (data.live_sent_at !== undefined && data.live_sent_at !== null && data.live_sent_at !== "") {
-        const enviado = Number(data.live_sent_at);
-
-        if (Number.isFinite(enviado) && enviado > 0) {
-          const atrasoMs = Math.max(0, Math.min(8000, Date.now() - enviado));
-
-          if (relojCorreLocal) {
-            segundosServidor = Math.max(0, segundosServidor - (atrasoMs / 1000));
-          }
-        }
-      }
-
-      relojBaseSegundos = segundosServidor;
-      relojBaseMomento = momentoBase;
-
-      actualizarRelojLocal();
-
+      setText("reloj", data.reloj, "00:00");
       setText("periodo", data.periodo, "R1");
       setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
 
@@ -223,6 +134,5 @@
   }
 
   cargarMarcador();
-  setInterval(cargarMarcador, 500);
-
+  setInterval(cargarMarcador, 700);
 </script>
