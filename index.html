@@ -333,118 +333,125 @@
 
   <script>
     const URL = "https://script.google.com/macros/s/AKfycbwZTsD8afCQeHofxLRF7spa3Y6letC7HIRakEA407zUosKIqO8fXqE3-i87zXe05jve/exec";
-
+  
     let puntosRojoAnterior = null;
     let puntosAzulAnterior = null;
-
+  
     function setText(id, valor, defecto) {
-      document.getElementById(id).innerText = valor || defecto;
+      const el = document.getElementById(id);
+      if (el) {
+        el.innerText = valor || defecto;
+      }
     }
-
+  
     function animarSiCambio(id, nuevo, anterior) {
       const el = document.getElementById(id);
+      if (!el) return;
+  
       if (anterior !== null && Number(nuevo) !== Number(anterior)) {
         el.classList.remove("bump");
         void el.offsetWidth;
         el.classList.add("bump");
       }
     }
-
+  
     async function cargarMarcador() {
       try {
         const respuesta = await fetch(URL + "?t=" + Date.now());
+  
+        if (!respuesta.ok) {
+          throw new Error("Respuesta no válida del servidor: " + respuesta.status);
+        }
+  
         const data = await respuesta.json();
-
-        const rojoPts = data.rojo_puntos ?? 0;
-        const azulPts = data.azul_puntos ?? 0;
-        
+  
+        const rojoPts = Number(data.rojo_puntos ?? 0);
+        const azulPts = Number(data.azul_puntos ?? 0);
+  
         const panelRojo = document.querySelector(".panel-rojo");
         const panelAzul = document.querySelector(".panel-azul");
-
-        panelRojo.classList.remove("lider");
-        panelAzul.classList.remove("lider");
-
-        if (Number(rojoPts) > Number(azulPts)) {
-          panelRojo.classList.add("lider");
-        } else if (Number(azulPts) > Number(rojoPts)) {
-          panelAzul.classList.add("lider");
+  
+        if (panelRojo && panelAzul) {
+          panelRojo.classList.remove("lider");
+          panelAzul.classList.remove("lider");
+  
+          if (rojoPts > azulPts) {
+            panelRojo.classList.add("lider");
+          } else if (azulPts > rojoPts) {
+            panelAzul.classList.add("lider");
+          }
         }
-        const panelRojo = document.querySelector(".panel-rojo");
-        const panelAzul = document.querySelector(".panel-azul");
-
-        panelRojo.classList.remove("lider");
-        panelAzul.classList.remove("lider");
-
-        if (rojoPts > azulPts) {
-          panelRojo.classList.add("lider");
-        } else if (azulPts > rojoPts) {
-          panelAzul.classList.add("lider");
-        }
-
+  
         animarSiCambio("rojo_puntos", rojoPts, puntosRojoAnterior);
         animarSiCambio("azul_puntos", azulPts, puntosAzulAnterior);
-
+  
         puntosRojoAnterior = rojoPts;
         puntosAzulAnterior = azulPts;
-
+  
         setText("evento_nombre", data.evento_nombre, "COPA HABANA 2026");
-
+  
         const tatami = data.tapiz || data.tatami || "Tapiz 1";
         const categoria = data.categoria || "U13/15";
         const peso = data.peso || "32 KG";
         const estilo = data.estilo || "Libre";
-        document.getElementById("division_info").innerText = `${tatami} · ${categoria} · ${peso} · ${estilo}`;
-
+  
+        const divisionInfo = document.getElementById("division_info");
+        if (divisionInfo) {
+          divisionInfo.innerText = `${tatami} · ${categoria} · ${peso} · ${estilo}`;
+        }
+  
         setText("rojo_nombre", data.rojo_nombre, "---");
         setText("azul_nombre", data.azul_nombre, "---");
-
-        document.getElementById("rojo_puntos").innerText = rojoPts;
-        document.getElementById("azul_puntos").innerText = azulPts;
-
+  
+        setText("rojo_puntos", rojoPts, "0");
+        setText("azul_puntos", azulPts, "0");
+  
         setText("reloj", data.reloj, "00:00");
         setText("periodo", data.periodo, "R1");
         setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
-
+  
         setText("proximo_combate", data.proximo_combate, "Esperando próximo combate...");
         setText("resultado_final", data.resultado_final, "Resultado: combate en progreso");
-
-        const historial = data.historial || [
-          "Sin resultados recientes"
-        ];
-
+  
+        const historial = data.historial || ["Sin resultados recientes"];
         const historialBox = document.getElementById("historial");
-        historialBox.innerHTML = "";
-
-        if (Array.isArray(historial)) {
-          historial.slice(0, 3).forEach(item => {
+  
+        if (historialBox) {
+          historialBox.innerHTML = "";
+  
+          if (Array.isArray(historial)) {
+            historial.slice(0, 3).forEach(item => {
+              const div = document.createElement("div");
+              div.className = "history-line";
+              div.innerText = item;
+              historialBox.appendChild(div);
+            });
+          } else {
             const div = document.createElement("div");
             div.className = "history-line";
-            div.innerText = item;
+            div.innerText = historial;
             historialBox.appendChild(div);
-          });
-        } else {
-          const div = document.createElement("div");
-          div.className = "history-line";
-          div.innerText = historial;
-          historialBox.appendChild(div);
+          }
         }
-
-        document.getElementById("estado").innerText = "EN VIVO";
+  
+        setText("estado", "EN VIVO", "EN VIVO");
+  
       } catch (error) {
-        document.getElementById("estado").innerText = "Esperando actualización del evento...";
-        console.log(error);
+        setText("estado", "Esperando actualización del evento...", "Esperando actualización del evento...");
+        console.log("Error cargando marcador:", error);
       }
     }
-
+  
     function pantallaCompleta() {
       const elem = document.documentElement;
+  
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       } else if (elem.webkitRequestFullscreen) {
         elem.webkitRequestFullscreen();
       }
     }
-
+  
     cargarMarcador();
     setInterval(cargarMarcador, 1000);
   </script>
