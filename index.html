@@ -106,15 +106,15 @@
     .ganador-final::after {
       content: "GANADOR";
       position: absolute;
-      top: 14px;
-      right: 18px;
+      top: 10px;
+      right: 12px;
       background: gold;
       color: black;
-      font-size: 20px;
+      font-size: 13px;
       font-weight: 900;
-      padding: 6px 14px;
+      padding: 4px 9px;
       border-radius: 999px;
-      box-shadow: 0 0 18px gold;
+      box-shadow: 0 0 10px gold;
       z-index: 2;
     }
 
@@ -361,6 +361,55 @@
   
     let puntosRojoAnterior = null;
     let puntosAzulAnterior = null;
+
+    let relojBaseSegundos = null;
+    let relojBaseMomento = Date.now();
+    let relojCorreLocal = false;
+
+    function parseReloj(txt) {
+      txt = String(txt || "00:00").trim();
+
+      if (txt.includes(".")) {
+        txt = txt.split(".")[0];
+      }
+
+      const partes = txt.split(":");
+
+      if (partes.length !== 2) {
+        return 0;
+      }
+
+      const min = Number(partes[0]) || 0;
+      const seg = Number(partes[1]) || 0;
+
+      return Math.max(0, (min * 60) + seg);
+    }
+
+    function formatoReloj(segundos) {
+      segundos = Math.max(0, Math.ceil(Number(segundos) || 0));
+
+      const min = Math.floor(segundos / 60);
+      const seg = segundos % 60;
+
+      return String(min).padStart(2, "0") + ":" + String(seg).padStart(2, "0");
+    }
+
+    function actualizarRelojLocal() {
+      const relojEl = document.getElementById("reloj");
+      if (!relojEl) return;
+
+      if (relojBaseSegundos === null) return;
+
+      if (!relojCorreLocal) {
+        relojEl.innerText = formatoReloj(relojBaseSegundos);
+        return;
+      }
+
+      const pasado = (Date.now() - relojBaseMomento) / 1000;
+      const actual = Math.max(0, relojBaseSegundos - pasado);
+
+      relojEl.innerText = formatoReloj(actual);
+    }    
   
     function setText(id, valor, defecto) {
       const el = document.getElementById(id);
@@ -441,7 +490,18 @@
         setText("rojo_puntos", rojoPts, "0");
         setText("azul_puntos", azulPts, "0");
   
-        setText("reloj", data.reloj, "00:00");
+        const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
+
+        relojBaseSegundos = parseReloj(data.reloj || "00:00");
+        relojBaseMomento = Date.now();
+
+        relojCorreLocal = (
+          estadoActual === "EN VIVO" ||
+          estadoActual === "LIVE" ||
+          estadoActual === "CORRIENDO"
+        );
+
+        actualizarRelojLocal();
         setText("periodo", data.periodo, "R1");
         setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
   
@@ -489,6 +549,7 @@
   
     cargarMarcador();
     setInterval(cargarMarcador, 700);
+    setInterval(actualizarRelojLocal, 200);
   </script>
 
 </body>
