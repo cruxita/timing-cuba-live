@@ -12,10 +12,7 @@
       margin: 0;
     }
 
-    h1 {
-      font-size: 34px;
-      margin-top: 20px;
-    }
+    h1 { font-size: 34px; margin-top: 20px; }
 
     .box {
       display: inline-block;
@@ -24,15 +21,8 @@
       margin-top: 40px;
     }
 
-    .name {
-      font-size: 42px;
-      font-weight: bold;
-    }
-
-    .score {
-      font-size: 130px;
-      font-weight: bold;
-    }
+    .name { font-size: 42px; font-weight: bold; }
+    .score { font-size: 130px; font-weight: bold; }
 
     .rojo { color: red; }
     .azul { color: blue; }
@@ -42,9 +32,7 @@
       margin-top: 25px;
     }
 
-    .periodo {
-      font-size: 24px;
-    }
+    .periodo { font-size: 24px; }
 
     #estado {
       margin-top: 20px;
@@ -75,31 +63,31 @@
 <script>
   const URL = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/marcador.json";
 
-  async function cargarMarcador() {
-    try {
-      const respuesta = await fetch(URL + "?t=" + Date.now(), {
-  method: "GET",
-  cache: "no-store"
-});
+  window.recibirMarcador = function(data) {
+    data = data || {};
 
-    if (!respuesta || !respuesta.ok) {
-      document.getElementById("estado").innerText = "Firebase bloqueado";
-      return;
-    }
+    document.getElementById("rojo_nombre").innerText = data.rojo_nombre || "---";
+    document.getElementById("azul_nombre").innerText = data.azul_nombre || "---";
+    document.getElementById("rojo_puntos").innerText = data.rojo_puntos ?? 0;
+    document.getElementById("azul_puntos").innerText = data.azul_puntos ?? 0;
+    document.getElementById("reloj").innerText = data.reloj || "00:00";
+    document.getElementById("periodo").innerText = data.periodo || "R1";
+    document.getElementById("estado").innerText = "EN VIVO";
+  };
 
-      const data = await respuesta.json() || {};
+  function cargarMarcador() {
+    const viejo = document.getElementById("firebase_jsonp");
+    if (viejo) viejo.remove();
 
-      document.getElementById("rojo_nombre").innerText = data.rojo_nombre || "---";
-      document.getElementById("azul_nombre").innerText = data.azul_nombre || "---";
-      document.getElementById("rojo_puntos").innerText = data.rojo_puntos ?? 0;
-      document.getElementById("azul_puntos").innerText = data.azul_puntos ?? 0;
-      document.getElementById("reloj").innerText = data.reloj || "00:00";
-      document.getElementById("periodo").innerText = data.periodo || "R1";
-      document.getElementById("estado").innerText = "EN VIVO";
-    } catch (error) {
-      document.getElementById("estado").innerText = "Sin conexión con Firebase";
-      console.log(error);
-    }
+    const script = document.createElement("script");
+    script.id = "firebase_jsonp";
+    script.src = URL + "?callback=recibirMarcador&t=" + Date.now();
+
+    script.onerror = function() {
+      document.getElementById("estado").innerText = "Firebase bloqueado en este móvil";
+    };
+
+    document.body.appendChild(script);
   }
 
   cargarMarcador();
