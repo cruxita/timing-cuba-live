@@ -357,7 +357,18 @@
 
         const rojoPts = data.rojo_puntos ?? 0;
         const azulPts = data.azul_puntos ?? 0;
+        
+        const panelRojo = document.querySelector(".panel-rojo");
+        const panelAzul = document.querySelector(".panel-azul");
 
+        panelRojo.classList.remove("lider");
+        panelAzul.classList.remove("lider");
+
+        if (Number(rojoPts) > Number(azulPts)) {
+          panelRojo.classList.add("lider");
+        } else if (Number(azulPts) > Number(rojoPts)) {
+          panelAzul.classList.add("lider");
+        }
         const panelRojo = document.querySelector(".panel-rojo");
         const panelAzul = document.querySelector(".panel-azul");
 
