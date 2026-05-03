@@ -59,12 +59,12 @@
 <h1>LIVE TIMING CUBA</h1>
 
 <div class="box rojo">
-  <div id="rojo_nombre" class="name">CARGANDO...</div>
+  <div id="rojo_nombre" class="name">---</div>
   <div id="rojo_puntos" class="score">0</div>
 </div>
 
 <div class="box azul">
-  <div id="azul_nombre" class="name">CARGANDO...</div>
+  <div id="azul_nombre" class="name">---</div>
   <div id="azul_puntos" class="score">0</div>
 </div>
 
@@ -78,12 +78,13 @@
   async function cargarMarcador() {
     try {
       const respuesta = await fetch(URL + "?t=" + Date.now());
-      const data = await respuesta.json();
 
-      if (!data) {
-        document.getElementById("estado").innerText = "Sin datos en Firebase";
+      if (!respuesta.ok) {
+        document.getElementById("estado").innerText = "Firebase no responde";
         return;
       }
+
+      const data = await respuesta.json() || {};
 
       document.getElementById("rojo_nombre").innerText = data.rojo_nombre || "---";
       document.getElementById("azul_nombre").innerText = data.azul_nombre || "---";
@@ -93,7 +94,7 @@
       document.getElementById("periodo").innerText = data.periodo || "R1";
       document.getElementById("estado").innerText = "EN VIVO";
     } catch (error) {
-      document.getElementById("estado").innerText = "Error conectando con Firebase";
+      document.getElementById("estado").innerText = "Sin conexión con Firebase";
       console.log(error);
     }
   }
