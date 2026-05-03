@@ -393,20 +393,24 @@
     }
   
     function calcularRelojEnVivo(data) {
-      if (!data) return "00:00";
-  
-      let baseSeg = Number(data.reloj_segundos ?? 0);
-      const corriendo = Boolean(data.reloj_corriendo);
-      const enviado = Number(data.live_sent_at || 0);
-  
-      if (corriendo && enviado > 0) {
-        const atrasoMs = Date.now() - enviado;
-        const atrasoSeg = atrasoMs / 1000;
-        baseSeg = baseSeg - atrasoSeg;
-      }
-  
-      return formatearReloj(baseSeg);
+    if (!data) return "00:00";
+
+    let baseSeg = Number(data.reloj_segundos ?? 0);
+    const corriendo = Boolean(data.reloj_corriendo);
+    const enviado = Number(data.live_sent_at || 0);
+
+    // SEGURO IMPORTANTE:
+    // Si Firebase no recibe datos frescos, NO seguimos descontando eternamente.
+    // Esto evita que la web se vaya por delante del reloj real.
+    const edadDatoMs = enviado > 0 ? (Date.now() - enviado) : 999999;
+
+    if (corriendo && enviado > 0 && edadDatoMs <= 2000) {
+      const atrasoSeg = edadDatoMs / 1000;
+      baseSeg = baseSeg - atrasoSeg;
     }
+
+    return formatearReloj(baseSeg);
+  }
   
     function pintarMarcador(data) {
       if (!data) return;
