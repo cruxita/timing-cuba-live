@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Timing Cuba Live</title>
+
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-top: 20px;
+    }
+
+    .box {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      margin-top: 40px;
+    }
+
+    .name {
+      font-size: 42px;
+      font-weight: bold;
+    }
+
+    .score {
+      font-size: 130px;
+      font-weight: bold;
+    }
+
+    .rojo {
+      color: red;
+    }
+
+    .azul {
+      color: blue;
+    }
+
+    .timer {
+      font-size: 85px;
+      margin-top: 25px;
+    }
+
+    .periodo {
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>LIVE TIMING CUBA</h1>
+
+<div class="box rojo">
+  <div id="rojo_nombre" class="name">CARGANDO...</div>
+  <div id="rojo_puntos" class="score">0</div>
+</div>
+
+<div class="box azul">
+  <div id="azul_nombre" class="name">CARGANDO...</div>
+  <div id="azul_puntos" class="score">0</div>
+</div>
+
+<div id="reloj" class="timer">00:00</div>
+<div id="periodo" class="periodo">R1</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAEgEioyw6Lxq3-qovwcms8Wu7E3TG0ZMU",
+    authDomain: "timing-cuba-live-2026.firebaseapp.com",
+    databaseURL: "https://timing-cuba-live-2026-default-rtdb.firebaseio.com",
+    projectId: "timing-cuba-live-2026",
+    storageBucket: "timing-cuba-live-2026.appspot.com",
+    messagingSenderId: "497025190145",
+    appId: "1:497025190145:web:4535cf65f7018e64a37300"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  const marcadorRef = ref(db, "evento/copa-habana-2026/marcador");
+
+  onValue(marcadorRef, (snapshot) => {
+    const data = snapshot.val();
+
+    console.log("DATOS FIREBASE:", data);
+
+    if (!data) {
+      document.getElementById("rojo_nombre").innerText = "SIN DATOS";
+      document.getElementById("azul_nombre").innerText = "SIN DATOS";
+      return;
+    }
+
+    document.getElementById("rojo_nombre").innerText = data.rojo_nombre || "---";
+    document.getElementById("azul_nombre").innerText = data.azul_nombre || "---";
+    document.getElementById("rojo_puntos").innerText = data.rojo_puntos ?? 0;
+    document.getElementById("azul_puntos").innerText = data.azul_puntos ?? 0;
+    document.getElementById("reloj").innerText = data.reloj || "00:00";
+    document.getElementById("periodo").innerText = data.periodo || "R1";
+  });
+</script>
+
+</body>
+</html>
