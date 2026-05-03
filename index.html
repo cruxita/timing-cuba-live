@@ -93,6 +93,31 @@
       transform: scale(1.02);
       transition: all 0.2s ease;
     }
+
+    .ganador-final {
+      border: 6px solid white !important;
+      box-shadow:
+        0 0 35px white,
+        0 0 65px gold,
+        inset 0 0 35px rgba(255, 255, 255, 0.35) !important;
+      transform: scale(1.025);
+    }
+
+    .ganador-final::after {
+      content: "GANADOR";
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: gold;
+      color: black;
+      font-size: 20px;
+      font-weight: 900;
+      padding: 6px 14px;
+      border-radius: 999px;
+      box-shadow: 0 0 18px gold;
+      z-index: 2;
+    }
+
     .panel::before {
       content: "";
       position: absolute;
@@ -332,7 +357,7 @@
   <div id="estado">Conectando...</div>
 
   <script>
-    const URL = "https://script.google.com/macros/s/AKfycbwZTsD8afCQeHofxLRF7spa3Y6letC7HIRakEA407zUosKIqO8fXqE3-i87zXe05jve/exec";
+    const URL = "https://script.google.com/macros/s/AKfycbyk17adLpbWl4T15I7iWHvmUhdPK6N3oSvFNzXksiH7c0BRg2J35eg2bLetmcAtYhOx/exec"
   
     let puntosRojoAnterior = null;
     let puntosAzulAnterior = null;
@@ -370,15 +395,24 @@
   
         const panelRojo = document.querySelector(".panel-rojo");
         const panelAzul = document.querySelector(".panel-azul");
-  
+
         if (panelRojo && panelAzul) {
-          panelRojo.classList.remove("lider");
-          panelAzul.classList.remove("lider");
-  
-          if (rojoPts > azulPts) {
-            panelRojo.classList.add("lider");
-          } else if (azulPts > rojoPts) {
-            panelAzul.classList.add("lider");
+          panelRojo.classList.remove("lider", "ganador-final");
+          panelAzul.classList.remove("lider", "ganador-final");
+
+          const estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
+          const ganadorLado = String(data.ganador_lado || "").toUpperCase();
+
+          if (estadoLive === "FINALIZADO" && ganadorLado === "RED") {
+            panelRojo.classList.add("ganador-final");
+          } else if (estadoLive === "FINALIZADO" && ganadorLado === "BLUE") {
+            panelAzul.classList.add("ganador-final");
+          } else {
+            if (rojoPts > azulPts) {
+              panelRojo.classList.add("lider");
+            } else if (azulPts > rojoPts) {
+              panelAzul.classList.add("lider");
+            }
           }
         }
   
@@ -453,7 +487,7 @@
     }
   
     cargarMarcador();
-    setInterval(cargarMarcador, 1000);
+    setInterval(cargarMarcador, 700);
   </script>
 
 </body>
