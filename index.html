@@ -61,10 +61,20 @@
 <div id="estado">Conectando...</div>
 
 <script>
-  const URL = "https://timing-cuba-api.x9xf7qctdr.workers.dev";
+const URL = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/marcador.json";
 
-  window.recibirMarcador = function(data) {
-    data = data || {};
+async function cargarMarcador() {
+  try {
+    const respuesta = await fetch(URL);
+
+    const texto = await respuesta.text();
+
+    if (!texto) {
+      document.getElementById("estado").innerText = "Sin datos";
+      return;
+    }
+
+    const data = JSON.parse(texto);
 
     document.getElementById("rojo_nombre").innerText = data.rojo_nombre || "---";
     document.getElementById("azul_nombre").innerText = data.azul_nombre || "---";
@@ -73,7 +83,12 @@
     document.getElementById("reloj").innerText = data.reloj || "00:00";
     document.getElementById("periodo").innerText = data.periodo || "R1";
     document.getElementById("estado").innerText = "EN VIVO";
-  };
+
+  } catch (error) {
+    document.getElementById("estado").innerText = "Error conexión";
+    console.log(error);
+  }
+}
 
   function cargarMarcador() {
     const viejo = document.getElementById("firebase_jsonp");
