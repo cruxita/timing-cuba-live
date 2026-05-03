@@ -6,123 +6,181 @@
 
   <style>
     body {
-      background: black;
+      margin: 0;
+      background: #000;
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
-      margin: 0;
+      overflow-x: hidden;
     }
 
-    /* LOGO */
-    .logo {
-      margin-top: 10px;
+    .header {
+      padding-top: 12px;
     }
 
     .logo img {
-      width: 140px;
-      filter: drop-shadow(0 0 10px gold);
+      width: 105px;
+      filter: drop-shadow(0 0 12px gold);
     }
 
-    /* TITULO */
     h1 {
-      font-size: 28px;
+      margin: 6px 0 18px;
+      font-size: 30px;
       color: gold;
-      margin-top: 5px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
     }
 
-    /* CONTENEDORES */
-    .box {
-      display: inline-block;
-      width: 45%;
-      vertical-align: top;
-      margin-top: 30px;
-      border: 2px solid gold;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(255,215,0,0.4);
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 330px 1fr;
+      gap: 10px;
+      padding: 0 22px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border: 3px solid gold;
+      border-radius: 18px;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.55);
+      background: rgba(0, 0, 0, 0.85);
     }
 
     .name {
-      font-size: 36px;
-      font-weight: bold;
+      font-size: 46px;
+      font-weight: 900;
+      margin-bottom: 18px;
     }
 
     .score {
-      font-size: 120px;
-      font-weight: bold;
+      font-size: 175px;
+      font-weight: 900;
+      line-height: 1;
     }
 
-    .rojo { color: red; }
-    .azul { color: blue; }
+    .rojo {
+      color: #ff0000;
+    }
 
-    /* RELOJ */
+    .azul {
+      color: #003cff;
+    }
+
+    .center {
+      border: 3px solid gold;
+      border-radius: 18px;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 0 22px rgba(255, 215, 0, 0.75);
+      background: radial-gradient(circle, rgba(80,70,0,0.25), #000 70%);
+    }
+
     .timer {
-      font-size: 90px;
-      margin-top: 30px;
+      font-size: 95px;
+      font-weight: 900;
       color: white;
-      text-shadow: 0 0 10px gold;
+      text-shadow: 0 0 14px gold;
+      line-height: 1;
     }
 
     .periodo {
-      font-size: 26px;
+      margin-top: 18px;
+      font-size: 34px;
+      font-weight: 800;
       color: gold;
     }
 
     #estado {
-      margin-top: 15px;
+      margin-top: 14px;
       font-size: 16px;
-      color: gray;
+      color: #aaa;
+    }
+
+    @media (max-width: 900px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .center {
+        order: -1;
+        min-height: 210px;
+      }
+
+      .panel {
+        min-height: 240px;
+      }
+
+      .score {
+        font-size: 130px;
+      }
+
+      .timer {
+        font-size: 78px;
+      }
+
+      .name {
+        font-size: 34px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<div class="logo">
-  <img src="logo.png">
-</div>
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="Timing Cuba Logo">
+    </div>
+    <h1>LIVE TIMING CUBA</h1>
+  </div>
 
-<h1>LIVE TIMING CUBA</h1>
+  <div class="main">
+    <div class="panel">
+      <div id="rojo_nombre" class="name rojo">---</div>
+      <div id="rojo_puntos" class="score rojo">0</div>
+    </div>
 
-<div class="box rojo">
-  <div id="rojo_nombre" class="name">---</div>
-  <div id="rojo_puntos" class="score">0</div>
-</div>
+    <div class="center">
+      <div id="reloj" class="timer">00:00</div>
+      <div id="periodo" class="periodo">R1</div>
+      <div id="estado">Conectando...</div>
+    </div>
 
-<div class="box azul">
-  <div id="azul_nombre" class="name">---</div>
-  <div id="azul_puntos" class="score">0</div>
-</div>
+    <div class="panel">
+      <div id="azul_nombre" class="name azul">---</div>
+      <div id="azul_puntos" class="score azul">0</div>
+    </div>
+  </div>
 
-<div id="reloj" class="timer">00:00</div>
-<div id="periodo" class="periodo">R1</div>
-<div id="estado">Conectando...</div>
+  <script>
+    const URL = "https://script.google.com/macros/s/AKfycbwZTsD8afCQeHofxLRF7spa3Y6letC7HIRakEA407zUosKIqO8fXqE3-i87zXe05jve/exec";
 
-<script>
-  const URL = "https://script.google.com/macros/s/AKfycbwZTsD8afCQeHofxLRF7spa3Y6letC7HIRakEA407zUosKIqO8fXqE3-i87zXe05jve/exec";
+    async function cargarMarcador() {
+      try {
+        const respuesta = await fetch(URL + "?t=" + Date.now());
+        const data = await respuesta.json();
 
-  async function cargarMarcador() {
-    try {
-      const respuesta = await fetch(URL + "?t=" + Date.now());
-      const data = await respuesta.json();
-
-      document.getElementById("rojo_nombre").innerText = data.rojo_nombre || "---";
-      document.getElementById("azul_nombre").innerText = data.azul_nombre || "---";
-      document.getElementById("rojo_puntos").innerText = data.rojo_puntos ?? 0;
-      document.getElementById("azul_puntos").innerText = data.azul_puntos ?? 0;
-      document.getElementById("reloj").innerText = data.reloj || "00:00";
-      document.getElementById("periodo").innerText = data.periodo || "R1";
-      document.getElementById("estado").innerText = "EN VIVO";
-    } catch (error) {
-      document.getElementById("estado").innerText = "Error conexión";
-      console.log(error);
+        document.getElementById("rojo_nombre").innerText = data.rojo_nombre || "---";
+        document.getElementById("azul_nombre").innerText = data.azul_nombre || "---";
+        document.getElementById("rojo_puntos").innerText = data.rojo_puntos ?? 0;
+        document.getElementById("azul_puntos").innerText = data.azul_puntos ?? 0;
+        document.getElementById("reloj").innerText = data.reloj || "00:00";
+        document.getElementById("periodo").innerText = data.periodo || "R1";
+        document.getElementById("estado").innerText = "EN VIVO";
+      } catch (error) {
+        document.getElementById("estado").innerText = "Error conexión";
+        console.log(error);
+      }
     }
-  }
 
-  cargarMarcador();
-  setInterval(cargarMarcador, 1000);
-</script>
+    cargarMarcador();
+    setInterval(cargarMarcador, 1000);
+  </script>
 
 </body>
 </html>
