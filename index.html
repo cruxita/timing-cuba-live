@@ -357,7 +357,7 @@
   <div id="estado">Conectando...</div>
 
   <script>
-    const URL = "https://script.google.com/macros/s/AKfycbyk17adLpbWl4T15I7iWHvmUhdPK6N3oSvFNzXksiH7c0BRg2J35eg2bLetmcAtYhOx/exec"
+    const URL = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/marcador.json";
   
     let puntosRojoAnterior = null;
     let puntosAzulAnterior = null;
@@ -457,6 +457,10 @@
             panelRojo.classList.add("ganador-final");
           } else if (estadoLive === "FINALIZADO" && ganadorLado === "BLUE") {
             panelAzul.classList.add("ganador-final");
+          } else if (rojoPts === azulPts && ventajaLado === "RED") {
+            panelRojo.classList.add("lider");
+          } else if (rojoPts === azulPts && ventajaLado === "BLUE") {
+            panelAzul.classList.add("lider");
           } else {
             if (rojoPts > azulPts) {
               panelRojo.classList.add("lider");
@@ -464,7 +468,6 @@
               panelAzul.classList.add("lider");
             }
           }
-        }
   
         animarSiCambio("rojo_puntos", rojoPts, puntosRojoAnterior);
         animarSiCambio("azul_puntos", azulPts, puntosAzulAnterior);
@@ -548,7 +551,7 @@
     }
   
     cargarMarcador();
-    setInterval(cargarMarcador, 700);
+    setInterval(cargarMarcador, 500);
     setInterval(actualizarRelojLocal, 200);
   </script>
 
