@@ -402,6 +402,7 @@
 
           const estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
           const ganadorLado = String(data.ganador_lado || "").toUpperCase();
+          const ventajaLado = String(data.ventaja_lado || "").toUpperCase();
 
           if (estadoLive === "FINALIZADO" && ganadorLado === "RED") {
             panelRojo.classList.add("ganador-final");
