@@ -358,101 +358,147 @@
 
   <script>
     const URL = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/marcador.json";
-
+  
     let puntosRojoAnterior = null;
     let puntosAzulAnterior = null;
-
+  
     let relojBaseSegundos = 0;
     let relojBaseMomento = 0;
     let relojDebeCorrer = false;
+    let relojInicializado = false;
     let periodoLive = "R1";
     let limitePrimerTiempoLive = 180;
-
+  
     function setText(id, valor, defecto) {
       const el = document.getElementById(id);
       if (!el) return;
-
-      if (valor === undefined || valor === null || valor === "") {
-        el.innerText = defecto;
-      } else {
-        el.innerText = valor;
-      }
+      el.innerText = (valor === undefined || valor === null || valor === "") ? defecto : valor;
     }
-
+  
     function animarSiCambio(id, nuevo, anterior) {
       const el = document.getElementById(id);
       if (!el) return;
-
+  
       if (anterior !== null && Number(nuevo) !== Number(anterior)) {
         el.classList.remove("bump");
         void el.offsetWidth;
         el.classList.add("bump");
       }
     }
-
+  
     function textoRelojASegundos(txt) {
       txt = String(txt || "00:00").trim();
-
       const partes = txt.split(":");
       if (partes.length !== 2) return 0;
-
+  
       const min = Number(partes[0] || 0);
       const seg = Number(partes[1] || 0);
-
+  
       return Math.max(0, (min * 60) + seg);
     }
-
+  
     function segundosATextoReloj(total) {
       total = Math.max(0, Math.floor(Number(total || 0)));
-
+  
       const min = Math.floor(total / 60);
       const seg = total % 60;
-
+  
       return String(min).padStart(2, "0") + ":" + String(seg).padStart(2, "0");
     }
-
+  
+    function relojActualCalculado() {
+      let actual = relojBaseSegundos;
+  
+      if (relojDebeCorrer && relojBaseMomento) {
+        const pasado = (Date.now() - relojBaseMomento) / 1000;
+        actual = relojBaseSegundos - pasado;
+      }
+  
+      return Math.max(0, actual);
+    }
+  
     function actualizarRelojSuaveSeguro() {
       if (!relojBaseMomento) return;
-
-      let nuevo = relojBaseSegundos;
-
+  
+      let nuevo = relojActualCalculado();
+  
       if (relojDebeCorrer) {
-        const pasado = (Date.now() - relojBaseMomento) / 1000;
-        nuevo = relojBaseSegundos - pasado;
-
         if (periodoLive === "R1" && nuevo <= limitePrimerTiempoLive) {
           nuevo = limitePrimerTiempoLive;
           relojDebeCorrer = false;
         }
-
+  
         if (periodoLive === "R2" && nuevo <= 0) {
           nuevo = 0;
           relojDebeCorrer = false;
         }
       }
-
-      if (nuevo < 0) nuevo = 0;
-
+  
       setText("reloj", segundosATextoReloj(nuevo), "00:00");
     }
-
+  
+    function actualizarBaseRelojDesdeServidor(data, estadoActual) {
+      const servidorSegundos = Number(
+        data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00")
+      );
+  
+      const servidorCorriendo =
+        Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
+  
+      periodoLive = String(data.periodo || "R1").toUpperCase();
+  
+      if (periodoLive === "R1") {
+        limitePrimerTiempoLive = servidorSegundos <= 240 ? 120 : 180;
+      }
+  
+      if (!relojInicializado) {
+        relojBaseSegundos = servidorSegundos;
+        relojBaseMomento = Date.now();
+        relojDebeCorrer = servidorCorriendo;
+        relojInicializado = true;
+        return;
+      }
+  
+      const actualWeb = relojActualCalculado();
+  
+      if (servidorCorriendo !== relojDebeCorrer) {
+        relojBaseSegundos = servidorSegundos;
+        relojBaseMomento = Date.now();
+        relojDebeCorrer = servidorCorriendo;
+        return;
+      }
+  
+      if (!servidorCorriendo) {
+        relojBaseSegundos = servidorSegundos;
+        relojBaseMomento = Date.now();
+        relojDebeCorrer = false;
+        return;
+      }
+  
+      if (servidorSegundos < actualWeb - 1.2) {
+        relojBaseSegundos = servidorSegundos;
+        relojBaseMomento = Date.now();
+        relojDebeCorrer = true;
+      }
+    }
+  
     function pintarMarcador(data) {
       if (!data) return;
-
+  
       const rojoPts = Number(data.rojo_puntos ?? 0);
       const azulPts = Number(data.azul_puntos ?? 0);
-
+  
       const panelRojo = document.querySelector(".panel-rojo");
       const panelAzul = document.querySelector(".panel-azul");
-
+  
       if (panelRojo && panelAzul) {
         panelRojo.classList.remove("lider", "ganador-final");
         panelAzul.classList.remove("lider", "ganador-final");
-
+  
         const estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
         const ganadorLado = String(data.ganador_lado || "").toUpperCase();
         const ventajaLado = String(data.ventaja_lado || "").toUpperCase();
-
+  
         if (estadoLive === "FINALIZADO" && ganadorLado === "RED") {
           panelRojo.classList.add("ganador-final");
         } else if (estadoLive === "FINALIZADO" && ganadorLado === "BLUE") {
@@ -467,59 +513,47 @@
           panelAzul.classList.add("lider");
         }
       }
-
+  
       animarSiCambio("rojo_puntos", rojoPts, puntosRojoAnterior);
       animarSiCambio("azul_puntos", azulPts, puntosAzulAnterior);
-
+  
       puntosRojoAnterior = rojoPts;
       puntosAzulAnterior = azulPts;
-
+  
       setText("evento_nombre", data.evento_nombre, "COPA HABANA 2026");
-
+  
       const tapiz = data.tapiz || data.tatami || "Tapiz 1";
       const categoria = data.categoria || "U13/15";
       const peso = data.peso || "32 KG";
       const estilo = data.estilo || "Libre";
-
+  
       const divisionInfo = document.getElementById("division_info");
       if (divisionInfo) {
         divisionInfo.innerText = `${tapiz} · ${categoria} · ${peso} · ${estilo}`;
       }
-
+  
       setText("rojo_nombre", data.rojo_nombre, "---");
       setText("azul_nombre", data.azul_nombre, "---");
       setText("rojo_puntos", rojoPts, "0");
       setText("azul_puntos", azulPts, "0");
-
+  
       const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
-
-      periodoLive = String(data.periodo || "R1").toUpperCase();
-
-      relojBaseSegundos = Number(
-        data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00")
-      );
-
-      if (periodoLive === "R1") {
-        limitePrimerTiempoLive = relojBaseSegundos <= 240 ? 120 : 180;
-      }
-
-      relojBaseMomento = Date.now();
-      relojDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
-
+  
+      actualizarBaseRelojDesdeServidor(data, estadoActual);
       actualizarRelojSuaveSeguro();
-
+  
       setText("periodo", data.periodo, "R1");
       setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
-
+  
       setText("proximo_combate", data.proximo_combate, "Esperando próximo combate...");
       setText("resultado_final", data.resultado_final, "Resultado: combate en progreso");
-
+  
       const historial = data.historial || ["Sin resultados recientes"];
       const historialBox = document.getElementById("historial");
-
+  
       if (historialBox) {
         historialBox.innerHTML = "";
-
+  
         if (Array.isArray(historial)) {
           historial.slice(0, 3).forEach(item => {
             const div = document.createElement("div");
@@ -534,32 +568,32 @@
           historialBox.appendChild(div);
         }
       }
-
+  
       setText("estado", "EN VIVO", "EN VIVO");
     }
-
+  
     async function cargarMarcador() {
       try {
         const respuesta = await fetch(URL + "?t=" + Date.now(), { cache: "no-store" });
-
+  
         if (!respuesta.ok) {
           throw new Error("Respuesta no válida de Firebase: " + respuesta.status);
         }
-
+  
         const data = await respuesta.json();
-
+  
         if (!data) {
           throw new Error("Firebase respondió vacío");
         }
-
+  
         pintarMarcador(data);
-
+  
       } catch (error) {
         setText("estado", "Esperando actualización del evento...", "Esperando actualización del evento...");
         console.log("Error cargando marcador:", error);
       }
     }
-
+  
     function pantallaCompleta() {
       const elem = document.documentElement;
       if (elem.requestFullscreen) {
@@ -568,9 +602,9 @@
         elem.webkitRequestFullscreen();
       }
     }
-
+  
     cargarMarcador();
-
+  
     setInterval(cargarMarcador, 500);
     setInterval(actualizarRelojSuaveSeguro, 100);
   </script>
