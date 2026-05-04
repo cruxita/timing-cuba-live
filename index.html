@@ -410,16 +410,17 @@
     }
 
     function actualizarRelojSuaveSeguro() {
-      if (!relojDebeCorrer) return;
       if (!relojBaseMomento) return;
 
-      const pasado = (Date.now() - relojBaseMomento) / 1000;
+      let nuevo = relojBaseSegundos;
 
-      // Seguro: solo suaviza un poquito.
-      // Si Firebase tarda más, no dejamos que la web se vaya sola.
-      if (pasado > 1.5) return;
+      if (relojDebeCorrer) {
+        const pasado = (Date.now() - relojBaseMomento) / 1000;
+        nuevo = relojBaseSegundos - pasado;
+      }
 
-      const nuevo = relojBaseSegundos - pasado;
+      if (nuevo < 0) nuevo = 0;
+
       setText("reloj", segundosATextoReloj(nuevo), "00:00");
     }
 
@@ -479,14 +480,13 @@
       setText("rojo_puntos", rojoPts, "0");
       setText("azul_puntos", azulPts, "0");
 
-      const relojTxt = data.reloj || "00:00";
-      setText("reloj", relojTxt, "00:00");
-
-      relojBaseSegundos = textoRelojASegundos(relojTxt);
-      relojBaseMomento = Date.now();
-
       const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
-      relojDebeCorrer = estadoActual === "EN VIVO";
+
+      relojBaseSegundos = Number(data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00"));
+      relojBaseMomento = Number(data.live_sent_at || Date.now());
+      relojDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
+
+      actualizarRelojSuaveSeguro();
 
       setText("periodo", data.periodo, "R1");
       setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
@@ -551,9 +551,8 @@
 
     cargarMarcador();
 
-    // Estable: lee Firebase cada medio segundo.
-    // El reloj mostrado es exactamente el de Timing Cuba.
-    setInterval(cargarMarcador, 100);
+    setInterval(cargarMarcador, 500);
+    setInterval(actualizarRelojSuaveSeguro, 100);
   </script>
 
 </body>
