@@ -483,18 +483,20 @@
 
       const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
 
-      const liveStamp = data.live_sent_at || data.updated_at || "";
+      const nuevoDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
+      const liveStamp = String(data.live_sent_at || data.updated_at || "");
 
-      const cambioReloj =
-        liveStamp !== ultimoLiveSentAt ||
-        relojDebeCorrer !== (Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO");
+      const esDatoNuevo = liveStamp !== ultimoLiveSentAt;
+      const cambioEstadoReloj = nuevoDebeCorrer !== relojDebeCorrer;
 
-      if (cambioReloj) {
+      if (esDatoNuevo || cambioEstadoReloj || relojBaseMomento === 0) {
         ultimoLiveSentAt = liveStamp;
         relojBaseSegundos = Number(data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00"));
         relojBaseMomento = Date.now();
-        relojDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
+        relojDebeCorrer = nuevoDebeCorrer;
       }
+
+actualizarRelojSuaveSeguro();
 
       actualizarRelojSuaveSeguro();
 
