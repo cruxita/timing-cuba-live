@@ -364,7 +364,8 @@
 
     let relojBaseSegundos = 0;
     let relojBaseMomento = 0;
-    let relojDebeCorrer = false;    
+    let relojDebeCorrer = false;
+    let ultimoLiveSentAt = null;    
 
     function setText(id, valor, defecto) {
       const el = document.getElementById(id);
@@ -482,9 +483,18 @@
 
       const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
 
-      relojBaseSegundos = Number(data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00"));
-      relojBaseMomento = Date.now();
-      relojDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
+      const liveStamp = data.live_sent_at || data.updated_at || "";
+
+      const cambioReloj =
+        liveStamp !== ultimoLiveSentAt ||
+        relojDebeCorrer !== (Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO");
+
+      if (cambioReloj) {
+        ultimoLiveSentAt = liveStamp;
+        relojBaseSegundos = Number(data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00"));
+        relojBaseMomento = Date.now();
+        relojDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
+      }
 
       actualizarRelojSuaveSeguro();
 
