@@ -444,6 +444,14 @@
   
       const servidorCorriendo =
         Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
+
+      if (estadoActual !== "EN VIVO" || data.reloj_corriendo !== true) {
+        relojBaseSegundos = servidorSegundos;
+        relojBaseMomento = Date.now();
+        relojDebeCorrer = false;
+        relojInicializado = true;
+        return;
+      }
   
       periodoLive = String(data.periodo || "R1").toUpperCase();
   
