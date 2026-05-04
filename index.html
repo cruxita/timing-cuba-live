@@ -425,13 +425,23 @@
       if (relojDebeCorrer) {
         const pasado = (Date.now() - relojBaseMomento) / 1000;
         nuevo = relojBaseSegundos - pasado;
+
+        if (periodoLive === "R1" && nuevo <= limitePrimerTiempoLive) {
+          nuevo = limitePrimerTiempoLive;
+          relojDebeCorrer = false;
+        }
+
+        if (periodoLive === "R2" && nuevo <= 0) {
+          nuevo = 0;
+          relojDebeCorrer = false;
+        }
       }
 
       if (nuevo < 0) nuevo = 0;
 
       setText("reloj", segundosATextoReloj(nuevo), "00:00");
     }
-  
+    
     function actualizarBaseRelojDesdeServidor(data, estadoActual) {
       const servidorSegundos = Number(
         data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00")
