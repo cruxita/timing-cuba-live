@@ -365,9 +365,8 @@
     let relojBaseSegundos = 0;
     let relojBaseMomento = 0;
     let relojDebeCorrer = false;
-    let ultimoLiveSentAt = "";
     let periodoLive = "R1";
-    let limitePrimerTiempoLive = 180;  
+    let limitePrimerTiempoLive = 180;
 
     function setText(id, valor, defecto) {
       const el = document.getElementById(id);
@@ -421,19 +420,21 @@
         const pasado = (Date.now() - relojBaseMomento) / 1000;
         nuevo = relojBaseSegundos - pasado;
 
-        // Seguridad UWW:
-        // En R1 el reloj total debe detenerse en 03:00 para esperar BREAK.
-        // En R2 debe detenerse en 00:00.
         if (periodoLive === "R1" && nuevo <= limitePrimerTiempoLive) {
           nuevo = limitePrimerTiempoLive;
           relojDebeCorrer = false;
         }
 
+        if (periodoLive === "R2" && nuevo <= 0) {
+          nuevo = 0;
+          relojDebeCorrer = false;
+        }
+      }
+
       if (nuevo < 0) nuevo = 0;
 
       setText("reloj", segundosATextoReloj(nuevo), "00:00");
     }
-
 
     function pintarMarcador(data) {
       if (!data) return;
@@ -494,28 +495,16 @@
 
       periodoLive = String(data.periodo || "R1").toUpperCase();
 
-      const relojInicial = Number(data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00"));
+      relojBaseSegundos = Number(
+        data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00")
+      );
 
       if (periodoLive === "R1") {
-        if (relojInicial <= 240) {
-          limitePrimerTiempoLive = 120;
-        } else {
-          limitePrimerTiempoLive = 180;
-        }
+        limitePrimerTiempoLive = relojBaseSegundos <= 240 ? 120 : 180;
       }
 
-      const nuevoDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
-      const liveStamp = String(data.live_sent_at || data.updated_at || "");
-
-      const esDatoNuevo = liveStamp !== ultimoLiveSentAt;
-      const cambioEstadoReloj = nuevoDebeCorrer !== relojDebeCorrer;
-
-      if (esDatoNuevo || cambioEstadoReloj || relojBaseMomento === 0) {
-        ultimoLiveSentAt = liveStamp;
-        relojBaseSegundos = Number(data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00"));
-        relojBaseMomento = Date.now();
-        relojDebeCorrer = nuevoDebeCorrer;
-      }
+      relojBaseMomento = Date.now();
+      relojDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
 
       actualizarRelojSuaveSeguro();
 
