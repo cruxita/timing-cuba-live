@@ -365,7 +365,9 @@
     let relojBaseSegundos = 0;
     let relojBaseMomento = 0;
     let relojDebeCorrer = false;
-    let ultimoLiveSentAt = null;    
+    let ultimoLiveSentAt = "";
+    let periodoLive = "R1";
+    let limitePrimerTiempoLive = 180;  
 
     function setText(id, valor, defecto) {
       const el = document.getElementById(id);
@@ -422,24 +424,10 @@
         // Seguridad UWW:
         // En R1 el reloj total debe detenerse en 03:00 para esperar BREAK.
         // En R2 debe detenerse en 00:00.
-        const periodoTxt = String(document.getElementById("periodo")?.innerText || "").toUpperCase();
-
-        let limiteR1 = 180;
-
-        if (relojBaseSegundos <= 240) {
-          limiteR1 = 120;
-        }
-
-        if (periodoTxt === "R1" && nuevo <= limiteR1) {
-          nuevo = limiteR1;
+        if (periodoLive === "R1" && nuevo <= limitePrimerTiempoLive) {
+          nuevo = limitePrimerTiempoLive;
           relojDebeCorrer = false;
         }
-
-        if (periodoTxt === "R2" && nuevo <= 0) {
-          nuevo = 0;
-          relojDebeCorrer = false;
-        }
-      }
 
       if (nuevo < 0) nuevo = 0;
 
@@ -504,6 +492,18 @@
 
       const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
 
+      periodoLive = String(data.periodo || "R1").toUpperCase();
+
+      const relojInicial = Number(data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00"));
+
+      if (periodoLive === "R1") {
+        if (relojInicial <= 240) {
+          limitePrimerTiempoLive = 120;
+        } else {
+          limitePrimerTiempoLive = 180;
+        }
+      }
+
       const nuevoDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
       const liveStamp = String(data.live_sent_at || data.updated_at || "");
 
@@ -516,8 +516,6 @@
         relojBaseMomento = Date.now();
         relojDebeCorrer = nuevoDebeCorrer;
       }
-
-actualizarRelojSuaveSeguro();
 
       actualizarRelojSuaveSeguro();
 
