@@ -419,21 +419,16 @@
   
     function actualizarRelojSuaveSeguro() {
       if (!relojBaseMomento) return;
-  
-      let nuevo = relojActualCalculado();
-  
+
+      let nuevo = relojBaseSegundos;
+
       if (relojDebeCorrer) {
-        if (periodoLive === "R1" && nuevo <= limitePrimerTiempoLive) {
-          nuevo = limitePrimerTiempoLive;
-          relojDebeCorrer = false;
-        }
-  
-        if (periodoLive === "R2" && nuevo <= 0) {
-          nuevo = 0;
-          relojDebeCorrer = false;
-        }
+        const pasado = (Date.now() - relojBaseMomento) / 1000;
+        nuevo = relojBaseSegundos - pasado;
       }
-  
+
+      if (nuevo < 0) nuevo = 0;
+
       setText("reloj", segundosATextoReloj(nuevo), "00:00");
     }
   
