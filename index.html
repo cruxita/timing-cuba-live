@@ -483,7 +483,7 @@
       const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
 
       relojBaseSegundos = Number(data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00"));
-      relojBaseMomento = Number(data.live_sent_at || Date.now());
+      relojBaseMomento = Date.now();
       relojDebeCorrer = Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
 
       actualizarRelojSuaveSeguro();
