@@ -418,6 +418,27 @@
       if (relojDebeCorrer) {
         const pasado = (Date.now() - relojBaseMomento) / 1000;
         nuevo = relojBaseSegundos - pasado;
+
+        // Seguridad UWW:
+        // En R1 el reloj total debe detenerse en 03:00 para esperar BREAK.
+        // En R2 debe detenerse en 00:00.
+        const periodoTxt = String(document.getElementById("periodo")?.innerText || "").toUpperCase();
+
+        let limiteR1 = 180;
+
+        if (relojBaseSegundos <= 240) {
+          limiteR1 = 120;
+        }
+
+        if (periodoTxt === "R1" && nuevo <= limiteR1) {
+          nuevo = limiteR1;
+          relojDebeCorrer = false;
+        }
+
+        if (periodoTxt === "R2" && nuevo <= 0) {
+          nuevo = 0;
+          relojDebeCorrer = false;
+        }
       }
 
       if (nuevo < 0) nuevo = 0;
