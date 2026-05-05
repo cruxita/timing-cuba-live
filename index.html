@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timing Cuba Live</title>
 
   <style>
@@ -20,32 +21,49 @@
     }
 
     .topbar {
-      padding: 10px 18px 6px;
+      padding: 18px 20px 10px;
       display: grid;
-      grid-template-columns: 120px 1fr 170px;
+      grid-template-columns: 170px 1fr 180px;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .logo img {
-      width: 92px;
-      filter: drop-shadow(0 0 14px gold);
+      width: 135px;
+      max-height: 135px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px gold);
     }
 
     .event-title {
       color: gold;
-      font-size: 34px;
+      font-size: 38px;
       font-weight: 900;
       letter-spacing: 2px;
       text-transform: uppercase;
       text-shadow: 0 0 10px rgba(255, 215, 0, 0.55);
+      line-height: 1.05;
     }
 
     .sub-info {
-      margin-top: 5px;
+      margin-top: 8px;
       color: #ddd;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
+    }
+
+    .style-strip {
+      margin-top: 8px;
+      display: inline-block;
+      padding: 6px 18px;
+      border: 2px solid gold;
+      border-radius: 999px;
+      background: rgba(255, 215, 0, 0.13);
+      color: gold;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.45);
     }
 
     .fullscreen-btn {
@@ -63,7 +81,7 @@
       display: grid;
       grid-template-columns: 1fr 340px 1fr;
       gap: 12px;
-      padding: 8px 22px 0;
+      padding: 22px 22px 0;
       align-items: stretch;
     }
 
@@ -183,6 +201,7 @@
       color: white;
       text-shadow: 0 0 16px gold;
       line-height: 1;
+      font-variant-numeric: tabular-nums;
     }
 
     .periodo {
@@ -250,7 +269,8 @@
       }
 
       .logo img {
-        width: 100px;
+        width: 125px;
+        max-height: 125px;
       }
 
       .event-title {
@@ -261,6 +281,10 @@
         font-size: 15px;
       }
 
+      .style-strip {
+        font-size: 18px;
+      }
+
       .fullscreen-btn {
         width: 80%;
         margin: auto;
@@ -268,7 +292,7 @@
 
       .main {
         grid-template-columns: 1fr;
-        padding: 8px 12px 0;
+        padding: 14px 12px 0;
       }
 
       .center {
@@ -313,8 +337,9 @@
     </div>
 
     <div>
-      <div id="evento_nombre" class="event-title">COPA HABANA 2026</div>
-      <div id="division_info" class="sub-info">Tapiz 1 · U13/15 · 32 KG · Libre</div>
+      <div id="evento_nombre" class="event-title">TIMING CUBA LIVE</div>
+      <div id="division_info" class="sub-info">Tapiz 1 · Categoría · Peso</div>
+      <div id="estilo_visible" class="style-strip">FS</div>
     </div>
 
     <button class="fullscreen-btn" onclick="pantallaCompleta()">PANTALLA COMPLETA</button>
@@ -358,74 +383,102 @@
 
   <script>
     const URL = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/marcador.json";
-  
+
     let puntosRojoAnterior = null;
     let puntosAzulAnterior = null;
-  
+
     let relojBaseSegundos = 0;
     let relojBaseMomento = 0;
     let relojDebeCorrer = false;
     let relojInicializado = false;
+
     let periodoLive = "R1";
     let limitePrimerTiempoLive = 180;
-  
+    let ultimoEstadoClave = "";
+
     function setText(id, valor, defecto) {
       const el = document.getElementById(id);
       if (!el) return;
-      el.innerText = (valor === undefined || valor === null || valor === "") ? defecto : valor;
+
+      if (valor === undefined || valor === null || valor === "") {
+        el.innerText = defecto;
+      } else {
+        el.innerText = valor;
+      }
     }
-  
+
+    function normalizarEstilo(estilo) {
+      const txt = String(estilo || "").trim().toUpperCase();
+
+      if (txt === "LIBRE" || txt === "MASCULINA" || txt === "FREESTYLE") return "FS";
+      if (txt === "FEMENINA" || txt === "WOMEN" || txt === "WOMEN'S" || txt === "WOMENS") return "WW";
+      if (txt === "GRECO" || txt === "GRECORROMANA" || txt === "GRECO-ROMANA") return "GR";
+      if (txt === "FS" || txt === "GR" || txt === "WW") return txt;
+
+      return txt || "FS";
+    }
+
+    function boolLive(valor) {
+      if (valor === true) return true;
+      if (valor === false) return false;
+
+      const txt = String(valor || "").trim().toLowerCase();
+      return txt === "true" || txt === "1" || txt === "yes" || txt === "si" || txt === "sí";
+    }
+
     function animarSiCambio(id, nuevo, anterior) {
       const el = document.getElementById(id);
       if (!el) return;
-  
+
       if (anterior !== null && Number(nuevo) !== Number(anterior)) {
         el.classList.remove("bump");
         void el.offsetWidth;
         el.classList.add("bump");
       }
     }
-  
+
     function textoRelojASegundos(txt) {
       txt = String(txt || "00:00").trim();
+
+      if (/^\d+(\.\d+)?$/.test(txt)) {
+        return Math.max(0, Number(txt));
+      }
+
       const partes = txt.split(":");
       if (partes.length !== 2) return 0;
-  
+
       const min = Number(partes[0] || 0);
       const seg = Number(partes[1] || 0);
-  
+
       return Math.max(0, (min * 60) + seg);
     }
-  
+
     function segundosATextoReloj(total) {
       total = Math.max(0, Math.floor(Number(total || 0)));
-  
+
       const min = Math.floor(total / 60);
       const seg = total % 60;
-  
+
       return String(min).padStart(2, "0") + ":" + String(seg).padStart(2, "0");
     }
-  
+
     function relojActualCalculado() {
       let actual = relojBaseSegundos;
-  
+
       if (relojDebeCorrer && relojBaseMomento) {
         const pasado = (Date.now() - relojBaseMomento) / 1000;
         actual = relojBaseSegundos - pasado;
       }
-  
+
       return Math.max(0, actual);
     }
-  
+
     function actualizarRelojSuaveSeguro() {
       if (!relojBaseMomento) return;
 
-      let nuevo = relojBaseSegundos;
+      let nuevo = relojActualCalculado();
 
       if (relojDebeCorrer) {
-        const pasado = (Date.now() - relojBaseMomento) / 1000;
-        nuevo = relojBaseSegundos - pasado;
-
         if (periodoLive === "R1" && nuevo <= limitePrimerTiempoLive) {
           nuevo = limitePrimerTiempoLive;
           relojDebeCorrer = false;
@@ -437,81 +490,87 @@
         }
       }
 
-      if (nuevo < 0) nuevo = 0;
-
       setText("reloj", segundosATextoReloj(nuevo), "00:00");
     }
-    
+
     function actualizarBaseRelojDesdeServidor(data, estadoActual) {
       const servidorSegundos = Number(
         data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00")
       );
-  
-      const servidorCorriendo =
-        Boolean(data.reloj_corriendo) && estadoActual === "EN VIVO";
 
-      if (estadoActual !== "EN VIVO" || data.reloj_corriendo !== true) {
-        relojBaseSegundos = servidorSegundos;
-        relojBaseMomento = Date.now();
-        relojDebeCorrer = false;
-        relojInicializado = true;
-        return;
-      }
-  
-      periodoLive = String(data.periodo || "R1").toUpperCase();
-  
+      const periodoNuevo = String(data.periodo || "R1").toUpperCase();
+      const servidorCorriendo = boolLive(data.reloj_corriendo) && estadoActual === "EN VIVO";
+
+      periodoLive = periodoNuevo;
+
       if (periodoLive === "R1") {
         limitePrimerTiempoLive = servidorSegundos <= 240 ? 120 : 180;
       }
-  
-      if (!relojInicializado) {
-        relojBaseSegundos = servidorSegundos;
-        relojBaseMomento = Date.now();
-        relojDebeCorrer = servidorCorriendo;
-        relojInicializado = true;
-        return;
-      }
-  
-      const actualWeb = relojActualCalculado();
-  
-      if (servidorCorriendo !== relojDebeCorrer) {
-        relojBaseSegundos = servidorSegundos;
-        relojBaseMomento = Date.now();
-        relojDebeCorrer = servidorCorriendo;
-        return;
-      }
-  
+
+      const claveEstado = [
+        estadoActual,
+        periodoLive,
+        servidorCorriendo ? "RUN" : "STOP",
+        String(Math.round(servidorSegundos))
+      ].join("|");
+
       if (!servidorCorriendo) {
         relojBaseSegundos = servidorSegundos;
         relojBaseMomento = Date.now();
         relojDebeCorrer = false;
+        relojInicializado = true;
+        ultimoEstadoClave = claveEstado;
         return;
       }
-  
-      if (servidorSegundos < actualWeb - 1.2) {
+
+      if (!relojInicializado) {
         relojBaseSegundos = servidorSegundos;
         relojBaseMomento = Date.now();
         relojDebeCorrer = true;
+        relojInicializado = true;
+        ultimoEstadoClave = claveEstado;
+        return;
       }
+
+      if (claveEstado !== ultimoEstadoClave && !relojDebeCorrer) {
+        relojBaseSegundos = servidorSegundos;
+        relojBaseMomento = Date.now();
+        relojDebeCorrer = true;
+        ultimoEstadoClave = claveEstado;
+        return;
+      }
+
+      const actualWeb = relojActualCalculado();
+
+      if (servidorSegundos < actualWeb - 1.5) {
+        relojBaseSegundos = servidorSegundos;
+        relojBaseMomento = Date.now();
+        relojDebeCorrer = true;
+        ultimoEstadoClave = claveEstado;
+        return;
+      }
+
+      relojDebeCorrer = true;
+      ultimoEstadoClave = claveEstado;
     }
-  
+
     function pintarMarcador(data) {
       if (!data) return;
-  
+
       const rojoPts = Number(data.rojo_puntos ?? 0);
       const azulPts = Number(data.azul_puntos ?? 0);
-  
+
       const panelRojo = document.querySelector(".panel-rojo");
       const panelAzul = document.querySelector(".panel-azul");
-  
+
       if (panelRojo && panelAzul) {
         panelRojo.classList.remove("lider", "ganador-final");
         panelAzul.classList.remove("lider", "ganador-final");
-  
+
         const estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
         const ganadorLado = String(data.ganador_lado || "").toUpperCase();
         const ventajaLado = String(data.ventaja_lado || "").toUpperCase();
-  
+
         if (estadoLive === "FINALIZADO" && ganadorLado === "RED") {
           panelRojo.classList.add("ganador-final");
         } else if (estadoLive === "FINALIZADO" && ganadorLado === "BLUE") {
@@ -526,47 +585,51 @@
           panelAzul.classList.add("lider");
         }
       }
-  
+
       animarSiCambio("rojo_puntos", rojoPts, puntosRojoAnterior);
       animarSiCambio("azul_puntos", azulPts, puntosAzulAnterior);
-  
+
       puntosRojoAnterior = rojoPts;
       puntosAzulAnterior = azulPts;
-  
-      setText("evento_nombre", data.evento_nombre, "COPA HABANA 2026");
-  
+
+      const eventoNombre = data.evento_nombre || "TIMING CUBA LIVE";
       const tapiz = data.tapiz || data.tatami || "Tapiz 1";
-      const categoria = data.categoria || "U13/15";
-      const peso = data.peso || "32 KG";
-      const estilo = data.estilo || "Libre";
-  
+      const categoria = data.categoria || "";
+      const peso = data.peso || "";
+      const estilo = normalizarEstilo(data.estilo || data.style || "FS");
+
+      setText("evento_nombre", eventoNombre, "TIMING CUBA LIVE");
+
       const divisionInfo = document.getElementById("division_info");
       if (divisionInfo) {
-        divisionInfo.innerText = `${tapiz} · ${categoria} · ${peso} · ${estilo}`;
+        const partes = [tapiz, categoria, peso].filter(Boolean);
+        divisionInfo.innerText = partes.join(" · ");
       }
-  
+
+      setText("estilo_visible", estilo, "FS");
+
       setText("rojo_nombre", data.rojo_nombre, "---");
       setText("azul_nombre", data.azul_nombre, "---");
       setText("rojo_puntos", rojoPts, "0");
       setText("azul_puntos", azulPts, "0");
-  
+
       const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
-  
+
       actualizarBaseRelojDesdeServidor(data, estadoActual);
       actualizarRelojSuaveSeguro();
-  
+
       setText("periodo", data.periodo, "R1");
       setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
-  
+
       setText("proximo_combate", data.proximo_combate, "Esperando próximo combate...");
       setText("resultado_final", data.resultado_final, "Resultado: combate en progreso");
-  
+
       const historial = data.historial || ["Sin resultados recientes"];
       const historialBox = document.getElementById("historial");
-  
+
       if (historialBox) {
         historialBox.innerHTML = "";
-  
+
         if (Array.isArray(historial)) {
           historial.slice(0, 3).forEach(item => {
             const div = document.createElement("div");
@@ -581,32 +644,32 @@
           historialBox.appendChild(div);
         }
       }
-  
+
       setText("estado", "EN VIVO", "EN VIVO");
     }
-  
+
     async function cargarMarcador() {
       try {
         const respuesta = await fetch(URL + "?t=" + Date.now(), { cache: "no-store" });
-  
+
         if (!respuesta.ok) {
           throw new Error("Respuesta no válida de Firebase: " + respuesta.status);
         }
-  
+
         const data = await respuesta.json();
-  
+
         if (!data) {
           throw new Error("Firebase respondió vacío");
         }
-  
+
         pintarMarcador(data);
-  
+
       } catch (error) {
         setText("estado", "Esperando actualización del evento...", "Esperando actualización del evento...");
         console.log("Error cargando marcador:", error);
       }
     }
-  
+
     function pantallaCompleta() {
       const elem = document.documentElement;
       if (elem.requestFullscreen) {
@@ -615,9 +678,9 @@
         elem.webkitRequestFullscreen();
       }
     }
-  
+
     cargarMarcador();
-  
+
     setInterval(cargarMarcador, 500);
     setInterval(actualizarRelojSuaveSeguro, 100);
   </script>
