@@ -395,6 +395,7 @@
     let periodoLive = "R1";
     let limitePrimerTiempoLive = 180;
     let ultimoEstadoClave = "";
+    let ultimaVersionRecibida = 0;
 
     function setText(id, valor, defecto) {
       const el = document.getElementById(id);
@@ -478,16 +479,18 @@
 
       let nuevo = relojActualCalculado();
 
-      if (relojDebeCorrer) {
-        if (periodoLive === "R1" && nuevo <= limitePrimerTiempoLive) {
-          nuevo = limitePrimerTiempoLive;
-          relojDebeCorrer = false;
-        }
+      if (periodoLive === "R1" && nuevo <= limitePrimerTiempoLive) {
+        nuevo = limitePrimerTiempoLive;
+        relojDebeCorrer = false;
+      }
 
-        if (periodoLive === "R2" && nuevo <= 0) {
-          nuevo = 0;
-          relojDebeCorrer = false;
-        }
+      if (periodoLive === "R2" && nuevo <= 0) {
+        nuevo = 0;
+        relojDebeCorrer = false;
+      }
+
+      if (ultimoEstadoClave.includes("PAUSADO") || ultimoEstadoClave.includes("BREAK") || ultimoEstadoClave.includes("FINALIZADO")) {
+        relojDebeCorrer = false;
       }
 
       setText("reloj", segundosATextoReloj(nuevo), "00:00");
@@ -498,10 +501,9 @@
         data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00")
       );
 
-      const periodoNuevo = String(data.periodo || "R1").toUpperCase();
       const servidorCorriendo = boolLive(data.reloj_corriendo) && estadoActual === "EN VIVO";
 
-      periodoLive = periodoNuevo;
+      periodoLive = String(data.periodo || "R1").toUpperCase();
 
       if (periodoLive === "R1") {
         limitePrimerTiempoLive = servidorSegundos <= 240 ? 120 : 180;
@@ -556,6 +558,14 @@
 
     function pintarMarcador(data) {
       if (!data) return;
+
+      const versionActual = Number(data.version || 0);
+      if (versionActual > 0 && versionActual < ultimaVersionRecibida) {
+        return;
+      }
+      if (versionActual > 0) {
+        ultimaVersionRecibida = versionActual;
+      }
 
       const rojoPts = Number(data.rojo_puntos ?? 0);
       const azulPts = Number(data.azul_puntos ?? 0);
@@ -681,7 +691,7 @@
 
     cargarMarcador();
 
-    setInterval(cargarMarcador, 500);
+    setInterval(cargarMarcador, 200);
     setInterval(actualizarRelojSuaveSeguro, 100);
   </script>
 
