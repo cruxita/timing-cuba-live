@@ -464,10 +464,22 @@
       );
 
       const estado = String(data.estado_combate || data.estado || "").toUpperCase();
+      const periodo = String(data.periodo || "").toUpperCase();
+      const categoria = String(data.categoria || "").toUpperCase();
 
-      // IMPORTANTE:
-      // El BREAK también debe correr si Timing Cuba manda reloj_corriendo = true.
-      // Antes lo estábamos bloqueando por periodo === "BREAK", y por eso se quedaba pegado.
+      // Corte visual del primer tiempo:
+      // U13/15 y categorías infantiles: el primer tiempo termina visualmente en 02:00.
+      // U20/U23/Senior: normalmente termina visualmente en 03:00.
+      let cortePrimerTiempo = 120;
+
+      if (
+        categoria.includes("U20") ||
+        categoria.includes("U23") ||
+        categoria.includes("SENIOR")
+      ) {
+        cortePrimerTiempo = 180;
+      }
+
       const corriendo =
         boolLive(data.reloj_corriendo) &&
         estado !== "PAUSADO" &&
@@ -483,6 +495,13 @@
 
         const pasado = Math.floor((Date.now() - baseServidor) / 1000);
         baseSegundos = Math.max(0, baseSegundos - pasado);
+      }
+
+      // PROTECCIÓN IMPORTANTE:
+      // Si todavía Firebase dice R1, la web no puede bajar de 02:00.
+      // Debe esperar el dato oficial de BREAK.
+      if (periodo === "R1" && corriendo && baseSegundos <= cortePrimerTiempo) {
+        baseSegundos = cortePrimerTiempo;
       }
 
       return segundosATextoReloj(baseSegundos);
