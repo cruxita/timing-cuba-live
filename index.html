@@ -107,18 +107,41 @@
     }
 
     .lider {
-      box-shadow: 0 0 35px gold, 0 0 60px rgba(255,215,0,0.5);
       transform: scale(1.02);
       transition: all 0.2s ease;
     }
 
+    .panel-rojo.lider {
+      box-shadow:
+        0 0 28px #ff2a2a,
+        0 0 60px rgba(255, 0, 0, 0.50);
+    }
+
+    .panel-azul.lider {
+      box-shadow:
+        0 0 28px #2f7cff,
+        0 0 60px rgba(0, 90, 255, 0.50);
+    }
+
     .ganador-final {
       border: 6px solid white !important;
-      box-shadow:
-        0 0 35px white,
-        0 0 65px gold,
-        inset 0 0 35px rgba(255, 255, 255, 0.35) !important;
       transform: scale(1.025);
+    }
+
+    .panel-rojo.ganador-final {
+      box-shadow:
+        0 0 25px white,
+        0 0 40px #ff3a3a,
+        0 0 75px rgba(255, 0, 0, 0.65),
+        inset 0 0 30px rgba(255, 70, 70, 0.28) !important;
+    }
+
+    .panel-azul.ganador-final {
+      box-shadow:
+        0 0 25px white,
+        0 0 40px #3d8bff,
+        0 0 75px rgba(0, 90, 255, 0.65),
+        inset 0 0 30px rgba(70, 140, 255, 0.28) !important;
     }
 
     .ganador-final::after {
