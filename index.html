@@ -382,205 +382,145 @@
   <div id="estado">Conectando...</div>
 
   <script>
-    const URL = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/marcador.json";
-
+    const URL = "https://script.google.com/macros/s/AKfycbyk17adLpbWl4T15I7iWHvmUhdPK6N3oSvFNzXksiH7c0BRg2J35eg2bLetmcAtYhOx/exec";
+  
     let puntosRojoAnterior = null;
     let puntosAzulAnterior = null;
-
-    let relojBaseSegundos = 0;
-    let relojBaseMomento = 0;
-    let relojDebeCorrer = false;
-    let relojInicializado = false;
-
-    let periodoLive = "R1";
-    let limitePrimerTiempoLive = 180;
-    let ultimoEstadoClave = "";
+  
+    let ultimoDato = null;
     let ultimaVersionRecibida = 0;
-
+  
     function setText(id, valor, defecto) {
       const el = document.getElementById(id);
       if (!el) return;
-
+  
       if (valor === undefined || valor === null || valor === "") {
         el.innerText = defecto;
       } else {
         el.innerText = valor;
       }
     }
-
+  
     function normalizarEstilo(estilo) {
       const txt = String(estilo || "").trim().toUpperCase();
-
+  
       if (txt === "LIBRE" || txt === "MASCULINA" || txt === "FREESTYLE") return "FS";
       if (txt === "FEMENINA" || txt === "WOMEN" || txt === "WOMEN'S" || txt === "WOMENS") return "WW";
       if (txt === "GRECO" || txt === "GRECORROMANA" || txt === "GRECO-ROMANA") return "GR";
       if (txt === "FS" || txt === "GR" || txt === "WW") return txt;
-
+  
       return txt || "FS";
     }
-
+  
     function boolLive(valor) {
       if (valor === true) return true;
       if (valor === false) return false;
-
+  
       const txt = String(valor || "").trim().toLowerCase();
       return txt === "true" || txt === "1" || txt === "yes" || txt === "si" || txt === "sí";
     }
-
+  
     function animarSiCambio(id, nuevo, anterior) {
       const el = document.getElementById(id);
       if (!el) return;
-
+  
       if (anterior !== null && Number(nuevo) !== Number(anterior)) {
         el.classList.remove("bump");
         void el.offsetWidth;
         el.classList.add("bump");
       }
     }
-
+  
     function textoRelojASegundos(txt) {
       txt = String(txt || "00:00").trim();
-
+  
       if (/^\d+(\.\d+)?$/.test(txt)) {
         return Math.max(0, Number(txt));
       }
-
+  
       const partes = txt.split(":");
       if (partes.length !== 2) return 0;
-
+  
       const min = Number(partes[0] || 0);
       const seg = Number(partes[1] || 0);
-
+  
       return Math.max(0, (min * 60) + seg);
     }
-
+  
     function segundosATextoReloj(total) {
       total = Math.max(0, Math.floor(Number(total || 0)));
-
+  
       const min = Math.floor(total / 60);
       const seg = total % 60;
-
+  
       return String(min).padStart(2, "0") + ":" + String(seg).padStart(2, "0");
     }
-
-    function relojActualCalculado() {
-      let actual = relojBaseSegundos;
-
-      if (relojDebeCorrer && relojBaseMomento) {
-        const pasado = (Date.now() - relojBaseMomento) / 1000;
-        actual = relojBaseSegundos - pasado;
-      }
-
-      return Math.max(0, actual);
-    }
-
-    function actualizarRelojSuaveSeguro() {
-      if (!relojBaseMomento) return;
-
-      let nuevo = relojActualCalculado();
-
-      if (periodoLive === "R1" && nuevo <= limitePrimerTiempoLive) {
-        nuevo = limitePrimerTiempoLive;
-        relojDebeCorrer = false;
-      }
-
-      if (periodoLive === "R2" && nuevo <= 0) {
-        nuevo = 0;
-        relojDebeCorrer = false;
-      }
-
-      if (ultimoEstadoClave.includes("PAUSADO") || ultimoEstadoClave.includes("BREAK") || ultimoEstadoClave.includes("FINALIZADO")) {
-        relojDebeCorrer = false;
-      }
-
-      setText("reloj", segundosATextoReloj(nuevo), "00:00");
-    }
-
-    function actualizarBaseRelojDesdeServidor(data, estadoActual) {
-      const servidorSegundos = Number(
+  
+    function calcularRelojInternet(data) {
+      if (!data) return "00:00";
+  
+      let baseSegundos = Number(
         data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00")
       );
-
-      const servidorCorriendo = boolLive(data.reloj_corriendo) && estadoActual === "EN VIVO";
-
-      periodoLive = String(data.periodo || "R1").toUpperCase();
-
-      if (periodoLive === "R1") {
-        limitePrimerTiempoLive = servidorSegundos <= 240 ? 120 : 180;
+  
+      const estado = String(data.estado_combate || data.estado || "").toUpperCase();
+      const periodo = String(data.periodo || "").toUpperCase();
+  
+      const corriendo =
+        boolLive(data.reloj_corriendo) &&
+        estado !== "PAUSADO" &&
+        estado !== "FINALIZADO" &&
+        periodo !== "BREAK";
+  
+      if (corriendo) {
+        const baseServidor = Number(
+          data.reloj_base_server_at ||
+          data.live_server_at ||
+          data.live_sent_at ||
+          Date.now()
+        );
+  
+        const pasado = Math.floor((Date.now() - baseServidor) / 1000);
+        baseSegundos = Math.max(0, baseSegundos - pasado);
       }
-
-      const claveEstado = [
-        estadoActual,
-        periodoLive,
-        servidorCorriendo ? "RUN" : "STOP",
-        String(Math.round(servidorSegundos))
-      ].join("|");
-
-      if (!servidorCorriendo) {
-        relojBaseSegundos = servidorSegundos;
-        relojBaseMomento = Date.now();
-        relojDebeCorrer = false;
-        relojInicializado = true;
-        ultimoEstadoClave = claveEstado;
-        return;
-      }
-
-      if (!relojInicializado) {
-        relojBaseSegundos = servidorSegundos;
-        relojBaseMomento = Date.now();
-        relojDebeCorrer = true;
-        relojInicializado = true;
-        ultimoEstadoClave = claveEstado;
-        return;
-      }
-
-      if (claveEstado !== ultimoEstadoClave && !relojDebeCorrer) {
-        relojBaseSegundos = servidorSegundos;
-        relojBaseMomento = Date.now();
-        relojDebeCorrer = true;
-        ultimoEstadoClave = claveEstado;
-        return;
-      }
-
-      const actualWeb = relojActualCalculado();
-
-      if (servidorSegundos < actualWeb - 1.5) {
-        relojBaseSegundos = servidorSegundos;
-        relojBaseMomento = Date.now();
-        relojDebeCorrer = true;
-        ultimoEstadoClave = claveEstado;
-        return;
-      }
-
-      relojDebeCorrer = true;
-      ultimoEstadoClave = claveEstado;
+  
+      return segundosATextoReloj(baseSegundos);
     }
-
+  
+    function actualizarRelojVisual() {
+      if (!ultimoDato) return;
+      setText("reloj", calcularRelojInternet(ultimoDato), "00:00");
+    }
+  
     function pintarMarcador(data) {
       if (!data) return;
-
-      const versionActual = Number(data.version || 0);
+  
+      const versionActual = Number(data.version || data.updated_at || data.live_server_at || 0);
+  
       if (versionActual > 0 && versionActual < ultimaVersionRecibida) {
         return;
       }
+  
       if (versionActual > 0) {
         ultimaVersionRecibida = versionActual;
       }
-
+  
+      ultimoDato = data;
+  
       const rojoPts = Number(data.rojo_puntos ?? 0);
       const azulPts = Number(data.azul_puntos ?? 0);
-
+  
       const panelRojo = document.querySelector(".panel-rojo");
       const panelAzul = document.querySelector(".panel-azul");
-
+  
       if (panelRojo && panelAzul) {
         panelRojo.classList.remove("lider", "ganador-final");
         panelAzul.classList.remove("lider", "ganador-final");
-
+  
         const estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
         const ganadorLado = String(data.ganador_lado || "").toUpperCase();
         const ventajaLado = String(data.ventaja_lado || "").toUpperCase();
-
+  
         if (estadoLive === "FINALIZADO" && ganadorLado === "RED") {
           panelRojo.classList.add("ganador-final");
         } else if (estadoLive === "FINALIZADO" && ganadorLado === "BLUE") {
@@ -595,51 +535,48 @@
           panelAzul.classList.add("lider");
         }
       }
-
+  
       animarSiCambio("rojo_puntos", rojoPts, puntosRojoAnterior);
       animarSiCambio("azul_puntos", azulPts, puntosAzulAnterior);
-
+  
       puntosRojoAnterior = rojoPts;
       puntosAzulAnterior = azulPts;
-
+  
       const eventoNombre = data.evento_nombre || "TIMING CUBA LIVE";
       const tapiz = data.tapiz || data.tatami || "Tapiz 1";
       const categoria = data.categoria || "";
       const peso = data.peso || "";
       const estilo = normalizarEstilo(data.estilo || data.style || "FS");
-
+  
       setText("evento_nombre", eventoNombre, "TIMING CUBA LIVE");
-
+  
       const divisionInfo = document.getElementById("division_info");
       if (divisionInfo) {
         const partes = [tapiz, categoria, peso].filter(Boolean);
         divisionInfo.innerText = partes.join(" · ");
       }
-
+  
       setText("estilo_visible", estilo, "FS");
-
+  
       setText("rojo_nombre", data.rojo_nombre, "---");
       setText("azul_nombre", data.azul_nombre, "---");
       setText("rojo_puntos", rojoPts, "0");
       setText("azul_puntos", azulPts, "0");
-
-      const estadoActual = String(data.estado_combate || data.estado || "").toUpperCase();
-
-      actualizarBaseRelojDesdeServidor(data, estadoActual);
-      actualizarRelojSuaveSeguro();
-
+  
+      actualizarRelojVisual();
+  
       setText("periodo", data.periodo, "R1");
       setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
-
+  
       setText("proximo_combate", data.proximo_combate, "Esperando próximo combate...");
       setText("resultado_final", data.resultado_final, "Resultado: combate en progreso");
-
+  
       const historial = data.historial || ["Sin resultados recientes"];
       const historialBox = document.getElementById("historial");
-
+  
       if (historialBox) {
         historialBox.innerHTML = "";
-
+  
         if (Array.isArray(historial)) {
           historial.slice(0, 3).forEach(item => {
             const div = document.createElement("div");
@@ -654,45 +591,48 @@
           historialBox.appendChild(div);
         }
       }
-
+  
       setText("estado", "EN VIVO", "EN VIVO");
     }
-
+  
     async function cargarMarcador() {
       try {
-        const respuesta = await fetch(URL + "?t=" + Date.now(), { cache: "no-store" });
-
+        const respuesta = await fetch(URL + "?t=" + Date.now(), {
+          cache: "no-store"
+        });
+  
         if (!respuesta.ok) {
-          throw new Error("Respuesta no válida de Firebase: " + respuesta.status);
+          throw new Error("Respuesta no válida: " + respuesta.status);
         }
-
+  
         const data = await respuesta.json();
-
+  
         if (!data) {
-          throw new Error("Firebase respondió vacío");
+          throw new Error("Respuesta vacía");
         }
-
+  
         pintarMarcador(data);
-
+  
       } catch (error) {
         setText("estado", "Esperando actualización del evento...", "Esperando actualización del evento...");
         console.log("Error cargando marcador:", error);
       }
     }
-
+  
     function pantallaCompleta() {
       const elem = document.documentElement;
+  
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       } else if (elem.webkitRequestFullscreen) {
         elem.webkitRequestFullscreen();
       }
     }
-
+  
     cargarMarcador();
-
-    setInterval(cargarMarcador, 200);
-    setInterval(actualizarRelojSuaveSeguro, 100);
+  
+    setInterval(cargarMarcador, 700);
+    setInterval(actualizarRelojVisual, 200);
   </script>
 
 </body>
