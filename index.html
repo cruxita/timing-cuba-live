@@ -458,20 +458,21 @@
   
     function calcularRelojInternet(data) {
       if (!data) return "00:00";
-  
+
       let baseSegundos = Number(
         data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00")
       );
-  
+
       const estado = String(data.estado_combate || data.estado || "").toUpperCase();
-      const periodo = String(data.periodo || "").toUpperCase();
-  
+
+      // IMPORTANTE:
+      // El BREAK también debe correr si Timing Cuba manda reloj_corriendo = true.
+      // Antes lo estábamos bloqueando por periodo === "BREAK", y por eso se quedaba pegado.
       const corriendo =
         boolLive(data.reloj_corriendo) &&
         estado !== "PAUSADO" &&
-        estado !== "FINALIZADO" &&
-        periodo !== "BREAK";
-  
+        estado !== "FINALIZADO";
+
       if (corriendo) {
         const baseServidor = Number(
           data.reloj_base_server_at ||
@@ -479,11 +480,11 @@
           data.live_sent_at ||
           Date.now()
         );
-  
+
         const pasado = Math.floor((Date.now() - baseServidor) / 1000);
         baseSegundos = Math.max(0, baseSegundos - pasado);
       }
-  
+
       return segundosATextoReloj(baseSegundos);
     }
   
