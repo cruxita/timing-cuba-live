@@ -517,165 +517,178 @@
   <div id="estado">Conectando...</div>
 
   <script>
-    const URL = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/marcador.json";
-  
-    let puntosRojoAnterior = null;
-    let puntosAzulAnterior = null;
-  
-    let ultimoDato = null;
-    let ultimaVersionRecibida = 0;
-  
+    var URL_FIREBASE = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/marcador.json";
+    var URL_SCRIPT = "https://script.google.com/macros/s/AKfycbyk17adLpbWl4T15I7iWHvmUhdPK6N3oSvFNzXksiH7c0BRg2J35eg2bLetmcAtYhOx/exec";
+
+    var puntosRojoAnterior = null;
+    var puntosAzulAnterior = null;
+
+    var ultimoDato = null;
+    var ultimaVersionRecibida = 0;
+
+    function valorSeguro(valor, defecto) {
+      if (valor === undefined || valor === null || valor === "") {
+        return defecto;
+      }
+      return valor;
+    }
+
     function setText(id, valor, defecto) {
-      const el = document.getElementById(id);
+      var el = document.getElementById(id);
       if (!el) return;
-  
+
       if (valor === undefined || valor === null || valor === "") {
         el.innerText = defecto;
       } else {
         el.innerText = valor;
       }
     }
-  
+
     function normalizarEstilo(estilo) {
-      const txt = String(estilo || "").trim().toUpperCase();
-  
+      var txt = String(estilo || "").trim().toUpperCase();
+
       if (txt === "LIBRE" || txt === "MASCULINA" || txt === "FREESTYLE") return "FS";
       if (txt === "FEMENINA" || txt === "WOMEN" || txt === "WOMEN'S" || txt === "WOMENS") return "WW";
       if (txt === "GRECO" || txt === "GRECORROMANA" || txt === "GRECO-ROMANA") return "GR";
       if (txt === "FS" || txt === "GR" || txt === "WW") return txt;
-  
+
       return txt || "FS";
     }
-  
+
     function boolLive(valor) {
       if (valor === true) return true;
       if (valor === false) return false;
-  
-      const txt = String(valor || "").trim().toLowerCase();
+
+      var txt = String(valor || "").trim().toLowerCase();
       return txt === "true" || txt === "1" || txt === "yes" || txt === "si" || txt === "sí";
     }
-  
+
     function animarSiCambio(id, nuevo, anterior) {
-      const el = document.getElementById(id);
+      var el = document.getElementById(id);
       if (!el) return;
-  
+
       if (anterior !== null && Number(nuevo) !== Number(anterior)) {
         el.classList.remove("bump");
         void el.offsetWidth;
         el.classList.add("bump");
       }
     }
-  
+
     function textoRelojASegundos(txt) {
       txt = String(txt || "00:00").trim();
-  
+
       if (/^\d+(\.\d+)?$/.test(txt)) {
         return Math.max(0, Number(txt));
       }
-  
-      const partes = txt.split(":");
+
+      var partes = txt.split(":");
       if (partes.length !== 2) return 0;
-  
-      const min = Number(partes[0] || 0);
-      const seg = Number(partes[1] || 0);
-  
+
+      var min = Number(partes[0] || 0);
+      var seg = Number(partes[1] || 0);
+
       return Math.max(0, (min * 60) + seg);
     }
-  
+
+    function dosDigitos(n) {
+      n = Number(n || 0);
+      if (n < 10) {
+        return "0" + n;
+      }
+      return String(n);
+    }
+
     function segundosATextoReloj(total) {
       total = Math.max(0, Math.floor(Number(total || 0)));
-  
-      const min = Math.floor(total / 60);
-      const seg = total % 60;
-  
-      return String(min).padStart(2, "0") + ":" + String(seg).padStart(2, "0");
+
+      var min = Math.floor(total / 60);
+      var seg = total % 60;
+
+      return dosDigitos(min) + ":" + dosDigitos(seg);
     }
-  
+
     function calcularRelojInternet(data) {
       if (!data) return "00:00";
 
-      let baseSegundos = Number(
-        data.reloj_segundos ?? textoRelojASegundos(data.reloj || "00:00")
+      var relojFuente = valorSeguro(
+        data.reloj_segundos,
+        textoRelojASegundos(data.reloj || "00:00")
       );
 
-      const estado = String(data.estado_combate || data.estado || "").toUpperCase();
-      const periodo = String(data.periodo || "").toUpperCase();
-      const categoria = String(data.categoria || "").toUpperCase();
+      var baseSegundos = Number(relojFuente);
 
-      // Corte visual del primer tiempo:
-      // U13/15 y categorías infantiles: el primer tiempo termina visualmente en 02:00.
-      // U20/U23/Senior: normalmente termina visualmente en 03:00.
-      let cortePrimerTiempo = 120;
+      var estado = String(data.estado_combate || data.estado || "").toUpperCase();
+      var periodo = String(data.periodo || "").toUpperCase();
+      var categoria = String(data.categoria || "").toUpperCase();
+
+      var cortePrimerTiempo = 120;
 
       if (
-        categoria.includes("U20") ||
-        categoria.includes("U23") ||
-        categoria.includes("SENIOR")
+        categoria.indexOf("U20") >= 0 ||
+        categoria.indexOf("U23") >= 0 ||
+        categoria.indexOf("SENIOR") >= 0
       ) {
         cortePrimerTiempo = 180;
       }
 
-      const corriendo =
+      var corriendo =
         boolLive(data.reloj_corriendo) &&
         estado !== "PAUSADO" &&
         estado !== "FINALIZADO";
 
       if (corriendo) {
-        const baseServidor = Number(
+        var baseServidor = Number(
           data.reloj_base_server_at ||
           data.live_server_at ||
           data.live_sent_at ||
-          Date.now()
+          new Date().getTime()
         );
 
-        const pasado = Math.floor((Date.now() - baseServidor) / 1000);
+        var pasado = Math.floor((new Date().getTime() - baseServidor) / 1000);
         baseSegundos = Math.max(0, baseSegundos - pasado);
       }
 
-      // PROTECCIÓN IMPORTANTE:
-      // Si todavía Firebase dice R1, la web no puede bajar de 02:00.
-      // Debe esperar el dato oficial de BREAK.
       if (periodo === "R1" && corriendo && baseSegundos <= cortePrimerTiempo) {
         baseSegundos = cortePrimerTiempo;
       }
 
       return segundosATextoReloj(baseSegundos);
     }
-  
+
     function actualizarRelojVisual() {
       if (!ultimoDato) return;
       setText("reloj", calcularRelojInternet(ultimoDato), "00:00");
     }
-  
+
     function pintarMarcador(data) {
       if (!data) return;
-  
-      const versionActual = Number(data.version || data.updated_at || data.live_server_at || 0);
-  
+
+      var versionActual = Number(data.version || data.updated_at || data.live_server_at || 0);
+
       if (versionActual > 0 && versionActual < ultimaVersionRecibida) {
         return;
       }
-  
+
       if (versionActual > 0) {
         ultimaVersionRecibida = versionActual;
       }
-  
+
       ultimoDato = data;
-  
-      const rojoPts = Number(data.rojo_puntos ?? 0);
-      const azulPts = Number(data.azul_puntos ?? 0);
-  
-      const panelRojo = document.querySelector(".panel-rojo");
-      const panelAzul = document.querySelector(".panel-azul");
-  
+
+      var rojoPts = Number(valorSeguro(data.rojo_puntos, 0));
+      var azulPts = Number(valorSeguro(data.azul_puntos, 0));
+
+      var panelRojo = document.querySelector(".panel-rojo");
+      var panelAzul = document.querySelector(".panel-azul");
+
       if (panelRojo && panelAzul) {
         panelRojo.classList.remove("lider", "ganador-final");
         panelAzul.classList.remove("lider", "ganador-final");
-  
-        const estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
-        const ganadorLado = String(data.ganador_lado || "").toUpperCase();
-        const ventajaLado = String(data.ventaja_lado || "").toUpperCase();
-  
+
+        var estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
+        var ganadorLado = String(data.ganador_lado || "").toUpperCase();
+        var ventajaLado = String(data.ventaja_lado || "").toUpperCase();
+
         if (estadoLive === "FINALIZADO" && ganadorLado === "RED") {
           panelRojo.classList.add("ganador-final");
         } else if (estadoLive === "FINALIZADO" && ganadorLado === "BLUE") {
@@ -690,93 +703,120 @@
           panelAzul.classList.add("lider");
         }
       }
-  
+
       animarSiCambio("rojo_puntos", rojoPts, puntosRojoAnterior);
       animarSiCambio("azul_puntos", azulPts, puntosAzulAnterior);
-  
+
       puntosRojoAnterior = rojoPts;
       puntosAzulAnterior = azulPts;
-  
-      const eventoNombre = data.evento_nombre || "TIMING CUBA LIVE";
-      const tapiz = data.tapiz || data.tatami || "Tapiz 1";
-      const categoria = data.categoria || "";
-      const peso = data.peso || "";
-      const estilo = normalizarEstilo(data.estilo || data.style || "FS");
-  
+
+      var eventoNombre = data.evento_nombre || "TIMING CUBA LIVE";
+      var tapiz = data.tapiz || data.tatami || "Tapiz 1";
+      var categoria = data.categoria || "";
+      var peso = data.peso || "";
+      var estilo = normalizarEstilo(data.estilo || data.style || "FS");
+
       setText("evento_nombre", eventoNombre, "TIMING CUBA LIVE");
-  
-      const divisionInfo = document.getElementById("division_info");
+
+      var divisionInfo = document.getElementById("division_info");
       if (divisionInfo) {
-        const partes = [tapiz, categoria, peso].filter(Boolean);
+        var partes = [];
+        if (tapiz) partes.push(tapiz);
+        if (categoria) partes.push(categoria);
+        if (peso) partes.push(peso);
         divisionInfo.innerText = partes.join(" · ");
       }
-  
+
       setText("estilo_visible", estilo, "FS");
-  
+
       setText("rojo_nombre", data.rojo_nombre, "---");
       setText("azul_nombre", data.azul_nombre, "---");
       setText("rojo_puntos", rojoPts, "0");
       setText("azul_puntos", azulPts, "0");
-  
+
       actualizarRelojVisual();
-  
+
       setText("periodo", data.periodo, "R1");
       setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
-  
+
       setText("proximo_combate", data.proximo_combate, "Esperando próximo combate...");
       setText("resultado_final", data.resultado_final, "Resultado: combate en progreso");
-  
-      const historial = data.historial || ["Sin resultados recientes"];
-      const historialBox = document.getElementById("historial");
-  
+
+      var historial = data.historial || ["Sin resultados recientes"];
+      var historialBox = document.getElementById("historial");
+
       if (historialBox) {
         historialBox.innerHTML = "";
-  
+
         if (Array.isArray(historial)) {
-          historial.slice(0, 3).forEach(item => {
-            const div = document.createElement("div");
+          for (var i = 0; i < Math.min(historial.length, 3); i++) {
+            var div = document.createElement("div");
             div.className = "history-line";
-            div.innerText = item;
+            div.innerText = historial[i];
             historialBox.appendChild(div);
-          });
+          }
         } else {
-          const div = document.createElement("div");
-          div.className = "history-line";
-          div.innerText = historial;
-          historialBox.appendChild(div);
+          var div2 = document.createElement("div");
+          div2.className = "history-line";
+          div2.innerText = historial;
+          historialBox.appendChild(div2);
         }
       }
-  
-      setText("estado", "EN VIVO", "EN VIVO");
+
+      setText("estado", "CONECTADO · " + (data.estado_combate || data.estado || "EN VIVO"), "EN VIVO");
     }
-  
-    async function cargarMarcador() {
-      try {
-        const respuesta = await fetch(URL + "?t=" + Date.now(), {
-          cache: "no-store"
-        });
-  
-        if (!respuesta.ok) {
-          throw new Error("Respuesta no válida: " + respuesta.status);
+
+    function cargarJSON(url, ok, fail) {
+      var xhr = new XMLHttpRequest();
+      var sep = url.indexOf("?") >= 0 ? "&" : "?";
+      var finalUrl = url + sep + "t=" + new Date().getTime();
+
+      xhr.open("GET", finalUrl, true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState !== 4) return;
+
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            var data = JSON.parse(xhr.responseText);
+            ok(data);
+          } catch (e) {
+            fail("JSON inválido");
+          }
+        } else {
+          fail("HTTP " + xhr.status);
         }
-  
-        const data = await respuesta.json();
-  
-        if (!data) {
-          throw new Error("Respuesta vacía");
-        }
-  
-        pintarMarcador(data);
-  
-      } catch (error) {
-        setText("estado", "Esperando actualización del evento...", "Esperando actualización del evento...");
-        console.log("Error cargando marcador:", error);
-      }
+      };
+
+      xhr.onerror = function () {
+        fail("Error de red");
+      };
+
+      xhr.send();
     }
-  
+
+    function cargarMarcador() {
+      cargarJSON(
+        URL_FIREBASE,
+        function (data) {
+          pintarMarcador(data);
+        },
+        function () {
+          cargarJSON(
+            URL_SCRIPT,
+            function (data2) {
+              pintarMarcador(data2);
+            },
+            function (error2) {
+              setText("estado", "No conecta con Firebase ni Script: " + error2, "Sin conexión");
+            }
+          );
+        }
+      );
+    }
+
     function pantallaCompleta() {
-      const elem = document.documentElement;
-  
+      var elem = document.documentElement;
+
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       } else if (elem.webkitRequestFullscreen) {
@@ -784,7 +824,6 @@
       }
     }
 
-  
     cargarMarcador();
 
     setInterval(cargarMarcador, 350);
