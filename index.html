@@ -525,53 +525,59 @@
       }
 
       .bottom {
-        display: grid;
+        display: grid !important;
         grid-template-columns: 1fr 1fr;
-        gap: 6px;
-        padding: 7px 5px 0;
+        gap: 5px;
+        padding: 6px 5px 0;
+        margin-bottom: 4px;
       }
 
       .card {
-        border-radius: 12px;
-        padding: 7px;
+        display: block !important;
+        border-radius: 10px;
+        padding: 6px;
+        min-height: auto;
       }
 
       .card-title {
-        font-size: 12px;
-        margin-bottom: 5px;
-        letter-spacing: 0.5px;
+        font-size: 10px;
+        margin-bottom: 3px;
+        letter-spacing: 0.4px;
       }
 
       .card-text {
-        font-size: 12px;
-        line-height: 1.2;
+        font-size: 10px;
+        line-height: 1.12;
       }
 
       .history-line {
-        font-size: 11px;
-        line-height: 1.2;
+        font-size: 10px;
+        line-height: 1.12;
+        padding: 2px 0;
       }
 
       .cartelera-item {
-        padding: 5px 0 7px;
+        display: block !important;
+        padding: 3px 0 4px;
       }
 
       .cartelera-head {
-        font-size: 9.5px;
-        letter-spacing: 0.3px;
-        line-height: 1.15;
+        font-size: 8.8px;
+        letter-spacing: 0.2px;
+        line-height: 1.08;
+        margin-bottom: 2px;
       }
 
       .cartelera-names {
-        font-size: 10.5px;
-        line-height: 1.15;
+        font-size: 9.5px;
+        line-height: 1.08;
         word-break: break-word;
         overflow-wrap: anywhere;
       }
 
       .cartelera-names span {
-        font-size: 8.5px;
-        padding: 0 2px;
+        font-size: 8px;
+        padding: 0 1px;
       }
 
       #estado {
@@ -658,8 +664,15 @@
       }
 
       .bottom {
+        display: grid !important;
         grid-template-columns: 1fr;
-        gap: 6px;
+        gap: 5px;
+        padding: 5px 4px 0;
+      }
+
+      .card {
+        display: block !important;
+        padding: 6px;
       }
 
       .card-title {
