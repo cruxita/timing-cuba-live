@@ -845,9 +845,28 @@
       setText("proximo_combate", data.proximo_combate, "Esperando próximo combate...");
       
       var clasificacionFinal = clasificacionFinalTexto(data);
+      var estadoLiveBarra = String(data.estado_combate || data.estado || "").toUpperCase();
+      var ganadorBarra = String(data.ganador_lado || "").toUpperCase();
+      var nombreGanadorBarra = "";
 
-      if (clasificacionFinal) {
-        setText("resultado_final", clasificacionFinal, "");
+      if (ganadorBarra === "RED") {
+        nombreGanadorBarra = data.rojo_nombre || "ROJO";
+      } else if (ganadorBarra === "BLUE") {
+        nombreGanadorBarra = data.azul_nombre || "AZUL";
+      } else {
+        if (rojoPts > azulPts) {
+          nombreGanadorBarra = data.rojo_nombre || "ROJO";
+        } else if (azulPts > rojoPts) {
+          nombreGanadorBarra = data.azul_nombre || "AZUL";
+        }
+      }
+
+      if (estadoLiveBarra === "FINALIZADO" && nombreGanadorBarra && clasificacionFinal) {
+        setText(
+          "resultado_final",
+          "Ganador: " + nombreGanadorBarra + " (" + clasificacionFinal + ")",
+          ""
+        );
       } else {
         setText("resultado_final", data.resultado_final, "Resultado: combate en progreso");
       }
