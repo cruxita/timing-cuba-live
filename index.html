@@ -52,6 +52,16 @@
       font-weight: bold;
     }
 
+    .bout-info {
+      margin-top: 6px;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+    }
+
     .style-strip {
       margin-top: 8px;
       display: inline-block;
@@ -317,6 +327,12 @@
         font-size: 13px;
       }
 
+      .bout-info {
+        margin-top: 3px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+
       .style-strip {
         margin-top: 5px;
         padding: 3px 12px;
@@ -474,6 +490,7 @@
     <div>
       <div id="evento_nombre" class="event-title">TIMING CUBA LIVE</div>
       <div id="division_info" class="sub-info">Tapiz 1 · Categoría · Peso</div>
+      <div id="combate_info" class="bout-info">Fase · Combate</div>
       <div id="estilo_visible" class="style-strip">FS</div>
     </div>
 
@@ -728,6 +745,35 @@
       }
 
       setText("estilo_visible", estilo, "FS");
+
+      var faseActual = data.fase_actual || data.round_public || "";
+      var combateActual = data.combate_actual || data.bout_public || "";
+
+      var faseTxt = String(faseActual || "").trim();
+      var combateTxt = String(combateActual || "").trim();
+
+      if (faseTxt === "1/8") faseTxt = "1/8 FINAL";
+      if (faseTxt === "1/4") faseTxt = "1/4 FINAL";
+      if (faseTxt === "1/2") faseTxt = "1/2 FINAL";
+      if (faseTxt.toUpperCase() === "FINAL") faseTxt = "1-2 FINAL";
+      if (faseTxt === "3-5") faseTxt = "3-5 FINAL";
+      if (faseTxt.toUpperCase() === "QUALIF.") faseTxt = "QUALIF.";
+
+      if (combateTxt && combateTxt.toUpperCase().indexOf("COMBATE") < 0) {
+        combateTxt = "COMBATE " + combateTxt;
+      }
+
+      var combateInfo = "";
+
+      if (faseTxt && combateTxt) {
+        combateInfo = faseTxt + " · " + combateTxt;
+      } else if (faseTxt) {
+        combateInfo = faseTxt;
+      } else if (combateTxt) {
+        combateInfo = combateTxt;
+      }
+
+      setText("combate_info", combateInfo, "");
 
       setText("rojo_nombre", data.rojo_nombre, "---");
       setText("azul_nombre", data.azul_nombre, "---");
