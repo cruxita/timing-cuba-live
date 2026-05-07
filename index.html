@@ -284,6 +284,33 @@
       border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
+    .cartelera-item {
+      padding: 5px 0 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .cartelera-head {
+      color: gold;
+      font-size: 15px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .cartelera-names {
+      color: white;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .cartelera-names span {
+      color: gold;
+      font-size: 13px;
+      font-weight: 900;
+      padding: 0 5px;
+    }
+
     #estado {
       margin: 12px 0 10px;
       font-size: 15px;
@@ -419,6 +446,19 @@
       .history-line {
         font-size: 12px;
         line-height: 1.25;
+      }
+
+      .cartelera-head {
+        font-size: 11px;
+      }
+
+      .cartelera-names {
+        font-size: 12px;
+        line-height: 1.2;
+      }
+
+      .cartelera-names span {
+        font-size: 10px;
       }
 
       #estado {
@@ -842,7 +882,45 @@
       setText("periodo", data.periodo, "R1");
       setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
 
-      setText("proximo_combate", data.proximo_combate, "Esperando próximo combate...");
+      var boxProximos = document.getElementById("proximo_combate");
+
+      if (boxProximos) {
+        boxProximos.innerHTML = "";
+
+        var listaProximos = data.proximos_combates || [];
+
+        if (Array.isArray(listaProximos) && listaProximos.length > 0) {
+          for (var p = 0; p < Math.min(listaProximos.length, 4); p++) {
+            var item = listaProximos[p] || {};
+
+            var estadoItem = String(item.estado || "").trim();
+            var faseItem = String(item.fase || "").trim();
+            var combateItem = String(item.combate || "").trim();
+            var rojoItem = String(item.rojo || "Por definir").trim();
+            var azulItem = String(item.azul || "Por definir").trim();
+
+            if (combateItem && combateItem.toUpperCase().indexOf("COMBATE") < 0) {
+              combateItem = "Combate " + combateItem;
+            }
+
+            var linea1 = [];
+            if (estadoItem) linea1.push(estadoItem);
+            if (faseItem) linea1.push(faseItem);
+            if (combateItem) linea1.push(combateItem);
+
+            var div = document.createElement("div");
+            div.className = "cartelera-item";
+
+            div.innerHTML =
+              '<div class="cartelera-head">' + linea1.join(" · ") + '</div>' +
+              '<div class="cartelera-names">' + rojoItem + ' <span>vs</span> ' + azulItem + '</div>';
+
+            boxProximos.appendChild(div);
+          }
+        } else {
+          boxProximos.innerText = data.proximo_combate || "Esperando próximo combate...";
+        }
+      }
       
       var clasificacionFinal = clasificacionFinalTexto(data);
       var estadoLiveBarra = String(data.estado_combate || data.estado || "").toUpperCase();
