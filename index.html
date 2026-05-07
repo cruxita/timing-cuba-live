@@ -326,6 +326,99 @@
       color: #aaa;
     }
 
+    /* ======================================================
+       COLOR GENERAL TIMING CUBA - ORO VIEJO DEL LOGO
+       No toca la sombra del ganador rojo/azul
+    ====================================================== */
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(200, 154, 69, 0.10), transparent 34%),
+        linear-gradient(180deg, #080808, #000);
+    }
+
+    .logo img {
+      filter: drop-shadow(0 0 10px rgba(200, 154, 69, 0.42));
+    }
+
+    .event-title {
+      color: #c89a45;
+      text-shadow: 0 0 7px rgba(200, 154, 69, 0.38);
+    }
+
+    .style-strip {
+      border-color: #c89a45;
+      background: rgba(200, 154, 69, 0.10);
+      color: #c89a45;
+      text-shadow: 0 0 6px rgba(200, 154, 69, 0.30);
+    }
+
+    .fullscreen-btn {
+      border-color: #c89a45;
+      color: #c89a45;
+      box-shadow: 0 0 8px rgba(200, 154, 69, 0.22);
+    }
+
+    .panel:not(.lider):not(.ganador-final) {
+      border-color: #c89a45;
+      box-shadow: 0 0 12px rgba(200, 154, 69, 0.26);
+    }
+
+    .panel::before {
+      background: linear-gradient(135deg, #c89a45, transparent 45%, #c89a45);
+      opacity: 0.06;
+    }
+
+    .center {
+      border-color: #c89a45;
+      box-shadow: 0 0 15px rgba(200, 154, 69, 0.34);
+      background: radial-gradient(circle, rgba(200, 154, 69, 0.12), #000 72%);
+    }
+
+    .status {
+      background: rgba(200, 154, 69, 0.10);
+      border-color: #c89a45;
+      color: #c89a45;
+    }
+
+    .timer {
+      text-shadow: 0 0 9px rgba(200, 154, 69, 0.42);
+    }
+
+    .periodo {
+      color: #c89a45;
+    }
+
+    .result {
+      border-color: rgba(200, 154, 69, 0.48);
+      background: rgba(200, 154, 69, 0.06);
+    }
+
+    .card {
+      border-color: rgba(200, 154, 69, 0.42);
+      box-shadow: 0 0 10px rgba(200, 154, 69, 0.16);
+    }
+
+    .card-title {
+      color: #c89a45;
+      letter-spacing: 0.8px;
+    }
+
+    .cartelera-head {
+      color: #c89a45;
+      text-shadow: 0 0 7px rgba(200, 154, 69, 0.24);
+    }
+
+    .cartelera-names span {
+      color: #d7b36a;
+    }
+
+    @keyframes bump {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.20); text-shadow: 0 0 18px rgba(200, 154, 69, 0.70); }
+      100% { transform: scale(1); }
+    }
+
     @media (max-width: 900px) {
       body {
         overflow-x: hidden;
