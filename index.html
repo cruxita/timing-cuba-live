@@ -159,18 +159,8 @@
     }
 
     .ganador-final::after {
-      content: "GANADOR";
-      position: absolute;
-      top: 10px;
-      right: 12px;
-      background: gold;
-      color: black;
-      font-size: 13px;
-      font-weight: 900;
-      padding: 4px 9px;
-      border-radius: 999px;
-      box-shadow: 0 0 10px gold;
-      z-index: 2;
+      display: none;
+      content: "";
     }
 
     .panel::before {
@@ -677,6 +667,73 @@
       setText("reloj", calcularRelojInternet(ultimoDato), "00:00");
     }
 
+    function clasificacionFinalTexto(data) {
+      if (!data) return "";
+
+      var estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
+      if (estadoLive !== "FINALIZADO") return "";
+
+      var resultadoFinal = String(data.resultado_final || "").toUpperCase();
+
+      var rojoPts = Number(valorSeguro(data.rojo_puntos, 0));
+      var azulPts = Number(valorSeguro(data.azul_puntos, 0));
+
+      var ganador = String(data.ganador_lado || "").toUpperCase();
+
+      if (!ganador) {
+        if (rojoPts > azulPts) ganador = "RED";
+        else if (azulPts > rojoPts) ganador = "BLUE";
+      }
+
+      var ganadorPts = 0;
+      var perdedorPts = 0;
+
+      if (ganador === "RED") {
+        ganadorPts = rojoPts;
+        perdedorPts = azulPts;
+      } else if (ganador === "BLUE") {
+        ganadorPts = azulPts;
+        perdedorPts = rojoPts;
+      } else {
+        return "";
+      }
+
+      var estiloNorm = normalizarEstilo(data.estilo || data.style || "FS");
+      var diferencia = Math.abs(rojoPts - azulPts);
+
+      // FALL / VIN / similares = 5-0
+      if (
+        resultadoFinal.indexOf("(FALL)") >= 0 ||
+        resultadoFinal.indexOf("(VIN)") >= 0 ||
+        resultadoFinal.indexOf("(VFA)") >= 0 ||
+        resultadoFinal.indexOf("(WO)") >= 0 ||
+        resultadoFinal.indexOf("(BYE)") >= 0 ||
+        resultadoFinal.indexOf("(DSQ)") >= 0
+      ) {
+        return "5-0";
+      }
+
+      // Superioridad técnica:
+      // FS / WW = diferencia 10
+      // GR = diferencia 8
+      var limiteSuperioridad = (estiloNorm === "GR") ? 8 : 10;
+
+      if (diferencia >= limiteSuperioridad) {
+        if (perdedorPts > 0) {
+          return "4-1";
+        } else {
+          return "4-0";
+        }
+      }
+
+      // Decisión por puntos
+      if (perdedorPts > 0) {
+        return "3-1";
+      } else {
+        return "3-0";
+      }
+    }
+
     function pintarMarcador(data) {
       if (!data) return;
 
@@ -786,7 +843,14 @@
       setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
 
       setText("proximo_combate", data.proximo_combate, "Esperando próximo combate...");
-      setText("resultado_final", data.resultado_final, "Resultado: combate en progreso");
+      
+      var clasificacionFinal = clasificacionFinalTexto(data);
+
+      if (clasificacionFinal) {
+        setText("resultado_final", clasificacionFinal, "");
+      } else {
+        setText("resultado_final", data.resultado_final, "Resultado: combate en progreso");
+      }
 
       var historial = data.historial || ["Sin resultados recientes"];
       var historialBox = document.getElementById("historial");
