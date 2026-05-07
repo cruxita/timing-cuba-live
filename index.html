@@ -425,191 +425,253 @@
       }
 
       .topbar {
-        grid-template-columns: 90px 1fr;
-        padding: 10px 8px 6px;
-        gap: 8px;
+        grid-template-columns: 76px 1fr;
+        padding: 8px 6px 4px;
+        gap: 6px;
       }
 
       .logo img {
-        width: 82px;
-        max-height: 82px;
+        width: 70px;
+        max-height: 70px;
       }
 
       .event-title {
-        font-size: 22px;
+        font-size: 20px;
         letter-spacing: 1px;
         line-height: 1.05;
       }
 
       .sub-info {
-        margin-top: 4px;
-        font-size: 13px;
+        margin-top: 3px;
+        font-size: 12px;
+        line-height: 1.15;
       }
 
       .bout-info {
         margin-top: 3px;
-        font-size: 12px;
-        letter-spacing: 0.5px;
+        font-size: 11px;
+        letter-spacing: 0.4px;
+        line-height: 1.15;
       }
 
       .style-strip {
-        margin-top: 5px;
-        padding: 3px 12px;
-        font-size: 15px;
+        margin-top: 4px;
+        padding: 3px 11px;
+        font-size: 14px;
+        letter-spacing: 1px;
       }
 
       .fullscreen-btn {
         grid-column: 1 / -1;
-        width: 180px;
-        margin: 4px auto 0;
-        padding: 8px 8px;
-        font-size: 12px;
+        width: 150px;
+        margin: 3px auto 0;
+        padding: 7px 6px;
+        font-size: 11px;
         border-radius: 10px;
       }
 
       .main {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 132px minmax(0, 1fr);
-        gap: 6px;
-        padding: 8px 6px 0;
+        grid-template-columns: minmax(0, 1fr) 126px minmax(0, 1fr);
+        gap: 5px;
+        padding: 7px 5px 0;
         align-items: stretch;
       }
 
       .panel,
       .center {
-        min-height: 175px;
+        min-height: 165px;
         border-radius: 14px;
         border-width: 3px;
       }
 
-      .center {
-        order: 0;
-      }
-
       .name {
-        font-size: 17px;
-        line-height: 1.08;
-        margin-bottom: 10px;
-        padding: 0 4px;
+        font-size: 15px;
+        line-height: 1.05;
+        margin-bottom: 8px;
+        padding: 0 3px;
         word-break: break-word;
+        overflow-wrap: anywhere;
       }
 
       .score {
-        font-size: 78px;
+        font-size: 70px;
         line-height: 0.95;
       }
 
       .status {
-        margin-bottom: 10px;
-        padding: 5px 9px;
-        font-size: 12px;
+        margin-bottom: 9px;
+        padding: 5px 8px;
+        font-size: 11px;
         border-width: 2px;
       }
 
       .timer {
-        font-size: 42px;
+        font-size: 39px;
         line-height: 1;
       }
 
       .periodo {
-        margin-top: 10px;
-        font-size: 22px;
+        margin-top: 9px;
+        font-size: 20px;
       }
 
       .result {
-        margin: 8px 6px 0;
-        padding: 9px 6px;
+        margin: 7px 5px 0;
+        padding: 8px 5px;
         border-radius: 12px;
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.2;
       }
 
       .bottom {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 7px;
-        padding: 8px 6px 0;
+        gap: 6px;
+        padding: 7px 5px 0;
       }
 
       .card {
         border-radius: 12px;
-        padding: 8px;
+        padding: 7px;
       }
 
       .card-title {
-        font-size: 13px;
+        font-size: 12px;
         margin-bottom: 5px;
+        letter-spacing: 0.5px;
       }
 
       .card-text {
-        font-size: 13px;
-        line-height: 1.25;
+        font-size: 12px;
+        line-height: 1.2;
       }
 
       .history-line {
-        font-size: 12px;
-        line-height: 1.25;
+        font-size: 11px;
+        line-height: 1.2;
+      }
+
+      .cartelera-item {
+        padding: 5px 0 7px;
       }
 
       .cartelera-head {
-        font-size: 10px;
-        letter-spacing: 0.4px;
+        font-size: 9.5px;
+        letter-spacing: 0.3px;
+        line-height: 1.15;
       }
 
       .cartelera-names {
-        font-size: 11px;
-        line-height: 1.18;
+        font-size: 10.5px;
+        line-height: 1.15;
         word-break: break-word;
         overflow-wrap: anywhere;
       }
 
       .cartelera-names span {
-        font-size: 9px;
+        font-size: 8.5px;
+        padding: 0 2px;
       }
 
       #estado {
-        margin: 8px 0 8px;
-        font-size: 12px;
+        margin: 7px 0 7px;
+        font-size: 11px;
       }
     }
 
     @media (max-width: 480px) {
+      .topbar {
+        grid-template-columns: 62px 1fr;
+        padding: 6px 5px 3px;
+      }
+
+      .logo img {
+        width: 58px;
+        max-height: 58px;
+      }
+
+      .event-title {
+        font-size: 17px;
+        letter-spacing: 0.7px;
+      }
+
+      .sub-info {
+        font-size: 11px;
+      }
+
+      .bout-info {
+        font-size: 10px;
+      }
+
+      .style-strip {
+        font-size: 12px;
+        padding: 2px 10px;
+      }
+
+      .fullscreen-btn {
+        width: 135px;
+        font-size: 10px;
+        padding: 6px 5px;
+      }
+
       .main {
-        grid-template-columns: minmax(0, 1fr) 112px minmax(0, 1fr);
-        gap: 5px;
+        grid-template-columns: minmax(0, 1fr) 108px minmax(0, 1fr);
+        gap: 4px;
+        padding: 6px 4px 0;
       }
 
       .panel,
       .center {
-        min-height: 155px;
+        min-height: 145px;
+        border-radius: 12px;
       }
 
       .name {
-        font-size: 14px;
+        font-size: 12.5px;
+        line-height: 1.05;
+        margin-bottom: 6px;
       }
 
       .score {
-        font-size: 64px;
+        font-size: 58px;
       }
 
       .timer {
-        font-size: 36px;
+        font-size: 32px;
       }
 
       .periodo {
-        font-size: 19px;
+        font-size: 17px;
+        margin-top: 7px;
       }
 
       .status {
-        font-size: 11px;
-        padding: 4px 7px;
+        font-size: 9.5px;
+        padding: 4px 6px;
+        margin-bottom: 7px;
       }
 
-      .event-title {
-        font-size: 19px;
+      .result {
+        font-size: 12px;
+        padding: 7px 4px;
       }
 
       .bottom {
         grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .card-title {
+        font-size: 12px;
+      }
+
+      .cartelera-head {
+        font-size: 10px;
+      }
+
+      .cartelera-names {
+        font-size: 11px;
       }
     }
   </style>
