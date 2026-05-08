@@ -768,6 +768,13 @@
     var ultimoDato = null;
     var ultimaVersionRecibida = 0;
 
+    // Reloj local del navegador.
+    // Esto evita que el reloj se quede congelado si Firebase refresca
+    // el mismo segundo muchas veces.
+    var relojLocalBaseSegundos = null;
+    var relojLocalBaseMs = null;
+    var relojLocalFirma = "";
+
     function valorSeguro(valor, defecto) {
       if (valor === undefined || valor === null || valor === "") {
         return defecto;
@@ -849,17 +856,102 @@
       return dosDigitos(min) + ":" + dosDigitos(seg);
     }
 
-    function calcularRelojInternet(data) {
-      if (!data) return "00:00";
+    function segundosFuenteReloj(data) {
+      if (!data) return 0;
 
       var relojFuente = valorSeguro(
         data.reloj_segundos,
         textoRelojASegundos(data.reloj || "00:00")
       );
 
-      var baseSegundos = Number(relojFuente);
+      return Math.max(0, Number(relojFuente || 0));
+    }
+
+    function relojEstaCorriendo(data) {
+      if (!data) return false;
 
       var estado = String(data.estado_combate || data.estado || "").toUpperCase();
+
+      return (
+        boolLive(data.reloj_corriendo) &&
+        estado !== "PAUSADO" &&
+        estado !== "FINALIZADO"
+      );
+    }
+
+    function firmaRelojData(data) {
+      if (!data) return "";
+
+      return [
+        data.tapiz || "",
+        data.round_public || data.fase_actual || "",
+        data.bout_public || data.combate_actual || "",
+        data.periodo || "",
+        data.rojo_nombre || "",
+        data.azul_nombre || ""
+      ].join("|");
+    }
+
+    function prepararRelojLocal(data) {
+      if (!data) return;
+
+      var segundosEntrada = segundosFuenteReloj(data);
+      var corriendo = relojEstaCorriendo(data);
+      var firma = firmaRelojData(data);
+      var ahora = new Date().getTime();
+
+      // Si está pausado o finalizado, la web debe quedarse exacta en el segundo recibido.
+      if (!corriendo) {
+        relojLocalBaseSegundos = segundosEntrada;
+        relojLocalBaseMs = ahora;
+        relojLocalFirma = firma;
+        return;
+      }
+
+      // Si cambió de combate, ronda, periodo o atletas, sincronizar de cero.
+      if (
+        relojLocalBaseSegundos === null ||
+        relojLocalBaseMs === null ||
+        relojLocalFirma !== firma
+      ) {
+        relojLocalBaseSegundos = segundosEntrada;
+        relojLocalBaseMs = ahora;
+        relojLocalFirma = firma;
+        return;
+      }
+
+      var segundosLocales = Math.max(
+        0,
+        relojLocalBaseSegundos - Math.floor((ahora - relojLocalBaseMs) / 1000)
+      );
+
+      // Si el servidor manda un salto hacia abajo, respetarlo.
+      // Sirve para break, segundo periodo o ajustes reales.
+      if (segundosEntrada < segundosLocales - 2) {
+        relojLocalBaseSegundos = segundosEntrada;
+        relojLocalBaseMs = ahora;
+        relojLocalFirma = firma;
+        return;
+      }
+
+      // Si el servidor manda un salto grande hacia arriba, respetarlo.
+      // Sirve cuando se reajusta manualmente el reloj.
+      if (segundosEntrada > segundosLocales + 10) {
+        relojLocalBaseSegundos = segundosEntrada;
+        relojLocalBaseMs = ahora;
+        relojLocalFirma = firma;
+        return;
+      }
+
+      // Si Firebase refresca el mismo segundo, NO reiniciamos el reloj local.
+    }
+
+    function calcularRelojInternet(data) {
+      if (!data) return "00:00";
+
+      var baseSegundos = segundosFuenteReloj(data);
+      var corriendo = relojEstaCorriendo(data);
+
       var periodo = String(data.periodo || "").toUpperCase();
       var categoria = String(data.categoria || "").toUpperCase();
 
@@ -873,21 +965,13 @@
         cortePrimerTiempo = 180;
       }
 
-      var corriendo =
-        boolLive(data.reloj_corriendo) &&
-        estado !== "PAUSADO" &&
-        estado !== "FINALIZADO";
-
-      if (corriendo) {
-        var baseServidor = Number(
-          data.reloj_base_server_at ||
-          data.live_server_at ||
-          data.live_sent_at ||
-          new Date().getTime()
-        );
-
-        var pasado = Math.floor((new Date().getTime() - baseServidor) / 1000);
-        baseSegundos = Math.max(0, baseSegundos - pasado);
+      if (
+        corriendo &&
+        relojLocalBaseSegundos !== null &&
+        relojLocalBaseMs !== null
+      ) {
+        var pasado = Math.floor((new Date().getTime() - relojLocalBaseMs) / 1000);
+        baseSegundos = Math.max(0, relojLocalBaseSegundos - pasado);
       }
 
       if (periodo === "R1" && corriendo && baseSegundos <= cortePrimerTiempo) {
@@ -983,6 +1067,7 @@
       }
 
       ultimoDato = data;
+      prepararRelojLocal(data);
 
       var rojoPts = Number(valorSeguro(data.rojo_puntos, 0));
       var azulPts = Number(valorSeguro(data.azul_puntos, 0));
