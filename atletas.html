@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atletas - Timing Cuba Live</title>
+  <style>
+    :root {
+      --bg: #05070d;
+      --card: #111827;
+      --card2: #0b1220;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --line: rgba(255,255,255,0.12);
+      --accent: #facc15;
+      --red: #ef4444;
+      --blue: #3b82f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.14), transparent 35%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(5, 7, 13, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 18px;
+    }
+
+    .topbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 44px);
+      line-height: 1;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      text-decoration: none;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.12s ease, background 0.12s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.10);
+    }
+
+    .btn-main {
+      background: var(--accent);
+      color: #111827;
+      border-color: transparent;
+    }
+
+    main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 22px 18px 42px;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: minmax(220px, 2fr) repeat(4, minmax(130px, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    input, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.07);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 13px 12px;
+      font-size: 15px;
+      outline: none;
+      font-weight: 700;
+    }
+
+    option {
+      color: #111827;
+    }
+
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-weight: 800;
+      margin: 6px 2px 18px;
+      flex-wrap: wrap;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+    }
+
+    .photo-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background:
+        linear-gradient(135deg, rgba(250,204,21,0.14), rgba(59,130,246,0.12)),
+        var(--card2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .placeholder {
+      width: 92px;
+      height: 92px;
+      border-radius: 999px;
+      border: 3px solid rgba(255,255,255,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .body {
+      padding: 14px;
+    }
+
+    .name {
+      font-size: 22px;
+      line-height: 1.08;
+      font-weight: 950;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      min-height: 48px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 8px 9px;
+      min-height: 42px;
+    }
+
+    .pill small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .pill strong {
+      display: block;
+      font-size: 14px;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .club {
+      margin-top: 8px;
+      color: var(--muted);
+      font-weight: 800;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .empty, .error {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      padding: 22px;
+      font-weight: 800;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .error {
+      color: #fecaca;
+      border-color: rgba(239,68,68,0.35);
+    }
+
+    @media (max-width: 860px) {
+      .filters {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .filters input {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .topbar-inner {
+        align-items: stretch;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .btn {
+        flex: 1;
+        text-align: center;
+      }
+
+      .filters {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <h1>Atletas</h1>
+        <span>Timing Cuba Live</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="index.html">Inicio</a>
+        <a class="btn btn-main" href="tapiz-a.html">Tapiz A</a>
+        <a class="btn btn-main" href="tapiz-b.html">Tapiz B</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="filters">
+      <input id="buscar" type="search" placeholder="Buscar por nombre, club, país, peso..." />
+
+      <select id="filtroEstilo">
+        <option value="">Todos los estilos</option>
+      </select>
+
+      <select id="filtroGrupo">
+        <option value="">Todos los grupos</option>
+      </select>
+
+      <select id="filtroPeso">
+        <option value="">Todos los pesos</option>
+      </select>
+
+      <select id="filtroClub">
+        <option value="">Todos los clubes</option>
+      </select>
+    </section>
+
+    <div class="summary">
+      <div id="contador">Cargando atletas...</div>
+      <div id="actualizado"></div>
+    </div>
+
+    <section id="contenido" class="grid"></section>
+  </main>
+
+  <script>
+    const DATA_URL = "datos/atletas.json";
+
+    let atletas = [];
+
+    const $ = (id) => document.getElementById(id);
+
+    function texto(valor) {
+      return String(valor ?? "").trim();
+    }
+
+    function normalizarAtleta(a) {
+      const nombrePublico = texto(a.nombre_publico);
+      const nombreCompleto = `${texto(a.nombre)} ${texto(a.apellidos)}`.trim();
+
+      return {
+        id: texto(a.id),
+        nombre: nombrePublico || nombreCompleto || "ATLETA",
+        nombre_busqueda: `${nombrePublico} ${nombreCompleto}`.toLowerCase(),
+        club: texto(a.club),
+        pais: texto(a.pais),
+        provincia: texto(a.provincia),
+        municipio: texto(a.municipio),
+        grupo: texto(a.grupo),
+        peso: texto(a.peso),
+        estilo: texto(a.estilo),
+        tag_publico: texto(a.tag_publico),
+        foto: texto(a.foto || a.foto_web || a.foto_path || a.imagen)
+      };
+    }
+
+    function getListaDesdeJSON(data) {
+      if (Array.isArray(data)) return data;
+      if (Array.isArray(data.atletas)) return data.atletas;
+      if (Array.isArray(data.data)) return data.data;
+      return [];
+    }
+
+    function crearOpciones(selectId, valores, etiqueta) {
+      const select = $(selectId);
+      const valorActual = select.value;
+
+      select.innerHTML = `<option value="">${etiqueta}</option>`;
+
+      [...new Set(valores.filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b, "es", { numeric: true }))
+        .forEach((valor) => {
+          const opt = document.createElement("option");
+          opt.value = valor;
+          opt.textContent = valor;
+          select.appendChild(opt);
+        });
+
+      select.value = valorActual;
+    }
+
+    function iniciales(nombre) {
+      return nombre
+        .split(/\s+/)
+        .filter(Boolean)
+        .slice(0, 2)
+        .map(p => p[0])
+        .join("")
+        .toUpperCase() || "TC";
+    }
+
+    function crearCard(a) {
+      const card = document.createElement("article");
+      card.className = "card";
+
+      const photoWrap = document.createElement("div");
+      photoWrap.className = "photo-wrap";
+
+      if (a.foto) {
+        const img = document.createElement("img");
+        img.className = "photo";
+        img.src = a.foto.replaceAll("\\", "/");
+        img.alt = a.nombre;
+        img.loading = "lazy";
+        img.onerror = () => {
+          photoWrap.innerHTML = `<div class="placeholder">${iniciales(a.nombre)}</div>`;
+        };
+        photoWrap.appendChild(img);
+      } else {
+        photoWrap.innerHTML = `<div class="placeholder">${iniciales(a.nombre)}</div>`;
+      }
+
+      const body = document.createElement("div");
+      body.className = "body";
+
+      body.innerHTML = `
+        <div class="name">${escapeHTML(a.nombre)}</div>
+        <div class="club">${escapeHTML(a.club || a.provincia || a.pais || "Sin club")}</div>
+        <div class="meta">
+          <div class="pill"><small>ID</small><strong>${escapeHTML(a.id || "-")}</strong></div>
+          <div class="pill"><small>País</small><strong>${escapeHTML(a.pais || "-")}</strong></div>
+          <div class="pill"><small>Grupo</small><strong>${escapeHTML(a.grupo || "-")}</strong></div>
+          <div class="pill"><small>Peso</small><strong>${escapeHTML(a.peso || "-")}</strong></div>
+          <div class="pill"><small>Estilo</small><strong>${escapeHTML(a.estilo || "-")}</strong></div>
+          <div class="pill"><small>Tag</small><strong>${escapeHTML(a.tag_publico || "-")}</strong></div>
+        </div>
+      `;
+
+      card.appendChild(photoWrap);
+      card.appendChild(body);
+
+      return card;
+    }
+
+    function escapeHTML(valor) {
+      return String(valor ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function filtrar() {
+      const q = texto($("buscar").value).toLowerCase();
+      const estilo = $("filtroEstilo").value;
+      const grupo = $("filtroGrupo").value;
+      const peso = $("filtroPeso").value;
+      const club = $("filtroClub").value;
+
+      return atletas.filter((a) => {
+        const textoCompleto = [
+          a.nombre_busqueda,
+          a.club,
+          a.pais,
+          a.provincia,
+          a.municipio,
+          a.grupo,
+          a.peso,
+          a.estilo,
+          a.tag_publico
+        ].join(" ").toLowerCase();
+
+        if (q && !textoCompleto.includes(q)) return false;
+        if (estilo && a.estilo !== estilo) return false;
+        if (grupo && a.grupo !== grupo) return false;
+        if (peso && a.peso !== peso) return false;
+        if (club && a.club !== club) return false;
+
+        return true;
+      });
+    }
+
+    function render() {
+      const contenido = $("contenido");
+      const lista = filtrar();
+
+      contenido.innerHTML = "";
+
+      $("contador").textContent = `${lista.length} atleta(s) mostrado(s) de ${atletas.length}`;
+
+      if (!lista.length) {
+        contenido.className = "";
+        contenido.innerHTML = `<div class="empty">No hay atletas para mostrar con esos filtros.</div>`;
+        return;
+      }
+
+      contenido.className = "grid";
+      lista.forEach((a) => contenido.appendChild(crearCard(a)));
+    }
+
+    function llenarFiltros() {
+      crearOpciones("filtroEstilo", atletas.map(a => a.estilo), "Todos los estilos");
+      crearOpciones("filtroGrupo", atletas.map(a => a.grupo), "Todos los grupos");
+      crearOpciones("filtroPeso", atletas.map(a => a.peso), "Todos los pesos");
+      crearOpciones("filtroClub", atletas.map(a => a.club), "Todos los clubes");
+    }
+
+    async function cargarAtletas() {
+      const contenido = $("contenido");
+
+      try {
+        const res = await fetch(DATA_URL + "?v=" + Date.now(), { cache: "no-store" });
+
+        if (!res.ok) {
+          throw new Error("No se pudo leer " + DATA_URL);
+        }
+
+        const data = await res.json();
+        atletas = getListaDesdeJSON(data).map(normalizarAtleta);
+
+        llenarFiltros();
+        render();
+
+        const fecha = new Date();
+        $("actualizado").textContent = "Actualizado: " + fecha.toLocaleString("es-US");
+      } catch (err) {
+        $("contador").textContent = "No se pudo cargar atletas.json";
+        contenido.className = "";
+        contenido.innerHTML = `
+          <div class="error">
+            No se pudo abrir <b>${DATA_URL}</b>.<br><br>
+            Si estás probando en la PC, abre esta página desde un servidor local o súbela a GitHub Pages.
+          </div>
+        `;
+        console.error(err);
+      }
+    }
+
+    ["buscar", "filtroEstilo", "filtroGrupo", "filtroPeso", "filtroClub"].forEach((id) => {
+      $(id).addEventListener("input", render);
+      $(id).addEventListener("change", render);
+    });
+
+    cargarAtletas();
+  </script>
+</body>
+</html>
