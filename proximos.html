@@ -614,6 +614,52 @@
         .replace(/'/g, "&#039;");
     }
 
+
+    function nombrePublico(nombre) {
+      var txt = String(nombre || "").trim();
+
+      if (!txt) return "";
+
+      var upper = txt.toUpperCase();
+
+      if (
+        upper === "ROJO" ||
+        upper === "AZUL" ||
+        upper === "---" ||
+        upper === "POR DEFINIR"
+      ) {
+        return upper;
+      }
+
+      // Si ya viene como A. ARROYO, no lo cambia.
+      if (/^[A-ZÁÉÍÓÚÑ]\.\s+\S+/i.test(txt)) {
+        return upper;
+      }
+
+      var partes = txt.split(/\s+/).filter(Boolean);
+
+      if (partes.length <= 1) {
+        return upper;
+      }
+
+      var inicial = partes[0].charAt(0).toUpperCase() + ".";
+
+      // Nombre + Apellido: Abraham Arroyo -> A. Arroyo
+      // Nombre + Segundo nombre + Apellido: Abraham Ali Arroyo -> A. Arroyo
+      // Nombre + Segundo nombre + Apellidos: Abraham Ali Arroyo Cruz -> A. Arroyo
+      var apellido = "";
+
+      if (partes.length === 2) {
+        apellido = partes[1];
+      } else if (partes.length === 3) {
+        apellido = partes[2];
+      } else {
+        apellido = partes[partes.length - 2];
+      }
+
+      return (inicial + " " + apellido).toUpperCase();
+    }
+
     function normalizarEstilo(estilo) {
       var txt = String(estilo || "").trim().toUpperCase();
       if (txt === "LIBRE" || txt === "MASCULINA" || txt === "FREESTYLE") return "FS";
@@ -693,8 +739,8 @@
           var estado = String(item.estado || "").trim();
           var fase = String(item.fase || "").trim();
           var combate = String(item.combate || "").trim();
-          var rojo = String(item.rojo || "Por definir").trim();
-          var azul = String(item.azul || "Por definir").trim();
+          var rojo = nombrePublico(item.rojo || "Por definir");
+          var azul = nombrePublico(item.azul || "Por definir");
 
           if (combate && combate.toUpperCase().indexOf("COMBATE") < 0) {
             combate = "Combate " + combate;
@@ -737,8 +783,8 @@
         setText("evento_general", data.evento_nombre, "Timing Cuba Live");
       }
 
-      setText("actual_rojo_" + sufijo, data.rojo_nombre || "ROJO", "ROJO");
-      setText("actual_azul_" + sufijo, data.azul_nombre || "AZUL", "AZUL");
+      setText("actual_rojo_" + sufijo, nombrePublico(data.rojo_nombre || "ROJO"), "ROJO");
+      setText("actual_azul_" + sufijo, nombrePublico(data.azul_nombre || "AZUL"), "AZUL");
 
       pintarMeta(sufijo, data);
       pintarCola(sufijo, data);
