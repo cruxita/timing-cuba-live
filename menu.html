@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timing Cuba Live</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --oro: #c89a45;
+      --oro-claro: #e1bd72;
+      --fondo: #000000;
+      --panel: rgba(10, 10, 10, 0.82);
+      --borde: rgba(200, 154, 69, 0.62);
+      --texto: #ffffff;
+      --suave: #cfcfcf;
+      --rojo: #ff2020;
+      --azul: #2f7cff;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(200, 154, 69, 0.22), transparent 34%),
+        radial-gradient(circle at bottom, rgba(200, 154, 69, 0.08), transparent 30%),
+        linear-gradient(180deg, #0b0b0b, #000000 72%);
+      color: var(--texto);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      width: 100%;
+      padding: 26px 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .shell {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .logo {
+      width: min(245px, 44vw);
+      max-height: 245px;
+      object-fit: contain;
+      filter:
+        drop-shadow(0 0 10px rgba(200, 154, 69, 0.48))
+        drop-shadow(0 0 24px rgba(200, 154, 69, 0.22));
+    }
+
+    h1 {
+      margin: 8px 0 6px;
+      color: var(--oro);
+      font-size: clamp(34px, 6vw, 76px);
+      line-height: 0.95;
+      font-weight: 1000;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 0 14px rgba(200, 154, 69, 0.42);
+    }
+
+    .subtitle {
+      color: var(--suave);
+      font-size: clamp(15px, 2.3vw, 24px);
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      gap: 18px;
+      margin: 0 auto;
+      max-width: 980px;
+    }
+
+    .btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 124px;
+      padding: 22px 18px;
+      border-radius: 24px;
+      border: 3px solid var(--borde);
+      text-decoration: none;
+      color: var(--texto);
+      background:
+        linear-gradient(135deg, rgba(200, 154, 69, 0.16), rgba(0,0,0,0.88)),
+        var(--panel);
+      box-shadow:
+        0 0 18px rgba(200, 154, 69, 0.22),
+        inset 0 0 24px rgba(200, 154, 69, 0.05);
+      transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.01);
+      border-color: var(--oro-claro);
+      box-shadow:
+        0 0 28px rgba(200, 154, 69, 0.42),
+        inset 0 0 30px rgba(200, 154, 69, 0.08);
+    }
+
+    .btn-main {
+      grid-column: span 1;
+    }
+
+    .btn-title {
+      font-size: clamp(24px, 3.2vw, 42px);
+      font-weight: 1000;
+      line-height: 1;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .btn-note {
+      margin-top: 10px;
+      color: #d8d8d8;
+      font-size: clamp(13px, 1.6vw, 17px);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .tapiz-a {
+      border-color: rgba(255, 48, 48, 0.72);
+      box-shadow:
+        0 0 20px rgba(255, 0, 0, 0.18),
+        inset 0 0 28px rgba(255, 0, 0, 0.05);
+    }
+
+    .tapiz-a .btn-title {
+      color: #ff4141;
+      text-shadow: 0 0 14px rgba(255, 0, 0, 0.38);
+    }
+
+    .tapiz-b {
+      border-color: rgba(47, 124, 255, 0.72);
+      box-shadow:
+        0 0 20px rgba(47, 124, 255, 0.18),
+        inset 0 0 28px rgba(47, 124, 255, 0.05);
+    }
+
+    .tapiz-b .btn-title {
+      color: #4b8dff;
+      text-shadow: 0 0 14px rgba(47, 124, 255, 0.42);
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: rgba(255,255,255,0.58);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 18px 12px 22px;
+        align-items: flex-start;
+      }
+
+      .logo {
+        width: min(168px, 48vw);
+        max-height: 168px;
+      }
+
+      h1 {
+        letter-spacing: 1.5px;
+      }
+
+      .subtitle {
+        margin-bottom: 16px;
+      }
+
+      .menu {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .btn {
+        min-height: 94px;
+        border-radius: 18px;
+        padding: 18px 14px;
+      }
+
+      .wide {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .logo {
+        width: 132px;
+      }
+
+      .btn {
+        min-height: 86px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="shell">
+      <div class="logo-wrap">
+        <img class="logo" src="logo.png" alt="Lucha Cubana" />
+      </div>
+
+      <h1>Timing Cuba Live</h1>
+      <div class="subtitle">Seleccione qué desea ver</div>
+
+      <nav class="menu" aria-label="Menú principal Timing Cuba Live">
+        <a class="btn btn-main tapiz-a" href="tapiz-a.html">
+          <span class="btn-title">Tapiz A</span>
+          <span class="btn-note">Marcador en vivo</span>
+        </a>
+
+        <a class="btn btn-main tapiz-b" href="tapiz-b.html">
+          <span class="btn-title">Tapiz B</span>
+          <span class="btn-note">Marcador en vivo</span>
+        </a>
+
+        <a class="btn" href="atletas.html">
+          <span class="btn-title">Atletas</span>
+          <span class="btn-note">Fotos y datos registrados</span>
+        </a>
+
+        <a class="btn" href="resultados.html">
+          <span class="btn-title">Resultados</span>
+          <span class="btn-note">Últimos combates</span>
+        </a>
+
+        <a class="btn wide" href="clasificacion.html">
+          <span class="btn-title">Clasificación</span>
+          <span class="btn-note">Equipos · países · municipios</span>
+        </a>
+      </nav>
+
+      <div class="footer">Lucha Cubana · Desde adentro</div>
+    </section>
+  </main>
+</body>
+</html>

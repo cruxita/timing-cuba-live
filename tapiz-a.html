@@ -1,0 +1,1343 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timing Cuba Live - Tapiz A</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(255, 215, 0, 0.16), transparent 35%),
+        linear-gradient(180deg, #080808, #000);
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .topbar {
+      padding: 18px 20px 10px;
+      display: grid;
+      grid-template-columns: 170px 1fr 180px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 135px;
+      max-height: 135px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px gold);
+    }
+
+    .event-title {
+      color: gold;
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.55);
+      line-height: 1.05;
+    }
+
+    .sub-info {
+      margin-top: 8px;
+      color: #ddd;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .bout-info {
+      margin-top: 6px;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+    }
+
+    .style-strip {
+      margin-top: 8px;
+      display: inline-block;
+      padding: 6px 18px;
+      border: 2px solid gold;
+      border-radius: 999px;
+      background: rgba(255, 215, 0, 0.13);
+      color: gold;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.45);
+    }
+
+    .fullscreen-btn,
+    .menu-btn {
+      border: 2px solid gold;
+      background: #111;
+      color: gold;
+      border-radius: 12px;
+      padding: 12px 10px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
+      text-decoration: none;
+      display: inline-block;
+      font-size: 13px;
+    }
+
+    .side-actions {
+      display: grid;
+      gap: 8px;
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 340px 1fr;
+      gap: 12px;
+      padding: 22px 22px 0;
+      align-items: stretch;
+    }
+
+    .panel {
+      border: 4px solid gold;
+      border-radius: 22px;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 0 22px rgba(255, 215, 0, 0.55);
+      background: rgba(0, 0, 0, 0.88);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel-rojo {
+      background: linear-gradient(135deg, #380000, #120000 55%, #050000);
+    }
+
+    .panel-azul {
+      background: linear-gradient(135deg, #001f55, #000b24 55%, #00030a);
+    }
+
+    .lider {
+      transform: scale(1.02);
+      transition: all 0.2s ease;
+    }
+
+    .panel-rojo.lider {
+      border-color: #ff2a2a;
+      box-shadow:
+        0 0 28px #ff2a2a,
+        0 0 60px rgba(255, 0, 0, 0.50);
+    }
+
+    .panel-azul.lider {
+      border-color: #2f7cff;
+      box-shadow:
+        0 0 28px #2f7cff,
+        0 0 60px rgba(0, 90, 255, 0.50);
+    }
+
+    .ganador-final {
+      border: 6px solid white !important;
+      transform: scale(1.025);
+    }
+
+    .panel-rojo.ganador-final {
+      border: 6px solid #ff2a2a !important;
+      box-shadow:
+        0 0 25px white,
+        0 0 40px #ff3a3a,
+        0 0 75px rgba(255, 0, 0, 0.65),
+        inset 0 0 30px rgba(255, 70, 70, 0.28) !important;
+    }
+
+    .panel-azul.ganador-final {
+      border: 6px solid #2f7cff !important;
+      box-shadow:
+        0 0 25px white,
+        0 0 40px #3d8bff,
+        0 0 75px rgba(0, 90, 255, 0.65),
+        inset 0 0 30px rgba(70, 140, 255, 0.28) !important;
+    }
+
+    .ganador-final::after {
+      display: none;
+      content: "";
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background: linear-gradient(135deg, gold, transparent 45%, gold);
+      pointer-events: none;
+    }
+
+    .name {
+      font-size: 44px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      z-index: 1;
+    }
+
+    .score {
+      font-size: 176px;
+      font-weight: 900;
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .rojo { color: #ff1010; }
+    .azul { color: #1060ff; }
+
+    .score.bump {
+      animation: bump 0.35s ease;
+    }
+
+    @keyframes bump {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.25); text-shadow: 0 0 30px gold; }
+      100% { transform: scale(1); }
+    }
+
+    .center {
+      border: 4px solid gold;
+      border-radius: 22px;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 0 28px rgba(255, 215, 0, 0.8);
+      background: radial-gradient(circle, rgba(110, 95, 0, 0.28), #000 72%);
+    }
+
+    .status {
+      display: inline-block;
+      margin: 0 auto 18px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255, 215, 0, 0.16);
+      border: 2px solid gold;
+      color: gold;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .timer {
+      font-size: 98px;
+      font-weight: 900;
+      color: white;
+      text-shadow: 0 0 16px gold;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .periodo {
+      margin-top: 18px;
+      font-size: 34px;
+      font-weight: 900;
+      color: gold;
+    }
+
+    .result {
+      margin: 15px 22px 0;
+      padding: 13px;
+      border: 2px solid rgba(255, 215, 0, 0.7);
+      border-radius: 16px;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 900;
+      background: rgba(255, 215, 0, 0.08);
+    }
+
+    .bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding: 14px 22px 0;
+    }
+
+    .card {
+      border: 2px solid rgba(255, 215, 0, 0.65);
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(0, 0, 0, 0.75);
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.28);
+      text-align: left;
+    }
+
+    .card-title {
+      color: gold;
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .card-text {
+      font-size: 20px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .history-line {
+      font-size: 17px;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .cartelera-item {
+      padding: 7px 0 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .cartelera-item:last-child {
+      border-bottom: none;
+    }
+
+    .cartelera-head {
+      color: #8fd3ff;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      letter-spacing: 0.6px;
+      text-shadow: 0 0 8px rgba(143, 211, 255, 0.25);
+    }
+
+    .cartelera-names {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.28;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .cartelera-names span {
+      color: #b9dfff;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 0 4px;
+      text-transform: uppercase;
+    }
+
+    #estado {
+      margin: 12px 0 10px;
+      font-size: 15px;
+      color: #aaa;
+    }
+
+    /* ======================================================
+       COLOR GENERAL TIMING CUBA - ORO VIEJO DEL LOGO
+       No toca la sombra del ganador rojo/azul
+    ====================================================== */
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(200, 154, 69, 0.10), transparent 34%),
+        linear-gradient(180deg, #080808, #000);
+    }
+
+    .logo img {
+      filter: drop-shadow(0 0 10px rgba(200, 154, 69, 0.42));
+    }
+
+    .event-title {
+      color: #c89a45;
+      text-shadow: 0 0 7px rgba(200, 154, 69, 0.38);
+    }
+
+    .style-strip {
+      border-color: #c89a45;
+      background: rgba(200, 154, 69, 0.10);
+      color: #c89a45;
+      text-shadow: 0 0 6px rgba(200, 154, 69, 0.30);
+    }
+
+    .fullscreen-btn,
+    .menu-btn {
+      border-color: #c89a45;
+      color: #c89a45;
+      box-shadow: 0 0 8px rgba(200, 154, 69, 0.22);
+    }
+
+    .panel:not(.lider):not(.ganador-final) {
+      border-color: #c89a45;
+      box-shadow: 0 0 12px rgba(200, 154, 69, 0.26);
+    }
+
+    .panel::before {
+      background: linear-gradient(135deg, #c89a45, transparent 45%, #c89a45);
+      opacity: 0.06;
+    }
+
+    .center {
+      border-color: #c89a45;
+      box-shadow: 0 0 15px rgba(200, 154, 69, 0.34);
+      background: radial-gradient(circle, rgba(200, 154, 69, 0.12), #000 72%);
+    }
+
+    .status {
+      background: rgba(200, 154, 69, 0.10);
+      border-color: #c89a45;
+      color: #c89a45;
+    }
+
+    .timer {
+      text-shadow: 0 0 9px rgba(200, 154, 69, 0.42);
+    }
+
+    .periodo {
+      color: #c89a45;
+    }
+
+    .result {
+      border-color: rgba(200, 154, 69, 0.48);
+      background: rgba(200, 154, 69, 0.06);
+    }
+
+    .card {
+      border-color: rgba(200, 154, 69, 0.42);
+      box-shadow: 0 0 10px rgba(200, 154, 69, 0.16);
+    }
+
+    .card-title {
+      color: #c89a45;
+      letter-spacing: 0.8px;
+    }
+
+    .cartelera-head {
+      color: #c89a45;
+      text-shadow: 0 0 7px rgba(200, 154, 69, 0.24);
+    }
+
+    .cartelera-names span {
+      color: #d7b36a;
+    }
+
+    @keyframes bump {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.20); text-shadow: 0 0 18px rgba(200, 154, 69, 0.70); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 900px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .topbar {
+        grid-template-columns: 76px 1fr;
+        padding: 8px 6px 4px;
+        gap: 6px;
+      }
+
+      .logo img {
+        width: 70px;
+        max-height: 70px;
+      }
+
+      .event-title {
+        font-size: 20px;
+        letter-spacing: 1px;
+        line-height: 1.05;
+      }
+
+      .sub-info {
+        margin-top: 3px;
+        font-size: 12px;
+        line-height: 1.15;
+      }
+
+      .bout-info {
+        margin-top: 3px;
+        font-size: 11px;
+        letter-spacing: 0.4px;
+        line-height: 1.15;
+      }
+
+      .style-strip {
+        margin-top: 4px;
+        padding: 3px 11px;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+
+      .side-actions {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .fullscreen-btn,
+      .menu-btn {
+        width: 150px;
+        margin: 3px 0 0;
+        padding: 7px 6px;
+        font-size: 11px;
+        border-radius: 10px;
+      }
+
+      .main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 126px minmax(0, 1fr);
+        gap: 5px;
+        padding: 7px 5px 0;
+        align-items: stretch;
+      }
+
+      .panel,
+      .center {
+        min-height: 165px;
+        border-radius: 14px;
+        border-width: 3px;
+      }
+
+      .name {
+        font-size: 15px;
+        line-height: 1.05;
+        margin-bottom: 8px;
+        padding: 0 3px;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+
+      .score {
+        font-size: 70px;
+        line-height: 0.95;
+      }
+
+      .status {
+        margin-bottom: 9px;
+        padding: 5px 8px;
+        font-size: 11px;
+        border-width: 2px;
+      }
+
+      .timer {
+        font-size: 39px;
+        line-height: 1;
+      }
+
+      .periodo {
+        margin-top: 9px;
+        font-size: 20px;
+      }
+
+      .result {
+        margin: 7px 5px 0;
+        padding: 8px 5px;
+        border-radius: 12px;
+        font-size: 14px;
+        line-height: 1.2;
+      }
+
+      .bottom {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        padding: 6px 5px 0;
+        margin-bottom: 4px;
+      }
+
+      .card {
+        display: block !important;
+        border-radius: 10px;
+        padding: 6px;
+        min-height: auto;
+      }
+
+      .card-title {
+        font-size: 10px;
+        margin-bottom: 3px;
+        letter-spacing: 0.4px;
+      }
+
+      .card-text {
+        font-size: 10px;
+        line-height: 1.12;
+      }
+
+      .history-line {
+        font-size: 10px;
+        line-height: 1.12;
+        padding: 2px 0;
+      }
+
+      .cartelera-item {
+        display: block !important;
+        padding: 3px 0 4px;
+      }
+
+      .cartelera-head {
+        font-size: 8.8px;
+        letter-spacing: 0.2px;
+        line-height: 1.08;
+        margin-bottom: 2px;
+      }
+
+      .cartelera-names {
+        font-size: 9.5px;
+        line-height: 1.08;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+
+      .cartelera-names span {
+        font-size: 8px;
+        padding: 0 1px;
+      }
+
+      #estado {
+        margin: 7px 0 7px;
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .topbar {
+        grid-template-columns: 62px 1fr;
+        padding: 6px 5px 3px;
+      }
+
+      .logo img {
+        width: 58px;
+        max-height: 58px;
+      }
+
+      .event-title {
+        font-size: 17px;
+        letter-spacing: 0.7px;
+      }
+
+      .sub-info {
+        font-size: 11px;
+      }
+
+      .bout-info {
+        font-size: 10px;
+      }
+
+      .style-strip {
+        font-size: 12px;
+        padding: 2px 10px;
+      }
+
+      .fullscreen-btn,
+      .menu-btn {
+        width: 135px;
+        font-size: 10px;
+        padding: 6px 5px;
+      }
+
+      .main {
+        grid-template-columns: minmax(0, 1fr) 108px minmax(0, 1fr);
+        gap: 4px;
+        padding: 6px 4px 0;
+      }
+
+      .panel,
+      .center {
+        min-height: 145px;
+        border-radius: 12px;
+      }
+
+      .name {
+        font-size: 12.5px;
+        line-height: 1.05;
+        margin-bottom: 6px;
+      }
+
+      .score {
+        font-size: 58px;
+      }
+
+      .timer {
+        font-size: 32px;
+      }
+
+      .periodo {
+        font-size: 17px;
+        margin-top: 7px;
+      }
+
+      .status {
+        font-size: 9.5px;
+        padding: 4px 6px;
+        margin-bottom: 7px;
+      }
+
+      .result {
+        font-size: 12px;
+        padding: 7px 4px;
+      }
+
+      .bottom {
+        display: grid !important;
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 6px 4px 0;
+        align-items: start;
+      }
+
+      .card {
+        display: block !important;
+        padding: 7px;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+      }
+
+      #proximo_combate {
+        display: block !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+      }
+
+      .cartelera-item {
+        display: block !important;
+      }
+
+      .card-title {
+        font-size: 12px;
+      }
+
+      .cartelera-head {
+        font-size: 10px;
+      }
+
+      .cartelera-names {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="Timing Cuba Logo">
+    </div>
+
+    <div>
+      <div id="evento_nombre" class="event-title">TIMING CUBA LIVE</div>
+      <div id="division_info" class="sub-info">Tapiz A · Categoría · Peso</div>
+      <div id="combate_info" class="bout-info">Fase · Combate</div>
+      <div id="estilo_visible" class="style-strip">FS</div>
+    </div>
+
+    <div class="side-actions">
+      <a class="menu-btn" href="index.html">MENÚ</a>
+      <button class="fullscreen-btn" onclick="pantallaCompleta()">PANTALLA COMPLETA</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="panel panel-rojo">
+      <div id="rojo_nombre" class="name rojo">---</div>
+      <div id="rojo_puntos" class="score rojo">0</div>
+    </div>
+
+    <div class="center">
+      <div id="estado_combate" class="status">EN VIVO</div>
+      <div id="reloj" class="timer">00:00</div>
+      <div id="periodo" class="periodo">R1</div>
+    </div>
+
+    <div class="panel panel-azul">
+      <div id="azul_nombre" class="name azul">---</div>
+      <div id="azul_puntos" class="score azul">0</div>
+    </div>
+  </div>
+
+  <div id="resultado_final" class="result">Resultado: combate en progreso</div>
+
+  <div class="bottom">
+    <div class="card">
+      <div class="card-title">PRÓXIMO COMBATE</div>
+      <div id="proximo_combate" class="card-text">Esperando próximo combate...</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">ÚLTIMOS RESULTADOS</div>
+      <div id="historial">
+        <div class="history-line">Sin resultados recientes</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="estado">Conectando...</div>
+
+  <script>
+    var URL_FIREBASE = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/tapices/tapiz_a/marcador.json";
+    var URL_SCRIPT = "https://script.google.com/macros/s/AKfycbyk17adLpbWl4T15I7iWHvmUhdPK6N3oSvFNzXksiH7c0BRg2J35eg2bLetmcAtYhOx/exec?tapiz=tapiz_a";
+
+    var puntosRojoAnterior = null;
+    var puntosAzulAnterior = null;
+
+    var ultimoDato = null;
+    var ultimaVersionRecibida = 0;
+
+    // Reloj local del navegador.
+    // Esto evita que el reloj se quede congelado si Firebase refresca
+    // el mismo segundo muchas veces.
+    var relojLocalBaseSegundos = null;
+    var relojLocalBaseMs = null;
+    var relojLocalFirma = "";
+
+    function valorSeguro(valor, defecto) {
+      if (valor === undefined || valor === null || valor === "") {
+        return defecto;
+      }
+      return valor;
+    }
+
+    function setText(id, valor, defecto) {
+      var el = document.getElementById(id);
+      if (!el) return;
+
+      if (valor === undefined || valor === null || valor === "") {
+        el.innerText = defecto;
+      } else {
+        el.innerText = valor;
+      }
+    }
+
+    function normalizarEstilo(estilo) {
+      var txt = String(estilo || "").trim().toUpperCase();
+
+      if (txt === "LIBRE" || txt === "MASCULINA" || txt === "FREESTYLE") return "FS";
+      if (txt === "FEMENINA" || txt === "WOMEN" || txt === "WOMEN'S" || txt === "WOMENS") return "WW";
+      if (txt === "GRECO" || txt === "GRECORROMANA" || txt === "GRECO-ROMANA") return "GR";
+      if (txt === "FS" || txt === "GR" || txt === "WW") return txt;
+
+      return txt || "FS";
+    }
+
+    function boolLive(valor) {
+      if (valor === true) return true;
+      if (valor === false) return false;
+
+      var txt = String(valor || "").trim().toLowerCase();
+      return txt === "true" || txt === "1" || txt === "yes" || txt === "si" || txt === "sí";
+    }
+
+    function animarSiCambio(id, nuevo, anterior) {
+      var el = document.getElementById(id);
+      if (!el) return;
+
+      if (anterior !== null && Number(nuevo) !== Number(anterior)) {
+        el.classList.remove("bump");
+        void el.offsetWidth;
+        el.classList.add("bump");
+      }
+    }
+
+    function textoRelojASegundos(txt) {
+      txt = String(txt || "00:00").trim();
+
+      if (/^\d+(\.\d+)?$/.test(txt)) {
+        return Math.max(0, Number(txt));
+      }
+
+      var partes = txt.split(":");
+      if (partes.length !== 2) return 0;
+
+      var min = Number(partes[0] || 0);
+      var seg = Number(partes[1] || 0);
+
+      return Math.max(0, (min * 60) + seg);
+    }
+
+    function dosDigitos(n) {
+      n = Number(n || 0);
+      if (n < 10) {
+        return "0" + n;
+      }
+      return String(n);
+    }
+
+    function segundosATextoReloj(total) {
+      total = Math.max(0, Math.floor(Number(total || 0)));
+
+      var min = Math.floor(total / 60);
+      var seg = total % 60;
+
+      return dosDigitos(min) + ":" + dosDigitos(seg);
+    }
+
+    function segundosFuenteReloj(data) {
+      if (!data) return 0;
+
+      var relojFuente = valorSeguro(
+        data.reloj_segundos,
+        textoRelojASegundos(data.reloj || "00:00")
+      );
+
+      return Math.max(0, Number(relojFuente || 0));
+    }
+
+    function relojEstaCorriendo(data) {
+      if (!data) return false;
+
+      var estado = String(data.estado_combate || data.estado || "").toUpperCase();
+
+      return (
+        boolLive(data.reloj_corriendo) &&
+        estado !== "PAUSADO" &&
+        estado !== "FINALIZADO"
+      );
+    }
+
+    function firmaRelojData(data) {
+      if (!data) return "";
+
+      return [
+        data.tapiz || "",
+        data.round_public || data.fase_actual || "",
+        data.bout_public || data.combate_actual || "",
+        data.periodo || "",
+        data.rojo_nombre || "",
+        data.azul_nombre || ""
+      ].join("|");
+    }
+
+    function prepararRelojLocal(data) {
+      if (!data) return;
+
+      var segundosEntrada = segundosFuenteReloj(data);
+      var corriendo = relojEstaCorriendo(data);
+      var firma = firmaRelojData(data);
+      var ahora = new Date().getTime();
+
+      // Si está pausado o finalizado, la web debe quedarse exacta en el segundo recibido.
+      if (!corriendo) {
+        relojLocalBaseSegundos = segundosEntrada;
+        relojLocalBaseMs = ahora;
+        relojLocalFirma = firma;
+        return;
+      }
+
+      // Si cambió de combate, ronda, periodo o atletas, sincronizar de cero.
+      if (
+        relojLocalBaseSegundos === null ||
+        relojLocalBaseMs === null ||
+        relojLocalFirma !== firma
+      ) {
+        relojLocalBaseSegundos = segundosEntrada;
+        relojLocalBaseMs = ahora;
+        relojLocalFirma = firma;
+        return;
+      }
+
+      var segundosLocales = Math.max(
+        0,
+        relojLocalBaseSegundos - Math.floor((ahora - relojLocalBaseMs) / 1000)
+      );
+
+      // Si el servidor manda un salto hacia abajo, respetarlo.
+      // Esto sirve para BREAK, segundo periodo o ajustes reales del reloj.
+      if (segundosEntrada < segundosLocales - 2) {
+        relojLocalBaseSegundos = segundosEntrada;
+        relojLocalBaseMs = ahora;
+        relojLocalFirma = firma;
+        return;
+      }
+
+      // Si el servidor manda un salto grande hacia arriba, respetarlo.
+      // Esto sirve cuando se reajusta manualmente el reloj.
+      if (segundosEntrada > segundosLocales + 10) {
+        relojLocalBaseSegundos = segundosEntrada;
+        relojLocalBaseMs = ahora;
+        relojLocalFirma = firma;
+        return;
+      }
+
+      // Si Firebase/Script refresca el mismo segundo, NO reiniciamos el reloj local.
+      // Así el BREAK no se congela y el reloj normal tampoco salta para atrás.
+    }
+
+    function calcularRelojInternet(data) {
+      if (!data) return "00:00";
+
+      var baseSegundos = segundosFuenteReloj(data);
+      var corriendo = relojEstaCorriendo(data);
+
+      var periodo = String(data.periodo || "").toUpperCase();
+      var categoria = String(data.categoria || "").toUpperCase();
+
+      var cortePrimerTiempo = 120;
+
+      if (
+        categoria.indexOf("U20") >= 0 ||
+        categoria.indexOf("U23") >= 0 ||
+        categoria.indexOf("SENIOR") >= 0
+      ) {
+        cortePrimerTiempo = 180;
+      }
+
+      if (
+        corriendo &&
+        relojLocalBaseSegundos !== null &&
+        relojLocalBaseMs !== null
+      ) {
+        var pasado = Math.floor((new Date().getTime() - relojLocalBaseMs) / 1000);
+        baseSegundos = Math.max(0, relojLocalBaseSegundos - pasado);
+      }
+
+      if (periodo === "R1" && corriendo && baseSegundos <= cortePrimerTiempo) {
+        baseSegundos = cortePrimerTiempo;
+      }
+
+      return segundosATextoReloj(baseSegundos);
+    }
+
+    function actualizarRelojVisual() {
+      if (!ultimoDato) return;
+      setText("reloj", calcularRelojInternet(ultimoDato), "00:00");
+    }
+
+    function clasificacionFinalTexto(data) {
+      if (!data) return "";
+
+      var estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
+      if (estadoLive !== "FINALIZADO") return "";
+
+      var resultadoFinal = String(data.resultado_final || "").toUpperCase();
+
+      var rojoPts = Number(valorSeguro(data.rojo_puntos, 0));
+      var azulPts = Number(valorSeguro(data.azul_puntos, 0));
+
+      var ganador = String(data.ganador_lado || "").toUpperCase();
+
+      if (!ganador) {
+        if (rojoPts > azulPts) ganador = "RED";
+        else if (azulPts > rojoPts) ganador = "BLUE";
+      }
+
+      var ganadorPts = 0;
+      var perdedorPts = 0;
+
+      if (ganador === "RED") {
+        ganadorPts = rojoPts;
+        perdedorPts = azulPts;
+      } else if (ganador === "BLUE") {
+        ganadorPts = azulPts;
+        perdedorPts = rojoPts;
+      } else {
+        return "";
+      }
+
+      var estiloNorm = normalizarEstilo(data.estilo || data.style || "FS");
+      var diferencia = Math.abs(rojoPts - azulPts);
+
+      // FALL / VIN / similares = 5-0
+      if (
+        resultadoFinal.indexOf("(FALL)") >= 0 ||
+        resultadoFinal.indexOf("(VIN)") >= 0 ||
+        resultadoFinal.indexOf("(VFA)") >= 0 ||
+        resultadoFinal.indexOf("(WO)") >= 0 ||
+        resultadoFinal.indexOf("(BYE)") >= 0 ||
+        resultadoFinal.indexOf("(DSQ)") >= 0
+      ) {
+        return "5-0";
+      }
+
+      // Superioridad técnica:
+      // FS / WW = diferencia 10
+      // GR = diferencia 8
+      var limiteSuperioridad = (estiloNorm === "GR") ? 8 : 10;
+
+      if (diferencia >= limiteSuperioridad) {
+        if (perdedorPts > 0) {
+          return "4-1";
+        } else {
+          return "4-0";
+        }
+      }
+
+      // Decisión por puntos
+      if (perdedorPts > 0) {
+        return "3-1";
+      } else {
+        return "3-0";
+      }
+    }
+
+    function pintarMarcador(data) {
+      if (!data) return;
+
+      var versionActual = Number(data.version || data.updated_at || data.live_server_at || 0);
+
+      if (versionActual > 0 && versionActual < ultimaVersionRecibida) {
+        return;
+      }
+
+      if (versionActual > 0) {
+        ultimaVersionRecibida = versionActual;
+      }
+
+      ultimoDato = data;
+      prepararRelojLocal(data);
+
+      var rojoPts = Number(valorSeguro(data.rojo_puntos, 0));
+      var azulPts = Number(valorSeguro(data.azul_puntos, 0));
+
+      var panelRojo = document.querySelector(".panel-rojo");
+      var panelAzul = document.querySelector(".panel-azul");
+
+      if (panelRojo && panelAzul) {
+        panelRojo.classList.remove("lider", "ganador-final");
+        panelAzul.classList.remove("lider", "ganador-final");
+
+        var estadoLive = String(data.estado_combate || data.estado || "").toUpperCase();
+        var ganadorLado = String(data.ganador_lado || "").toUpperCase();
+        var ventajaLado = String(data.ventaja_lado || "").toUpperCase();
+
+        if (estadoLive === "FINALIZADO" && ganadorLado === "RED") {
+          panelRojo.classList.add("ganador-final");
+        } else if (estadoLive === "FINALIZADO" && ganadorLado === "BLUE") {
+          panelAzul.classList.add("ganador-final");
+        } else if (rojoPts === azulPts && ventajaLado === "RED") {
+          panelRojo.classList.add("lider");
+        } else if (rojoPts === azulPts && ventajaLado === "BLUE") {
+          panelAzul.classList.add("lider");
+        } else if (rojoPts > azulPts) {
+          panelRojo.classList.add("lider");
+        } else if (azulPts > rojoPts) {
+          panelAzul.classList.add("lider");
+        }
+      }
+
+      animarSiCambio("rojo_puntos", rojoPts, puntosRojoAnterior);
+      animarSiCambio("azul_puntos", azulPts, puntosAzulAnterior);
+
+      puntosRojoAnterior = rojoPts;
+      puntosAzulAnterior = azulPts;
+
+      var eventoNombre = data.evento_nombre || "TIMING CUBA LIVE";
+      var tapiz = data.tapiz || data.tatami || "Tapiz 1";
+      var categoria = data.categoria || "";
+      var peso = data.peso || "";
+      var estilo = normalizarEstilo(data.estilo || data.style || "FS");
+
+      setText("evento_nombre", eventoNombre, "TIMING CUBA LIVE");
+
+      var divisionInfo = document.getElementById("division_info");
+      if (divisionInfo) {
+        var partes = [];
+        if (tapiz) partes.push(tapiz);
+        if (categoria) partes.push(categoria);
+        if (peso) partes.push(peso);
+        divisionInfo.innerText = partes.join(" · ");
+      }
+
+      setText("estilo_visible", estilo, "FS");
+
+      var faseActual = data.fase_actual || data.round_public || "";
+      var combateActual = data.combate_actual || data.bout_public || "";
+
+      var faseTxt = String(faseActual || "").trim();
+      var combateTxt = String(combateActual || "").trim();
+
+      if (faseTxt === "1/8") faseTxt = "1/8 FINAL";
+      if (faseTxt === "1/4") faseTxt = "1/4 FINAL";
+      if (faseTxt === "1/2") faseTxt = "1/2 FINAL";
+      if (faseTxt.toUpperCase() === "FINAL") faseTxt = "1-2 FINAL";
+      if (faseTxt === "3-5") faseTxt = "3-5 FINAL";
+      if (faseTxt.toUpperCase() === "QUALIF.") faseTxt = "QUALIF.";
+
+      if (combateTxt && combateTxt.toUpperCase().indexOf("COMBATE") < 0) {
+        combateTxt = "COMBATE " + combateTxt;
+      }
+
+      var combateInfo = "";
+
+      if (faseTxt && combateTxt) {
+        combateInfo = faseTxt + " · " + combateTxt;
+      } else if (faseTxt) {
+        combateInfo = faseTxt;
+      } else if (combateTxt) {
+        combateInfo = combateTxt;
+      }
+
+      setText("combate_info", combateInfo, "");
+
+      setText("rojo_nombre", data.rojo_nombre, "---");
+      setText("azul_nombre", data.azul_nombre, "---");
+      setText("rojo_puntos", rojoPts, "0");
+      setText("azul_puntos", azulPts, "0");
+
+      actualizarRelojVisual();
+
+      setText("periodo", data.periodo, "R1");
+      setText("estado_combate", data.estado_combate || data.estado, "EN VIVO");
+
+      var boxProximos = document.getElementById("proximo_combate");
+
+      if (boxProximos) {
+        boxProximos.innerHTML = "";
+
+        var listaProximos = data.proximos_combates || [];
+
+        if (Array.isArray(listaProximos) && listaProximos.length > 0) {
+          for (var p = 0; p < listaProximos.length; p++) {
+            var item = listaProximos[p] || {};
+
+            var estadoItem = String(item.estado || "").trim();
+            var faseItem = String(item.fase || "").trim();
+            var combateItem = String(item.combate || "").trim();
+            var rojoItem = String(item.rojo || "Por definir").trim();
+            var azulItem = String(item.azul || "Por definir").trim();
+
+            if (combateItem && combateItem.toUpperCase().indexOf("COMBATE") < 0) {
+              combateItem = "Combate " + combateItem;
+            }
+
+            var linea1 = [];
+            if (estadoItem) linea1.push(estadoItem);
+            if (faseItem) linea1.push(faseItem);
+            if (combateItem) linea1.push(combateItem);
+
+            var div = document.createElement("div");
+            div.className = "cartelera-item";
+
+            div.innerHTML =
+              '<div class="cartelera-head">' + linea1.join(" · ") + '</div>' +
+              '<div class="cartelera-names">' + rojoItem + ' <span>vs</span> ' + azulItem + '</div>';
+
+            boxProximos.appendChild(div);
+          }
+        } else {
+          boxProximos.innerText = data.proximo_combate || "Esperando próximo combate...";
+        }
+      }
+      
+      var clasificacionFinal = clasificacionFinalTexto(data);
+      var estadoLiveBarra = String(data.estado_combate || data.estado || "").toUpperCase();
+      var ganadorBarra = String(data.ganador_lado || "").toUpperCase();
+      var nombreGanadorBarra = "";
+
+      if (ganadorBarra === "RED") {
+        nombreGanadorBarra = data.rojo_nombre || "ROJO";
+      } else if (ganadorBarra === "BLUE") {
+        nombreGanadorBarra = data.azul_nombre || "AZUL";
+      } else {
+        if (rojoPts > azulPts) {
+          nombreGanadorBarra = data.rojo_nombre || "ROJO";
+        } else if (azulPts > rojoPts) {
+          nombreGanadorBarra = data.azul_nombre || "AZUL";
+        }
+      }
+
+      if (estadoLiveBarra === "FINALIZADO" && nombreGanadorBarra && clasificacionFinal) {
+        setText(
+          "resultado_final",
+          "Ganador: " + nombreGanadorBarra + " (" + clasificacionFinal + ")",
+          ""
+        );
+      } else {
+        setText("resultado_final", data.resultado_final, "Resultado: combate en progreso");
+      }
+
+      var historial = data.historial || ["Sin resultados recientes"];
+      var historialBox = document.getElementById("historial");
+
+      if (historialBox) {
+        historialBox.innerHTML = "";
+
+        if (Array.isArray(historial)) {
+          for (var i = 0; i < Math.min(historial.length, 3); i++) {
+            var div = document.createElement("div");
+            div.className = "history-line";
+            div.innerText = historial[i];
+            historialBox.appendChild(div);
+          }
+        } else {
+          var div2 = document.createElement("div");
+          div2.className = "history-line";
+          div2.innerText = historial;
+          historialBox.appendChild(div2);
+        }
+      }
+
+      setText("estado", "CONECTADO · " + (data.estado_combate || data.estado || "EN VIVO"), "EN VIVO");
+    }
+
+    function cargarJSON(url, ok, fail) {
+      var xhr = new XMLHttpRequest();
+      var sep = url.indexOf("?") >= 0 ? "&" : "?";
+      var finalUrl = url + sep + "t=" + new Date().getTime();
+
+      xhr.open("GET", finalUrl, true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState !== 4) return;
+
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            var data = JSON.parse(xhr.responseText);
+            ok(data);
+          } catch (e) {
+            fail("JSON inválido");
+          }
+        } else {
+          fail("HTTP " + xhr.status);
+        }
+      };
+
+      xhr.onerror = function () {
+        fail("Error de red");
+      };
+
+      xhr.send();
+    }
+
+    function cargarMarcador() {
+      cargarJSON(
+        URL_FIREBASE,
+        function (data) {
+          pintarMarcador(data);
+        },
+        function () {
+          cargarJSON(
+            URL_SCRIPT,
+            function (data2) {
+              pintarMarcador(data2);
+            },
+            function (error2) {
+              setText("estado", "No conecta con Firebase ni Script: " + error2, "Sin conexión");
+            }
+          );
+        }
+      );
+    }
+
+    function pantallaCompleta() {
+      var elem = document.documentElement;
+
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      }
+    }
+
+    cargarMarcador();
+
+    setInterval(cargarMarcador, 350);
+    setInterval(actualizarRelojVisual, 150);
+  </script>
+
+</body>
+</html>
