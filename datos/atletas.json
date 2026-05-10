@@ -1,7 +1,7 @@
 {
-  "generado_en": "2026-05-09 15:43:22",
-  "total_atletas": 43,
-  "total_fotos": 1,
+  "generado_en": "2026-05-10 13:32:46",
+  "total_atletas": 44,
+  "total_fotos": 2,
   "atletas": [
     {
       "id": 4,
@@ -715,6 +715,27 @@
       "telefono": "",
       "observaciones": "ATLETA DE PRUEBA - BORRAR DESPUÉS",
       "foto": "",
+      "activo": true
+    },
+    {
+      "id": 44,
+      "ci": "14062956490",
+      "nombre": "ROBERTO",
+      "apellidos": "HURTO GOMEZ",
+      "nombre_publico": "R. HURTO",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U13/15",
+      "peso": "46",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "CH",
+      "club": "",
+      "tag_publico": "",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0044_roberto_hurto_gomez.png",
       "activo": true
     },
     {
