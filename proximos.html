@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Próximos Combates - Timing Cuba Live</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --oro: #c89a45;
+      --oro2: #e2b96d;
+      --fondo: #050505;
+      --panel: rgba(0, 0, 0, 0.82);
+      --linea: rgba(200, 154, 69, 0.45);
+      --texto: #ffffff;
+      --suave: #cfcfcf;
+      --rojo: #ff1414;
+      --azul: #1f6bff;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(200, 154, 69, 0.18), transparent 34%),
+        linear-gradient(180deg, #080808 0%, #000 72%, #040404 100%);
+      color: var(--texto);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: min(1320px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 22px 0 42px;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 130px 1fr 185px;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 112px;
+      height: 112px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 16px rgba(200, 154, 69, 0.48));
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .title h1 {
+      margin: 0;
+      color: var(--oro);
+      font-size: clamp(30px, 4vw, 54px);
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1;
+      text-shadow: 0 0 12px rgba(200, 154, 69, 0.42);
+    }
+
+    .title .sub {
+      margin-top: 10px;
+      color: #eeeeee;
+      font-size: clamp(15px, 2vw, 22px);
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .menu-btn {
+      border: 2px solid var(--oro);
+      background: rgba(0, 0, 0, 0.75);
+      color: var(--oro);
+      border-radius: 14px;
+      padding: 14px 12px;
+      font-weight: 900;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      box-shadow: 0 0 12px rgba(200, 154, 69, 0.22);
+    }
+
+    .status-strip {
+      border: 2px solid var(--linea);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.62);
+      padding: 12px 18px;
+      margin: 0 0 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      box-shadow: 0 0 16px rgba(200, 154, 69, 0.12);
+    }
+
+    .mini {
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      min-height: 44px;
+    }
+
+    .mini:last-child {
+      border-right: none;
+    }
+
+    .mini-label {
+      color: var(--oro2);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .mini-value {
+      color: white;
+      font-size: 17px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .mats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .mat-card {
+      border: 3px solid var(--linea);
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at top left, rgba(200, 154, 69, 0.15), transparent 38%),
+        rgba(0, 0, 0, 0.82);
+      box-shadow:
+        0 0 18px rgba(200, 154, 69, 0.20),
+        inset 0 0 24px rgba(200, 154, 69, 0.05);
+      overflow: hidden;
+      min-height: 560px;
+    }
+
+    .mat-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 22px;
+      background:
+        linear-gradient(135deg, rgba(200, 154, 69, 0.28), rgba(0, 0, 0, 0.12));
+      border-bottom: 2px solid var(--linea);
+    }
+
+    .mat-title {
+      color: var(--oro);
+      font-size: 34px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-shadow: 0 0 10px rgba(200, 154, 69, 0.34);
+    }
+
+    .mat-state {
+      color: white;
+      border: 2px solid rgba(200, 154, 69, 0.52);
+      background: rgba(200, 154, 69, 0.10);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .mat-body {
+      padding: 18px 18px 20px;
+    }
+
+    .current {
+      border: 2px solid rgba(255, 255, 255, 0.16);
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background:
+        linear-gradient(90deg, rgba(120, 0, 0, 0.32), rgba(0, 0, 0, 0.18), rgba(0, 40, 120, 0.32));
+    }
+
+    .current-label {
+      color: var(--oro2);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .current-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      border: 1px solid rgba(200, 154, 69, 0.52);
+      color: #f1d59d;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .current-fight {
+      display: grid;
+      grid-template-columns: 1fr 62px 1fr;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .corner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      padding: 12px;
+      font-size: 22px;
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.16;
+      text-transform: uppercase;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .corner.red {
+      color: #fff;
+      background: linear-gradient(135deg, rgba(160, 0, 0, 0.88), rgba(45, 0, 0, 0.84));
+      border: 2px solid rgba(255, 30, 30, 0.65);
+    }
+
+    .corner.blue {
+      color: #fff;
+      background: linear-gradient(135deg, rgba(0, 66, 170, 0.92), rgba(0, 18, 65, 0.86));
+      border: 2px solid rgba(45, 130, 255, 0.70);
+    }
+
+    .vs-box {
+      color: var(--oro);
+      font-size: 22px;
+      font-weight: 900;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(200, 154, 69, 0.32);
+    }
+
+    .section-title {
+      color: var(--oro);
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 4px 0 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .small-note {
+      color: #a9a9a9;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .queue {
+      display: grid;
+      gap: 10px;
+    }
+
+    .queue-row {
+      display: grid;
+      grid-template-columns: 64px 1fr 44px 1fr;
+      gap: 10px;
+      align-items: stretch;
+      border: 2px solid rgba(255, 255, 255, 0.10);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.045);
+      overflow: hidden;
+      min-height: 74px;
+    }
+
+    .order {
+      background: rgba(200, 154, 69, 0.14);
+      color: var(--oro2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-right: 1px solid rgba(200, 154, 69, 0.28);
+      font-weight: 900;
+    }
+
+    .order span:first-child {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .order span:last-child {
+      font-size: 24px;
+    }
+
+    .q-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 8px;
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.16;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .q-name.red-text {
+      color: #ff5959;
+    }
+
+    .q-name.blue-text {
+      color: #5d94ff;
+    }
+
+    .q-vs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--oro2);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .q-meta {
+      grid-column: 2 / 5;
+      color: #cfcfcf;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 0 10px 10px;
+      margin-top: -4px;
+      text-align: center;
+    }
+
+    .empty {
+      border: 2px dashed rgba(200, 154, 69, 0.32);
+      border-radius: 18px;
+      padding: 30px 14px;
+      color: #cfcfcf;
+      font-size: 18px;
+      font-weight: 900;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .open-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--oro);
+      border: 2px solid rgba(200, 154, 69, 0.58);
+      border-radius: 13px;
+      padding: 11px 14px;
+      font-weight: 900;
+      text-decoration: none;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.38);
+    }
+
+    .footer {
+      text-align: center;
+      color: #a8a8a8;
+      font-size: 13px;
+      font-weight: 900;
+      margin-top: 18px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        grid-template-columns: 76px 1fr;
+        gap: 10px;
+      }
+
+      .logo {
+        width: 70px;
+        height: 70px;
+      }
+
+      .title {
+        text-align: left;
+      }
+
+      .menu-btn {
+        grid-column: 1 / -1;
+        justify-self: center;
+        padding: 10px 18px;
+      }
+
+      .status-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mini:nth-child(2) {
+        border-right: none;
+      }
+
+      .mats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 16px, 1320px);
+        padding-top: 12px;
+      }
+
+      .status-strip {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .mini {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding-bottom: 8px;
+      }
+
+      .mini:last-child {
+        border-bottom: none;
+      }
+
+      .mat-head {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .mat-title {
+        font-size: 28px;
+      }
+
+      .current-fight {
+        grid-template-columns: 1fr;
+      }
+
+      .vs-box {
+        font-size: 16px;
+      }
+
+      .queue-row {
+        grid-template-columns: 54px 1fr;
+        gap: 0;
+      }
+
+      .q-vs {
+        display: none;
+      }
+
+      .q-name {
+        justify-content: flex-start;
+        text-align: left;
+        min-height: 44px;
+      }
+
+      .q-meta {
+        grid-column: 2 / 3;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="logo-box">
+        <img class="logo" src="logo.png" alt="Timing Cuba Logo" />
+      </div>
+
+      <div class="title">
+        <h1>Próximos Combates</h1>
+        <div class="sub">Tapiz A · Tapiz B</div>
+      </div>
+
+      <a class="menu-btn" href="https://cruxita.github.io/timing-cuba-live/menu.html?v=10">Menú</a>
+    </header>
+
+    <section class="status-strip">
+      <div class="mini">
+        <div class="mini-label">Evento</div>
+        <div id="evento_general" class="mini-value">Timing Cuba Live</div>
+      </div>
+      <div class="mini">
+        <div class="mini-label">Tapices</div>
+        <div class="mini-value">A · B</div>
+      </div>
+      <div class="mini">
+        <div class="mini-label">Vista</div>
+        <div class="mini-value">Próximos</div>
+      </div>
+      <div class="mini">
+        <div class="mini-label">Estado</div>
+        <div id="estado_general" class="mini-value">Conectando...</div>
+      </div>
+    </section>
+
+    <section class="mats-grid">
+      <article class="mat-card" id="card_a">
+        <div class="mat-head">
+          <div class="mat-title">Tapiz A</div>
+          <div id="estado_a" class="mat-state">Conectando...</div>
+        </div>
+
+        <div class="mat-body">
+          <div class="current">
+            <div class="current-label">Combate actual</div>
+            <div id="meta_a" class="current-meta"></div>
+            <div class="current-fight">
+              <div id="actual_rojo_a" class="corner red">ROJO</div>
+              <div class="vs-box">VS</div>
+              <div id="actual_azul_a" class="corner blue">AZUL</div>
+            </div>
+          </div>
+
+          <div class="section-title">
+            <span>Orden de próximos combates</span>
+            <span id="conteo_a" class="small-note">0 combates</span>
+          </div>
+
+          <div id="lista_a" class="queue"></div>
+
+          <a class="open-link" href="tapiz-a.html?v=10">Ver marcador Tapiz A</a>
+        </div>
+      </article>
+
+      <article class="mat-card" id="card_b">
+        <div class="mat-head">
+          <div class="mat-title">Tapiz B</div>
+          <div id="estado_b" class="mat-state">Conectando...</div>
+        </div>
+
+        <div class="mat-body">
+          <div class="current">
+            <div class="current-label">Combate actual</div>
+            <div id="meta_b" class="current-meta"></div>
+            <div class="current-fight">
+              <div id="actual_rojo_b" class="corner red">ROJO</div>
+              <div class="vs-box">VS</div>
+              <div id="actual_azul_b" class="corner blue">AZUL</div>
+            </div>
+          </div>
+
+          <div class="section-title">
+            <span>Orden de próximos combates</span>
+            <span id="conteo_b" class="small-note">0 combates</span>
+          </div>
+
+          <div id="lista_b" class="queue"></div>
+
+          <a class="open-link" href="tapiz-b.html?v=10">Ver marcador Tapiz B</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="footer">Timing Cuba Live · Actualización automática</div>
+  </main>
+
+  <script>
+    var URL_A_FIREBASE = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/tapices/tapiz_a/marcador.json";
+    var URL_B_FIREBASE = "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/evento/copa-habana-2026/tapices/tapiz_b/marcador.json";
+
+    var URL_A_SCRIPT = "https://script.google.com/macros/s/AKfycbyk17adLpbWl4T15I7iWHvmUhdPK6N3oSvFNzXksiH7c0BRg2J35eg2bLetmcAtYhOx/exec?tapiz=tapiz_a";
+    var URL_B_SCRIPT = "https://script.google.com/macros/s/AKfycbyk17adLpbWl4T15I7iWHvmUhdPK6N3oSvFNzXksiH7c0BRg2J35eg2bLetmcAtYhOx/exec?tapiz=tapiz_b";
+
+    function setText(id, valor, defecto) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.innerText = (valor === undefined || valor === null || valor === "") ? (defecto || "") : valor;
+    }
+
+    function escapeHtml(txt) {
+      return String(txt || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function normalizarEstilo(estilo) {
+      var txt = String(estilo || "").trim().toUpperCase();
+      if (txt === "LIBRE" || txt === "MASCULINA" || txt === "FREESTYLE") return "FS";
+      if (txt === "FEMENINA" || txt === "WOMEN" || txt === "WOMENS" || txt === "WOMEN'S") return "WW";
+      if (txt === "GRECO" || txt === "GRECORROMANA" || txt === "GRECO-ROMANA") return "GR";
+      return txt || "";
+    }
+
+    function cargarJSON(url, ok, fail) {
+      var xhr = new XMLHttpRequest();
+      var sep = url.indexOf("?") >= 0 ? "&" : "?";
+      xhr.open("GET", url + sep + "t=" + new Date().getTime(), true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState !== 4) return;
+
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            ok(JSON.parse(xhr.responseText));
+          } catch (e) {
+            fail("JSON inválido");
+          }
+        } else {
+          fail("HTTP " + xhr.status);
+        }
+      };
+
+      xhr.onerror = function () {
+        fail("Error de red");
+      };
+
+      xhr.send();
+    }
+
+    function crearPill(texto) {
+      if (!texto) return "";
+      return '<span class="pill">' + escapeHtml(texto) + '</span>';
+    }
+
+    function pintarMeta(sufijo, data) {
+      var meta = document.getElementById("meta_" + sufijo);
+      if (!meta) return;
+
+      var fase = data.fase_actual || data.round_public || "";
+      var combate = data.combate_actual || data.bout_public || "";
+      var categoria = data.categoria || "";
+      var peso = data.peso || "";
+      var estilo = normalizarEstilo(data.estilo || data.style || "");
+
+      var html = "";
+      html += crearPill(fase);
+      html += crearPill(combate);
+      html += crearPill(categoria);
+      html += crearPill(peso);
+      html += crearPill(estilo);
+
+      meta.innerHTML = html || crearPill("Esperando datos");
+    }
+
+    function pintarCola(sufijo, data) {
+      var box = document.getElementById("lista_" + sufijo);
+      var conteo = document.getElementById("conteo_" + sufijo);
+
+      if (!box) return;
+      box.innerHTML = "";
+
+      var lista = data && Array.isArray(data.proximos_combates) ? data.proximos_combates : [];
+
+      if (conteo) {
+        conteo.innerText = lista.length === 1 ? "1 combate" : lista.length + " combates";
+      }
+
+      if (lista.length > 0) {
+        for (var i = 0; i < Math.min(lista.length, 8); i++) {
+          var item = lista[i] || {};
+
+          var estado = String(item.estado || "").trim();
+          var fase = String(item.fase || "").trim();
+          var combate = String(item.combate || "").trim();
+          var rojo = String(item.rojo || "Por definir").trim();
+          var azul = String(item.azul || "Por definir").trim();
+
+          if (combate && combate.toUpperCase().indexOf("COMBATE") < 0) {
+            combate = "Combate " + combate;
+          }
+
+          var meta = [];
+          if (estado) meta.push(estado);
+          if (fase) meta.push(fase);
+          if (combate) meta.push(combate);
+
+          var div = document.createElement("div");
+          div.className = "queue-row";
+
+          div.innerHTML =
+            '<div class="order"><span>Orden</span><span>' + (i + 1) + '</span></div>' +
+            '<div class="q-name red-text">' + escapeHtml(rojo) + '</div>' +
+            '<div class="q-vs">vs</div>' +
+            '<div class="q-name blue-text">' + escapeHtml(azul) + '</div>' +
+            '<div class="q-meta">' + escapeHtml(meta.join(" · ") || "Próximo combate") + '</div>';
+
+          box.appendChild(div);
+        }
+        return;
+      }
+
+      var simple = data && data.proximo_combate ? data.proximo_combate : "Esperando próximos combates...";
+
+      var div2 = document.createElement("div");
+      div2.className = "empty";
+      div2.innerText = simple;
+      box.appendChild(div2);
+    }
+
+    function pintarTapiz(sufijo, data) {
+      data = data || {};
+
+      setText("estado_" + sufijo, data.estado_combate || data.estado || "EN VIVO", "EN VIVO");
+
+      if (data.evento_nombre) {
+        setText("evento_general", data.evento_nombre, "Timing Cuba Live");
+      }
+
+      setText("actual_rojo_" + sufijo, data.rojo_nombre || "ROJO", "ROJO");
+      setText("actual_azul_" + sufijo, data.azul_nombre || "AZUL", "AZUL");
+
+      pintarMeta(sufijo, data);
+      pintarCola(sufijo, data);
+    }
+
+    function cargarTapiz(sufijo, urlFirebase, urlScript) {
+      cargarJSON(
+        urlFirebase,
+        function (data) {
+          pintarTapiz(sufijo, data);
+        },
+        function () {
+          cargarJSON(
+            urlScript,
+            function (data2) {
+              pintarTapiz(sufijo, data2);
+            },
+            function () {
+              setText("estado_" + sufijo, "Sin conexión", "Sin conexión");
+              pintarCola(sufijo, { proximo_combate: "No se pudo conectar." });
+            }
+          );
+        }
+      );
+    }
+
+    function cargarTodo() {
+      cargarTapiz("a", URL_A_FIREBASE, URL_A_SCRIPT);
+      cargarTapiz("b", URL_B_FIREBASE, URL_B_SCRIPT);
+      setText("estado_general", "Actualizado", "Actualizado");
+    }
+
+    cargarTodo();
+    setInterval(cargarTodo, 2500);
+  </script>
+</body>
+</html>
