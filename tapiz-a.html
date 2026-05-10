@@ -825,52 +825,6 @@
       return txt || "FS";
     }
 
-
-    function nombrePublico(nombre) {
-      var txt = String(nombre || "").trim();
-
-      if (!txt) return "";
-
-      var upper = txt.toUpperCase();
-
-      if (
-        upper === "ROJO" ||
-        upper === "AZUL" ||
-        upper === "---" ||
-        upper === "POR DEFINIR"
-      ) {
-        return upper;
-      }
-
-      // Si ya viene como A. ARROYO, no lo cambia.
-      if (/^[A-ZÁÉÍÓÚÑ]\.\s+\S+/i.test(txt)) {
-        return upper;
-      }
-
-      var partes = txt.split(/\s+/).filter(Boolean);
-
-      if (partes.length <= 1) {
-        return upper;
-      }
-
-      var inicial = partes[0].charAt(0).toUpperCase() + ".";
-
-      // Nombre + Apellido: Abraham Arroyo -> A. Arroyo
-      // Nombre + Segundo nombre + Apellido: Abraham Ali Arroyo -> A. Arroyo
-      // Nombre + Segundo nombre + Apellidos: Abraham Ali Arroyo Cruz -> A. Arroyo
-      var apellido = "";
-
-      if (partes.length === 2) {
-        apellido = partes[1];
-      } else if (partes.length === 3) {
-        apellido = partes[2];
-      } else {
-        apellido = partes[partes.length - 2];
-      }
-
-      return (inicial + " " + apellido).toUpperCase();
-    }
-
     function boolLive(valor) {
       if (valor === true) return true;
       if (valor === false) return false;
@@ -967,6 +921,21 @@
       var firma = firmaRelojData(data);
       var ahora = new Date().getTime();
 
+      // Timing Cuba manda live_sent_at / live_server_at / reloj_base_server_at.
+      // Si el dato llegó hace varios segundos, la web debe descontar ese tiempo.
+      // Antes usábamos "ahora" como base y por eso el reloj se atrasaba.
+      var baseMs = Number(
+        data.reloj_base_server_at ||
+        data.live_server_at ||
+        data.live_sent_at ||
+        ahora
+      );
+
+      // Protección por si alguna marca de tiempo viene rara.
+      if (!baseMs || isNaN(baseMs) || baseMs < 1000000000000 || Math.abs(ahora - baseMs) > 120000) {
+        baseMs = ahora;
+      }
+
       // Si está pausado o finalizado, la web debe quedarse exacta en el segundo recibido.
       if (!corriendo) {
         relojLocalBaseSegundos = segundosEntrada;
@@ -975,14 +944,14 @@
         return;
       }
 
-      // Si cambió de combate, ronda, periodo o atletas, sincronizar de cero.
+      // Si cambió de combate, ronda, periodo o atletas, sincronizar desde la hora real del dato.
       if (
         relojLocalBaseSegundos === null ||
         relojLocalBaseMs === null ||
         relojLocalFirma !== firma
       ) {
         relojLocalBaseSegundos = segundosEntrada;
-        relojLocalBaseMs = ahora;
+        relojLocalBaseMs = baseMs;
         relojLocalFirma = firma;
         return;
       }
@@ -993,25 +962,25 @@
       );
 
       // Si el servidor manda un salto hacia abajo, respetarlo.
-      // Esto sirve para BREAK, segundo periodo o ajustes reales del reloj.
+      // Sirve para BREAK, segundo periodo o ajustes reales del reloj.
       if (segundosEntrada < segundosLocales - 2) {
         relojLocalBaseSegundos = segundosEntrada;
-        relojLocalBaseMs = ahora;
+        relojLocalBaseMs = baseMs;
         relojLocalFirma = firma;
         return;
       }
 
       // Si el servidor manda un salto grande hacia arriba, respetarlo.
-      // Esto sirve cuando se reajusta manualmente el reloj.
+      // Sirve cuando se reajusta manualmente el reloj.
       if (segundosEntrada > segundosLocales + 10) {
         relojLocalBaseSegundos = segundosEntrada;
-        relojLocalBaseMs = ahora;
+        relojLocalBaseMs = baseMs;
         relojLocalFirma = firma;
         return;
       }
 
-      // Si Firebase/Script refresca el mismo segundo, NO reiniciamos el reloj local.
-      // Así el BREAK no se congela y el reloj normal tampoco salta para atrás.
+      // Si Firebase/Script refresca el mismo segundo, no reiniciamos.
+      // Así el reloj sigue fluido, pero ya no arranca atrasado.
     }
 
     function calcularRelojInternet(data) {
@@ -1220,8 +1189,8 @@
 
       setText("combate_info", combateInfo, "");
 
-      setText("rojo_nombre", nombrePublico(data.rojo_nombre), "---");
-      setText("azul_nombre", nombrePublico(data.azul_nombre), "---");
+      setText("rojo_nombre", data.rojo_nombre, "---");
+      setText("azul_nombre", data.azul_nombre, "---");
       setText("rojo_puntos", rojoPts, "0");
       setText("azul_puntos", azulPts, "0");
 
@@ -1244,8 +1213,8 @@
             var estadoItem = String(item.estado || "").trim();
             var faseItem = String(item.fase || "").trim();
             var combateItem = String(item.combate || "").trim();
-            var rojoItem = nombrePublico(item.rojo || "Por definir");
-            var azulItem = nombrePublico(item.azul || "Por definir");
+            var rojoItem = String(item.rojo || "Por definir").trim();
+            var azulItem = String(item.azul || "Por definir").trim();
 
             if (combateItem && combateItem.toUpperCase().indexOf("COMBATE") < 0) {
               combateItem = "Combate " + combateItem;
@@ -1276,14 +1245,14 @@
       var nombreGanadorBarra = "";
 
       if (ganadorBarra === "RED") {
-        nombreGanadorBarra = nombrePublico(data.rojo_nombre || "ROJO");
+        nombreGanadorBarra = data.rojo_nombre || "ROJO";
       } else if (ganadorBarra === "BLUE") {
-        nombreGanadorBarra = nombrePublico(data.azul_nombre || "AZUL");
+        nombreGanadorBarra = data.azul_nombre || "AZUL";
       } else {
         if (rojoPts > azulPts) {
-          nombreGanadorBarra = nombrePublico(data.rojo_nombre || "ROJO");
+          nombreGanadorBarra = data.rojo_nombre || "ROJO";
         } else if (azulPts > rojoPts) {
-          nombreGanadorBarra = nombrePublico(data.azul_nombre || "AZUL");
+          nombreGanadorBarra = data.azul_nombre || "AZUL";
         }
       }
 
