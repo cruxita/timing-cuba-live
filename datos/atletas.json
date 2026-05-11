@@ -1,6 +1,6 @@
 {
-  "generado_en": "2026-05-11 14:18:01",
-  "total_atletas": 46,
+  "generado_en": "2026-05-11 14:19:53",
+  "total_atletas": 45,
   "total_fotos": 1,
   "atletas": [
     {
@@ -184,27 +184,6 @@
       "estilo": "FS",
       "pais": "CUB",
       "provincia": "",
-      "municipio": "",
-      "club": "",
-      "tag_publico": "",
-      "telefono": "",
-      "observaciones": "",
-      "foto": "",
-      "activo": true
-    },
-    {
-      "id": 45,
-      "ci": "",
-      "nombre": "RAFAEL",
-      "apellidos": "CLUSELL",
-      "nombre_publico": "R. CLUSELL",
-      "sexo": "M",
-      "fecha_nacimiento": "",
-      "grupo": "U13/15",
-      "peso": "",
-      "estilo": "FS",
-      "pais": "CUB",
-      "provincia": "LA HABANA",
       "municipio": "",
       "club": "",
       "tag_publico": "",
