@@ -1,6 +1,6 @@
 {
-  "generado_en": "2026-05-11 12:26:05",
-  "total_atletas": 45,
+  "generado_en": "2026-05-11 12:38:37",
+  "total_atletas": 46,
   "total_fotos": 1,
   "atletas": [
     {
@@ -164,6 +164,27 @@
       "pais": "CUB",
       "provincia": "LA HABANA",
       "municipio": "CH",
+      "club": "",
+      "tag_publico": "",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "activo": true
+    },
+    {
+      "id": 46,
+      "ci": "",
+      "nombre": "ABRAHIM",
+      "apellidos": "ARROYO",
+      "nombre_publico": "A. ARROYO",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U13/15",
+      "peso": "",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "",
+      "municipio": "",
       "club": "",
       "tag_publico": "",
       "telefono": "",
