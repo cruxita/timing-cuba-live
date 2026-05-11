@@ -1,7 +1,7 @@
 {
-  "generado_en": "2026-05-11 12:41:13",
-  "total_atletas": 47,
-  "total_fotos": 2,
+  "generado_en": "2026-05-11 14:18:01",
+  "total_atletas": 46,
+  "total_fotos": 1,
   "atletas": [
     {
       "id": 4,
@@ -211,27 +211,6 @@
       "telefono": "",
       "observaciones": "",
       "foto": "",
-      "activo": true
-    },
-    {
-      "id": 47,
-      "ci": "",
-      "nombre": "RAMON",
-      "apellidos": "JAMON",
-      "nombre_publico": "R. JAMON",
-      "sexo": "M",
-      "fecha_nacimiento": "",
-      "grupo": "U13/15",
-      "peso": "",
-      "estilo": "FS",
-      "pais": "CUB",
-      "provincia": "",
-      "municipio": "",
-      "club": "",
-      "tag_publico": "",
-      "telefono": "",
-      "observaciones": "",
-      "foto": "fotos_atletas/atleta_0047_ramon_jamon.png",
       "activo": true
     },
     {
