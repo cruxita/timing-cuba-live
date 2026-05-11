@@ -1,7 +1,7 @@
 {
-  "generado_en": "2026-05-10 13:32:46",
-  "total_atletas": 44,
-  "total_fotos": 2,
+  "generado_en": "2026-05-11 12:26:05",
+  "total_atletas": 45,
+  "total_fotos": 1,
   "atletas": [
     {
       "id": 4,
@@ -164,6 +164,27 @@
       "pais": "CUB",
       "provincia": "LA HABANA",
       "municipio": "CH",
+      "club": "",
+      "tag_publico": "",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "activo": true
+    },
+    {
+      "id": 45,
+      "ci": "",
+      "nombre": "RAFAEL",
+      "apellidos": "CLUSELL",
+      "nombre_publico": "R. CLUSELL",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U13/15",
+      "peso": "",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "",
       "club": "",
       "tag_publico": "",
       "telefono": "",
@@ -924,7 +945,7 @@
       "tag_publico": "CH",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
+      "foto": "",
       "activo": true
     }
   ]
