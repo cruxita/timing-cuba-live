@@ -146,7 +146,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
       gap: 16px;
     }
 
@@ -160,9 +160,8 @@
 
     .photo-wrap {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 3;
       background:
-        radial-gradient(circle at center, rgba(255,255,255,0.10), transparent 55%),
         linear-gradient(135deg, rgba(250,204,21,0.14), rgba(59,130,246,0.12)),
         var(--card2);
       display: flex;
@@ -170,44 +169,27 @@
       justify-content: center;
       border-bottom: 1px solid var(--line);
       overflow: hidden;
-      padding: 18px;
     }
 
     .photo {
-      width: 172px;
-      height: 172px;
-      max-width: 88%;
-      max-height: 88%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 7px solid #ffffff;
-      box-shadow:
-        0 0 0 2px rgba(250, 204, 21, 0.55),
-        0 14px 34px rgba(0,0,0,0.38),
-        inset 0 0 0 1px rgba(0,0,0,0.08);
     }
 
     .placeholder {
-      width: 172px;
-      height: 172px;
-      max-width: 88%;
-      max-height: 88%;
+      width: 92px;
+      height: 92px;
       border-radius: 999px;
-      border: 7px solid #ffffff;
+      border: 3px solid rgba(255,255,255,0.22);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 46px;
+      font-size: 38px;
       font-weight: 900;
-      color: rgba(255,255,255,0.86);
-      background:
-        radial-gradient(circle at center, rgba(255,255,255,0.16), rgba(255,255,255,0.05)),
-        rgba(255,255,255,0.06);
-      box-shadow:
-        0 0 0 2px rgba(250, 204, 21, 0.55),
-        0 14px 34px rgba(0,0,0,0.38);
+      color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.06);
     }
 
     .body {
@@ -215,12 +197,12 @@
     }
 
     .name {
-      font-size: 21px;
+      font-size: 22px;
       line-height: 1.08;
       font-weight: 950;
       text-transform: uppercase;
       margin-bottom: 8px;
-      min-height: 46px;
+      min-height: 48px;
     }
 
     .meta {
@@ -292,319 +274,32 @@
     }
 
     @media (max-width: 520px) {
-      .topbar {
-        padding: 12px 10px;
-      }
-
       .topbar-inner {
         align-items: stretch;
       }
 
-      .brand h1 {
-        font-size: 30px;
-      }
-
-      .brand span {
-        font-size: 11px;
-      }
-
       .actions {
         width: 100%;
-        gap: 6px;
       }
 
       .btn {
         flex: 1;
         text-align: center;
-        padding: 9px 8px;
-        border-radius: 10px;
-        font-size: 12px;
       }
 
       .filters {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-
-      .filters input {
-        grid-column: 1 / -1;
-      }
-
-      input, select {
-        padding: 10px 9px;
-        font-size: 13px;
-        border-radius: 10px;
+        grid-template-columns: 1fr;
       }
 
       main {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-
-      .summary {
-        font-size: 12px;
-        margin-bottom: 12px;
+        padding-left: 12px;
+        padding-right: 12px;
       }
 
       .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .card {
-        border-radius: 16px;
-      }
-
-      .photo-wrap {
-        padding: 9px;
-        aspect-ratio: 1 / 1;
-      }
-
-      .photo {
-        width: 96px;
-        height: 96px;
-        max-width: 88%;
-        max-height: 88%;
-        border-width: 5px;
-        box-shadow:
-          0 0 0 1px rgba(250, 204, 21, 0.50),
-          0 8px 20px rgba(0,0,0,0.35);
-      }
-
-      .placeholder {
-        width: 96px;
-        height: 96px;
-        max-width: 88%;
-        max-height: 88%;
-        border-width: 5px;
-        font-size: 28px;
-        box-shadow:
-          0 0 0 1px rgba(250, 204, 21, 0.50),
-          0 8px 20px rgba(0,0,0,0.35);
-      }
-
-      .body {
-        padding: 9px;
-      }
-
-      .name {
-        font-size: 13px;
-        line-height: 1.08;
-        min-height: 30px;
-        margin-bottom: 5px;
-        letter-spacing: 0.2px;
-      }
-
-      .club {
-        margin-top: 4px;
-        font-size: 10px;
-      }
-
-      .meta {
-        grid-template-columns: 1fr 1fr;
-        gap: 5px;
-        margin-top: 7px;
-      }
-
-      .pill {
-        border-radius: 8px;
-        padding: 5px 4px;
-        min-height: 30px;
-      }
-
-      .pill small {
-        font-size: 7px;
-        letter-spacing: 0.4px;
-        margin-bottom: 2px;
-      }
-
-      .pill strong {
-        font-size: 10px;
+        grid-template-columns: 1fr;
       }
     }
-
-    @media (min-width: 521px) and (max-width: 860px) {
-      .grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .photo {
-        width: 124px;
-        height: 124px;
-        border-width: 6px;
-      }
-
-      .placeholder {
-        width: 124px;
-        height: 124px;
-        border-width: 6px;
-        font-size: 34px;
-      }
-
-      .name {
-        font-size: 16px;
-        min-height: 36px;
-      }
-
-      .pill strong {
-        font-size: 12px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .grid {
-        gap: 8px;
-      }
-
-      .photo {
-        width: 82px;
-        height: 82px;
-        border-width: 4px;
-      }
-
-      .placeholder {
-        width: 82px;
-        height: 82px;
-        border-width: 4px;
-        font-size: 24px;
-      }
-
-      .name {
-        font-size: 12px;
-        min-height: 28px;
-      }
-
-      .pill {
-        min-height: 28px;
-      }
-
-      .pill small {
-        font-size: 6.5px;
-      }
-
-      .pill strong {
-        font-size: 9px;
-      }
-    }
-
-    /* ==========================================================
-      MOVIL - TARJETAS COMPACTAS 2 POR FILA
-      ESTE BLOQUE VA AL FINAL DEL CSS PARA QUE MANDE SOBRE TODO
-      ========================================================== */
-
-      @media (max-width: 768px) {
-      .grid,
-      .cards,
-      .atletas-grid,
-      .athletes-grid,
-      #grid,
-      #cards,
-      #atletasGrid,
-      #athletesGrid,
-      #listaAtletas {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 10px !important;
-      }
-
-      .card,
-      .atleta-card,
-      .athlete-card {
-        width: 100% !important;
-        max-width: none !important;
-        border-radius: 14px !important;
-        overflow: hidden !important;
-      }
-
-      .card img,
-      .atleta-card img,
-      .athlete-card img,
-      .foto,
-      .photo,
-      .avatar {
-        width: 100% !important;
-        height: 145px !important;
-        object-fit: cover !important;
-        object-position: center top !important;
-      }
-
-      .card h2,
-      .card h3,
-      .atleta-card h2,
-      .atleta-card h3,
-      .athlete-card h2,
-      .athlete-card h3,
-      .nombre,
-      .athlete-name {
-        font-size: 16px !important;
-        line-height: 1.05 !important;
-        margin: 8px 8px 6px !important;
-      }
-
-      .provincia,
-      .club,
-      .team,
-      .subtitulo {
-        font-size: 12px !important;
-        margin: 0 8px 6px !important;
-      }
-
-      .info-grid,
-      .details,
-      .datos,
-      .meta {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 6px !important;
-        padding: 8px !important;
-      }
-
-      .info-grid div,
-      .details div,
-      .datos div,
-      .meta div {
-        padding: 6px !important;
-        border-radius: 8px !important;
-        font-size: 11px !important;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .grid,
-      .cards,
-      .atletas-grid,
-      .athletes-grid,
-      #grid,
-      #cards,
-      #atletasGrid,
-      #athletesGrid,
-      #listaAtletas {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 8px !important;
-      }
-
-      .card img,
-      .atleta-card img,
-      .athlete-card img,
-      .foto,
-      .photo,
-      .avatar {
-        height: 130px !important;
-      }
-
-      .card h2,
-      .card h3,
-      .atleta-card h2,
-      .atleta-card h3,
-      .athlete-card h2,
-      .athlete-card h3,
-      .nombre,
-      .athlete-name {
-        font-size: 14px !important;
-      }
-    }    
-
   </style>
 </head>
 <body>
