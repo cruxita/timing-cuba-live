@@ -257,6 +257,29 @@
       white-space: nowrap;
     }
 
+    .pais-con-bandera {
+      display: flex !important;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .flag-small {
+      width: 24px;
+      height: 18px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.28);
+      flex: 0 0 auto;
+    }
+
+    .pais-texto {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     .club {
       margin-top: 8px;
       color: var(--muted);
@@ -785,6 +808,70 @@
         .toUpperCase();
     }
 
+    function codigoBanderaPais(valor) {
+      const pais = texto(valor).toUpperCase();
+
+      const mapa = {
+        CUB: "cu",
+        USA: "us",
+        MEX: "mx",
+        ESP: "es",
+        COL: "co",
+        VEN: "ve",
+        DOM: "do",
+        PUR: "pr",
+        CAN: "ca",
+        BRA: "br",
+        ARG: "ar",
+        CHI: "cl",
+        PER: "pe",
+        ECU: "ec",
+        PAN: "pa",
+        CRC: "cr",
+        GUA: "gt",
+        HON: "hn",
+        NCA: "ni",
+        ESA: "sv",
+        URU: "uy",
+        PAR: "py",
+        BOL: "bo",
+        FRA: "fr",
+        GER: "de",
+        ITA: "it",
+        RUS: "ru",
+        UKR: "ua",
+        JPN: "jp",
+        CHN: "cn",
+        KOR: "kr"
+      };
+
+      if (mapa[pais]) {
+        return mapa[pais];
+      }
+
+      if (/^[A-Z]{2}$/.test(pais)) {
+        return pais.toLowerCase();
+      }
+
+      return "";
+    }
+
+    function htmlPaisConBandera(pais) {
+      const codigo = codigoBanderaPais(pais);
+      const paisTexto = escapeHTML(pais || "-");
+
+      if (!codigo) {
+        return `<span class="pais-texto">${paisTexto}</span>`;
+      }
+
+      return `
+        <span class="pais-con-bandera">
+          <img class="flag-small" src="flags/countries/${codigo}.png" alt="${paisTexto}" loading="lazy" onerror="this.remove()">
+          <span class="pais-texto">${paisTexto}</span>
+        </span>
+      `;
+    }
+
     function crearCard(a) {
       const card = document.createElement("article");
       card.className = "card";
@@ -825,7 +912,7 @@
         <div class="club">${escapeHTML(a.club || a.provincia || a.pais || "Sin club")}</div>
         <div class="meta">
           <div class="pill"><small>ID</small><strong>${escapeHTML(a.id || "-")}</strong></div>
-          <div class="pill"><small>País</small><strong>${escapeHTML(a.pais || "-")}</strong></div>
+          <div class="pill"><small>País</small><strong>${htmlPaisConBandera(a.pais)}</strong></div>
           <div class="pill"><small>Municipio</small><strong>${escapeHTML(municipioTexto || "-")}</strong></div>
           <div class="pill"><small>Grupo</small><strong>${escapeHTML(a.grupo || "-")}</strong></div>
           <div class="pill"><small>Peso</small><strong>${escapeHTML(a.peso || "-")}</strong></div>
