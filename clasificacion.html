@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clasificación por Equipos - Timing Cuba Live</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --oro: #c89a45;
+      --oro2: #e2b96d;
+      --fondo: #050505;
+      --linea: rgba(200, 154, 69, 0.45);
+      --panel: rgba(0, 0, 0, 0.82);
+      --texto: #ffffff;
+      --suave: #cfcfcf;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(200, 154, 69, 0.16), transparent 34%),
+        linear-gradient(180deg, #080808 0%, #000 74%, #040404 100%);
+      color: var(--texto);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: min(1320px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 22px 0 42px;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 130px 1fr 185px;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .logo {
+      width: 112px;
+      height: 112px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 16px rgba(200, 154, 69, 0.48));
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .title h1 {
+      margin: 0;
+      color: var(--oro);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1;
+      text-shadow: 0 0 12px rgba(200, 154, 69, 0.42);
+    }
+
+    .title .sub {
+      margin-top: 10px;
+      color: #eeeeee;
+      font-size: clamp(15px, 2vw, 22px);
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .menu-btn {
+      border: 2px solid var(--oro);
+      background: rgba(0, 0, 0, 0.75);
+      color: var(--oro);
+      border-radius: 14px;
+      padding: 14px 12px;
+      font-weight: 900;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      box-shadow: 0 0 12px rgba(200, 154, 69, 0.22);
+    }
+
+    .summary {
+      border: 2px solid var(--linea);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.64);
+      padding: 14px 18px;
+      margin: 0 0 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      box-shadow: 0 0 16px rgba(200, 154, 69, 0.12);
+    }
+
+    .mini {
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      min-height: 46px;
+    }
+
+    .mini:last-child {
+      border-right: none;
+    }
+
+    .mini-label {
+      color: var(--oro2);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .mini-value {
+      color: white;
+      font-size: 17px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 18px 0;
+    }
+
+    .tab-btn {
+      border: 2px solid rgba(200, 154, 69, 0.52);
+      background: rgba(0, 0, 0, 0.70);
+      color: var(--oro);
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(200, 154, 69, 0.13);
+    }
+
+    .tab-btn.active {
+      background: rgba(200, 154, 69, 0.20);
+      color: white;
+      border-color: var(--oro);
+    }
+
+    .uww-scale {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(74px, 1fr));
+      gap: 8px;
+      margin: 18px 0;
+    }
+
+    .scale-pill {
+      border: 2px solid rgba(200, 154, 69, 0.46);
+      background:
+        linear-gradient(180deg, rgba(200, 154, 69, 0.16), rgba(0, 0, 0, 0.70));
+      border-radius: 14px;
+      padding: 10px 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(200, 154, 69, 0.12);
+    }
+
+    .scale-pill strong {
+      display: block;
+      color: var(--oro2);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .scale-pill span {
+      color: white;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 780px) {
+      .uww-scale {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media (max-width: 460px) {
+      .uww-scale {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .panel {
+      border: 3px solid var(--linea);
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at top left, rgba(200, 154, 69, 0.14), transparent 38%),
+        rgba(0, 0, 0, 0.82);
+      box-shadow:
+        0 0 18px rgba(200, 154, 69, 0.20),
+        inset 0 0 24px rgba(200, 154, 69, 0.05);
+      overflow: hidden;
+    }
+
+    .panel-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 22px;
+      background:
+        linear-gradient(135deg, rgba(200, 154, 69, 0.28), rgba(0, 0, 0, 0.12));
+      border-bottom: 2px solid var(--linea);
+    }
+
+    .panel-title {
+      color: var(--oro);
+      font-size: 30px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-shadow: 0 0 10px rgba(200, 154, 69, 0.34);
+    }
+
+    .note {
+      color: #d8d8d8;
+      border: 2px solid rgba(200, 154, 69, 0.42);
+      background: rgba(200, 154, 69, 0.08);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1120px;
+    }
+
+    thead th {
+      background: rgba(200, 154, 69, 0.12);
+      color: var(--oro2);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      padding: 14px 10px;
+      border-bottom: 2px solid rgba(200, 154, 69, 0.34);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 14px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      font-size: 16px;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    tbody tr.top1 {
+      background: linear-gradient(90deg, rgba(200, 154, 69, 0.22), rgba(255, 255, 255, 0.03));
+    }
+
+    .pos {
+      color: var(--oro);
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .team {
+      text-align: left;
+      font-size: 18px;
+      color: white;
+      min-width: 210px;
+    }
+
+    .medal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      color: #111;
+      font-weight: 900;
+      box-shadow: 0 0 10px rgba(255,255,255,0.15);
+    }
+
+    .gold { background: #f2c94c; }
+    .silver { background: #d9d9d9; }
+    .bronze { background: #c48845; }
+
+    .points {
+      color: var(--oro2);
+      font-size: 21px;
+    }
+
+    .empty {
+      padding: 42px 18px;
+      text-align: center;
+      color: #cfcfcf;
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .rules {
+      margin-top: 18px;
+      border: 2px solid rgba(200, 154, 69, 0.30);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.54);
+      padding: 16px 18px;
+      color: #ddd;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .rules strong {
+      color: var(--oro2);
+    }
+
+    .footer {
+      text-align: center;
+      color: #a8a8a8;
+      font-size: 13px;
+      font-weight: 900;
+      margin-top: 18px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        grid-template-columns: 76px 1fr;
+        gap: 10px;
+      }
+
+      .logo {
+        width: 70px;
+        height: 70px;
+      }
+
+      .title {
+        text-align: left;
+      }
+
+      .menu-btn {
+        grid-column: 1 / -1;
+        justify-self: center;
+        padding: 10px 18px;
+      }
+
+      .summary {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mini:nth-child(2) {
+        border-right: none;
+      }
+
+      .panel-head {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 16px, 1320px);
+        padding-top: 12px;
+      }
+
+      .summary {
+        grid-template-columns: 1fr;
+      }
+
+      .mini {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding-bottom: 8px;
+      }
+
+      .mini:last-child {
+        border-bottom: none;
+      }
+
+      .panel-title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div>
+        <img class="logo" src="logo.png" alt="Timing Cuba Logo" />
+      </div>
+
+      <div class="title">
+        <h1>Clasificación</h1>
+        <div class="sub">Ranking por equipos</div>
+      </div>
+
+      <a class="menu-btn" href="https://cruxita.github.io/timing-cuba-live/menu.html?v=10">Menú</a>
+    </header>
+
+    <section class="summary">
+      <div class="mini">
+        <div class="mini-label">Evento</div>
+        <div id="evento_nombre" class="mini-value">Timing Cuba Live</div>
+      </div>
+      <div class="mini">
+        <div class="mini-label">Sistema</div>
+        <div class="mini-value">UWW Original</div>
+      </div>
+      <div class="mini">
+        <div class="mini-label">Criterio</div>
+        <div class="mini-value">Posición final</div>
+      </div>
+      <div class="mini">
+        <div class="mini-label">Estado</div>
+        <div id="estado_datos" class="mini-value">Esperando datos</div>
+      </div>
+    </section>
+
+    <section class="uww-scale" aria-label="Escala de puntos UWW por posición">
+      <div class="scale-pill"><strong>1ro</strong><span>25</span></div>
+      <div class="scale-pill"><strong>2do</strong><span>20</span></div>
+      <div class="scale-pill"><strong>3ro</strong><span>15</span></div>
+      <div class="scale-pill"><strong>4to</strong><span>12</span></div>
+      <div class="scale-pill"><strong>5to</strong><span>10</span></div>
+      <div class="scale-pill"><strong>6to</strong><span>9</span></div>
+      <div class="scale-pill"><strong>7mo</strong><span>8</span></div>
+      <div class="scale-pill"><strong>8vo</strong><span>6</span></div>
+      <div class="scale-pill"><strong>9no</strong><span>4</span></div>
+      <div class="scale-pill"><strong>10mo</strong><span>2</span></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div id="titulo_tabla" class="panel-title">Clasificación por equipos</div>
+        <div class="note">Posiciones finales UWW</div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Lugar</th>
+              <th>Equipo</th>
+              <th>1ro</th>
+              <th>2do</th>
+              <th>3ro</th>
+              <th>4to</th>
+              <th>5to</th>
+              <th>6to</th>
+              <th>7mo</th>
+              <th>8vo</th>
+              <th>9no</th>
+              <th>10mo</th>
+              <th>Puntos UWW</th>
+            </tr>
+          </thead>
+          <tbody id="tabla_clasificacion">
+            <tr>
+              <td colspan="13">
+                <div class="empty">
+                  Clasificación lista para conectar.<br />
+                  Cuando el programa mande <strong>datos/clasificacion.json</strong>, aquí saldrá el ranking por equipos.
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+<div class="footer">Timing Cuba Live · Clasificación por equipos</div>
+  </main>
+
+  <script>
+    var DATA_URL = "datos/clasificacion.json";
+    var datosOriginales = [];
+
+    function escapeHtml(txt) {
+      return String(txt || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function num(v) {
+      var n = Number(v || 0);
+      return isNaN(n) ? 0 : n;
+    }
+
+    function pick(item, keys) {
+      for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+
+        if (item[k] !== undefined && item[k] !== null && item[k] !== "") {
+          return item[k];
+        }
+      }
+
+      return 0;
+    }
+
+    function calcularFila(item) {
+      var primero = num(pick(item, ["primero", "primeros", "p1", "pos1"]));
+      var segundo = num(pick(item, ["segundo", "segundos", "p2", "pos2"]));
+      var tercero = num(pick(item, ["tercero", "terceros", "p3", "pos3"]));
+      var cuarto = num(pick(item, ["cuarto", "cuartos", "p4", "pos4"]));
+      var quinto = num(pick(item, ["quinto", "quintos", "p5", "pos5"]));
+      var sexto = num(pick(item, ["sexto", "sextos", "p6", "pos6"]));
+      var septimo = num(pick(item, ["septimo", "séptimo", "septimos", "séptimos", "p7", "pos7"]));
+      var octavo = num(pick(item, ["octavo", "octavos", "p8", "pos8"]));
+      var noveno = num(pick(item, ["noveno", "novenos", "p9", "pos9"]));
+      var decimo = num(pick(item, ["decimo", "décimo", "decimos", "décimos", "p10", "pos10"]));
+
+      var puntosUww = num(pick(item, [
+        "puntos_uww",
+        "puntos_posicion_uww",
+        "puntos_uww_posicion",
+        "total_uww"
+      ]));
+
+      if (!puntosUww) {
+        puntosUww =
+          (primero * 25) +
+          (segundo * 20) +
+          (tercero * 15) +
+          (cuarto * 12) +
+          (quinto * 10) +
+          (sexto * 9) +
+          (septimo * 8) +
+          (octavo * 6) +
+          (noveno * 4) +
+          (decimo * 2);
+      }
+
+      return {
+        nombre: item.nombre || item.equipo || item.pais || item.club || "SIN EQUIPO",
+        primero: primero,
+        segundo: segundo,
+        tercero: tercero,
+        cuarto: cuarto,
+        quinto: quinto,
+        sexto: sexto,
+        septimo: septimo,
+        octavo: octavo,
+        noveno: noveno,
+        decimo: decimo,
+        puntos_uww: puntosUww
+      };
+    }
+
+    function ordenarDatos(lista) {
+      var filas = lista.map(calcularFila);
+
+      filas.sort(function(a, b) {
+        return (b.puntos_uww - a.puntos_uww) ||
+               (b.primero - a.primero) ||
+               (b.segundo - a.segundo) ||
+               (b.tercero - a.tercero) ||
+               (b.cuarto - a.cuarto) ||
+               (b.quinto - a.quinto) ||
+               (b.sexto - a.sexto) ||
+               (b.septimo - a.septimo) ||
+               (b.octavo - a.octavo) ||
+               (b.noveno - a.noveno) ||
+               (b.decimo - a.decimo) ||
+               a.nombre.localeCompare(b.nombre);
+      });
+
+      return filas;
+    }
+
+    function pintarTabla() {
+      var tbody = document.getElementById("tabla_clasificacion");
+      if (!tbody) return;
+
+      var filas = ordenarDatos(datosOriginales);
+
+      if (!filas.length) {
+        tbody.innerHTML =
+          '<tr><td colspan="13"><div class="empty">' +
+          'Clasificación lista para conectar.<br />' +
+          'Cuando el programa mande <strong>datos/clasificacion.json</strong>, aquí saldrá el ranking por equipos.' +
+          '</div></td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = "";
+
+      filas.forEach(function(f, idx) {
+        var tr = document.createElement("tr");
+        if (idx === 0) tr.className = "top1";
+
+        tr.innerHTML =
+          '<td><span class="pos">' + (idx + 1) + '</span></td>' +
+          '<td class="team">' + escapeHtml(f.nombre) + '</td>' +
+          '<td>' + f.primero + '</td>' +
+          '<td>' + f.segundo + '</td>' +
+          '<td>' + f.tercero + '</td>' +
+          '<td>' + f.cuarto + '</td>' +
+          '<td>' + f.quinto + '</td>' +
+          '<td>' + f.sexto + '</td>' +
+          '<td>' + f.septimo + '</td>' +
+          '<td>' + f.octavo + '</td>' +
+          '<td>' + f.noveno + '</td>' +
+          '<td>' + f.decimo + '</td>' +
+          '<td class="points">' + f.puntos_uww + '</td>';
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function cambiarVista() {
+      pintarTabla();
+    }
+
+    function cargarDatos() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", DATA_URL + "?t=" + new Date().getTime(), true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState !== 4) return;
+
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            var data = JSON.parse(xhr.responseText);
+
+            if (Array.isArray(data)) {
+              datosOriginales = data;
+            } else if (Array.isArray(data.clasificacion)) {
+              datosOriginales = data.clasificacion;
+              if (data.evento_nombre) {
+                document.getElementById("evento_nombre").innerText = data.evento_nombre;
+              }
+            } else {
+              datosOriginales = [];
+            }
+
+            document.getElementById("estado_datos").innerText = datosOriginales.length ? "Conectado" : "Sin datos";
+            pintarTabla();
+          } catch (e) {
+            document.getElementById("estado_datos").innerText = "JSON inválido";
+            pintarTabla();
+          }
+        } else {
+          document.getElementById("estado_datos").innerText = "Sin datos";
+          pintarTabla();
+        }
+      };
+
+      xhr.onerror = function () {
+        document.getElementById("estado_datos").innerText = "Sin conexión";
+        pintarTabla();
+      };
+
+      xhr.send();
+    }
+
+    cargarDatos();
+    setInterval(cargarDatos, 5000);
+  </script>
+</body>
+</html>
