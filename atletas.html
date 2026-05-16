@@ -265,13 +265,20 @@
     }
 
     .flag-small {
-      width: 24px;
-      height: 18px;
-      object-fit: cover;
+      width: 34px !important;
+      height: 24px !important;
+      min-width: 34px !important;
+      max-width: 34px !important;
+      min-height: 24px !important;
+      max-height: 24px !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      display: inline-block !important;
       border-radius: 3px;
-      border: 1px solid rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.65);
+      background: #ffffff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.28);
-      flex: 0 0 auto;
+      flex: 0 0 34px !important;
     }
 
     .pais-texto {
@@ -540,9 +547,9 @@
         overflow: hidden !important;
       }
 
-      .card img,
-      .atleta-card img,
-      .athlete-card img,
+      .card .photo,
+      .atleta-card .photo,
+      .athlete-card .photo,
       .foto,
       .photo,
       .avatar {
@@ -550,6 +557,17 @@
         height: 145px !important;
         object-fit: cover !important;
         object-position: center center !important;
+      }
+
+      .flag-small {
+        width: 28px !important;
+        height: 20px !important;
+        min-width: 28px !important;
+        max-width: 28px !important;
+        min-height: 20px !important;
+        max-height: 20px !important;
+        object-fit: contain !important;
+        flex: 0 0 28px !important;
       }
 
       .card h2,
@@ -607,13 +625,24 @@
         gap: 8px !important;
       }
 
-      .card img,
-      .atleta-card img,
-      .athlete-card img,
+      .card .photo,
+      .atleta-card .photo,
+      .athlete-card .photo,
       .foto,
       .photo,
       .avatar {
         height: 130px !important;
+      }
+
+      .flag-small {
+        width: 26px !important;
+        height: 18px !important;
+        min-width: 26px !important;
+        max-width: 26px !important;
+        min-height: 18px !important;
+        max-height: 18px !important;
+        object-fit: contain !important;
+        flex: 0 0 26px !important;
       }
 
       .card h2,
@@ -662,6 +691,111 @@
         padding: 4px 6px;
         font-size: 10px;
         border-width: 1px;
+      }
+    }
+
+  
+
+    /* ==========================================================
+       FIX BANDERAS WEB - PAIS EN TARJETAS DE ATLETAS
+       SVG correcto + texto CUB visible
+       ========================================================== */
+
+       .pill-pais {
+      min-height: 58px !important;
+    }
+
+    .pill-pais small {
+      margin-bottom: 6px !important;
+    }
+
+    .pais-con-bandera {
+      display: grid !important;
+      grid-template-columns: 32px 1fr !important;
+      align-items: center !important;
+      gap: 6px !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      line-height: 1 !important;
+    }
+
+    .flag-small,
+    .flag-empty {
+      width: 32px !important;
+      height: 22px !important;
+      min-width: 32px !important;
+      max-width: 32px !important;
+      min-height: 22px !important;
+      max-height: 22px !important;
+      display: block !important;
+      border-radius: 4px !important;
+      border: 2px solid rgba(255, 255, 255, 0.95) !important;
+      background-color: #ffffff !important;
+      background-image: var(--flag-url) !important;
+      background-repeat: no-repeat !important;
+      background-position: center center !important;
+      background-size: cover !important;
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(250, 204, 21, 0.45) !important;
+    }
+
+    .flag-empty {
+      background-image: none !important;
+      opacity: 0.35 !important;
+    }
+
+    .pais-texto {
+      display: block !important;
+      color: var(--text) !important;
+      font-size: 12px !important;
+      font-weight: 950 !important;
+      line-height: 1 !important;
+      min-width: 0 !important;
+      overflow: visible !important;
+      text-overflow: clip !important;
+      white-space: nowrap !important;
+    }
+
+    @media (max-width: 768px) {
+      .pais-con-bandera {
+        grid-template-columns: 28px 1fr !important;
+        gap: 5px !important;
+      }
+
+      .flag-small,
+      .flag-empty {
+        width: 28px !important;
+        height: 19px !important;
+        min-width: 28px !important;
+        max-width: 28px !important;
+        min-height: 19px !important;
+        max-height: 19px !important;
+      }
+
+      .pais-texto {
+        font-size: 10px !important;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .pais-con-bandera {
+        grid-template-columns: 24px 1fr !important;
+        gap: 4px !important;
+      }
+
+      .flag-small,
+      .flag-empty {
+        width: 24px !important;
+        height: 16px !important;
+        min-width: 24px !important;
+        max-width: 24px !important;
+        min-height: 16px !important;
+        max-height: 16px !important;
+      }
+
+      .pais-texto {
+        font-size: 9px !important;
       }
     }
 
@@ -861,12 +995,21 @@
       const paisTexto = escapeHTML(pais || "-");
 
       if (!codigo) {
-        return `<span class="pais-texto">${paisTexto}</span>`;
+        return `
+          <span class="pais-con-bandera">
+            <span class="flag-empty"></span>
+            <span class="pais-texto">${paisTexto}</span>
+          </span>
+        `;
       }
 
       return `
         <span class="pais-con-bandera">
-          <img class="flag-small" src="flags/countries/${codigo}.png" alt="${paisTexto}" loading="lazy" onerror="this.remove()">
+          <span
+            class="flag-small"
+            style="--flag-url: url('flags/countries/${codigo}.svg');"
+            aria-label="${paisTexto}"
+          ></span>
           <span class="pais-texto">${paisTexto}</span>
         </span>
       `;
@@ -912,7 +1055,7 @@
         <div class="club">${escapeHTML(a.club || a.provincia || a.pais || "Sin club")}</div>
         <div class="meta">
           <div class="pill"><small>ID</small><strong>${escapeHTML(a.id || "-")}</strong></div>
-          <div class="pill"><small>País</small><strong>${htmlPaisConBandera(a.pais)}</strong></div>
+          <div class="pill pill-pais"><small>País</small>${htmlPaisConBandera(a.pais)}</div>
           <div class="pill"><small>Municipio</small><strong>${escapeHTML(municipioTexto || "-")}</strong></div>
           <div class="pill"><small>Grupo</small><strong>${escapeHTML(a.grupo || "-")}</strong></div>
           <div class="pill"><small>Peso</small><strong>${escapeHTML(a.peso || "-")}</strong></div>
