@@ -1,7 +1,7 @@
 {
-  "generado_en": "2026-05-16 20:30:05",
-  "total_atletas": 11,
-  "total_fotos": 8,
+  "generado_en": "2026-05-16 20:35:00",
+  "total_atletas": 12,
+  "total_fotos": 9,
   "atletas": [
     {
       "id": 50,
@@ -169,6 +169,27 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0051_maykol_obispo_sainz.png",
+      "activo": true
+    },
+    {
+      "id": 56,
+      "ci": "",
+      "nombre": "LESDIAN ANTUAN",
+      "apellidos": "HERNANDEZ SERRANO",
+      "nombre_publico": "L. HERNANDEZ",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U9/10",
+      "peso": "",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "CH",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0056_lesdian_antuan_hernandez_serrano.png",
       "activo": true
     },
     {
