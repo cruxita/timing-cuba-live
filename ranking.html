@@ -531,7 +531,7 @@
   </main>
 
   <script>
-    const JSON_URL = "datos/ranking_atletas.json?v=" + Date.now();
+    const JSON_URL = "web_live_tapices_prueba/datos/ranking_atletas.json?v=" + Date.now();
 
     let rankingData = null;
     let modo = "divisiones";
@@ -1007,7 +1007,7 @@
 
   setInterval(() => {
 
-    fetch("datos/ranking_atletas.json?t=" + Date.now())
+    fetch("web_live_tapices_prueba/datos/ranking_atletas.json?t=" + Date.now())
       .then(res => res.json())
       .then(data => {
 
