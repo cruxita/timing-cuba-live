@@ -1,0 +1,1030 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranking de Atletas - Timing Cuba Live</title>
+
+  <style>
+    :root {
+      --bg: #05070d;
+      --panel: #0d1320;
+      --panel2: #111827;
+      --text: #ffffff;
+      --muted: #aeb7c8;
+      --gold: #f5c451;
+      --line: rgba(255,255,255,0.12);
+      --green: #10b981;
+      --red: #ef4444;
+      --blue: #3b82f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top, rgba(245,196,81,0.14), transparent 32%),
+        linear-gradient(180deg, #070a12 0%, #05070d 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page {
+      width: min(1400px, 96vw);
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .title-block h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .title-block p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .badge {
+      border: 1px solid var(--line);
+      background: rgba(245,196,81,0.12);
+      color: var(--gold);
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-weight: 900;
+      text-align: center;
+      min-width: 170px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat-card {
+      background: rgba(13,19,32,0.92);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .top-section {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .podium {
+      background: linear-gradient(180deg, rgba(245,196,81,0.18), rgba(13,19,32,0.95));
+      border: 1px solid rgba(245,196,81,0.35);
+      border-radius: 22px;
+      padding: 18px;
+      min-height: 190px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.3);
+    }
+
+    .podium .pos {
+      color: var(--gold);
+      font-size: 34px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .podium .name {
+      font-size: clamp(20px, 2.3vw, 30px);
+      font-weight: 900;
+      line-height: 1.05;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .podium .tag {
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .podium-photo-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      margin: 0 0 14px;
+      overflow: hidden;
+      border: 3px solid rgba(245,196,81,0.75);
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+    }
+
+    .podium-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .podium-initials {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 900;
+      color: #111111;
+      background: var(--gold);
+    }
+
+    .table-athlete {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .athlete-photo-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex: 0 0 auto;
+      border: 2px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .athlete-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .athlete-initials {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1f2937;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .athlete-name-text {
+      display: inline-block;
+      line-height: 1.1;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .mini {
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .mini b {
+      display: block;
+      font-size: 18px;
+    }
+
+    .mini span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin: 18px 0 12px;
+      flex-wrap: wrap;
+    }
+
+    .search {
+      flex: 1;
+      min-width: 240px;
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 14px;
+      padding: 13px 15px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: var(--panel2);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .btn.active {
+      background: var(--gold);
+      color: #111111;
+      border-color: var(--gold);
+    }
+
+    .table-wrap {
+      background: rgba(13,19,32,0.94);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+    }
+
+    .division-card {
+      background: rgba(13,19,32,0.94);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+      margin-bottom: 18px;
+    }
+
+    .division-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: linear-gradient(90deg, rgba(245,196,81,0.18), rgba(17,24,39,0.95));
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      padding: 16px 18px;
+    }
+
+    .division-title {
+      font-size: clamp(20px, 2.2vw, 30px);
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .division-meta {
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .filter-row{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .filter-chip{
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      cursor:pointer;
+      font-weight:800;
+      user-select:none;
+    }
+
+    .filter-chip.active{
+      background:rgba(245,196,81,.20);
+      border-color:rgba(245,196,81,.45);
+      color:var(--gold);
+    }
+
+    .mode-note {
+      background: rgba(245,196,81,0.10);
+      border: 1px solid rgba(245,196,81,0.22);
+      color: #ffe7a3;
+      border-radius: 18px;
+      padding: 12px 14px;
+      margin: 0 0 14px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    thead {
+      background: #111827;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    th {
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    td.name {
+      text-align: left;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      min-width: 230px;
+    }
+
+    td.tag {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .champ {
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .dif-pos {
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .dif-neg {
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    .loading, .error {
+      background: rgba(13,19,32,0.94);
+      border: 1px solid var(--line);
+      padding: 24px;
+      border-radius: 20px;
+      font-weight: 900;
+      color: var(--muted);
+    }
+
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      margin-top: 18px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .badge {
+        width: 100%;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .top-section {
+        grid-template-columns: 1fr;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      table {
+        min-width: 920px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        width: 94vw;
+        padding-top: 16px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .title-block h1 {
+        font-size: 30px;
+      }
+
+      .stat-value {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="title-block">
+        <h1>Ranking de Atletas</h1>
+        <p id="subtitulo">Timing Cuba Live</p>
+      </div>
+
+      <div class="badge" id="eventoBadge">Cargando...</div>
+    </header>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Atletas</div>
+        <div class="stat-value" id="totalAtletas">--</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Combates</div>
+        <div class="stat-value" id="totalCombates">--</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Round Robin</div>
+        <div class="stat-value" id="totalRR">--</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Champions</div>
+        <div class="stat-value" id="totalCH">--</div>
+      </div>
+    </section>
+
+    <section class="top-section" id="topSection"></section>
+
+    <section class="controls">
+      <input class="search" id="buscar" type="search" placeholder="Buscar atleta, club, país, provincia o división..." />
+      <div id="filtrosUWW" style="width:100%; display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+
+        <div id="filtroEstilo"></div>
+      
+        <div id="filtroGrupo"></div>
+      
+        <div id="filtroPeso"></div>
+      
+      </div>    
+      <button class="btn active" id="btnDivisiones">Por divisiones</button>
+      <button class="btn" id="btnGeneral">Top general</button>
+      <button class="btn" id="btnCampeones">Campeones</button>
+    </section>
+
+    <section id="contenido">
+      <div class="loading">Cargando ranking...</div>
+    </section>
+
+    <div class="footer" id="footerInfo"></div>
+  </main>
+
+  <script>
+    const JSON_URL = "datos/ranking_atletas.json?v=" + Date.now();
+
+    let rankingData = null;
+    let modo = "divisiones";
+
+    let filtroEstilo = "Todos";
+    let filtroGrupo = "Todos";
+    let filtroPeso = "Todos";    
+
+    const $ = (id) => document.getElementById(id);
+
+    function valor(n) {
+      return Number(n || 0);
+    }
+
+    function difClass(dif) {
+      if (dif > 0) return "dif-pos";
+      if (dif < 0) return "dif-neg";
+      return "";
+    }
+
+    function safeHtml(valor) {
+      return String(valor ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function fotoHtml(a, tipo) {
+      const iniciales = safeHtml(a.iniciales || "TC");
+      const nombre = safeHtml(a.nombre || "");
+      const foto = safeHtml(a.foto || "");
+
+      if (tipo === "podium") {
+        if (a.tiene_foto && foto) {
+          return `
+            <div class="podium-photo-wrap">
+              <img class="podium-photo" src="${foto}" alt="${nombre}"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="podium-initials" style="display:none;">${iniciales}</div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="podium-photo-wrap">
+            <div class="podium-initials">${iniciales}</div>
+          </div>
+        `;
+      }
+
+      if (a.tiene_foto && foto) {
+        return `
+          <div class="athlete-photo-wrap">
+            <img class="athlete-photo" src="${foto}" alt="${nombre}"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="athlete-initials" style="display:none;">${iniciales}</div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="athlete-photo-wrap">
+          <div class="athlete-initials">${iniciales}</div>
+        </div>
+      `;
+    }
+
+    function activarBoton(btnActivo) {
+      ["btnDivisiones", "btnGeneral", "btnCampeones"].forEach(id => {
+        $(id).classList.remove("active");
+      });
+
+      $(btnActivo).classList.add("active");
+    }
+
+    function textoBusqueda() {
+      return $("buscar").value.trim().toLowerCase();
+    }
+
+    function coincideBusquedaAtleta(a, texto) {
+      if (!texto) return true;
+
+      const campos = [
+        a.nombre,
+        a.tag,
+        a.club,
+        a.tag_club,
+        ...(a.divisiones || []),
+        ...(a.campeon_en || [])
+      ].join(" ").toLowerCase();
+
+      return campos.includes(texto);
+    }
+
+    function renderTop(ranking) {
+      const top = ranking.slice(0, 3);
+      const cont = $("topSection");
+
+      if (!top.length || modo === "divisiones") {
+        cont.innerHTML = "";
+        return;
+      }
+
+      cont.innerHTML = top.map(a => `
+        <article class="podium">
+          <div class="pos">#${a.posicion}</div>
+          ${fotoHtml(a, "podium")}
+          <div class="name">${safeHtml(a.nombre || "")}</div>
+          <div class="tag">${safeHtml(a.tag_club || "SIN TAG")}</div>
+
+          <div class="mini-stats">
+            <div class="mini"><b>${valor(a.victorias)}</b><span>V</span></div>
+            <div class="mini"><b>${valor(a.falls)}</b><span>FALL</span></div>
+            <div class="mini"><b>${valor(a.techs)}</b><span>TECH</span></div>
+            <div class="mini"><b>${valor(a.clasif)}</b><span>CLS</span></div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function tablaRanking(lista) {
+      if (!lista.length) {
+        return `<div class="error">No hay atletas para mostrar con este filtro.</div>`;
+      }
+
+      return `
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Atleta</th>
+                <th>Tag/Club</th>
+                <th>Campeón</th>
+                <th>C</th>
+                <th>V</th>
+                <th>D</th>
+                <th>FALL</th>
+                <th>TECH</th>
+                <th>CLS</th>
+                <th>PF</th>
+                <th>PC</th>
+                <th>DIF</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${lista.map(a => `
+                <tr>
+                  <td><b>${a.posicion}</b></td>
+                  <td class="name">
+                    <div class="table-athlete">
+                      ${fotoHtml(a, "table")}
+                      <span class="athlete-name-text">${safeHtml(a.nombre || "")}</span>
+                    </div>
+                  </td>
+                  <td class="tag">${safeHtml(a.tag_club || "")}</td>
+                  <td class="champ">${a.campeon ? "SÍ" : ""}</td>
+                  <td>${valor(a.combates)}</td>
+                  <td><b>${valor(a.victorias)}</b></td>
+                  <td>${valor(a.derrotas)}</td>
+                  <td>${valor(a.falls)}</td>
+                  <td>${valor(a.techs)}</td>
+                  <td><b>${valor(a.clasif)}</b></td>
+                  <td>${valor(a.pf)}</td>
+                  <td>${valor(a.pc)}</td>
+                  <td class="${difClass(valor(a.dif))}">${valor(a.dif)}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    function renderGeneral() {
+      const texto = textoBusqueda();
+      let lista = [...(rankingData.ranking || [])];
+
+      lista = lista.filter(a => coincideBusquedaAtleta(a, texto));
+      lista = lista.filter(a=>cumpleFiltrosUWW(a));
+
+      $("topSection").innerHTML = "";
+      renderTop(rankingData.ranking || []);
+
+      $("contenido").innerHTML = `
+        <div class="mode-note">
+          Top general del evento: esta vista mezcla todas las divisiones y sirve como estadística general de atletas.
+        </div>
+        ${tablaRanking(lista)}
+      `;
+    }
+
+    function renderCampeones() {
+
+      const texto = textoBusqueda();
+
+      let lista = [...(rankingData.ranking || [])];
+
+      lista = lista.filter(a => a.campeon);
+
+      lista = lista.filter(
+          a => coincideBusquedaAtleta(a, texto)
+      );
+
+      lista = lista.filter(
+          a => cumpleFiltrosUWW(a)
+      );
+
+      $("topSection").innerHTML = "";
+
+      $("contenido").innerHTML = `
+          <div class="mode-note">
+            Campeones del evento por divisiones.
+          </div>
+
+          ${tablaRanking(lista)}
+      `;
+      }
+
+    function renderDivisiones() {
+      const texto = textoBusqueda();
+      const divisiones = rankingData.divisiones || [];
+
+      $("topSection").innerHTML = "";
+
+      if (!divisiones.length) {
+        $("contenido").innerHTML = `<div class="error">No hay divisiones disponibles en el ranking.</div>`;
+        return;
+      }
+
+      let html = `
+        <div class="mode-note">
+          Vista por divisiones/pesos: esta es la forma principal para revisar resultados de atletas por categoría, estilo y peso.
+        </div>
+      `;
+
+      let totalMostradas = 0;
+
+      divisiones.forEach(div => {
+        let lista = [...(div.ranking || [])];
+
+        lista = lista.filter(a => coincideBusquedaAtleta(a, texto));
+
+        if (!lista.length) {
+          return;
+        }
+
+        totalMostradas += 1;
+
+        html += `
+          <section class="division-card">
+            <div class="division-header">
+              <div>
+                <div class="division-title">${safeHtml(div.titulo || "División")}</div>
+                <div style="color: var(--muted); font-weight: 800; margin-top: 4px;">
+                  ${safeHtml(div.sistema || "")}
+                </div>
+              </div>
+
+              <div class="division-meta">
+                ${valor(div.total_atletas)} atletas<br>
+                ${valor(div.total_combates)} combates
+              </div>
+            </div>
+
+            ${tablaRanking(lista)}
+          </section>
+        `;
+      });
+
+      if (!totalMostradas) {
+        $("contenido").innerHTML = `<div class="error">No hay divisiones para mostrar con este filtro.</div>`;
+        return;
+      }
+
+      $("contenido").innerHTML = html;
+    }
+
+    function cumpleFiltrosUWW(a){
+
+      if(
+        filtroEstilo!=="Todos" &&
+        (a.estilo||"")!==filtroEstilo
+      ){
+        return false;
+      }
+
+      if(
+        filtroGrupo!=="Todos" &&
+        (a.grupo||"")!==filtroGrupo
+      ){
+        return false;
+      }
+
+      if(
+        filtroPeso!=="Todos" &&
+        String(a.peso||"")!==filtroPeso
+      ){
+        return false;
+      }
+
+      return true;
+      }
+
+
+      function crearBotonesFiltro(
+      contenedorId,
+      valores,
+      valorActivo,
+      callback
+      ){
+
+      const cont=document.getElementById(contenedorId);
+
+      cont.className="filter-row";
+
+      cont.innerHTML=valores.map(v=>`
+
+          <div
+              class="filter-chip ${v===valorActivo?'active':''}"
+              data-v="${v}"
+          >
+              ${v}
+          </div>
+
+      `).join("");
+
+      cont.querySelectorAll(".filter-chip")
+      .forEach(btn=>{
+
+          btn.onclick=()=>{
+
+              callback(
+                  btn.dataset.v
+              );
+
+              render();
+
+          };
+
+      });
+
+      }
+
+
+      function construirFiltros(){
+
+      let atletas=
+      rankingData.ranking||[];
+
+      let estilos=[
+          "Todos",
+          ...new Set(
+              atletas
+              .map(a=>a.estilo)
+              .filter(Boolean)
+          )
+      ];
+
+      let grupos=[
+          "Todos",
+          ...new Set(
+              atletas
+              .map(a=>a.grupo)
+              .filter(Boolean)
+          )
+      ];
+
+      let pesos=[
+          "Todos",
+          ...new Set(
+              atletas
+              .map(a=>a.peso)
+              .filter(Boolean)
+          )
+      ];
+
+      crearBotonesFiltro(
+          "filtroEstilo",
+          estilos,
+          filtroEstilo,
+          v=>{
+              filtroEstilo=v;
+          }
+      );
+
+      crearBotonesFiltro(
+          "filtroGrupo",
+          grupos,
+          filtroGrupo,
+          v=>{
+              filtroGrupo=v;
+          }
+      );
+
+      crearBotonesFiltro(
+          "filtroPeso",
+          pesos,
+          filtroPeso,
+          v=>{
+              filtroPeso=v;
+          }
+      );
+
+      }
+
+      function render() {
+        if (!rankingData) return;
+
+        if (modo === "divisiones") {
+          renderDivisiones();
+        } 
+        else if (modo === "general") {
+          renderGeneral();
+        } 
+        else if (modo === "campeones") {
+          renderCampeones();
+        }
+      }
+
+    function cargarDatos(data) {
+      rankingData = data;
+
+      $("eventoBadge").textContent = data.evento || "TODOS VS TODOS";
+      $("subtitulo").textContent = `Generado: ${data.generado_en || ""}`;
+      $("totalAtletas").textContent = data.total_atletas ?? "--";
+      $("totalCombates").textContent = data.total_combates ?? "--";
+      $("totalRR").textContent = data.conteos?.["Round Robin"] ?? 0;
+      $("totalCH").textContent = data.conteos?.["Champions"] ?? 0;
+
+      $("footerInfo").textContent =
+        `Timing Cuba Live | ${data.total_atletas || 0} atletas | ${data.total_con_foto || 0} con foto | ${data.total_divisiones || 0} divisiones | ${data.total_combates || 0} combates leídos`;
+
+      render();
+    }
+
+    async function iniciar() {
+      try {
+        const resp = await fetch(JSON_URL);
+
+        if (!resp.ok) {
+          throw new Error("No se pudo cargar datos/ranking_atletas.json");
+        }
+
+        const data = await resp.json();
+        cargarDatos(data);
+        construirFiltros();
+
+      } catch (err) {
+        $("contenido").innerHTML = `
+          <div class="error">
+            Error cargando el ranking.<br><br>
+            Revisa que exista el archivo:<br>
+            <b>web_live_tapices_prueba/datos/ranking_atletas.json</b>
+          </div>
+        `;
+        console.error(err);
+      }
+    }
+
+    $("buscar").addEventListener("input", render);
+
+
+    
+
+  
+  iniciar();
+
+  let ultimoEstado = "";
+
+  setInterval(() => {
+
+    fetch("datos/ranking.json?t=" + new Date().getTime())
+      .then(res => res.json())
+      .then(data => {
+
+        const nuevoEstado = JSON.stringify(data);
+
+        if (nuevoEstado !== ultimoEstado) {
+          ultimoEstado = nuevoEstado;
+
+          rankingData = data;
+
+          render(); // 👈 SOLO actualiza la pantalla
+        }
+
+      })
+      .catch(err => console.log("Error live ranking", err));
+
+  }, 3000);
+</script>
+</body>
+</html>
