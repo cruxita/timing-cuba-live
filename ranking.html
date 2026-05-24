@@ -1007,7 +1007,7 @@
 
   setInterval(() => {
 
-    fetch("datos/ranking_atletas.json?t=" + new Date().getTime())
+    fetch("datos/ranking_atletas.json?t=" + Date.now())
       .then(res => res.json())
       .then(data => {
 
