@@ -532,6 +532,7 @@
 
   <script>
     const JSON_URL = "web_live_tapices_prueba/datos/ranking_atletas.json?v=" + Date.now();
+    fetch("web_live_tapices_prueba/datos/ranking_atletas.json")
 
     let rankingData = null;
     let modo = "divisiones";
@@ -756,7 +757,12 @@
 
     function renderDivisiones() {
       const texto = textoBusqueda();
-      const divisiones = rankingData.divisiones || [];
+      const divisiones = rankingData.divisiones && rankingData.divisiones.length
+        ? rankingData.divisiones
+        : [{
+            titulo: "GENERAL",
+            ranking: rankingData.ranking || []
+          }];
 
       $("topSection").innerHTML = "";
 
