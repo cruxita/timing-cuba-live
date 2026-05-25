@@ -531,28 +531,27 @@
   </main>
 
   <script>
-    const JSON_URL = "web_live_tapices_prueba/datos/ranking_atletas.json?v=" + Date.now();
-    fetch("web_live_tapices_prueba/datos/ranking_atletas.json")
-
+    const JSON_URL = "datos/ranking_atletas.json?v=" + Date.now();
+  
     let rankingData = null;
     let modo = "divisiones";
-
+  
     let filtroEstilo = "Todos";
     let filtroGrupo = "Todos";
-    let filtroPeso = "Todos";    
-
+    let filtroPeso = "Todos";
+  
     const $ = (id) => document.getElementById(id);
-
+  
     function valor(n) {
       return Number(n || 0);
     }
-
+  
     function difClass(dif) {
       if (dif > 0) return "dif-pos";
       if (dif < 0) return "dif-neg";
       return "";
     }
-
+  
     function safeHtml(valor) {
       return String(valor ?? "")
         .replaceAll("&", "&amp;")
@@ -561,105 +560,140 @@
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
     }
-
+  
+    function normalizarAtleta(a, index) {
+      return {
+        posicion: a.posicion || index + 1,
+        nombre: a.nombre || "SIN NOMBRE",
+        tag: a.tag || "",
+        club: a.club || "",
+        tag_club: a.tag_club || a.tag || a.club || "",
+        campeon: Boolean(a.campeon),
+        campeon_en: a.campeon_en || [],
+        divisiones: a.divisiones || [],
+  
+        estilo: a.estilo || "",
+        grupo: a.grupo || a.categoria || "",
+        peso: String(a.peso || "").replace("kg", "").trim(),
+  
+        combates: a.combates || 0,
+        victorias: a.victorias || 0,
+        derrotas: a.derrotas || 0,
+        falls: a.falls || 0,
+        techs: a.techs || 0,
+        clasif: a.clasif || 0,
+        pf: a.pf || 0,
+        pc: a.pc || 0,
+        dif: a.dif || 0,
+  
+        foto: a.foto || "",
+        tiene_foto: Boolean(a.tiene_foto),
+        iniciales: a.iniciales || "TC"
+      };
+    }
+  
+    function normalizarData(data) {
+      if (Array.isArray(data)) {
+        return {
+          evento: "TODOS VS TODOS",
+          generado_en: "",
+          conteos: {},
+          total_combates: 0,
+          total_con_foto: 0,
+          ranking: data.map(normalizarAtleta),
+          divisiones: []
+        };
+      }
+  
+      const ranking = (data.ranking || data.atletas || data.data || []).map(normalizarAtleta);
+      const divisiones = data.divisiones || [];
+  
+      return {
+        evento: data.evento || "TODOS VS TODOS",
+        generado_en: data.generado_en || "",
+        conteos: data.conteos || {},
+        total_combates: data.total_combates || 0,
+        total_con_foto: data.total_con_foto || 0,
+        ranking,
+        divisiones
+      };
+    }
+  
     function fotoHtml(a, tipo) {
       const iniciales = safeHtml(a.iniciales || "TC");
       const nombre = safeHtml(a.nombre || "");
       const foto = safeHtml(a.foto || "");
-
-      if (tipo === "podium") {
-        if (a.tiene_foto && foto) {
-          return `
-            <div class="podium-photo-wrap">
-              <img class="podium-photo" src="${foto}" alt="${nombre}"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="podium-initials" style="display:none;">${iniciales}</div>
-            </div>
-          `;
-        }
-
-        return `
-          <div class="podium-photo-wrap">
-            <div class="podium-initials">${iniciales}</div>
-          </div>
-        `;
-      }
-
+  
       if (a.tiene_foto && foto) {
         return `
-          <div class="athlete-photo-wrap">
-            <img class="athlete-photo" src="${foto}" alt="${nombre}"
+          <div class="${tipo === "podium" ? "podium-photo-wrap" : "athlete-photo-wrap"}">
+            <img class="${tipo === "podium" ? "podium-photo" : "athlete-photo"}" src="${foto}" alt="${nombre}"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="athlete-initials" style="display:none;">${iniciales}</div>
+            <div class="${tipo === "podium" ? "podium-initials" : "athlete-initials"}" style="display:none;">${iniciales}</div>
           </div>
         `;
       }
-
+  
       return `
-        <div class="athlete-photo-wrap">
-          <div class="athlete-initials">${iniciales}</div>
+        <div class="${tipo === "podium" ? "podium-photo-wrap" : "athlete-photo-wrap"}">
+          <div class="${tipo === "podium" ? "podium-initials" : "athlete-initials"}">${iniciales}</div>
         </div>
       `;
     }
-
+  
     function activarBoton(btnActivo) {
       ["btnDivisiones", "btnGeneral", "btnCampeones"].forEach(id => {
         $(id).classList.remove("active");
       });
-
+  
       $(btnActivo).classList.add("active");
     }
-
+  
     function textoBusqueda() {
       return $("buscar").value.trim().toLowerCase();
     }
-
+  
     function coincideBusquedaAtleta(a, texto) {
       if (!texto) return true;
-
+  
       const campos = [
         a.nombre,
         a.tag,
         a.club,
         a.tag_club,
+        a.estilo,
+        a.grupo,
+        a.peso,
         ...(a.divisiones || []),
         ...(a.campeon_en || [])
       ].join(" ").toLowerCase();
-
+  
       return campos.includes(texto);
     }
-
-    function renderTop(ranking) {
-      const top = ranking.slice(0, 3);
-      const cont = $("topSection");
-
-      if (!top.length || modo === "divisiones") {
-        cont.innerHTML = "";
-        return;
-      }
-
-      cont.innerHTML = top.map(a => `
-        <article class="podium">
-          <div class="pos">#${a.posicion}</div>
-          ${fotoHtml(a, "podium")}
-          <div class="name">${safeHtml(a.nombre || "")}</div>
-          <div class="tag">${safeHtml(a.tag_club || "SIN TAG")}</div>
-
-          <div class="mini-stats">
-            <div class="mini"><b>${valor(a.victorias)}</b><span>V</span></div>
-            <div class="mini"><b>${valor(a.falls)}</b><span>FALL</span></div>
-            <div class="mini"><b>${valor(a.techs)}</b><span>TECH</span></div>
-            <div class="mini"><b>${valor(a.clasif)}</b><span>CLS</span></div>
-          </div>
-        </article>
-      `).join("");
+  
+    function cumpleFiltrosUWW(a) {
+      if (filtroEstilo !== "Todos" && (a.estilo || "") !== filtroEstilo) return false;
+      if (filtroGrupo !== "Todos" && (a.grupo || "") !== filtroGrupo) return false;
+      if (filtroPeso !== "Todos" && String(a.peso || "") !== filtroPeso) return false;
+      return true;
     }
-
+  
+    function cumpleFiltrosDivision(div) {
+      const estilo = div.estilo || "";
+      const grupo = div.categoria || div.grupo || "";
+      const peso = String(div.peso || "").replace("kg", "").trim();
+  
+      if (filtroEstilo !== "Todos" && estilo !== filtroEstilo) return false;
+      if (filtroGrupo !== "Todos" && grupo !== filtroGrupo) return false;
+      if (filtroPeso !== "Todos" && peso !== filtroPeso) return false;
+      return true;
+    }
+  
     function tablaRanking(lista) {
       if (!lista.length) {
         return `<div class="error">No hay atletas para mostrar con este filtro.</div>`;
       }
-
+  
       return `
         <div class="table-wrap">
           <table>
@@ -680,7 +714,6 @@
                 <th>DIF</th>
               </tr>
             </thead>
-
             <tbody>
               ${lista.map(a => `
                 <tr>
@@ -709,87 +742,36 @@
         </div>
       `;
     }
-
-    function renderGeneral() {
-      const texto = textoBusqueda();
-      let lista = [...(rankingData.ranking || [])];
-
-      lista = lista.filter(a => coincideBusquedaAtleta(a, texto));
-      lista = lista.filter(a=>cumpleFiltrosUWW(a));
-
-      $("topSection").innerHTML = "";
-      renderTop(rankingData.ranking || []);
-
-      $("contenido").innerHTML = `
-        <div class="mode-note">
-          Top general del evento: esta vista mezcla todas las divisiones y sirve como estadística general de atletas.
-        </div>
-        ${tablaRanking(lista)}
-      `;
-    }
-
-    function renderCampeones() {
-
-      const texto = textoBusqueda();
-
-      let lista = [...(rankingData.ranking || [])];
-
-      lista = lista.filter(a => a.campeon);
-
-      lista = lista.filter(
-          a => coincideBusquedaAtleta(a, texto)
-      );
-
-      lista = lista.filter(
-          a => cumpleFiltrosUWW(a)
-      );
-
-      $("topSection").innerHTML = "";
-
-      $("contenido").innerHTML = `
-          <div class="mode-note">
-            Campeones del evento por divisiones.
-          </div>
-
-          ${tablaRanking(lista)}
-      `;
-      }
-
+  
     function renderDivisiones() {
       const texto = textoBusqueda();
-      const divisiones = rankingData.divisiones && rankingData.divisiones.length
-        ? rankingData.divisiones
-        : [{
-            titulo: "GENERAL",
-            ranking: rankingData.ranking || []
-          }];
-
+      const divisiones = rankingData.divisiones || [];
+  
       $("topSection").innerHTML = "";
-
+  
       if (!divisiones.length) {
-        $("contenido").innerHTML = `<div class="error">No hay divisiones disponibles en el ranking.</div>`;
+        $("contenido").innerHTML = `<div class="error">No hay divisiones disponibles. Revisa que el JSON tenga la sección divisiones.</div>`;
         return;
       }
-
+  
       let html = `
         <div class="mode-note">
-          Vista por divisiones/pesos: esta es la forma principal para revisar resultados de atletas por categoría, estilo y peso.
+          Vista por divisiones/pesos: forma principal estilo UWW para revisar resultados por categoría, estilo y peso.
         </div>
       `;
-
+  
       let totalMostradas = 0;
-
+  
       divisiones.forEach(div => {
-        let lista = [...(div.ranking || [])];
-
+        if (!cumpleFiltrosDivision(div)) return;
+  
+        let lista = [...(div.ranking || [])].map(normalizarAtleta);
         lista = lista.filter(a => coincideBusquedaAtleta(a, texto));
-
-        if (!lista.length) {
-          return;
-        }
-
+  
+        if (!lista.length) return;
+  
         totalMostradas += 1;
-
+  
         html += `
           <section class="division-card">
             <div class="division-header">
@@ -799,187 +781,138 @@
                   ${safeHtml(div.sistema || "")}
                 </div>
               </div>
-
               <div class="division-meta">
                 ${valor(div.total_atletas)} atletas<br>
                 ${valor(div.total_combates)} combates
               </div>
             </div>
-
             ${tablaRanking(lista)}
           </section>
         `;
       });
-
-      if (!totalMostradas) {
-        $("contenido").innerHTML = `<div class="error">No hay divisiones para mostrar con este filtro.</div>`;
-        return;
-      }
-
-      $("contenido").innerHTML = html;
+  
+      $("contenido").innerHTML = totalMostradas
+        ? html
+        : `<div class="error">No hay divisiones para mostrar con este filtro.</div>`;
     }
-
-    function cumpleFiltrosUWW(a){
-
-      if(
-        filtroEstilo!=="Todos" &&
-        (a.estilo||"")!==filtroEstilo
-      ){
-        return false;
-      }
-
-      if(
-        filtroGrupo!=="Todos" &&
-        (a.grupo||"")!==filtroGrupo
-      ){
-        return false;
-      }
-
-      if(
-        filtroPeso!=="Todos" &&
-        String(a.peso||"")!==filtroPeso
-      ){
-        return false;
-      }
-
-      return true;
-      }
-
-
-      function crearBotonesFiltro(
-      contenedorId,
-      valores,
-      valorActivo,
-      callback
-      ){
-
-      const cont=document.getElementById(contenedorId);
-
-      cont.className="filter-row";
-
-      cont.innerHTML=valores.map(v=>`
-
-          <div
-              class="filter-chip ${v===valorActivo?'active':''}"
-              data-v="${v}"
-          >
-              ${v}
-          </div>
-
+  
+    function renderGeneral() {
+      const texto = textoBusqueda();
+  
+      let lista = [...(rankingData.ranking || [])];
+      lista = lista.filter(a => coincideBusquedaAtleta(a, texto));
+      lista = lista.filter(a => cumpleFiltrosUWW(a));
+  
+      $("topSection").innerHTML = "";
+  
+      $("contenido").innerHTML = `
+        <div class="mode-note">
+          Top general del evento: mezcla todas las divisiones y sirve como estadística general de atletas.
+        </div>
+        ${tablaRanking(lista)}
+      `;
+    }
+  
+    function renderCampeones() {
+      const texto = textoBusqueda();
+  
+      let lista = [...(rankingData.ranking || [])];
+      lista = lista.filter(a => a.campeon);
+      lista = lista.filter(a => coincideBusquedaAtleta(a, texto));
+      lista = lista.filter(a => cumpleFiltrosUWW(a));
+  
+      $("topSection").innerHTML = "";
+  
+      $("contenido").innerHTML = `
+        <div class="mode-note">
+          Campeones del evento por divisiones.
+        </div>
+        ${tablaRanking(lista)}
+      `;
+    }
+  
+    function crearBotonesFiltro(contenedorId, valores, valorActivo, callback) {
+      const cont = document.getElementById(contenedorId);
+  
+      cont.className = "filter-row";
+  
+      cont.innerHTML = valores.map(v => `
+        <div class="filter-chip ${v === valorActivo ? "active" : ""}" data-v="${safeHtml(v)}">
+          ${safeHtml(v)}
+        </div>
       `).join("");
-
-      cont.querySelectorAll(".filter-chip")
-      .forEach(btn=>{
-
-          btn.onclick=()=>{
-
-              callback(
-                  btn.dataset.v
-              );
-
-              render();
-
-          };
-
+  
+      cont.querySelectorAll(".filter-chip").forEach(btn => {
+        btn.onclick = () => {
+          callback(btn.dataset.v);
+          construirFiltros();
+          render();
+        };
       });
-
+    }
+  
+    function construirFiltros() {
+      const atletas = rankingData.ranking || [];
+      const divisiones = rankingData.divisiones || [];
+  
+      const estilos = new Set();
+      const grupos = new Set();
+      const pesos = new Set();
+  
+      atletas.forEach(a => {
+        if (a.estilo) estilos.add(a.estilo);
+        if (a.grupo) grupos.add(a.grupo);
+        if (a.peso) pesos.add(String(a.peso));
+      });
+  
+      divisiones.forEach(d => {
+        if (d.estilo) estilos.add(d.estilo);
+        if (d.categoria) grupos.add(d.categoria);
+        if (d.grupo) grupos.add(d.grupo);
+        if (d.peso) pesos.add(String(d.peso).replace("kg", "").trim());
+      });
+  
+      crearBotonesFiltro("filtroEstilo", ["Todos", ...Array.from(estilos).sort()], filtroEstilo, v => filtroEstilo = v);
+      crearBotonesFiltro("filtroGrupo", ["Todos", ...Array.from(grupos).sort()], filtroGrupo, v => filtroGrupo = v);
+      crearBotonesFiltro("filtroPeso", ["Todos", ...Array.from(pesos).sort((a, b) => Number(a) - Number(b))], filtroPeso, v => filtroPeso = v);
+    }
+  
+    function render() {
+      if (!rankingData) return;
+  
+      if (modo === "divisiones") {
+        renderDivisiones();
+      } else if (modo === "general") {
+        renderGeneral();
+      } else if (modo === "campeones") {
+        renderCampeones();
       }
-
-
-      function construirFiltros(){
-
-      let atletas=
-      rankingData.ranking||[];
-
-      let estilos=[
-          "Todos",
-          ...new Set(
-              atletas
-              .map(a=>a.estilo)
-              .filter(Boolean)
-          )
-      ];
-
-      let grupos=[
-          "Todos",
-          ...new Set(
-              atletas
-              .map(a=>a.grupo)
-              .filter(Boolean)
-          )
-      ];
-
-      let pesos=[
-          "Todos",
-          ...new Set(
-              atletas
-              .map(a=>a.peso)
-              .filter(Boolean)
-          )
-      ];
-
-      crearBotonesFiltro(
-          "filtroEstilo",
-          estilos,
-          filtroEstilo,
-          v=>{
-              filtroEstilo=v;
-          }
-      );
-
-      crearBotonesFiltro(
-          "filtroGrupo",
-          grupos,
-          filtroGrupo,
-          v=>{
-              filtroGrupo=v;
-          }
-      );
-
-      crearBotonesFiltro(
-          "filtroPeso",
-          pesos,
-          filtroPeso,
-          v=>{
-              filtroPeso=v;
-          }
-      );
-
-      }
-
-      function render() {
-        if (!rankingData) return;
-
-        if (modo === "divisiones") {
-          renderDivisiones();
-        } 
-        else if (modo === "general") {
-          renderGeneral();
-        } 
-        else if (modo === "campeones") {
-          renderCampeones();
-        }
-      }
-
+    }
+  
     function cargarDatos(data) {
-      rankingData = data;
+      rankingData = normalizarData(data);
 
-      $("eventoBadge").textContent = data.evento || "TODOS VS TODOS";
-      $("subtitulo").textContent = `Generado: ${data.generado_en || ""}`;
-      $("totalAtletas").textContent = data.total_atletas ?? "--";
-      $("totalCombates").textContent = data.total_combates ?? "--";
-      $("totalRR").textContent = data.conteos?.["Round Robin"] ?? 0;
-      $("totalCH").textContent = data.conteos?.["Champions"] ?? 0;
+      $("eventoBadge").textContent = rankingData.evento || "TODOS VS TODOS";
+      $("subtitulo").textContent = `Generado: ${rankingData.generado_en || ""}`;
+
+      $("totalAtletas").textContent = rankingData.ranking.length || 0;
+      $("totalCombates").textContent = rankingData.total_combates || 0;
+      $("totalRR").textContent = rankingData.conteos?.["Round Robin"] ?? 0;
+      $("totalCH").textContent = rankingData.conteos?.["Champions"] ?? 0;
 
       $("footerInfo").textContent =
-        `Timing Cuba Live | ${data.total_atletas || 0} atletas | ${data.total_con_foto || 0} con foto | ${data.total_divisiones || 0} divisiones | ${data.total_combates || 0} combates leídos`;
+        `Timing Cuba Live | ${rankingData.ranking.length} atletas | ` +
+        `${rankingData.total_con_foto || 0} con foto | ` +
+        `${rankingData.divisiones.length || 0} divisiones | ` +
+        `${rankingData.total_combates || 0} combates`;
 
+      construirFiltros();
       render();
     }
 
     async function iniciar() {
       try {
-        const resp = await fetch(JSON_URL);
+        const resp = await fetch("datos/ranking_atletas.json?v=" + Date.now());
 
         if (!resp.ok) {
           throw new Error("No se pudo cargar datos/ranking_atletas.json");
@@ -987,50 +920,41 @@
 
         const data = await resp.json();
         cargarDatos(data);
-        construirFiltros();
 
       } catch (err) {
         $("contenido").innerHTML = `
           <div class="error">
             Error cargando el ranking.<br><br>
-            Revisa que exista el archivo:<br>
-            <b>web_live_tapices_prueba/datos/ranking_atletas.json</b>
+            Revisa que exista y esté actualizado:<br>
+            <b>datos/ranking_atletas.json</b>
           </div>
         `;
         console.error(err);
       }
     }
-
+  
     $("buscar").addEventListener("input", render);
 
+    $("btnDivisiones").addEventListener("click", () => {
+      modo = "divisiones";
+      activarBoton("btnDivisiones");
+      render();
+    });
 
-    
+    $("btnGeneral").addEventListener("click", () => {
+      modo = "general";
+      activarBoton("btnGeneral");
+      render();
+    });
 
-  
-  iniciar();
+    $("btnCampeones").addEventListener("click", () => {
+      modo = "campeones";
+      activarBoton("btnCampeones");
+      render();
+    });
 
-  let ultimoEstado = "";
+    iniciar();
 
-  setInterval(() => {
-
-    fetch("datos/ranking_atletas.json")
-      .then(res => res.json())
-      .then(data => {
-
-        const nuevoEstado = JSON.stringify(data);
-
-        if (nuevoEstado !== ultimoEstado) {
-          ultimoEstado = nuevoEstado;
-
-          rankingData = data;
-
-          render(); // 👈 SOLO actualiza la pantalla
-        }
-
-      })
-      .catch(err => console.log("Error live ranking", err));
-
-  }, 3000);
-</script>
+  </script>
 </body>
 </html>
