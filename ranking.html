@@ -531,7 +531,7 @@
   </main>
 
   <script>
-    const JSON_URL = "datos/ranking_atletas.json?v=" + Date.now();
+    const JSON_URL = "datos/ranking_atletas_live.json?v=" + Date.now();
   
     let rankingData = null;
     let modo = "divisiones";
@@ -912,10 +912,10 @@
 
     async function iniciar() {
       try {
-        const resp = await fetch("datos/ranking_atletas.json?v=" + Date.now());
+        const resp = await fetch("datos/ranking_atletas_live.json?v=" + Date.now());
 
         if (!resp.ok) {
-          throw new Error("No se pudo cargar datos/ranking_atletas.json");
+          throw new Error("No se pudo cargar datos/ranking_atletas_live.json");
         }
 
         const data = await resp.json();
@@ -926,7 +926,7 @@
           <div class="error">
             Error cargando el ranking.<br><br>
             Revisa que exista y esté actualizado:<br>
-            <b>datos/ranking_atletas.json</b>
+            <b>datos/ranking_atletas_live.json</b>
           </div>
         `;
         console.error(err);
@@ -958,4 +958,5 @@
   </script>
 </body>
 </html>
+
 
