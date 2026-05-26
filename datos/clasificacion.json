@@ -1,24 +1,309 @@
 {
-  "evento_nombre": "TODOS LOS EVENTOS",
+  "evento_nombre": "TODOS VS TODOS",
   "sistema": "UWW Original",
-  "criterio": "Posición final",
-  "generado_en": "2026-05-26 10:10:15",
-  "total_equipos": 1,
+  "fuente": "Round Robin + Champions",
+  "criterio": "Posicion final por division",
+  "generado_en": "2026-05-26 12:15:38",
+  "total_equipos": 2,
+  "total_divisiones": 5,
+  "sistemas": {
+    "Round Robin": 2,
+    "Champions": 3
+  },
   "clasificacion": [
     {
-      "nombre": "SIN EQUIPO",
-      "equipo": "SIN EQUIPO",
-      "primero": 2,
-      "segundo": 2,
-      "tercero": 2,
-      "cuarto": 0,
-      "quinto": 0,
-      "sexto": 0,
+      "nombre": "CUB",
+      "equipo": "CUB",
+      "primero": 4,
+      "segundo": 4,
+      "tercero": 3,
+      "cuarto": 3,
+      "quinto": 3,
+      "sexto": 1,
+      "septimo": 1,
+      "octavo": 0,
+      "noveno": 0,
+      "decimo": 0,
+      "puntos_uww": 308,
+      "divisiones": [
+        {
+          "posicion": 1,
+          "puntos": 25,
+          "atleta": "YURIANDY JOSUE",
+          "sistema": "Round Robin",
+          "division": "FS U11/12 28 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "28"
+        },
+        {
+          "posicion": 2,
+          "puntos": 20,
+          "atleta": "JOSE LUIS ARIAS",
+          "sistema": "Round Robin",
+          "division": "FS U11/12 28 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "28"
+        },
+        {
+          "posicion": 2,
+          "puntos": 20,
+          "atleta": "DAYAN REYES",
+          "sistema": "Champions",
+          "division": "FS U11/12 32 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "32"
+        },
+        {
+          "posicion": 4,
+          "puntos": 12,
+          "atleta": "JAIRO BOUSO",
+          "sistema": "Champions",
+          "division": "FS U11/12 32 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "32"
+        },
+        {
+          "posicion": 6,
+          "puntos": 9,
+          "atleta": "ALEJANDRO GONZALES",
+          "sistema": "Champions",
+          "division": "FS U11/12 32 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "32"
+        },
+        {
+          "posicion": 1,
+          "puntos": 25,
+          "atleta": "LESMAILIE COCA",
+          "sistema": "Champions",
+          "division": "FS U11/12 38 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "38"
+        },
+        {
+          "posicion": 2,
+          "puntos": 20,
+          "atleta": "CHRIS NOA",
+          "sistema": "Champions",
+          "division": "FS U11/12 38 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "38"
+        },
+        {
+          "posicion": 3,
+          "puntos": 15,
+          "atleta": "ALDIEL MARIN",
+          "sistema": "Champions",
+          "division": "FS U11/12 38 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "38"
+        },
+        {
+          "posicion": 5,
+          "puntos": 10,
+          "atleta": "NEYMAR ANDRES",
+          "sistema": "Champions",
+          "division": "FS U11/12 38 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "38"
+        },
+        {
+          "posicion": 1,
+          "puntos": 25,
+          "atleta": "FABIAN LEROY",
+          "sistema": "Round Robin",
+          "division": "FS U11/12 46 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "46"
+        },
+        {
+          "posicion": 2,
+          "puntos": 20,
+          "atleta": "YOTUEL JOBA",
+          "sistema": "Round Robin",
+          "division": "FS U11/12 46 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "46"
+        },
+        {
+          "posicion": 3,
+          "puntos": 15,
+          "atleta": "HANS PEREZ",
+          "sistema": "Round Robin",
+          "division": "FS U11/12 46 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "46"
+        },
+        {
+          "posicion": 4,
+          "puntos": 12,
+          "atleta": "RANDY TITO",
+          "sistema": "Round Robin",
+          "division": "FS U11/12 46 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "46"
+        },
+        {
+          "posicion": 5,
+          "puntos": 10,
+          "atleta": "GEOVANY POZO",
+          "sistema": "Round Robin",
+          "division": "FS U11/12 46 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "46"
+        },
+        {
+          "posicion": 1,
+          "puntos": 25,
+          "atleta": "HANNEL COFFINY",
+          "sistema": "Champions",
+          "division": "FS U11/12 53 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "53"
+        },
+        {
+          "posicion": 3,
+          "puntos": 15,
+          "atleta": "ERICK DIAZ",
+          "sistema": "Champions",
+          "division": "FS U11/12 53 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "53"
+        },
+        {
+          "posicion": 4,
+          "puntos": 12,
+          "atleta": "NIXANDER NEGRET",
+          "sistema": "Champions",
+          "division": "FS U11/12 53 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "53"
+        },
+        {
+          "posicion": 5,
+          "puntos": 10,
+          "atleta": "CRISTIAN YOEL",
+          "sistema": "Champions",
+          "division": "FS U11/12 53 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "53"
+        },
+        {
+          "posicion": 7,
+          "puntos": 8,
+          "atleta": "YORDANIS RIVERA",
+          "sistema": "Champions",
+          "division": "FS U11/12 53 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "53"
+        }
+      ]
+    },
+    {
+      "nombre": "CH",
+      "equipo": "CH",
+      "primero": 1,
+      "segundo": 1,
+      "tercero": 1,
+      "cuarto": 1,
+      "quinto": 1,
+      "sexto": 2,
       "septimo": 0,
       "octavo": 0,
       "noveno": 0,
       "decimo": 0,
-      "puntos_uww": 120
+      "puntos_uww": 100,
+      "divisiones": [
+        {
+          "posicion": 1,
+          "puntos": 25,
+          "atleta": "ANTHONY ARAMBURU",
+          "sistema": "Champions",
+          "division": "FS U11/12 32 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "32"
+        },
+        {
+          "posicion": 3,
+          "puntos": 15,
+          "atleta": "FRANK MARTINEZ LABRADA",
+          "sistema": "Champions",
+          "division": "FS U11/12 32 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "32"
+        },
+        {
+          "posicion": 5,
+          "puntos": 10,
+          "atleta": "ABRAHEM ARROYO CRUZ",
+          "sistema": "Champions",
+          "division": "FS U11/12 32 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "32"
+        },
+        {
+          "posicion": 4,
+          "puntos": 12,
+          "atleta": "MATTEO ORTIZ ARRIETE",
+          "sistema": "Champions",
+          "division": "FS U11/12 38 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "38"
+        },
+        {
+          "posicion": 6,
+          "puntos": 9,
+          "atleta": "ENMANUEL ABREU VERANES",
+          "sistema": "Champions",
+          "division": "FS U11/12 38 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "38"
+        },
+        {
+          "posicion": 2,
+          "puntos": 20,
+          "atleta": "VICTOR GARCIA MARCHENA",
+          "sistema": "Champions",
+          "division": "FS U11/12 53 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "53"
+        },
+        {
+          "posicion": 6,
+          "puntos": 9,
+          "atleta": "MAYKOL GUTIERREZ",
+          "sistema": "Champions",
+          "division": "FS U11/12 53 kg",
+          "estilo": "FS",
+          "categoria": "U11/12",
+          "peso": "53"
+        }
+      ]
     }
   ]
 }
