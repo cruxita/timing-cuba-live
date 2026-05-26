@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clasificación por Equipos - Timing Cuba Live</title>
+  <title>Clasificacion por Equipos - Timing Cuba Live</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -11,11 +11,9 @@
     :root {
       --oro: #c89a45;
       --oro2: #e2b96d;
-      --fondo: #050505;
       --linea: rgba(200, 154, 69, 0.45);
-      --panel: rgba(0, 0, 0, 0.82);
       --texto: #ffffff;
-      --suave: #cfcfcf;
+      --panel: rgba(0, 0, 0, 0.82);
     }
 
     body {
@@ -30,7 +28,7 @@
     }
 
     .page {
-      width: min(1320px, calc(100% - 28px));
+      width: min(1420px, calc(100% - 28px));
       margin: 0 auto;
       padding: 22px 0 42px;
     }
@@ -57,7 +55,7 @@
     .title h1 {
       margin: 0;
       color: var(--oro);
-      font-size: clamp(32px, 4vw, 56px);
+      font-size: clamp(31px, 4vw, 56px);
       font-weight: 900;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -93,9 +91,9 @@
       border-radius: 18px;
       background: rgba(0, 0, 0, 0.64);
       padding: 14px 18px;
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 12px;
       box-shadow: 0 0 16px rgba(200, 154, 69, 0.12);
     }
@@ -106,9 +104,7 @@
       min-height: 46px;
     }
 
-    .mini:last-child {
-      border-right: none;
-    }
+    .mini:last-child { border-right: none; }
 
     .mini-label {
       color: var(--oro2);
@@ -126,31 +122,37 @@
       text-transform: uppercase;
     }
 
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
+    .filters {
+      border: 2px solid rgba(200, 154, 69, 0.28);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.52);
+      padding: 13px;
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: 1fr auto;
       gap: 10px;
-      justify-content: center;
-      margin: 18px 0;
+      align-items: center;
     }
 
-    .tab-btn {
-      border: 2px solid rgba(200, 154, 69, 0.52);
-      background: rgba(0, 0, 0, 0.70);
-      color: var(--oro);
-      padding: 11px 16px;
-      border-radius: 999px;
+    input, button {
+      border: 1px solid rgba(200, 154, 69, 0.38);
+      background: rgba(255, 255, 255, 0.07);
+      color: white;
+      border-radius: 12px;
+      padding: 12px 11px;
       font-size: 14px;
       font-weight: 900;
+      outline: none;
       text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(200, 154, 69, 0.13);
     }
 
-    .tab-btn.active {
-      background: rgba(200, 154, 69, 0.20);
-      color: white;
-      border-color: var(--oro);
+    input { width: 100%; }
+
+    .clear-btn {
+      cursor: pointer;
+      background: rgba(200, 154, 69, 0.14);
+      color: var(--oro2);
+      white-space: nowrap;
     }
 
     .uww-scale {
@@ -162,8 +164,7 @@
 
     .scale-pill {
       border: 2px solid rgba(200, 154, 69, 0.46);
-      background:
-        linear-gradient(180deg, rgba(200, 154, 69, 0.16), rgba(0, 0, 0, 0.70));
+      background: linear-gradient(180deg, rgba(200, 154, 69, 0.16), rgba(0, 0, 0, 0.70));
       border-radius: 14px;
       padding: 10px 8px;
       text-align: center;
@@ -185,16 +186,90 @@
       font-weight: 900;
     }
 
-    @media (max-width: 780px) {
-      .uww-scale {
-        grid-template-columns: repeat(5, 1fr);
-      }
+    .podium {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1fr;
+      gap: 14px;
+      align-items: end;
+      margin: 20px 0 18px;
     }
 
-    @media (max-width: 460px) {
-      .uww-scale {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .podium-card {
+      border: 3px solid rgba(200, 154, 69, 0.34);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top, rgba(200, 154, 69, 0.18), transparent 44%),
+        rgba(0, 0, 0, 0.76);
+      padding: 18px 14px;
+      text-align: center;
+      min-height: 195px;
+      box-shadow: 0 0 18px rgba(200, 154, 69, 0.14);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .podium-card.first {
+      min-height: 238px;
+      border-color: rgba(242, 201, 76, 0.70);
+    }
+
+    .podium-card.second { border-color: rgba(216, 216, 216, 0.50); }
+    .podium-card.third { border-color: rgba(184, 121, 61, 0.62); }
+
+    .place-medal {
+      width: 62px;
+      height: 62px;
+      border-radius: 999px;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 900;
+      color: #111;
+    }
+
+    .m1 { background: #f2c94c; }
+    .m2 { background: #d8d8d8; }
+    .m3 { background: #b8793d; color: white; }
+
+    .podium-name {
+      color: white;
+      font-size: clamp(18px, 2.2vw, 27px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.1;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .podium-points {
+      margin-top: 10px;
+      color: var(--oro2);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .podium-label {
+      color: #d8d8d8;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-top: 5px;
+      letter-spacing: 1px;
+    }
+
+    .podium-detail {
+      margin-top: 10px;
+      color: rgba(255,255,255,0.78);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.45;
     }
 
     .panel {
@@ -203,10 +278,9 @@
       background:
         radial-gradient(circle at top left, rgba(200, 154, 69, 0.14), transparent 38%),
         rgba(0, 0, 0, 0.82);
-      box-shadow:
-        0 0 18px rgba(200, 154, 69, 0.20),
-        inset 0 0 24px rgba(200, 154, 69, 0.05);
+      box-shadow: 0 0 18px rgba(200, 154, 69, 0.20);
       overflow: hidden;
+      margin-top: 18px;
     }
 
     .panel-head {
@@ -214,9 +288,8 @@
       grid-template-columns: 1fr auto;
       align-items: center;
       gap: 12px;
-      padding: 20px 22px;
-      background:
-        linear-gradient(135deg, rgba(200, 154, 69, 0.28), rgba(0, 0, 0, 0.12));
+      padding: 18px 20px;
+      background: linear-gradient(135deg, rgba(200, 154, 69, 0.28), rgba(0, 0, 0, 0.12));
       border-bottom: 2px solid var(--linea);
     }
 
@@ -227,7 +300,6 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       line-height: 1;
-      text-shadow: 0 0 10px rgba(200, 154, 69, 0.34);
     }
 
     .note {
@@ -239,21 +311,27 @@
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
+      white-space: nowrap;
     }
+
+    .content { padding: 18px; }
 
     .table-wrap {
       width: 100%;
       overflow-x: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 1120px;
+      min-width: 1160px;
+      background: rgba(0,0,0,0.28);
     }
 
     thead th {
-      background: rgba(200, 154, 69, 0.12);
+      background: rgba(200, 154, 69, 0.13);
       color: var(--oro2);
       font-size: 13px;
       font-weight: 900;
@@ -274,13 +352,10 @@
       text-transform: uppercase;
     }
 
-    tbody tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    tbody tr.top1 {
-      background: linear-gradient(90deg, rgba(200, 154, 69, 0.22), rgba(255, 255, 255, 0.03));
-    }
+    tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.035); }
+    tbody tr.top1 { background: linear-gradient(90deg, rgba(242, 201, 76, 0.24), rgba(255, 255, 255, 0.03)); }
+    tbody tr.top2 { background: linear-gradient(90deg, rgba(216, 216, 216, 0.14), rgba(255, 255, 255, 0.02)); }
+    tbody tr.top3 { background: linear-gradient(90deg, rgba(184, 121, 61, 0.18), rgba(255, 255, 255, 0.02)); }
 
     .pos {
       color: var(--oro);
@@ -292,32 +367,32 @@
       text-align: left;
       font-size: 18px;
       color: white;
-      min-width: 210px;
+      min-width: 220px;
     }
-
-    .medal {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      color: #111;
-      font-weight: 900;
-      box-shadow: 0 0 10px rgba(255,255,255,0.15);
-    }
-
-    .gold { background: #f2c94c; }
-    .silver { background: #d9d9d9; }
-    .bronze { background: #c48845; }
 
     .points {
       color: var(--oro2);
-      font-size: 21px;
+      font-size: 23px;
     }
 
+    .medal-mini {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
+      padding: 0 9px;
+      border-radius: 999px;
+      color: #111;
+      font-weight: 900;
+    }
+
+    .gold { background: #f2c94c; }
+    .silver { background: #d8d8d8; }
+    .bronze { background: #b8793d; color: white; }
+
     .empty {
-      padding: 42px 18px;
+      padding: 44px 18px;
       text-align: center;
       color: #cfcfcf;
       font-size: 20px;
@@ -335,11 +410,10 @@
       font-size: 14px;
       font-weight: 800;
       line-height: 1.45;
+      text-transform: uppercase;
     }
 
-    .rules strong {
-      color: var(--oro2);
-    }
+    .rules strong { color: var(--oro2); }
 
     .footer {
       text-align: center;
@@ -348,6 +422,13 @@
       font-weight: 900;
       margin-top: 18px;
       text-transform: uppercase;
+    }
+
+    @media (max-width: 1080px) {
+      .summary { grid-template-columns: 1fr 1fr; }
+      .uww-scale { grid-template-columns: repeat(5, 1fr); }
+      .podium { grid-template-columns: 1fr; }
+      .podium-card, .podium-card.first { min-height: 178px; }
     }
 
     @media (max-width: 980px) {
@@ -361,22 +442,12 @@
         height: 70px;
       }
 
-      .title {
-        text-align: left;
-      }
+      .title { text-align: left; }
 
       .menu-btn {
         grid-column: 1 / -1;
         justify-self: center;
         padding: 10px 18px;
-      }
-
-      .summary {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .mini:nth-child(2) {
-        border-right: none;
       }
 
       .panel-head {
@@ -385,15 +456,13 @@
       }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 640px) {
       .page {
-        width: min(100% - 16px, 1320px);
+        width: min(100% - 16px, 1420px);
         padding-top: 12px;
       }
 
-      .summary {
-        grid-template-columns: 1fr;
-      }
+      .summary { grid-template-columns: 1fr; }
 
       .mini {
         border-right: none;
@@ -401,13 +470,10 @@
         padding-bottom: 8px;
       }
 
-      .mini:last-child {
-        border-bottom: none;
-      }
-
-      .panel-title {
-        font-size: 24px;
-      }
+      .filters { grid-template-columns: 1fr; }
+      .uww-scale { grid-template-columns: repeat(2, 1fr); }
+      .panel-title { font-size: 24px; }
+      .content { padding: 10px; }
     }
   </style>
 </head>
@@ -415,38 +481,45 @@
 <body>
   <main class="page">
     <header class="topbar">
-      <div>
-        <img class="logo" src="logo.png" alt="Timing Cuba Logo" />
-      </div>
+      <div><img class="logo" src="logo.png" alt="Timing Cuba Logo" /></div>
 
       <div class="title">
-        <h1>Clasificación</h1>
-        <div class="sub">Ranking por equipos</div>
+        <h1>Clasificacion</h1>
+        <div class="sub">Por equipos - Regla UWW original</div>
       </div>
 
-      <a class="menu-btn" href="https://cruxita.github.io/timing-cuba-live/menu.html?v=10">Menú</a>
+      <a class="menu-btn" href="menu.html?v=10">Menu</a>
     </header>
 
     <section class="summary">
       <div class="mini">
         <div class="mini-label">Evento</div>
-        <div id="evento_nombre" class="mini-value">Timing Cuba Live</div>
+        <div id="evento_nombre" class="mini-value">TODOS LOS EVENTOS</div>
       </div>
       <div class="mini">
-        <div class="mini-label">Sistema</div>
-        <div class="mini-value">UWW Original</div>
+        <div class="mini-label">Equipos</div>
+        <div id="total_equipos" class="mini-value">0</div>
       </div>
       <div class="mini">
-        <div class="mini-label">Criterio</div>
-        <div class="mini-value">Posición final</div>
+        <div class="mini-label">Lider</div>
+        <div id="lider_nombre" class="mini-value">-</div>
+      </div>
+      <div class="mini">
+        <div class="mini-label">Puntos lider</div>
+        <div id="lider_puntos" class="mini-value">0</div>
       </div>
       <div class="mini">
         <div class="mini-label">Estado</div>
-        <div id="estado_datos" class="mini-value">Esperando datos</div>
+        <div id="estado_datos" class="mini-value">Cargando...</div>
       </div>
     </section>
 
-    <section class="uww-scale" aria-label="Escala de puntos UWW por posición">
+    <section class="filters">
+      <input id="buscar" type="search" placeholder="Buscar equipo, pais o club..." />
+      <button id="limpiar_filtros" class="clear-btn" type="button">Limpiar</button>
+    </section>
+
+    <section class="uww-scale">
       <div class="scale-pill"><strong>1ro</strong><span>25</span></div>
       <div class="scale-pill"><strong>2do</strong><span>20</span></div>
       <div class="scale-pill"><strong>3ro</strong><span>15</span></div>
@@ -459,50 +532,64 @@
       <div class="scale-pill"><strong>10mo</strong><span>2</span></div>
     </section>
 
+    <section id="podium" class="podium"></section>
+
     <section class="panel">
       <div class="panel-head">
-        <div id="titulo_tabla" class="panel-title">Clasificación por equipos</div>
-        <div class="note">Posiciones finales UWW</div>
+        <div class="panel-title">Tabla general</div>
+        <div class="note">Desempate por mejores posiciones</div>
       </div>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Lugar</th>
-              <th>Equipo</th>
-              <th>1ro</th>
-              <th>2do</th>
-              <th>3ro</th>
-              <th>4to</th>
-              <th>5to</th>
-              <th>6to</th>
-              <th>7mo</th>
-              <th>8vo</th>
-              <th>9no</th>
-              <th>10mo</th>
-              <th>Puntos UWW</th>
-            </tr>
-          </thead>
-          <tbody id="tabla_clasificacion">
-            <tr>
-              <td colspan="13">
-                <div class="empty">
-                  Clasificación lista para conectar.<br />
-                  Cuando el programa mande <strong>datos/clasificacion.json</strong>, aquí saldrá el ranking por equipos.
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="content">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Pos.</th>
+                <th>Equipo</th>
+                <th>1ro</th>
+                <th>2do</th>
+                <th>3ro</th>
+                <th>4to</th>
+                <th>5to</th>
+                <th>6to</th>
+                <th>7mo</th>
+                <th>8vo</th>
+                <th>9no</th>
+                <th>10mo</th>
+                <th>Puntos</th>
+              </tr>
+            </thead>
+            <tbody id="tabla_clasificacion">
+              <tr>
+                <td colspan="13">
+                  <div class="empty">Cargando clasificacion...</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rules">
+          <strong>Regla principal UWW:</strong>
+          1ro = 25 puntos, 2do = 20, 3ro = 15, 4to = 12, 5to = 10,
+          6to = 9, 7mo = 8, 8vo = 6, 9no = 4 y 10mo = 2.
+          El desempate se ordena por mejores posiciones: mas primeros lugares,
+          luego segundos, terceros, cuartos, y asi sucesivamente.
+        </div>
       </div>
     </section>
-<div class="footer">Timing Cuba Live · Clasificación por equipos</div>
+
+    <div class="footer">Timing Cuba Live - Clasificacion por equipos</div>
   </main>
 
   <script>
     var DATA_URL = "datos/clasificacion.json";
     var datosOriginales = [];
+
+    function byId(id) {
+      return document.getElementById(id);
+    }
 
     function escapeHtml(txt) {
       return String(txt || "")
@@ -513,36 +600,55 @@
         .replace(/'/g, "&#039;");
     }
 
-    function num(v) {
-      var n = Number(v || 0);
-      return isNaN(n) ? 0 : n;
+    function normalizar(txt) {
+      return String(txt || "").trim().toUpperCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, " ");
     }
 
-    function pick(item, keys) {
-      for (var i = 0; i < keys.length; i++) {
-        var k = keys[i];
+    function numero(v) {
+      var n = Number(v || 0);
+
+      if (isNaN(n)) {
+        return 0;
+      }
+
+      return n;
+    }
+
+    function pick(item, keys, def) {
+      var i;
+      var k;
+
+      for (i = 0; i < keys.length; i++) {
+        k = keys[i];
 
         if (item[k] !== undefined && item[k] !== null && item[k] !== "") {
           return item[k];
         }
       }
 
-      return 0;
+      if (def === undefined) {
+        return 0;
+      }
+
+      return def;
     }
 
     function calcularFila(item) {
-      var primero = num(pick(item, ["primero", "primeros", "p1", "pos1"]));
-      var segundo = num(pick(item, ["segundo", "segundos", "p2", "pos2"]));
-      var tercero = num(pick(item, ["tercero", "terceros", "p3", "pos3"]));
-      var cuarto = num(pick(item, ["cuarto", "cuartos", "p4", "pos4"]));
-      var quinto = num(pick(item, ["quinto", "quintos", "p5", "pos5"]));
-      var sexto = num(pick(item, ["sexto", "sextos", "p6", "pos6"]));
-      var septimo = num(pick(item, ["septimo", "séptimo", "septimos", "séptimos", "p7", "pos7"]));
-      var octavo = num(pick(item, ["octavo", "octavos", "p8", "pos8"]));
-      var noveno = num(pick(item, ["noveno", "novenos", "p9", "pos9"]));
-      var decimo = num(pick(item, ["decimo", "décimo", "decimos", "décimos", "p10", "pos10"]));
+      var primero = numero(pick(item, ["primero", "primeros", "p1", "pos1"]));
+      var segundo = numero(pick(item, ["segundo", "segundos", "p2", "pos2"]));
+      var tercero = numero(pick(item, ["tercero", "terceros", "p3", "pos3"]));
+      var cuarto = numero(pick(item, ["cuarto", "cuartos", "p4", "pos4"]));
+      var quinto = numero(pick(item, ["quinto", "quintos", "p5", "pos5"]));
+      var sexto = numero(pick(item, ["sexto", "sextos", "p6", "pos6"]));
+      var septimo = numero(pick(item, ["septimo", "septimos", "p7", "pos7"]));
+      var octavo = numero(pick(item, ["octavo", "octavos", "p8", "pos8"]));
+      var noveno = numero(pick(item, ["noveno", "novenos", "p9", "pos9"]));
+      var decimo = numero(pick(item, ["decimo", "decimos", "p10", "pos10"]));
 
-      var puntosUww = num(pick(item, [
+      var puntosUww = numero(pick(item, [
         "puntos_uww",
         "puntos_posicion_uww",
         "puntos_uww_posicion",
@@ -563,8 +669,10 @@
           (decimo * 2);
       }
 
+      var nombre = item.nombre || item.equipo || item.pais || item.club || item.tag || "SIN EQUIPO";
+
       return {
-        nombre: item.nombre || item.equipo || item.pais || item.club || "SIN EQUIPO",
+        nombre: String(nombre).trim(),
         primero: primero,
         segundo: segundo,
         tercero: tercero,
@@ -583,34 +691,148 @@
       var filas = lista.map(calcularFila);
 
       filas.sort(function(a, b) {
-        return (b.puntos_uww - a.puntos_uww) ||
-               (b.primero - a.primero) ||
-               (b.segundo - a.segundo) ||
-               (b.tercero - a.tercero) ||
-               (b.cuarto - a.cuarto) ||
-               (b.quinto - a.quinto) ||
-               (b.sexto - a.sexto) ||
-               (b.septimo - a.septimo) ||
-               (b.octavo - a.octavo) ||
-               (b.noveno - a.noveno) ||
-               (b.decimo - a.decimo) ||
-               a.nombre.localeCompare(b.nombre);
+        var dif;
+
+        dif = b.puntos_uww - a.puntos_uww;
+        if (dif !== 0) return dif;
+
+        dif = b.primero - a.primero;
+        if (dif !== 0) return dif;
+
+        dif = b.segundo - a.segundo;
+        if (dif !== 0) return dif;
+
+        dif = b.tercero - a.tercero;
+        if (dif !== 0) return dif;
+
+        dif = b.cuarto - a.cuarto;
+        if (dif !== 0) return dif;
+
+        dif = b.quinto - a.quinto;
+        if (dif !== 0) return dif;
+
+        dif = b.sexto - a.sexto;
+        if (dif !== 0) return dif;
+
+        dif = b.septimo - a.septimo;
+        if (dif !== 0) return dif;
+
+        dif = b.octavo - a.octavo;
+        if (dif !== 0) return dif;
+
+        dif = b.noveno - a.noveno;
+        if (dif !== 0) return dif;
+
+        dif = b.decimo - a.decimo;
+        if (dif !== 0) return dif;
+
+        return a.nombre.localeCompare(b.nombre);
       });
 
       return filas;
     }
 
-    function pintarTabla() {
-      var tbody = document.getElementById("tabla_clasificacion");
-      if (!tbody) return;
-
+    function filtrarFilas() {
+      var q = normalizar(byId("buscar").value || "");
       var filas = ordenarDatos(datosOriginales);
+
+      if (!q) {
+        return filas;
+      }
+
+      return filas.filter(function(f) {
+        return normalizar(f.nombre).indexOf(q) >= 0;
+      });
+    }
+
+    function detallePosiciones(f) {
+      var partes = [];
+
+      if (f.primero) partes.push("1ro: " + f.primero);
+      if (f.segundo) partes.push("2do: " + f.segundo);
+      if (f.tercero) partes.push("3ro: " + f.tercero);
+      if (f.cuarto) partes.push("4to: " + f.cuarto);
+      if (f.quinto) partes.push("5to: " + f.quinto);
+      if (f.sexto) partes.push("6to: " + f.sexto);
+      if (f.septimo) partes.push("7mo: " + f.septimo);
+      if (f.octavo) partes.push("8vo: " + f.octavo);
+      if (f.noveno) partes.push("9no: " + f.noveno);
+      if (f.decimo) partes.push("10mo: " + f.decimo);
+
+      if (!partes.length) {
+        return "Sin posiciones registradas";
+      }
+
+      return partes.join(" - ");
+    }
+
+    function cardPodium(f, pos, clase, medalla) {
+      if (!f) {
+        return '<div class="podium-card ' + clase + '">' +
+          '<div class="place-medal m' + pos + '">' + medalla + '</div>' +
+          '<div class="podium-name">Pendiente</div>' +
+          '<div class="podium-points">0</div>' +
+          '<div class="podium-label">Puntos</div>' +
+        '</div>';
+      }
+
+      return '<div class="podium-card ' + clase + '">' +
+        '<div class="place-medal m' + pos + '">' + medalla + '</div>' +
+        '<div class="podium-name">' + escapeHtml(f.nombre) + '</div>' +
+        '<div class="podium-points">' + f.puntos_uww + '</div>' +
+        '<div class="podium-label">Puntos UWW</div>' +
+        '<div class="podium-detail">' + escapeHtml(detallePosiciones(f)) + '</div>' +
+      '</div>';
+    }
+
+    function pintarPodium(filas) {
+      var cont = byId("podium");
+
+      if (!cont) {
+        return;
+      }
+
+      if (!filas.length) {
+        cont.innerHTML = "";
+        return;
+      }
+
+      cont.innerHTML =
+        cardPodium(filas[1], 2, "second", "2") +
+        cardPodium(filas[0], 1, "first", "1") +
+        cardPodium(filas[2], 3, "third", "3");
+    }
+
+    function pintarTabla() {
+      var tbody = byId("tabla_clasificacion");
+      var filas = filtrarFilas();
+      var todas = ordenarDatos(datosOriginales);
+      var lider = null;
+
+      if (!tbody) {
+        return;
+      }
+
+      if (todas.length) {
+        lider = todas[0];
+      }
+
+      byId("total_equipos").innerText = filas.length + " / " + datosOriginales.length;
+
+      if (lider) {
+        byId("lider_nombre").innerText = lider.nombre;
+        byId("lider_puntos").innerText = lider.puntos_uww;
+      } else {
+        byId("lider_nombre").innerText = "-";
+        byId("lider_puntos").innerText = "0";
+      }
+
+      pintarPodium(todas);
 
       if (!filas.length) {
         tbody.innerHTML =
           '<tr><td colspan="13"><div class="empty">' +
-          'Clasificación lista para conectar.<br />' +
-          'Cuando el programa mande <strong>datos/clasificacion.json</strong>, aquí saldrá el ranking por equipos.' +
+          'No hay clasificacion para mostrar con esos filtros.' +
           '</div></td></tr>';
         return;
       }
@@ -619,14 +841,32 @@
 
       filas.forEach(function(f, idx) {
         var tr = document.createElement("tr");
+        var primeroHtml = "0";
+        var segundoHtml = "0";
+        var terceroHtml = "0";
+
         if (idx === 0) tr.className = "top1";
+        if (idx === 1) tr.className = "top2";
+        if (idx === 2) tr.className = "top3";
+
+        if (f.primero) {
+          primeroHtml = '<span class="medal-mini gold">' + f.primero + '</span>';
+        }
+
+        if (f.segundo) {
+          segundoHtml = '<span class="medal-mini silver">' + f.segundo + '</span>';
+        }
+
+        if (f.tercero) {
+          terceroHtml = '<span class="medal-mini bronze">' + f.tercero + '</span>';
+        }
 
         tr.innerHTML =
           '<td><span class="pos">' + (idx + 1) + '</span></td>' +
           '<td class="team">' + escapeHtml(f.nombre) + '</td>' +
-          '<td>' + f.primero + '</td>' +
-          '<td>' + f.segundo + '</td>' +
-          '<td>' + f.tercero + '</td>' +
+          '<td>' + primeroHtml + '</td>' +
+          '<td>' + segundoHtml + '</td>' +
+          '<td>' + terceroHtml + '</td>' +
           '<td>' + f.cuarto + '</td>' +
           '<td>' + f.quinto + '</td>' +
           '<td>' + f.sexto + '</td>' +
@@ -640,51 +880,65 @@
       });
     }
 
-    function cambiarVista() {
-      pintarTabla();
-    }
-
     function cargarDatos() {
       var xhr = new XMLHttpRequest();
       xhr.open("GET", DATA_URL + "?t=" + new Date().getTime(), true);
 
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState !== 4) return;
+      xhr.onreadystatechange = function() {
+        var data;
+
+        if (xhr.readyState !== 4) {
+          return;
+        }
 
         if (xhr.status >= 200 && xhr.status < 300) {
           try {
-            var data = JSON.parse(xhr.responseText);
+            data = JSON.parse(xhr.responseText);
 
             if (Array.isArray(data)) {
               datosOriginales = data;
+              byId("evento_nombre").innerText = "TODOS LOS EVENTOS";
             } else if (Array.isArray(data.clasificacion)) {
               datosOriginales = data.clasificacion;
-              if (data.evento_nombre) {
-                document.getElementById("evento_nombre").innerText = data.evento_nombre;
-              }
+              byId("evento_nombre").innerText = data.evento_nombre || "TODOS LOS EVENTOS";
             } else {
               datosOriginales = [];
             }
 
-            document.getElementById("estado_datos").innerText = datosOriginales.length ? "Conectado" : "Sin datos";
+            if (datosOriginales.length) {
+              byId("estado_datos").innerText = "Conectado";
+            } else {
+              byId("estado_datos").innerText = "Sin datos";
+            }
+
             pintarTabla();
           } catch (e) {
-            document.getElementById("estado_datos").innerText = "JSON inválido";
+            byId("estado_datos").innerText = "JSON invalido";
+            datosOriginales = [];
             pintarTabla();
           }
         } else {
-          document.getElementById("estado_datos").innerText = "Sin datos";
+          byId("estado_datos").innerText = "Sin datos";
+          datosOriginales = [];
           pintarTabla();
         }
       };
 
-      xhr.onerror = function () {
-        document.getElementById("estado_datos").innerText = "Sin conexión";
+      xhr.onerror = function() {
+        byId("estado_datos").innerText = "Sin conexion";
+        datosOriginales = [];
         pintarTabla();
       };
 
       xhr.send();
     }
+
+    byId("buscar").addEventListener("input", pintarTabla);
+
+    byId("limpiar_filtros").addEventListener("click", function() {
+      byId("buscar").value = "";
+      pintarTabla();
+    });
 
     cargarDatos();
     setInterval(cargarDatos, 5000);
