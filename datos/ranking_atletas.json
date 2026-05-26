@@ -3,7 +3,7 @@
   "titulo": "Ranking de Atletas",
   "evento": "TODOS VS TODOS",
   "filtro_usado": "EVENTO: TODOS VS TODOS",
-  "generado_en": "2026-05-25 15:22:58",
+  "generado_en": "2026-05-26 06:40:34",
   "conteos": {
     "Timing": 0,
     "Round Robin": 11,
@@ -12,7 +12,7 @@
   },
   "total_combates": 44,
   "total_atletas": 26,
-  "total_con_foto": 4,
+  "total_con_foto": 5,
   "total_divisiones": 5,
   "mejor_atleta": {
     "posicion": 1,
@@ -371,8 +371,8 @@
       "grupo": "",
       "peso": "",
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | FINAL",
-      "foto": "",
-      "tiene_foto": false,
+      "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
+      "tiene_foto": true,
       "iniciales": "CN"
     },
     {
@@ -727,8 +727,8 @@
       "grupo": "",
       "peso": "",
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | FINAL",
-      "foto": "",
-      "tiene_foto": false,
+      "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
+      "tiene_foto": true,
       "iniciales": "CN"
     },
     {
@@ -1670,8 +1670,8 @@
           "grupo": "",
           "peso": "",
           "division_principal": "FS U11/12 38 kg | FINAL",
-          "foto": "",
-          "tiene_foto": false,
+          "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
+          "tiene_foto": true,
           "iniciales": "CN"
         },
         {
