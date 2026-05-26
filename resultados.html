@@ -949,20 +949,70 @@
       xhr.send();
     }
 
+    function resetearFiltrosResultados() {
+      var buscar = $("buscar");
+      var filtroEvento = $("filtro_evento");
+      var filtroSistema = $("filtro_sistema");
+      var filtroDivision = $("filtro_division");
+
+      if (buscar) {
+        buscar.value = "";
+      }
+
+      if (filtroEvento) {
+        filtroEvento.value = "";
+        filtroEvento.selectedIndex = 0;
+      }
+
+      if (filtroSistema) {
+        filtroSistema.value = "";
+        filtroSistema.selectedIndex = 0;
+      }
+
+      if (filtroDivision) {
+        filtroDivision.value = "";
+        filtroDivision.selectedIndex = 0;
+      }
+
+      prepararFiltros();
+
+      if (filtroEvento) {
+        filtroEvento.value = "";
+        filtroEvento.selectedIndex = 0;
+      }
+
+      if (filtroSistema) {
+        filtroSistema.value = "";
+        filtroSistema.selectedIndex = 0;
+      }
+
+      if (filtroDivision) {
+        filtroDivision.value = "";
+        filtroDivision.selectedIndex = 0;
+      }
+
+      pintarBloques();
+    }
+
     ["buscar", "filtro_evento", "filtro_sistema", "filtro_division"].forEach(function(id) {
       var el = $(id);
-      if (!el) return;
+
+      if (!el) {
+        return;
+      }
+
       el.addEventListener("input", pintarBloques);
       el.addEventListener("change", pintarBloques);
     });
 
-    $("limpiar_filtros").addEventListener("click", function() {
-      $("buscar").value = "";
-      $("filtro_evento").value = "";
-      $("filtro_sistema").value = "";
-      $("filtro_division").value = "";
-      pintarBloques();
-    });
+    var botonLimpiar = $("limpiar_filtros");
+
+    if (botonLimpiar) {
+      botonLimpiar.addEventListener("click", function(e) {
+        e.preventDefault();
+        resetearFiltrosResultados();
+      });
+    }
 
     cargarDatos();
     setInterval(cargarDatos, 5000);
