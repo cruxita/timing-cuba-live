@@ -1,309 +1,609 @@
 {
   "evento_nombre": "TODOS VS TODOS",
   "sistema": "UWW Original",
-  "fuente": "Round Robin + Champions",
-  "criterio": "Posicion final por division",
-  "generado_en": "2026-05-26 15:54:03",
+  "criterio": "Posición final",
+  "generado_en": "2026-05-26 16:00:17",
   "total_equipos": 2,
-  "total_divisiones": 5,
-  "sistemas": {
-    "Round Robin": 2,
-    "Champions": 3
-  },
+  "total_eventos": 2,
+  "eventos": [
+    "TODOS VS TODOS",
+    "TODOS VS TODOS",
+    "frfrfrf"
+  ],
   "clasificacion": [
-    {
-      "nombre": "CUB",
-      "equipo": "CUB",
-      "primero": 4,
-      "segundo": 4,
-      "tercero": 3,
-      "cuarto": 3,
-      "quinto": 3,
-      "sexto": 1,
-      "septimo": 1,
-      "octavo": 0,
-      "noveno": 0,
-      "decimo": 0,
-      "puntos_uww": 308,
-      "divisiones": [
-        {
-          "posicion": 1,
-          "puntos": 25,
-          "atleta": "YURIANDY JOSUE",
-          "sistema": "Round Robin",
-          "division": "FS U11/12 28 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "28"
-        },
-        {
-          "posicion": 2,
-          "puntos": 20,
-          "atleta": "JOSE LUIS ARIAS",
-          "sistema": "Round Robin",
-          "division": "FS U11/12 28 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "28"
-        },
-        {
-          "posicion": 2,
-          "puntos": 20,
-          "atleta": "DAYAN REYES",
-          "sistema": "Champions",
-          "division": "FS U11/12 32 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "32"
-        },
-        {
-          "posicion": 4,
-          "puntos": 12,
-          "atleta": "JAIRO BOUSO",
-          "sistema": "Champions",
-          "division": "FS U11/12 32 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "32"
-        },
-        {
-          "posicion": 6,
-          "puntos": 9,
-          "atleta": "ALEJANDRO GONZALES",
-          "sistema": "Champions",
-          "division": "FS U11/12 32 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "32"
-        },
-        {
-          "posicion": 1,
-          "puntos": 25,
-          "atleta": "LESMAILIE COCA",
-          "sistema": "Champions",
-          "division": "FS U11/12 38 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "38"
-        },
-        {
-          "posicion": 2,
-          "puntos": 20,
-          "atleta": "CHRIS NOA",
-          "sistema": "Champions",
-          "division": "FS U11/12 38 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "38"
-        },
-        {
-          "posicion": 3,
-          "puntos": 15,
-          "atleta": "ALDIEL MARIN",
-          "sistema": "Champions",
-          "division": "FS U11/12 38 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "38"
-        },
-        {
-          "posicion": 5,
-          "puntos": 10,
-          "atleta": "NEYMAR ANDRES",
-          "sistema": "Champions",
-          "division": "FS U11/12 38 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "38"
-        },
-        {
-          "posicion": 1,
-          "puntos": 25,
-          "atleta": "FABIAN LEROY",
-          "sistema": "Round Robin",
-          "division": "FS U11/12 46 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "46"
-        },
-        {
-          "posicion": 2,
-          "puntos": 20,
-          "atleta": "YOTUEL JOBA",
-          "sistema": "Round Robin",
-          "division": "FS U11/12 46 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "46"
-        },
-        {
-          "posicion": 3,
-          "puntos": 15,
-          "atleta": "HANS PEREZ",
-          "sistema": "Round Robin",
-          "division": "FS U11/12 46 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "46"
-        },
-        {
-          "posicion": 4,
-          "puntos": 12,
-          "atleta": "RANDY TITO",
-          "sistema": "Round Robin",
-          "division": "FS U11/12 46 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "46"
-        },
-        {
-          "posicion": 5,
-          "puntos": 10,
-          "atleta": "GEOVANY POZO",
-          "sistema": "Round Robin",
-          "division": "FS U11/12 46 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "46"
-        },
-        {
-          "posicion": 1,
-          "puntos": 25,
-          "atleta": "HANNEL COFFINY",
-          "sistema": "Champions",
-          "division": "FS U11/12 53 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "53"
-        },
-        {
-          "posicion": 3,
-          "puntos": 15,
-          "atleta": "ERICK DIAZ",
-          "sistema": "Champions",
-          "division": "FS U11/12 53 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "53"
-        },
-        {
-          "posicion": 4,
-          "puntos": 12,
-          "atleta": "NIXANDER NEGRET",
-          "sistema": "Champions",
-          "division": "FS U11/12 53 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "53"
-        },
-        {
-          "posicion": 5,
-          "puntos": 10,
-          "atleta": "CRISTIAN YOEL",
-          "sistema": "Champions",
-          "division": "FS U11/12 53 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "53"
-        },
-        {
-          "posicion": 7,
-          "puntos": 8,
-          "atleta": "YORDANIS RIVERA",
-          "sistema": "Champions",
-          "division": "FS U11/12 53 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "53"
-        }
-      ]
-    },
     {
       "nombre": "CH",
       "equipo": "CH",
       "primero": 1,
       "segundo": 1,
       "tercero": 1,
-      "cuarto": 1,
-      "quinto": 1,
-      "sexto": 2,
+      "cuarto": 0,
+      "quinto": 0,
+      "sexto": 0,
       "septimo": 0,
       "octavo": 0,
       "noveno": 0,
       "decimo": 0,
-      "puntos_uww": 100,
+      "puntos_uww": 60,
       "divisiones": [
         {
+          "evento": "TODOS VS TODOS",
+          "sistema": "Champions",
+          "division": "FS U11/12 32 KG",
           "posicion": 1,
+          "cantidad": 1,
           "puntos": 25,
-          "atleta": "ANTHONY ARAMBURU",
-          "sistema": "Champions",
-          "division": "FS U11/12 32 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "32"
+          "atletas": "ANTHONY ARAMBURU"
         },
         {
-          "posicion": 3,
-          "puntos": 15,
-          "atleta": "FRANK MARTINEZ LABRADA",
+          "evento": "TODOS VS TODOS",
           "sistema": "Champions",
-          "division": "FS U11/12 32 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "32"
-        },
-        {
-          "posicion": 5,
-          "puntos": 10,
-          "atleta": "ABRAHEM ARROYO CRUZ",
-          "sistema": "Champions",
-          "division": "FS U11/12 32 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "32"
-        },
-        {
-          "posicion": 4,
-          "puntos": 12,
-          "atleta": "MATTEO ORTIZ ARRIETE",
-          "sistema": "Champions",
-          "division": "FS U11/12 38 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "38"
-        },
-        {
-          "posicion": 6,
-          "puntos": 9,
-          "atleta": "ENMANUEL ABREU VERANES",
-          "sistema": "Champions",
-          "division": "FS U11/12 38 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "38"
-        },
-        {
+          "division": "FS U11/12 32 KG",
           "posicion": 2,
+          "cantidad": 1,
           "puntos": 20,
-          "atleta": "VICTOR GARCIA MARCHENA",
-          "sistema": "Champions",
-          "division": "FS U11/12 53 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "53"
+          "atletas": "FRANK MARTINEZ LABRADA"
         },
         {
-          "posicion": 6,
-          "puntos": 9,
-          "atleta": "MAYKOL GUTIERREZ",
+          "evento": "TODOS VS TODOS",
           "sistema": "Champions",
-          "division": "FS U11/12 53 kg",
-          "estilo": "FS",
-          "categoria": "U11/12",
-          "peso": "53"
+          "division": "FS U11/12 53 KG",
+          "posicion": 3,
+          "cantidad": 1,
+          "puntos": 15,
+          "atletas": "VICTOR GARCIA MARCHENA"
         }
-      ]
+      ],
+      "lugar": 1
+    },
+    {
+      "nombre": "HAB",
+      "equipo": "HAB",
+      "primero": 1,
+      "segundo": 1,
+      "tercero": 0,
+      "cuarto": 0,
+      "quinto": 0,
+      "sexto": 0,
+      "septimo": 0,
+      "octavo": 0,
+      "noveno": 0,
+      "decimo": 0,
+      "puntos_uww": 45,
+      "divisiones": [
+        {
+          "evento": "frfrfrf",
+          "sistema": "Champions",
+          "division": "FS U13/15 60 KG",
+          "posicion": 1,
+          "cantidad": 1,
+          "puntos": 25,
+          "atletas": "ABRAHEM ARROYO"
+        },
+        {
+          "evento": "frfrfrf",
+          "sistema": "Champions",
+          "division": "FS U13/15 60 KG",
+          "posicion": 2,
+          "cantidad": 1,
+          "puntos": 20,
+          "atletas": "ARIEL GARCIA"
+        }
+      ],
+      "lugar": 2
     }
-  ]
+  ],
+  "clasificaciones_por_evento": {
+    "TODOS VS TODOS": [
+      {
+        "nombre": "CH",
+        "equipo": "CH",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 1,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 60,
+        "divisiones": [
+          {
+            "evento": "TODOS VS TODOS",
+            "sistema": "Champions",
+            "division": "FS U11/12 32 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ANTHONY ARAMBURU"
+          },
+          {
+            "evento": "TODOS VS TODOS",
+            "sistema": "Champions",
+            "division": "FS U11/12 32 KG",
+            "posicion": 2,
+            "cantidad": 1,
+            "puntos": 20,
+            "atletas": "FRANK MARTINEZ LABRADA"
+          },
+          {
+            "evento": "TODOS VS TODOS",
+            "sistema": "Champions",
+            "division": "FS U11/12 53 KG",
+            "posicion": 3,
+            "cantidad": 1,
+            "puntos": 15,
+            "atletas": "VICTOR GARCIA MARCHENA"
+          }
+        ],
+        "lugar": 1
+      },
+      {
+        "nombre": "HAB",
+        "equipo": "HAB",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 0,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 45,
+        "divisiones": [
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ABRAHEM ARROYO"
+          },
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
+            "posicion": 2,
+            "cantidad": 1,
+            "puntos": 20,
+            "atletas": "ARIEL GARCIA"
+          }
+        ],
+        "lugar": 2
+      }
+    ],
+    "TODOS LOS EVENTOS": [
+      {
+        "nombre": "CH",
+        "equipo": "CH",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 1,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 60,
+        "divisiones": [
+          {
+            "evento": "TODOS VS TODOS",
+            "sistema": "Champions",
+            "division": "FS U11/12 32 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ANTHONY ARAMBURU"
+          },
+          {
+            "evento": "TODOS VS TODOS",
+            "sistema": "Champions",
+            "division": "FS U11/12 32 KG",
+            "posicion": 2,
+            "cantidad": 1,
+            "puntos": 20,
+            "atletas": "FRANK MARTINEZ LABRADA"
+          },
+          {
+            "evento": "TODOS VS TODOS",
+            "sistema": "Champions",
+            "division": "FS U11/12 53 KG",
+            "posicion": 3,
+            "cantidad": 1,
+            "puntos": 15,
+            "atletas": "VICTOR GARCIA MARCHENA"
+          }
+        ],
+        "lugar": 1
+      },
+      {
+        "nombre": "HAB",
+        "equipo": "HAB",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 0,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 45,
+        "divisiones": [
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ABRAHEM ARROYO"
+          },
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
+            "posicion": 2,
+            "cantidad": 1,
+            "puntos": 20,
+            "atletas": "ARIEL GARCIA"
+          }
+        ],
+        "lugar": 2
+      }
+    ],
+    "TODOS": [
+      {
+        "nombre": "CH",
+        "equipo": "CH",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 1,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 60,
+        "divisiones": [
+          {
+            "evento": "TODOS VS TODOS",
+            "sistema": "Champions",
+            "division": "FS U11/12 32 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ANTHONY ARAMBURU"
+          },
+          {
+            "evento": "TODOS VS TODOS",
+            "sistema": "Champions",
+            "division": "FS U11/12 32 KG",
+            "posicion": 2,
+            "cantidad": 1,
+            "puntos": 20,
+            "atletas": "FRANK MARTINEZ LABRADA"
+          },
+          {
+            "evento": "TODOS VS TODOS",
+            "sistema": "Champions",
+            "division": "FS U11/12 53 KG",
+            "posicion": 3,
+            "cantidad": 1,
+            "puntos": 15,
+            "atletas": "VICTOR GARCIA MARCHENA"
+          }
+        ],
+        "lugar": 1
+      },
+      {
+        "nombre": "HAB",
+        "equipo": "HAB",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 0,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 45,
+        "divisiones": [
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ABRAHEM ARROYO"
+          },
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
+            "posicion": 2,
+            "cantidad": 1,
+            "puntos": 20,
+            "atletas": "ARIEL GARCIA"
+          }
+        ],
+        "lugar": 2
+      }
+    ],
+    "frfrfrf": [
+      {
+        "nombre": "HAB",
+        "equipo": "HAB",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 0,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 45,
+        "divisiones": [
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ABRAHEM ARROYO"
+          },
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
+            "posicion": 2,
+            "cantidad": 1,
+            "puntos": 20,
+            "atletas": "ARIEL GARCIA"
+          }
+        ],
+        "lugar": 1
+      }
+    ]
+  },
+  "por_evento": [
+    {
+      "evento": "TODOS VS TODOS",
+      "clasificacion": [
+        {
+          "nombre": "CH",
+          "equipo": "CH",
+          "primero": 1,
+          "segundo": 1,
+          "tercero": 1,
+          "cuarto": 0,
+          "quinto": 0,
+          "sexto": 0,
+          "septimo": 0,
+          "octavo": 0,
+          "noveno": 0,
+          "decimo": 0,
+          "puntos_uww": 60,
+          "divisiones": [
+            {
+              "evento": "TODOS VS TODOS",
+              "sistema": "Champions",
+              "division": "FS U11/12 32 KG",
+              "posicion": 1,
+              "cantidad": 1,
+              "puntos": 25,
+              "atletas": "ANTHONY ARAMBURU"
+            },
+            {
+              "evento": "TODOS VS TODOS",
+              "sistema": "Champions",
+              "division": "FS U11/12 32 KG",
+              "posicion": 2,
+              "cantidad": 1,
+              "puntos": 20,
+              "atletas": "FRANK MARTINEZ LABRADA"
+            },
+            {
+              "evento": "TODOS VS TODOS",
+              "sistema": "Champions",
+              "division": "FS U11/12 53 KG",
+              "posicion": 3,
+              "cantidad": 1,
+              "puntos": 15,
+              "atletas": "VICTOR GARCIA MARCHENA"
+            }
+          ],
+          "lugar": 1
+        },
+        {
+          "nombre": "HAB",
+          "equipo": "HAB",
+          "primero": 1,
+          "segundo": 1,
+          "tercero": 0,
+          "cuarto": 0,
+          "quinto": 0,
+          "sexto": 0,
+          "septimo": 0,
+          "octavo": 0,
+          "noveno": 0,
+          "decimo": 0,
+          "puntos_uww": 45,
+          "divisiones": [
+            {
+              "evento": "frfrfrf",
+              "sistema": "Champions",
+              "division": "FS U13/15 60 KG",
+              "posicion": 1,
+              "cantidad": 1,
+              "puntos": 25,
+              "atletas": "ABRAHEM ARROYO"
+            },
+            {
+              "evento": "frfrfrf",
+              "sistema": "Champions",
+              "division": "FS U13/15 60 KG",
+              "posicion": 2,
+              "cantidad": 1,
+              "puntos": 20,
+              "atletas": "ARIEL GARCIA"
+            }
+          ],
+          "lugar": 2
+        }
+      ],
+      "total_equipos": 2
+    },
+    {
+      "evento": "TODOS VS TODOS",
+      "clasificacion": [
+        {
+          "nombre": "CH",
+          "equipo": "CH",
+          "primero": 1,
+          "segundo": 1,
+          "tercero": 1,
+          "cuarto": 0,
+          "quinto": 0,
+          "sexto": 0,
+          "septimo": 0,
+          "octavo": 0,
+          "noveno": 0,
+          "decimo": 0,
+          "puntos_uww": 60,
+          "divisiones": [
+            {
+              "evento": "TODOS VS TODOS",
+              "sistema": "Champions",
+              "division": "FS U11/12 32 KG",
+              "posicion": 1,
+              "cantidad": 1,
+              "puntos": 25,
+              "atletas": "ANTHONY ARAMBURU"
+            },
+            {
+              "evento": "TODOS VS TODOS",
+              "sistema": "Champions",
+              "division": "FS U11/12 32 KG",
+              "posicion": 2,
+              "cantidad": 1,
+              "puntos": 20,
+              "atletas": "FRANK MARTINEZ LABRADA"
+            },
+            {
+              "evento": "TODOS VS TODOS",
+              "sistema": "Champions",
+              "division": "FS U11/12 53 KG",
+              "posicion": 3,
+              "cantidad": 1,
+              "puntos": 15,
+              "atletas": "VICTOR GARCIA MARCHENA"
+            }
+          ],
+          "lugar": 1
+        },
+        {
+          "nombre": "HAB",
+          "equipo": "HAB",
+          "primero": 1,
+          "segundo": 1,
+          "tercero": 0,
+          "cuarto": 0,
+          "quinto": 0,
+          "sexto": 0,
+          "septimo": 0,
+          "octavo": 0,
+          "noveno": 0,
+          "decimo": 0,
+          "puntos_uww": 45,
+          "divisiones": [
+            {
+              "evento": "frfrfrf",
+              "sistema": "Champions",
+              "division": "FS U13/15 60 KG",
+              "posicion": 1,
+              "cantidad": 1,
+              "puntos": 25,
+              "atletas": "ABRAHEM ARROYO"
+            },
+            {
+              "evento": "frfrfrf",
+              "sistema": "Champions",
+              "division": "FS U13/15 60 KG",
+              "posicion": 2,
+              "cantidad": 1,
+              "puntos": 20,
+              "atletas": "ARIEL GARCIA"
+            }
+          ],
+          "lugar": 2
+        }
+      ],
+      "total_equipos": 2
+    },
+    {
+      "evento": "frfrfrf",
+      "clasificacion": [
+        {
+          "nombre": "HAB",
+          "equipo": "HAB",
+          "primero": 1,
+          "segundo": 1,
+          "tercero": 0,
+          "cuarto": 0,
+          "quinto": 0,
+          "sexto": 0,
+          "septimo": 0,
+          "octavo": 0,
+          "noveno": 0,
+          "decimo": 0,
+          "puntos_uww": 45,
+          "divisiones": [
+            {
+              "evento": "frfrfrf",
+              "sistema": "Champions",
+              "division": "FS U13/15 60 KG",
+              "posicion": 1,
+              "cantidad": 1,
+              "puntos": 25,
+              "atletas": "ABRAHEM ARROYO"
+            },
+            {
+              "evento": "frfrfrf",
+              "sistema": "Champions",
+              "division": "FS U13/15 60 KG",
+              "posicion": 2,
+              "cantidad": 1,
+              "puntos": 20,
+              "atletas": "ARIEL GARCIA"
+            }
+          ],
+          "lugar": 1
+        }
+      ],
+      "total_equipos": 1
+    }
+  ],
+  "resumen": {
+    "divisiones": 4,
+    "sistemas": {
+      "Champions": 11
+    }
+  }
 }
