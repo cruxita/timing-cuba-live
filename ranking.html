@@ -531,6 +531,54 @@
   </main>
 
   <script>
+
+    // TIMING CUBA FIX:
+    // Evita que GitHub Pages entregue ranking_atletas.json viejo.
+    // Cuando ranking.html pida datos/ranking_atletas.json, se carga directo desde GitHub API.
+    const TIMING_CUBA_FETCH_ORIGINAL = window.fetch.bind(window);
+
+    function timingCubaDecodeBase64Utf8(b64) {
+      const limpio = String(b64 || "").replace(/\s/g, "");
+      const binario = atob(limpio);
+      const bytes = new Uint8Array(binario.length);
+
+      for (let i = 0; i < binario.length; i++) {
+        bytes[i] = binario.charCodeAt(i);
+      }
+
+      return new TextDecoder("utf-8").decode(bytes);
+    }
+
+    window.fetch = async function(input, init) {
+      const url = typeof input === "string" ? input : (input && input.url ? input.url : "");
+
+      if (url.includes("datos/ranking_atletas.json")) {
+        const apiUrl = "https://api.github.com/repos/cruxita/timing-cuba-live/contents/datos/ranking_atletas.json?ref=main&v=" + Date.now();
+
+        try {
+          const respApi = await TIMING_CUBA_FETCH_ORIGINAL(apiUrl, { cache: "no-store" });
+
+          if (respApi.ok) {
+            const dataApi = await respApi.json();
+            const textoJson = timingCubaDecodeBase64Utf8(dataApi.content);
+
+            return new Response(textoJson, {
+              status: 200,
+              headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                "Cache-Control": "no-store"
+              }
+            });
+          }
+        } catch (errApi) {
+          console.warn("GitHub API fall?, usando JSON local de GitHub Pages:", errApi);
+        }
+      }
+
+      return TIMING_CUBA_FETCH_ORIGINAL(input, init);
+    };
+
+
     const JSON_URL = "datos/ranking_atletas.json?v=" + Date.now();
   
     let rankingData = null;
