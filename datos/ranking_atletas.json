@@ -3,7 +3,7 @@
   "titulo": "Ranking de Atletas",
   "evento": "TODOS VS TODOS",
   "filtro_usado": "EVENTO: TODOS VS TODOS",
-  "generado_en": "2026-05-26 08:28:22",
+  "generado_en": "2026-05-26 09:01:56",
   "conteos": {
     "Timing": 0,
     "Round Robin": 11,
@@ -2236,6 +2236,5 @@
         }
       ]
     }
-  ],
-  "forzar_actualizacion": "2026-05-26 08:28:23"
+  ]
 }
