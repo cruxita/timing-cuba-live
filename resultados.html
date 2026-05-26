@@ -648,7 +648,7 @@
     function setText(id, valor, defecto) {
       var el = $(id);
       if (!el) return;
-      el.innerText = (valor === undefined || valor === null || valor === "") - (defecto || "") : valor;
+      el.innerText = (valor === undefined || valor === null || valor === "") ? (defecto || "") : valor;
     }
 
     function limpiarDivision(item) {
@@ -656,7 +656,7 @@
 
       var estilo = item.estilo || "";
       var categoria = item.categoria || "";
-      var peso = item.peso - item.peso + " KG" : "";
+      var peso = item.peso ? item.peso + " KG" : "";
 
       return [estilo, categoria, peso].filter(Boolean).join(" - ");
     }
@@ -921,15 +921,15 @@
           try {
             var data = JSON.parse(xhr.responseText);
 
-            resultadosOriginales = Array.isArray(data.resultados) - data.resultados : [];
+            resultadosOriginales = Array.isArray(data.resultados) ? data.resultados : [];
 
             setText("evento_nombre", data.evento_nombre || "TODOS LOS EVENTOS", "TODOS LOS EVENTOS");
-            setText("estado_datos", resultadosOriginales.length - "Conectado" : "Sin datos", "Sin datos");
+            setText("estado_datos", resultadosOriginales.length ? "Conectado" : "Sin datos", "Sin datos");
 
             prepararFiltros();
             pintarBloques();
           } catch (e) {
-            setText("estado_datos", "JSON inv?lido", "JSON inv?lido");
+            setText("estado_datos", "JSON invalido", "JSON invalido");
             resultadosOriginales = [];
             pintarBloques();
           }
@@ -941,7 +941,7 @@
       };
 
       xhr.onerror = function () {
-        setText("estado_datos", "Sin conexi?n", "Sin conexi?n");
+        setText("estado_datos", "Sin conexion", "Sin conexion");
         resultadosOriginales = [];
         pintarBloques();
       };
