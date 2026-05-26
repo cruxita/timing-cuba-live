@@ -1,7 +1,7 @@
 {
-  "generado_en": "2026-05-25 20:27:59",
+  "generado_en": "2026-05-26 09:27:42",
   "total_atletas": 30,
-  "total_fotos": 20,
+  "total_fotos": 21,
   "atletas": [
     {
       "id": 69,
@@ -144,10 +144,10 @@
       "provincia": "LA HABANA",
       "municipio": "CH",
       "club": "",
-      "tag_publico": "",
+      "tag_publico": "CH",
       "telefono": "",
       "observaciones": "",
-      "foto": "",
+      "foto": "fotos_atletas/atleta_0001_abrahem_arroyo_cruz.png",
       "activo": true
     },
     {
