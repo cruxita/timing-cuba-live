@@ -2,7 +2,23 @@
   "evento_nombre": "TODOS LOS EVENTOS",
   "sistema": "UWW Original",
   "criterio": "Posición final",
-  "generado_en": "2026-05-16 18:00:56",
-  "total_equipos": 0,
-  "clasificacion": []
+  "generado_en": "2026-05-26 10:10:15",
+  "total_equipos": 1,
+  "clasificacion": [
+    {
+      "nombre": "SIN EQUIPO",
+      "equipo": "SIN EQUIPO",
+      "primero": 2,
+      "segundo": 2,
+      "tercero": 2,
+      "cuarto": 0,
+      "quinto": 0,
+      "sexto": 0,
+      "septimo": 0,
+      "octavo": 0,
+      "noveno": 0,
+      "decimo": 0,
+      "puntos_uww": 120
+    }
+  ]
 }
