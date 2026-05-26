@@ -129,12 +129,12 @@
       padding: 13px;
       margin-bottom: 18px;
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 260px 1fr auto;
       gap: 10px;
       align-items: center;
     }
 
-    input, button {
+    input, button, select {
       border: 1px solid rgba(200, 154, 69, 0.38);
       background: rgba(255, 255, 255, 0.07);
       color: white;
@@ -146,7 +146,7 @@
       text-transform: uppercase;
     }
 
-    input { width: 100%; }
+    input, select { width: 100%; }
 
     .clear-btn {
       cursor: pointer;
@@ -515,6 +515,9 @@
     </section>
 
     <section class="filters">
+      <select id="filtro_evento">
+        <option value="TODOS">TODOS VS TODOS</option>
+      </select>
       <input id="buscar" type="search" placeholder="Buscar equipo, pais o club..." />
       <button id="limpiar_filtros" class="clear-btn" type="button">Limpiar</button>
     </section>
@@ -586,6 +589,8 @@
   <script>
     var DATA_URL = "datos/clasificacion.json";
     var datosOriginales = [];
+    var datosPorEvento = {};
+    var eventosDisponibles = ["TODOS"];
 
     function byId(id) {
       return document.getElementById(id);
@@ -688,7 +693,7 @@
     }
 
     function ordenarDatos(lista) {
-      var filas = lista.map(calcularFila);
+      var filas = (lista || []).map(calcularFila);
 
       filas.sort(function(a, b) {
         var dif;
@@ -732,9 +737,75 @@
       return filas;
     }
 
+    function eventoSeleccionado() {
+      var sel = byId("filtro_evento");
+
+      if (!sel || !sel.value) {
+        return "TODOS";
+      }
+
+      return sel.value;
+    }
+
+    function datosDelEventoActual() {
+      var evento = eventoSeleccionado();
+
+      if (evento !== "TODOS" && datosPorEvento[evento]) {
+        return datosPorEvento[evento];
+      }
+
+      return datosOriginales;
+    }
+
+    function textoEventoVisible(evento) {
+      if (!evento || evento === "TODOS" || evento === "TODOS LOS EVENTOS") {
+        return "TODOS VS TODOS";
+      }
+
+      return evento;
+    }
+
+    function prepararEventos() {
+      var sel = byId("filtro_evento");
+      var actual;
+      var usados = {};
+      var html = "";
+      var i;
+      var ev;
+
+      if (!sel) {
+        return;
+      }
+
+      actual = sel.value || "TODOS";
+      eventosDisponibles = eventosDisponibles || ["TODOS"];
+
+      html += '<option value="TODOS">TODOS VS TODOS</option>';
+      usados["TODOS"] = true;
+
+      for (i = 0; i < eventosDisponibles.length; i++) {
+        ev = String(eventosDisponibles[i] || "").trim();
+
+        if (!ev || ev === "TODOS" || usados[ev]) {
+          continue;
+        }
+
+        usados[ev] = true;
+        html += '<option value="' + escapeHtml(ev) + '">' + escapeHtml(ev) + '</option>';
+      }
+
+      sel.innerHTML = html;
+
+      if (actual && usados[actual]) {
+        sel.value = actual;
+      } else {
+        sel.value = "TODOS";
+      }
+    }
+
     function filtrarFilas() {
       var q = normalizar(byId("buscar").value || "");
-      var filas = ordenarDatos(datosOriginales);
+      var filas = ordenarDatos(datosDelEventoActual());
 
       if (!q) {
         return filas;
@@ -806,8 +877,9 @@
     function pintarTabla() {
       var tbody = byId("tabla_clasificacion");
       var filas = filtrarFilas();
-      var todas = ordenarDatos(datosOriginales);
+      var todas = ordenarDatos(datosDelEventoActual());
       var lider = null;
+      var evento = eventoSeleccionado();
 
       if (!tbody) {
         return;
@@ -817,7 +889,8 @@
         lider = todas[0];
       }
 
-      byId("total_equipos").innerText = filas.length + " / " + datosOriginales.length;
+      byId("evento_nombre").innerText = textoEventoVisible(evento);
+      byId("total_equipos").innerText = filas.length + " / " + todas.length;
 
       if (lider) {
         byId("lider_nombre").innerText = lider.nombre;
@@ -886,6 +959,8 @@
 
       xhr.onreadystatechange = function() {
         var data;
+        var claves;
+        var i;
 
         if (xhr.readyState !== 4) {
           return;
@@ -897,13 +972,31 @@
 
             if (Array.isArray(data)) {
               datosOriginales = data;
-              byId("evento_nombre").innerText = "TODOS LOS EVENTOS";
+              datosPorEvento = { "TODOS": datosOriginales };
+              eventosDisponibles = ["TODOS"];
+            } else if (data && data.por_evento) {
+              datosPorEvento = data.por_evento || {};
+              datosOriginales = datosPorEvento.TODOS || data.clasificacion || [];
+              eventosDisponibles = Array.isArray(data.eventos) ? data.eventos : ["TODOS"];
+
+              claves = Object.keys(datosPorEvento);
+
+              for (i = 0; i < claves.length; i++) {
+                if (eventosDisponibles.indexOf(claves[i]) < 0) {
+                  eventosDisponibles.push(claves[i]);
+                }
+              }
             } else if (Array.isArray(data.clasificacion)) {
               datosOriginales = data.clasificacion;
-              byId("evento_nombre").innerText = data.evento_nombre || "TODOS LOS EVENTOS";
+              datosPorEvento = { "TODOS": datosOriginales };
+              eventosDisponibles = ["TODOS"];
             } else {
               datosOriginales = [];
+              datosPorEvento = { "TODOS": [] };
+              eventosDisponibles = ["TODOS"];
             }
+
+            prepararEventos();
 
             if (datosOriginales.length) {
               byId("estado_datos").innerText = "Conectado";
@@ -915,11 +1008,17 @@
           } catch (e) {
             byId("estado_datos").innerText = "JSON invalido";
             datosOriginales = [];
+            datosPorEvento = { "TODOS": [] };
+            eventosDisponibles = ["TODOS"];
+            prepararEventos();
             pintarTabla();
           }
         } else {
           byId("estado_datos").innerText = "Sin datos";
           datosOriginales = [];
+          datosPorEvento = { "TODOS": [] };
+          eventosDisponibles = ["TODOS"];
+          prepararEventos();
           pintarTabla();
         }
       };
@@ -927,6 +1026,9 @@
       xhr.onerror = function() {
         byId("estado_datos").innerText = "Sin conexion";
         datosOriginales = [];
+        datosPorEvento = { "TODOS": [] };
+        eventosDisponibles = ["TODOS"];
+        prepararEventos();
         pintarTabla();
       };
 
@@ -934,9 +1036,11 @@
     }
 
     byId("buscar").addEventListener("input", pintarTabla);
+    byId("filtro_evento").addEventListener("change", pintarTabla);
 
     byId("limpiar_filtros").addEventListener("click", function() {
       byId("buscar").value = "";
+      byId("filtro_evento").value = "TODOS";
       pintarTabla();
     });
 
