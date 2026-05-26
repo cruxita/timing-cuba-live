@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -17,6 +17,8 @@
       --suave: #cfcfcf;
       --rojo: #e51616;
       --azul: #1f6bff;
+      --verde: #10b981;
+      --gris: rgba(255, 255, 255, 0.08);
     }
 
     body {
@@ -31,7 +33,7 @@
     }
 
     .page {
-      width: min(1380px, calc(100% - 28px));
+      width: min(1420px, calc(100% - 28px));
       margin: 0 auto;
       padding: 22px 0 42px;
     }
@@ -96,7 +98,7 @@
       padding: 14px 18px;
       margin: 0 0 16px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 12px;
       box-shadow: 0 0 16px rgba(200, 154, 69, 0.12);
     }
@@ -132,14 +134,14 @@
       border-radius: 18px;
       background: rgba(0, 0, 0, 0.52);
       padding: 13px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr 1.3fr auto;
       gap: 10px;
+      align-items: center;
     }
 
-    input, select {
-      width: 100%;
+    input, select, button {
       border: 1px solid rgba(200, 154, 69, 0.38);
       background: rgba(255, 255, 255, 0.07);
       color: white;
@@ -151,8 +153,19 @@
       text-transform: uppercase;
     }
 
+    input, select {
+      width: 100%;
+    }
+
     option {
       color: #111;
+    }
+
+    .clear-btn {
+      cursor: pointer;
+      background: rgba(200, 154, 69, 0.14);
+      color: var(--oro2);
+      white-space: nowrap;
     }
 
     .panel {
@@ -200,180 +213,222 @@
       white-space: nowrap;
     }
 
-    .table-wrap {
-      width: 100%;
-      overflow-x: auto;
+    .content {
+      padding: 18px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 1180px;
-    }
-
-    thead th {
-      background: rgba(200, 154, 69, 0.12);
-      color: var(--oro2);
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      padding: 13px 9px;
-      border-bottom: 2px solid rgba(200, 154, 69, 0.34);
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    tbody td {
-      padding: 12px 9px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-      font-size: 14px;
-      font-weight: 900;
-      text-align: center;
-      text-transform: uppercase;
-      vertical-align: middle;
-    }
-
-    tbody tr:nth-child(even) {
+    .evento-block {
+      margin-bottom: 22px;
+      border: 2px solid rgba(200, 154, 69, 0.36);
+      border-radius: 22px;
+      overflow: hidden;
       background: rgba(255, 255, 255, 0.035);
     }
 
-    .division {
-      color: var(--oro2);
-      white-space: nowrap;
+    .evento-head {
+      padding: 16px 18px;
+      background:
+        linear-gradient(90deg, rgba(200, 154, 69, 0.24), rgba(0,0,0,0.20));
+      border-bottom: 2px solid rgba(200, 154, 69, 0.28);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
     }
 
-    .name-red,
-    .name-blue {
-      min-width: 190px;
-      text-align: left;
+    .evento-title {
+      color: var(--oro2);
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .count-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(200, 154, 69, 0.44);
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: white;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      white-space: nowrap;
+      background: rgba(0,0,0,0.34);
+    }
+
+    .sistema-block {
+      padding: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .sistema-block:last-child {
+      border-bottom: none;
+    }
+
+    .sistema-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .sistema-title {
+      font-size: 21px;
+      font-weight: 900;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .sistema-title .rr {
+      color: #8ee6bf;
+    }
+
+    .sistema-title .ch {
+      color: #9dc2ff;
+    }
+
+    .division-block {
+      border: 2px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      margin: 12px 0;
+      background: rgba(0,0,0,0.28);
+      overflow: hidden;
+    }
+
+    .division-head {
+      padding: 13px 15px;
+      background: rgba(255,255,255,0.06);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .division-title {
+      font-size: 17px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--oro2);
+    }
+
+    .fase-block {
+      padding: 12px 14px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .fase-block:last-child {
+      border-bottom: none;
+    }
+
+    .fase-title {
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      border-left: 5px solid var(--oro);
+      padding-left: 8px;
+    }
+
+    .fight-row {
+      display: grid;
+      grid-template-columns: 95px 1fr 96px 1fr 190px 105px 82px;
+      gap: 8px;
+      align-items: stretch;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .fight-row:last-child {
+      border-bottom: none;
+    }
+
+    .cell {
+      border-radius: 12px;
+      padding: 9px 10px;
+      background: rgba(255,255,255,0.065);
+      display: flex;
+      align-items: center;
+      min-height: 46px;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
       line-height: 1.2;
     }
 
-    .name-red {
-      color: #ffdddd;
+    .combat {
+      justify-content: center;
+      color: var(--oro2);
+      text-align: center;
+      font-size: 12px;
     }
 
-    .name-blue {
-      color: #dce8ff;
+    .red {
+      background: linear-gradient(135deg, rgba(160, 0, 0, 0.90), rgba(45, 0, 0, 0.84));
+      border: 1px solid rgba(255, 35, 35, 0.48);
+      color: #fff0f0;
     }
 
-    .team {
-      display: block;
-      color: #bdbdbd;
-      font-size: 11px;
-      margin-top: 3px;
+    .blue {
+      background: linear-gradient(135deg, rgba(0, 66, 170, 0.92), rgba(0, 18, 65, 0.86));
+      border: 1px solid rgba(45, 130, 255, 0.55);
+      color: #edf4ff;
     }
 
     .score {
-      font-size: 22px;
+      justify-content: center;
       color: white;
-      white-space: nowrap;
+      font-size: 23px;
+      letter-spacing: 1px;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.14);
     }
 
     .winner {
       color: var(--oro2);
-      text-align: left;
-      min-width: 190px;
+      background: rgba(200, 154, 69, 0.10);
+      border: 1px solid rgba(200, 154, 69, 0.32);
     }
 
     .badge {
-      display: inline-flex;
       justify-content: center;
-      min-width: 56px;
-      border-radius: 999px;
-      padding: 6px 9px;
-      border: 2px solid rgba(200, 154, 69, 0.42);
-      background: rgba(200, 154, 69, 0.08);
       color: white;
-      font-weight: 900;
-      white-space: nowrap;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.34);
+      text-align: center;
     }
 
     .classif {
+      justify-content: center;
       color: var(--oro2);
-      font-size: 18px;
-      white-space: nowrap;
+      background: rgba(200, 154, 69, 0.10);
+      border: 1px solid rgba(200, 154, 69, 0.28);
+      font-size: 17px;
+    }
+
+    .team {
+      display: block;
+      color: rgba(255,255,255,0.68);
+      font-size: 10px;
+      margin-top: 3px;
+      font-weight: 900;
     }
 
     .empty {
-      padding: 42px 18px;
+      padding: 44px 18px;
       text-align: center;
       color: #cfcfcf;
       font-size: 20px;
       font-weight: 900;
-      line-height: 1.35;
-    }
-
-    .cards-mobile {
-      display: none;
-    }
-
-    .result-card {
-      border: 2px solid rgba(200, 154, 69, 0.34);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.045);
-      padding: 13px;
-      margin-bottom: 12px;
-    }
-
-    .card-meta {
-      color: var(--oro2);
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      line-height: 1.35;
-    }
-
-    .fighters {
-      display: grid;
-      grid-template-columns: 1fr 68px 1fr;
-      align-items: stretch;
-      gap: 8px;
-    }
-
-    .fighter {
-      border-radius: 14px;
-      padding: 10px;
-      font-size: 14px;
-      font-weight: 900;
-      text-align: center;
-      text-transform: uppercase;
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1.18;
-    }
-
-    .fighter.red {
-      background: linear-gradient(135deg, rgba(160, 0, 0, 0.88), rgba(45, 0, 0, 0.84));
-      border: 2px solid rgba(255, 30, 30, 0.65);
-    }
-
-    .fighter.blue {
-      background: linear-gradient(135deg, rgba(0, 66, 170, 0.92), rgba(0, 18, 65, 0.86));
-      border: 2px solid rgba(45, 130, 255, 0.70);
-    }
-
-    .score-mobile {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 22px;
-      font-weight: 900;
-    }
-
-    .card-winner {
-      margin-top: 10px;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 10px;
-      color: white;
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
       line-height: 1.35;
     }
 
@@ -384,6 +439,16 @@
       font-weight: 900;
       margin-top: 18px;
       text-transform: uppercase;
+    }
+
+    @media (max-width: 1180px) {
+      .fight-row {
+        grid-template-columns: 82px 1fr 82px 1fr;
+      }
+
+      .winner, .badge, .classif {
+        grid-column: span 1;
+      }
     }
 
     @media (max-width: 980px) {
@@ -411,7 +476,8 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .mini:nth-child(2) {
+      .mini:nth-child(2),
+      .mini:nth-child(4) {
         border-right: none;
       }
 
@@ -419,19 +485,27 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .filters input {
+      .filters input,
+      .clear-btn {
         grid-column: 1 / -1;
       }
 
-      .panel-head {
+      .panel-head,
+      .evento-head,
+      .division-head {
         grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .sistema-head {
+        justify-content: center;
         text-align: center;
       }
     }
 
     @media (max-width: 680px) {
       .page {
-        width: min(100% - 16px, 1380px);
+        width: min(100% - 16px, 1420px);
         padding-top: 12px;
       }
 
@@ -453,21 +527,35 @@
         font-size: 24px;
       }
 
-      .table-wrap {
-        display: none;
+      .content {
+        padding: 10px;
       }
 
-      .cards-mobile {
-        display: block;
-        padding: 14px;
+      .evento-title {
+        font-size: 20px;
       }
 
-      .fighters {
+      .sistema-block {
+        padding: 10px;
+      }
+
+      .fight-row {
         grid-template-columns: 1fr;
+        border: 2px solid rgba(255,255,255,0.12);
+        border-radius: 16px;
+        padding: 10px;
+        margin-bottom: 10px;
+        background: rgba(255,255,255,0.04);
       }
 
-      .score-mobile {
+      .cell {
         min-height: 42px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .score {
+        font-size: 26px;
       }
     }
   </style>
@@ -482,24 +570,28 @@
 
       <div class="title">
         <h1>Resultados</h1>
-        <div class="sub">Combates terminados</div>
+        <div class="sub">Organizados por evento - sistema - division</div>
       </div>
 
-      <a class="menu-btn" href="menu.html?v=10">Menú</a>
+      <a class="menu-btn" href="menu.html?v=10">Menu</a>
     </header>
 
     <section class="summary">
       <div class="mini">
-        <div class="mini-label">Evento</div>
+        <div class="mini-label">Evento principal</div>
         <div id="evento_nombre" class="mini-value">Timing Cuba Live</div>
       </div>
       <div class="mini">
-        <div class="mini-label">Vista</div>
-        <div class="mini-value">Resultados</div>
+        <div class="mini-label">Resultados</div>
+        <div id="total_resultados" class="mini-value">0</div>
       </div>
       <div class="mini">
-        <div class="mini-label">Total</div>
-        <div id="total_resultados" class="mini-value">0</div>
+        <div class="mini-label">Eventos</div>
+        <div id="total_eventos" class="mini-value">0</div>
+      </div>
+      <div class="mini">
+        <div class="mini-label">Divisiones</div>
+        <div id="total_divisiones" class="mini-value">0</div>
       </div>
       <div class="mini">
         <div class="mini-label">Estado</div>
@@ -508,52 +600,25 @@
     </section>
 
     <section class="filters">
-      <input id="buscar" type="search" placeholder="Buscar atleta, equipo, evento..." />
+      <input id="buscar" type="search" placeholder="Buscar atleta, equipo, fase..." />
       <select id="filtro_evento"><option value="">Todos los eventos</option></select>
-      <select id="filtro_estilo"><option value="">Todos los estilos</option></select>
       <select id="filtro_sistema"><option value="">Todos los sistemas</option></select>
-      <select id="filtro_peso"><option value="">Todos los pesos</option></select>
+      <select id="filtro_division"><option value="">Todas las divisiones</option></select>
+      <button id="limpiar_filtros" class="clear-btn" type="button">Limpiar</button>
     </section>
 
     <section class="panel">
       <div class="panel-head">
         <div class="panel-title">Resultados oficiales</div>
-        <div class="note">Marcador · Victoria · Puntos clasificación</div>
+        <div class="note">Vista por bloques - Mas clara para muchos eventos</div>
       </div>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Evento</th>
-              <th>Sistema</th>
-              <th>División</th>
-              <th>Combate</th>
-              <th>Rojo</th>
-              <th>Resultado</th>
-              <th>Azul</th>
-              <th>Ganador</th>
-              <th>Victoria</th>
-              <th>Clasif.</th>
-            </tr>
-          </thead>
-          <tbody id="tabla_resultados">
-            <tr>
-              <td colspan="11">
-                <div class="empty">Cargando resultados...</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div id="cards_resultados" class="cards-mobile">
+      <div id="resultados_bloques" class="content">
         <div class="empty">Cargando resultados...</div>
       </div>
     </section>
 
-    <div class="footer">Timing Cuba Live · Resultados</div>
+    <div class="footer">Timing Cuba Live - Resultados</div>
   </main>
 
   <script>
@@ -574,28 +639,39 @@
     }
 
     function normalizar(txt) {
-      return String(txt || "").trim().toUpperCase();
+      return String(txt || "").trim().toUpperCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, " ");
     }
 
     function setText(id, valor, defecto) {
       var el = $(id);
       if (!el) return;
-      el.innerText = (valor === undefined || valor === null || valor === "") ? (defecto || "") : valor;
+      el.innerText = (valor === undefined || valor === null || valor === "") - (defecto || "") : valor;
     }
 
     function limpiarDivision(item) {
+      if (item.division) return String(item.division || "").trim();
+
       var estilo = item.estilo || "";
       var categoria = item.categoria || "";
-      var peso = item.peso ? item.peso + " KG" : "";
-      return [estilo, categoria, peso].filter(Boolean).join(" · ");
+      var peso = item.peso - item.peso + " KG" : "";
+
+      return [estilo, categoria, peso].filter(Boolean).join(" - ");
     }
 
-    function valorUnico(lista, campo) {
+    function valorUnico(lista, fn) {
       var set = {};
+
       lista.forEach(function(item) {
-        var v = normalizar(item[campo]);
-        if (v) set[v] = true;
+        var v = normalizar(fn(item));
+
+        if (v) {
+          set[v] = true;
+        }
       });
+
       return Object.keys(set).sort();
     }
 
@@ -613,47 +689,28 @@
         sel.appendChild(op);
       });
 
-      sel.value = actual;
-    }
-
-    function codigoVictoria(item) {
-      var tipo = normalizar(item.tipo_victoria);
-      var lado = normalizar(item.ganador_lado);
-      var partes = String(item.puntos_clasificacion || "0-0").split("-");
-      var pRojo = Number(partes[0] || 0);
-      var pAzul = Number(partes[1] || 0);
-
-      var puntosGanador = lado === "BLUE" ? pAzul : pRojo;
-      var puntosPerdedor = lado === "BLUE" ? pRojo : pAzul;
-
-      if (tipo === "FALL" || tipo === "TOUCHE" || tipo === "PEGADA") return "VFA";
-      if (tipo === "TECH" || tipo === "SUPERIORIDAD" || tipo === "ST") return puntosPerdedor > 0 ? "VSU1" : "VSU";
-      if (tipo === "PTS" || tipo === "POINTS" || tipo === "DECISION") return puntosPerdedor > 0 ? "VPO1" : "VPO";
-      if (tipo === "INJURY" || tipo === "LESION") return "VIN";
-      if (tipo === "FORFEIT" || tipo === "WO") return "VFO";
-
-      if (puntosGanador === 5) return "VFA";
-      if (puntosGanador === 4) return puntosPerdedor > 0 ? "VSU1" : "VSU";
-      if (puntosGanador === 3) return puntosPerdedor > 0 ? "VPO1" : "VPO";
-
-      return tipo || "-";
+      if (valores.indexOf(actual) >= 0) {
+        sel.value = actual;
+      }
     }
 
     function filtrarResultados() {
       var q = normalizar($("buscar").value);
       var evento = normalizar($("filtro_evento").value);
-      var estilo = normalizar($("filtro_estilo").value);
       var sistema = normalizar($("filtro_sistema").value);
-      var peso = normalizar($("filtro_peso").value);
+      var division = normalizar($("filtro_division").value);
 
       return resultadosOriginales.filter(function(item) {
+        var div = limpiarDivision(item);
+
         var texto = normalizar([
           item.evento,
           item.sistema,
-          item.division,
+          div,
           item.estilo,
           item.categoria,
           item.peso,
+          item.fase,
           item.combate,
           item.rojo,
           item.rojo_equipo,
@@ -667,78 +724,190 @@
 
         if (q && texto.indexOf(q) < 0) return false;
         if (evento && normalizar(item.evento) !== evento) return false;
-        if (estilo && normalizar(item.estilo) !== estilo) return false;
         if (sistema && normalizar(item.sistema) !== sistema) return false;
-        if (peso && normalizar(item.peso) !== peso) return false;
+        if (division && normalizar(div) !== division) return false;
 
         return true;
       });
     }
 
-    function pintarTabla() {
-      var tbody = $("tabla_resultados");
-      var cards = $("cards_resultados");
+    function agrupar(lista, fn) {
+      var salida = {};
+
+      lista.forEach(function(item) {
+        var k = String(fn(item) || "").trim() || "SIN DEFINIR";
+
+        if (!salida[k]) {
+          salida[k] = [];
+        }
+
+        salida[k].push(item);
+      });
+
+      return salida;
+    }
+
+    function ordenarKeys(keys, tipo) {
+      if (tipo === "sistema") {
+        var ordenSistema = {
+          "ROUND ROBIN": 1,
+          "CHAMPIONS": 2,
+          "LLAVES UWW": 3
+        };
+
+        return keys.sort(function(a, b) {
+          return (ordenSistema[normalizar(a)] || 99) - (ordenSistema[normalizar(b)] || 99) ||
+                 a.localeCompare(b);
+        });
+      }
+
+      return keys.sort(function(a, b) {
+        return a.localeCompare(b);
+      });
+    }
+
+    function claseSistema(nombre) {
+      var n = normalizar(nombre);
+
+      if (n.indexOf("ROUND") >= 0) return "rr";
+      if (n.indexOf("CHAMP") >= 0) return "ch";
+
+      return "";
+    }
+
+    function pintarCombate(item) {
+      var victoria = item.tipo_victoria || "-";
+      var clasif = item.puntos_clasificacion || "0-0";
+      var ganador = item.ganador || "";
+      var ganadorEquipo = item.ganador_equipo || "";
+
+      return '' +
+        '<div class="fight-row">' +
+          '<div class="cell combat">' + escapeHtml(item.combate || "") + '</div>' +
+
+          '<div class="cell red">' +
+            '<div>' +
+              escapeHtml(item.rojo || "ROJO") +
+              '<span class="team">' + escapeHtml(item.rojo_equipo || "") + '</span>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="cell score">' + escapeHtml(item.marcador || "0-0") + '</div>' +
+
+          '<div class="cell blue">' +
+            '<div>' +
+              escapeHtml(item.azul || "AZUL") +
+              '<span class="team">' + escapeHtml(item.azul_equipo || "") + '</span>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="cell winner">' +
+            '<div>' +
+              'Ganador: ' + escapeHtml(ganador || "-") +
+              '<span class="team">' + escapeHtml(ganadorEquipo || "") + '</span>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="cell badge">' + escapeHtml(victoria) + '</div>' +
+          '<div class="cell classif">' + escapeHtml(clasif) + '</div>' +
+        '</div>';
+    }
+
+    function pintarBloques() {
+      var cont = $("resultados_bloques");
+      if (!cont) return;
+
       var lista = filtrarResultados();
 
       setText("total_resultados", lista.length + " / " + resultadosOriginales.length, "0");
 
-      if (!tbody || !cards) return;
+      var eventosTotal = valorUnico(resultadosOriginales, function(item) { return item.evento; }).length;
+      var divisionesTotal = valorUnico(resultadosOriginales, function(item) { return limpiarDivision(item); }).length;
+
+      setText("total_eventos", eventosTotal, "0");
+      setText("total_divisiones", divisionesTotal, "0");
 
       if (!lista.length) {
-        tbody.innerHTML = '<tr><td colspan="11"><div class="empty">No hay resultados para esos filtros.</div></td></tr>';
-        cards.innerHTML = '<div class="empty">No hay resultados para esos filtros.</div>';
+        cont.innerHTML = '<div class="empty">No hay resultados para esos filtros.</div>';
         return;
       }
 
-      tbody.innerHTML = "";
-      cards.innerHTML = "";
+      var eventos = agrupar(lista, function(item) { return item.evento || "EVENTO SIN NOMBRE"; });
+      var html = "";
 
-      lista.forEach(function(item, idx) {
-        var division = limpiarDivision(item);
-        var victoria = codigoVictoria(item);
+      ordenarKeys(Object.keys(eventos), "evento").forEach(function(eventoNombre) {
+        var listaEvento = eventos[eventoNombre];
+        var sistemas = agrupar(listaEvento, function(item) { return item.sistema || "Sistema"; });
 
-        var tr = document.createElement("tr");
-        tr.innerHTML =
-          '<td>' + (idx + 1) + '</td>' +
-          '<td>' + escapeHtml(item.evento || "") + '</td>' +
-          '<td>' + escapeHtml(item.sistema || "") + '</td>' +
-          '<td class="division">' + escapeHtml(division) + '</td>' +
-          '<td>' + escapeHtml(item.combate || "") + '</td>' +
-          '<td class="name-red">' + escapeHtml(item.rojo || "") + '<span class="team">' + escapeHtml(item.rojo_equipo || "") + '</span></td>' +
-          '<td class="score">' + escapeHtml(item.marcador || "0-0") + '</td>' +
-          '<td class="name-blue">' + escapeHtml(item.azul || "") + '<span class="team">' + escapeHtml(item.azul_equipo || "") + '</span></td>' +
-          '<td class="winner">' + escapeHtml(item.ganador || "") + '<span class="team">' + escapeHtml(item.ganador_equipo || "") + '</span></td>' +
-          '<td><span class="badge">' + escapeHtml(victoria) + '</span></td>' +
-          '<td class="classif">' + escapeHtml(item.puntos_clasificacion || "0-0") + '</td>';
+        html += '<section class="evento-block">';
+        html +=   '<div class="evento-head">';
+        html +=     '<div class="evento-title">' + escapeHtml(eventoNombre) + '</div>';
+        html +=     '<div class="count-pill">' + listaEvento.length + ' resultados</div>';
+        html +=   '</div>';
 
-        tbody.appendChild(tr);
+        ordenarKeys(Object.keys(sistemas), "sistema").forEach(function(sistemaNombre) {
+          var listaSistema = sistemas[sistemaNombre];
+          var divisiones = agrupar(listaSistema, function(item) { return limpiarDivision(item); });
 
-        var card = document.createElement("div");
-        card.className = "result-card";
-        card.innerHTML =
-          '<div class="card-meta">' +
-            escapeHtml(item.evento || "") + '<br>' +
-            escapeHtml(item.sistema || "") + ' · ' + escapeHtml(division) + ' · ' + escapeHtml(item.combate || "") +
-          '</div>' +
-          '<div class="fighters">' +
-            '<div class="fighter red">' + escapeHtml(item.rojo || "") + '</div>' +
-            '<div class="score-mobile">' + escapeHtml(item.marcador || "0-0") + '</div>' +
-            '<div class="fighter blue">' + escapeHtml(item.azul || "") + '</div>' +
-          '</div>' +
-          '<div class="card-winner">' +
-            'Ganador: ' + escapeHtml(item.ganador || "") + '<br>' +
-            'Victoria: ' + escapeHtml(victoria) + ' · Clasif.: ' + escapeHtml(item.puntos_clasificacion || "0-0") +
-          '</div>';
+          html += '<div class="sistema-block">';
+          html +=   '<div class="sistema-head">';
+          html +=     '<div class="sistema-title"><span class="' + claseSistema(sistemaNombre) + '">' + escapeHtml(sistemaNombre) + '</span></div>';
+          html +=     '<div class="count-pill">' + listaSistema.length + ' combates</div>';
+          html +=   '</div>';
 
-        cards.appendChild(card);
+          ordenarKeys(Object.keys(divisiones), "division").forEach(function(divisionNombre) {
+            var listaDivision = divisiones[divisionNombre];
+            var fases = agrupar(listaDivision, function(item) { return item.fase || "Combates"; });
+
+            html += '<section class="division-block">';
+            html +=   '<div class="division-head">';
+            html +=     '<div class="division-title">' + escapeHtml(divisionNombre) + '</div>';
+            html +=     '<div class="count-pill">' + listaDivision.length + ' resultados</div>';
+            html +=   '</div>';
+
+            Object.keys(fases).forEach(function(faseNombre) {
+              var listaFase = fases[faseNombre];
+
+              html += '<div class="fase-block">';
+              html +=   '<div class="fase-title">' + escapeHtml(faseNombre) + '</div>';
+
+              listaFase.forEach(function(item) {
+                html += pintarCombate(item);
+              });
+
+              html += '</div>';
+            });
+
+            html += '</section>';
+          });
+
+          html += '</div>';
+        });
+
+        html += '</section>';
       });
+
+      cont.innerHTML = html;
     }
 
     function prepararFiltros() {
-      llenarSelect("filtro_evento", valorUnico(resultadosOriginales, "evento"), "Todos los eventos");
-      llenarSelect("filtro_estilo", valorUnico(resultadosOriginales, "estilo"), "Todos los estilos");
-      llenarSelect("filtro_sistema", valorUnico(resultadosOriginales, "sistema"), "Todos los sistemas");
-      llenarSelect("filtro_peso", valorUnico(resultadosOriginales, "peso"), "Todos los pesos");
+      llenarSelect(
+        "filtro_evento",
+        valorUnico(resultadosOriginales, function(item) { return item.evento; }),
+        "Todos los eventos"
+      );
+
+      llenarSelect(
+        "filtro_sistema",
+        valorUnico(resultadosOriginales, function(item) { return item.sistema; }),
+        "Todos los sistemas"
+      );
+
+      llenarSelect(
+        "filtro_division",
+        valorUnico(resultadosOriginales, function(item) { return limpiarDivision(item); }),
+        "Todas las divisiones"
+      );
     }
 
     function cargarDatos() {
@@ -752,39 +921,47 @@
           try {
             var data = JSON.parse(xhr.responseText);
 
-            resultadosOriginales = Array.isArray(data.resultados) ? data.resultados : [];
+            resultadosOriginales = Array.isArray(data.resultados) - data.resultados : [];
 
             setText("evento_nombre", data.evento_nombre || "TODOS LOS EVENTOS", "TODOS LOS EVENTOS");
-            setText("estado_datos", resultadosOriginales.length ? "Conectado" : "Sin datos", "Sin datos");
+            setText("estado_datos", resultadosOriginales.length - "Conectado" : "Sin datos", "Sin datos");
 
             prepararFiltros();
-            pintarTabla();
+            pintarBloques();
           } catch (e) {
-            setText("estado_datos", "JSON inválido", "JSON inválido");
+            setText("estado_datos", "JSON inv?lido", "JSON inv?lido");
             resultadosOriginales = [];
-            pintarTabla();
+            pintarBloques();
           }
         } else {
           setText("estado_datos", "Sin datos", "Sin datos");
           resultadosOriginales = [];
-          pintarTabla();
+          pintarBloques();
         }
       };
 
       xhr.onerror = function () {
-        setText("estado_datos", "Sin conexión", "Sin conexión");
+        setText("estado_datos", "Sin conexi?n", "Sin conexi?n");
         resultadosOriginales = [];
-        pintarTabla();
+        pintarBloques();
       };
 
       xhr.send();
     }
 
-    ["buscar", "filtro_evento", "filtro_estilo", "filtro_sistema", "filtro_peso"].forEach(function(id) {
+    ["buscar", "filtro_evento", "filtro_sistema", "filtro_division"].forEach(function(id) {
       var el = $(id);
       if (!el) return;
-      el.addEventListener("input", pintarTabla);
-      el.addEventListener("change", pintarTabla);
+      el.addEventListener("input", pintarBloques);
+      el.addEventListener("change", pintarBloques);
+    });
+
+    $("limpiar_filtros").addEventListener("click", function() {
+      $("buscar").value = "";
+      $("filtro_evento").value = "";
+      $("filtro_sistema").value = "";
+      $("filtro_division").value = "";
+      pintarBloques();
     });
 
     cargarDatos();
