@@ -1,6 +1,6 @@
 {
-  "generado_en": "2026-05-26 11:07:34",
-  "total_atletas": 30,
+  "generado_en": "2026-05-26 12:41:07",
+  "total_atletas": 31,
   "total_fotos": 21,
   "atletas": [
     {
@@ -64,6 +64,27 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0061_enmanuel_abreu_veranes.png",
+      "activo": true
+    },
+    {
+      "id": 75,
+      "ci": "",
+      "nombre": "JOSE LUIS",
+      "apellidos": "ARIAS",
+      "nombre_publico": "J. ARIAS",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U11/12",
+      "peso": "",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "10O",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
       "activo": true
     },
     {
