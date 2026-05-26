@@ -531,55 +531,7 @@
   </main>
 
   <script>
-
-    // TIMING CUBA FIX:
-    // Evita que GitHub Pages entregue ranking_atletas.json viejo.
-    // Cuando ranking.html pida datos/ranking_atletas.json, se carga directo desde GitHub API.
-    const TIMING_CUBA_FETCH_ORIGINAL = window.fetch.bind(window);
-
-    function timingCubaDecodeBase64Utf8(b64) {
-      const limpio = String(b64 || "").replace(/\s/g, "");
-      const binario = atob(limpio);
-      const bytes = new Uint8Array(binario.length);
-
-      for (let i = 0; i < binario.length; i++) {
-        bytes[i] = binario.charCodeAt(i);
-      }
-
-      return new TextDecoder("utf-8").decode(bytes);
-    }
-
-    window.fetch = async function(input, init) {
-      const url = typeof input === "string" ? input : (input && input.url ? input.url : "");
-
-      if (url.includes("datos/ranking_atletas.json")) {
-        const apiUrl = "https://api.github.com/repos/cruxita/timing-cuba-live/contents/datos/ranking_atletas.json?ref=main&v=" + Date.now();
-
-        try {
-          const respApi = await TIMING_CUBA_FETCH_ORIGINAL(apiUrl, { cache: "no-store" });
-
-          if (respApi.ok) {
-            const dataApi = await respApi.json();
-            const textoJson = timingCubaDecodeBase64Utf8(dataApi.content);
-
-            return new Response(textoJson, {
-              status: 200,
-              headers: {
-                "Content-Type": "application/json; charset=utf-8",
-                "Cache-Control": "no-store"
-              }
-            });
-          }
-        } catch (errApi) {
-          console.warn("GitHub API fall?, usando JSON local de GitHub Pages:", errApi);
-        }
-      }
-
-      return TIMING_CUBA_FETCH_ORIGINAL(input, init);
-    };
-
-
-    const JSON_URL = "datos/ranking_atletas.json?v=" + Date.now();
+    const JSON_URL = "datos/ranking_atletas_live.json?v=" + Date.now();
   
     let rankingData = null;
     let modo = "divisiones";
@@ -609,109 +561,7 @@
         .replaceAll("'", "&#039;");
     }
   
-
-    let fotosAtletasWeb = {};
-
-    function normalizarClaveNombre(valor) {
-      return String(valor || "")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .toUpperCase()
-        .replace(/[^A-Z0-9 ]/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-    }
-
-    function limpiarRutaFotoWeb(foto) {
-      let f = String(foto || "").replaceAll("\\", "/").trim();
-
-      if (!f) return "";
-
-      const partes = f.split("/");
-      const nombreArchivo = partes[partes.length - 1];
-
-      if (!nombreArchivo) return "";
-
-      return "fotos_atletas/" + nombreArchivo;
-    }
-
-    function registrarAliasFoto(mapa, alias, foto) {
-      const clave = normalizarClaveNombre(alias);
-      if (!clave || !foto) return;
-      mapa[clave] = foto;
-    }
-
-    function construirMapaFotosAtletas(dataAtletas) {
-      const mapa = {};
-      const lista = Array.isArray(dataAtletas)
-        ? dataAtletas
-        : (dataAtletas.atletas || dataAtletas.data || []);
-
-      lista.forEach(a => {
-        const foto = limpiarRutaFotoWeb(
-          a.foto || a.foto_web || a.foto_path || a.imagen || a.photo || ""
-        );
-
-        if (!foto) return;
-
-        const nombre = a.nombre || a.nombres || "";
-        const apellidos = a.apellidos || "";
-        const nombrePublico = a.nombre_publico || a.publico || "";
-        const nombreCompleto = a.nombre_completo || `${nombre} ${apellidos}`.trim();
-
-        registrarAliasFoto(mapa, nombrePublico, foto);
-        registrarAliasFoto(mapa, nombre, foto);
-        registrarAliasFoto(mapa, apellidos, foto);
-        registrarAliasFoto(mapa, nombreCompleto, foto);
-
-        const partes = normalizarClaveNombre(nombreCompleto).split(" ").filter(Boolean);
-        if (partes.length >= 2) {
-          registrarAliasFoto(mapa, `${partes[0]} ${partes[partes.length - 1]}`, foto);
-          registrarAliasFoto(mapa, `${partes[0][0]} ${partes[partes.length - 1]}`, foto);
-        }
-      });
-
-      return mapa;
-    }
-
-    function buscarFotoEnAtletas(nombreRanking) {
-      const clave = normalizarClaveNombre(nombreRanking);
-
-      if (!clave) return "";
-
-      if (fotosAtletasWeb[clave]) {
-        return fotosAtletasWeb[clave];
-      }
-
-      const tokens = clave.split(" ").filter(x => x.length >= 2);
-
-      if (tokens.length < 2) return "";
-
-      for (const alias of Object.keys(fotosAtletasWeb)) {
-        const aliasTokens = alias.split(" ").filter(x => x.length >= 2);
-
-        if (tokens.every(t => aliasTokens.includes(t))) {
-          return fotosAtletasWeb[alias];
-        }
-
-        if (
-          aliasTokens.length >= 2 &&
-          aliasTokens[0] === tokens[0] &&
-          aliasTokens.includes(tokens[tokens.length - 1])
-        ) {
-          return fotosAtletasWeb[alias];
-        }
-      }
-
-      return "";
-    }
-
-
     function normalizarAtleta(a, index) {
-      const fotoExtra = buscarFotoEnAtletas(a.nombre || "");
-      const fotoFinal = a.foto || fotoExtra || "";
-      const tieneFotoFinal = Boolean(a.tiene_foto) || Boolean(fotoFinal);
-
       return {
         posicion: a.posicion || index + 1,
         nombre: a.nombre || "SIN NOMBRE",
@@ -736,8 +586,8 @@
         pc: a.pc || 0,
         dif: a.dif || 0,
   
-        foto: fotoFinal,
-        tiene_foto: tieneFotoFinal,
+        foto: a.foto || "",
+        tiene_foto: Boolean(a.tiene_foto),
         iniciales: a.iniciales || "TC"
       };
     }
@@ -1062,10 +912,10 @@
 
     async function iniciar() {
       try {
-        const resp = await fetch("datos/ranking_atletas.json?v=" + Date.now());
+        const resp = await fetch("datos/ranking_atletas_live.json?v=" + Date.now());
 
         if (!resp.ok) {
-          throw new Error("No se pudo cargar datos/ranking_atletas.json");
+          throw new Error("No se pudo cargar datos/ranking_atletas_live.json");
         }
 
         const data = await resp.json();
@@ -1076,7 +926,7 @@
           <div class="error">
             Error cargando el ranking.<br><br>
             Revisa que exista y esté actualizado:<br>
-            <b>datos/ranking_atletas.json</b>
+            <b>datos/ranking_atletas_live.json</b>
           </div>
         `;
         console.error(err);
