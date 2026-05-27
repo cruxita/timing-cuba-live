@@ -885,6 +885,69 @@
       }
     }
 
+  
+    /* RANKING_SAFE_FIX_INICIO */
+    /* Ranking limpio: cuadrito peque?o, sin texto montado */
+    .pill-ranking-auto {
+      grid-column: auto !important;
+      background: rgba(250,204,21,0.16) !important;
+      border: 1px solid rgba(250,204,21,0.65) !important;
+      min-height: 42px !important;
+      padding: 8px 9px !important;
+      display: block !important;
+    }
+
+    .pill-ranking-auto small {
+      color: var(--muted) !important;
+      font-size: 10px !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.8px !important;
+      text-transform: uppercase !important;
+      margin-bottom: 3px !important;
+    }
+
+    .ranking-auto-line {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    .ranking-auto-num {
+      display: block !important;
+      color: #facc15 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+      font-size: 18px !important;
+      font-weight: 1000 !important;
+      line-height: 1.05 !important;
+      white-space: nowrap !important;
+    }
+
+    .ranking-auto-info,
+    .ranking-auto-div,
+    .ranking-auto-campeon {
+      display: none !important;
+    }
+
+    @media (max-width: 520px) {
+      .pill-ranking-auto {
+        min-height: 30px !important;
+        padding: 5px 4px !important;
+      }
+
+      .pill-ranking-auto small {
+        font-size: 7px !important;
+        margin-bottom: 2px !important;
+      }
+
+      .ranking-auto-num {
+        font-size: 11px !important;
+      }
+    }
+    /* RANKING_SAFE_FIX_FIN */
+
   </style>
 </head>
 <body>
@@ -1456,6 +1519,71 @@ llenarFiltros();
           </div>
       `;
     }
+
+
+
+    // RANKING_SAFE_FIX_INICIO
+    // Uni?n segura: NO usa foto, NO usa apellido solo, NO usa inicial+apellido.
+    // Solo muestra ranking cuando el nombre completo del atleta coincide con el ranking.
+
+    function buscarRankingAutoFix(a) {
+      const nombreCompletoAtleta = rankingAutoClave(
+        a.nombre_completo || a.nombre_busqueda || ""
+      );
+
+      if (!nombreCompletoAtleta) {
+        return null;
+      }
+
+      const tokensAtleta = rankingAutoTokens(nombreCompletoAtleta);
+      const setAtleta = new Set(tokensAtleta);
+
+      if (tokensAtleta.length < 2) {
+        return null;
+      }
+
+      for (const r of rankingAutoLista) {
+        const tokensRanking = Array.isArray(r.tokens)
+          ? r.tokens.filter((t) => t.length >= 2)
+          : [];
+
+        if (tokensRanking.length < 2) {
+          continue;
+        }
+
+        const nombreRanking = rankingAutoClave(r.nombre || "");
+
+        if (nombreRanking && nombreCompletoAtleta === nombreRanking) {
+          return r;
+        }
+
+        const todosLosTokensDelRankingEstanEnAtleta = tokensRanking.every((t) => setAtleta.has(t));
+
+        if (todosLosTokensDelRankingEstanEnAtleta) {
+          return r;
+        }
+      }
+
+      return null;
+    }
+
+    function htmlRankingAtleta(a) {
+      const r = a.ranking_auto_fix;
+
+      if (!r || !r.posicion) {
+        return "";
+      }
+
+      return `
+          <div class="pill pill-ranking-auto">
+            <small>Ranking</small>
+            <div class="ranking-auto-line">
+              <span class="ranking-auto-num">#${escapeHTML(r.posicion)}</span>
+            </div>
+          </div>
+      `;
+    }
+    // RANKING_SAFE_FIX_FIN
 
 
     ["buscar", "filtroEstilo", "filtroGrupo", "filtroPeso", "filtroClub"].forEach((id) => {
