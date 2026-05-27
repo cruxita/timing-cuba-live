@@ -1075,6 +1075,69 @@
     }
     /* RANKING_NOMBRE_FINO_FIX_FIN */
 
+  
+    /* RANKING_FINAL_INTELIGENTE_FIX_INICIO */
+    .pill-ranking-auto {
+      grid-column: auto !important;
+      background: rgba(250,204,21,0.16) !important;
+      border: 1px solid rgba(250,204,21,0.72) !important;
+      min-height: 42px !important;
+      padding: 8px 9px !important;
+      display: block !important;
+    }
+
+    .pill-ranking-auto small {
+      display: block !important;
+      color: var(--muted) !important;
+      font-size: 10px !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.8px !important;
+      text-transform: uppercase !important;
+      margin-bottom: 3px !important;
+    }
+
+    .ranking-auto-line {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    .ranking-auto-num {
+      display: block !important;
+      color: #facc15 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+      font-size: 18px !important;
+      font-weight: 1000 !important;
+      line-height: 1.05 !important;
+      white-space: nowrap !important;
+    }
+
+    .ranking-auto-info,
+    .ranking-auto-div,
+    .ranking-auto-campeon {
+      display: none !important;
+    }
+
+    @media (max-width: 520px) {
+      .pill-ranking-auto {
+        min-height: 30px !important;
+        padding: 5px 4px !important;
+      }
+
+      .pill-ranking-auto small {
+        font-size: 7px !important;
+        margin-bottom: 2px !important;
+      }
+
+      .ranking-auto-num {
+        font-size: 11px !important;
+      }
+    }
+    /* RANKING_FINAL_INTELIGENTE_FIX_FIN */
+
   </style>
 </head>
 <body>
@@ -1135,13 +1198,24 @@
 
     function normalizarAtleta(a) {
       const nombrePublico = texto(a.nombre_publico);
-      const nombreCompleto = `${texto(a.nombre)} ${texto(a.apellidos)}`.trim();
+
+      const nombreDirectoCompleto = texto(
+        a.nombre_completo ||
+        a.nombre_real ||
+        a.nombre_original ||
+        a.full_name ||
+        a.display_name ||
+        a.nombre_atleta ||
+        a.atleta_nombre
+      );
+
+      const nombreCompleto = nombreDirectoCompleto || `${texto(a.nombre)} ${texto(a.apellidos)}`.trim();
 
       return {
         id: texto(a.id),
         nombre: nombrePublico || nombreCompleto || "ATLETA",
         nombre_completo: nombreCompleto,
-        nombre_busqueda: `${nombrePublico} ${nombreCompleto}`.toLowerCase(),
+        nombre_busqueda: `${nombrePublico} ${nombreCompleto} ${texto(a.nombre)} ${texto(a.apellidos)} ${texto(a.nombres)} ${texto(a.apellido)}`.toLowerCase(),
         club: texto(a.club),
         pais: texto(a.pais),
         provincia: texto(a.provincia),
@@ -1425,7 +1499,6 @@
         const data = await res.json();
         atletas = getListaDesdeJSON(data).map(normalizarAtleta);
 
-        
         await cargarRankingAutoFix();
         aplicarRankingAutoFix();
 llenarFiltros();
@@ -2028,6 +2101,247 @@ llenarFiltros();
       `;
     }
     // RANKING_NOMBRE_FINO_FIX_FIN
+
+
+
+    // RANKING_FINAL_INTELIGENTE_FIX_INICIO
+    // Regla final:
+    // - NO regala ranking por apellido solo.
+    // - La foto solo sirve si la division es compatible.
+    // - Nombre completo manda.
+    // - Inicial + apellido solo se acepta si es ?nico y compatible.
+
+    function rankingFinalTextoDivision(r) {
+      const partes = [];
+
+      if (r.division) partes.push(r.division);
+
+      if (r.original && r.original.division_principal) {
+        partes.push(r.original.division_principal);
+      }
+
+      if (r.original && Array.isArray(r.original.divisiones)) {
+        r.original.divisiones.forEach((d) => partes.push(d));
+      }
+
+      if (r.original && r.original.estilo) partes.push(r.original.estilo);
+      if (r.original && r.original.grupo) partes.push(r.original.grupo);
+      if (r.original && r.original.peso) partes.push(r.original.peso);
+
+      return rankingAutoClave(partes.join(" "));
+    }
+
+    function rankingFinalPeso(valor) {
+      const txt = String(valor ?? "").replace(",", ".").trim();
+
+      if (!txt || txt === "-") {
+        return "";
+      }
+
+      const m = txt.match(/\d+(\.\d+)?/);
+      return m ? m[0] : "";
+    }
+
+    function rankingFinalDivisionCompatible(a, r) {
+      const division = rankingFinalTextoDivision(r);
+
+      if (!division) {
+        return true;
+      }
+
+      const tokensDivision = new Set(rankingAutoTokens(division));
+      const numerosDivision = division.match(/\d+(\.\d+)?/g) || [];
+
+      const estilo = rankingAutoClave(a.estilo);
+      const grupo = rankingAutoClave(a.grupo);
+      const peso = rankingFinalPeso(a.peso);
+
+      if (estilo && estilo !== "-" && !tokensDivision.has(estilo)) {
+        return false;
+      }
+
+      if (grupo && grupo !== "-") {
+        const tokensGrupo = rankingAutoTokens(grupo);
+
+        if (tokensGrupo.length && !tokensGrupo.every((t) => tokensDivision.has(t))) {
+          return false;
+        }
+      }
+
+      if (peso && !numerosDivision.includes(peso)) {
+        return false;
+      }
+
+      return true;
+    }
+
+    function rankingFinalPuntosDivision(a, r) {
+      const division = rankingFinalTextoDivision(r);
+
+      if (!division) {
+        return 0;
+      }
+
+      const tokensDivision = new Set(rankingAutoTokens(division));
+      const numerosDivision = division.match(/\d+(\.\d+)?/g) || [];
+
+      const estilo = rankingAutoClave(a.estilo);
+      const grupo = rankingAutoClave(a.grupo);
+      const peso = rankingFinalPeso(a.peso);
+
+      let puntos = 0;
+
+      if (estilo && tokensDivision.has(estilo)) puntos += 20;
+
+      if (grupo) {
+        const tokensGrupo = rankingAutoTokens(grupo);
+        if (tokensGrupo.length && tokensGrupo.every((t) => tokensDivision.has(t))) {
+          puntos += 20;
+        }
+      }
+
+      if (peso && numerosDivision.includes(peso)) puntos += 20;
+
+      return puntos;
+    }
+
+    function rankingFinalArchivoFoto(valor) {
+      const limpio = String(valor ?? "")
+        .replaceAll("\\", "/")
+        .trim()
+        .toLowerCase();
+
+      if (!limpio) return "";
+
+      return limpio.split("/").pop();
+    }
+
+    function rankingFinalFirmaInicialApellido(a) {
+      const nombre = rankingAutoClave(a.nombre || "");
+      const tokens = rankingAutoTokens(nombre);
+
+      if (tokens.length < 2) return "";
+
+      const primero = tokens[0];
+      const ultimo = tokens[tokens.length - 1];
+
+      if (primero.length === 1 && ultimo.length >= 2) {
+        return primero + "|" + ultimo;
+      }
+
+      return "";
+    }
+
+    function rankingFinalFirmaRanking(r) {
+      const tokens = Array.isArray(r.tokens)
+        ? r.tokens.filter((t) => t.length >= 2)
+        : rankingAutoTokens(r.nombre || "");
+
+      if (tokens.length < 2) return "";
+
+      return tokens[0][0] + "|" + tokens[tokens.length - 1];
+    }
+
+    function buscarRankingAutoFix(a) {
+      const nombreAtleta = rankingAutoClave(
+        a.nombre_completo || a.nombre_busqueda || a.nombre || ""
+      );
+
+      const tokensAtleta = rankingAutoTokens(nombreAtleta);
+      const setAtleta = new Set(tokensAtleta);
+
+      const fotoAtleta = rankingFinalArchivoFoto(a.foto);
+
+      let candidatos = [];
+
+      for (const r of rankingAutoLista) {
+        if (!rankingFinalDivisionCompatible(a, r)) {
+          continue;
+        }
+
+        const nombreRanking = rankingAutoClave(r.nombre || "");
+        const tokensRanking = Array.isArray(r.tokens)
+          ? r.tokens.filter((t) => t.length >= 2)
+          : rankingAutoTokens(nombreRanking);
+
+        if (!tokensRanking.length) {
+          continue;
+        }
+
+        let puntos = 0;
+
+        if (nombreRanking && nombreAtleta && nombreAtleta === nombreRanking) {
+          puntos += 500;
+        }
+
+        if (tokensAtleta.length >= 2) {
+          const rankingDentroAtleta = tokensRanking.every((t) => setAtleta.has(t));
+          const comunes = tokensRanking.filter((t) => setAtleta.has(t)).length;
+
+          if (rankingDentroAtleta) {
+            puntos += 300;
+          }
+
+          if (comunes >= 2) {
+            puntos += comunes * 50;
+          }
+        }
+
+        const fotoRanking = rankingFinalArchivoFoto(r.fotoArchivo || (r.original && r.original.foto) || "");
+
+        if (fotoAtleta && fotoRanking && fotoAtleta === fotoRanking) {
+          puntos += 220;
+        }
+
+        puntos += rankingFinalPuntosDivision(a, r);
+
+        if (puntos > 0) {
+          candidatos.push({
+            ranking: r,
+            puntos: puntos
+          });
+        }
+      }
+
+      candidatos.sort((a, b) => b.puntos - a.puntos);
+
+      if (candidatos.length && candidatos[0].puntos >= 220) {
+        return candidatos[0].ranking;
+      }
+
+      const firmaAtleta = rankingFinalFirmaInicialApellido(a);
+
+      if (firmaAtleta) {
+        const candidatosFirma = rankingAutoLista.filter((r) => {
+          return rankingFinalFirmaRanking(r) === firmaAtleta &&
+                 rankingFinalDivisionCompatible(a, r);
+        });
+
+        if (candidatosFirma.length === 1) {
+          return candidatosFirma[0];
+        }
+      }
+
+      return null;
+    }
+
+    function htmlRankingAtleta(a) {
+      const r = a.ranking_auto_fix;
+
+      if (!r || !r.posicion) {
+        return "";
+      }
+
+      return `
+          <div class="pill pill-ranking-auto">
+            <small>Ranking</small>
+            <div class="ranking-auto-line">
+              <span class="ranking-auto-num">#${escapeHTML(r.posicion)}</span>
+            </div>
+          </div>
+      `;
+    }
+    // RANKING_FINAL_INTELIGENTE_FIX_FIN
 
 
     ["buscar", "filtroEstilo", "filtroGrupo", "filtroPeso", "filtroClub"].forEach((id) => {
