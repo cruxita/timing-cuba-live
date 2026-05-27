@@ -948,6 +948,70 @@
     }
     /* RANKING_SAFE_FIX_FIN */
 
+  
+    /* RANKING_DIVISION_SAFE_FIX_INICIO */
+    /* Ranking compacto: solo n?mero, sin divisi?n larga montada */
+    .pill-ranking-auto {
+      grid-column: auto !important;
+      background: rgba(250,204,21,0.16) !important;
+      border: 1px solid rgba(250,204,21,0.70) !important;
+      min-height: 42px !important;
+      padding: 8px 9px !important;
+      display: block !important;
+    }
+
+    .pill-ranking-auto small {
+      display: block !important;
+      color: var(--muted) !important;
+      font-size: 10px !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.8px !important;
+      text-transform: uppercase !important;
+      margin-bottom: 3px !important;
+    }
+
+    .ranking-auto-line {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    .ranking-auto-num {
+      display: block !important;
+      color: #facc15 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+      font-size: 18px !important;
+      font-weight: 1000 !important;
+      line-height: 1.05 !important;
+      white-space: nowrap !important;
+    }
+
+    .ranking-auto-info,
+    .ranking-auto-div,
+    .ranking-auto-campeon {
+      display: none !important;
+    }
+
+    @media (max-width: 520px) {
+      .pill-ranking-auto {
+        min-height: 30px !important;
+        padding: 5px 4px !important;
+      }
+
+      .pill-ranking-auto small {
+        font-size: 7px !important;
+        margin-bottom: 2px !important;
+      }
+
+      .ranking-auto-num {
+        font-size: 11px !important;
+      }
+    }
+    /* RANKING_DIVISION_SAFE_FIX_FIN */
+
   </style>
 </head>
 <body>
@@ -1584,6 +1648,160 @@ llenarFiltros();
       `;
     }
     // RANKING_SAFE_FIX_FIN
+
+
+
+    // RANKING_DIVISION_SAFE_FIX_INICIO
+    // Uni?n segura por nombre + estilo + grupo/categor?a + peso.
+    // Evita confundir hermanos o atletas con el mismo apellido.
+
+    function rankingDivisionTexto(r) {
+      const partes = [];
+
+      if (r.division) {
+        partes.push(r.division);
+      }
+
+      if (r.original && r.original.division_principal) {
+        partes.push(r.original.division_principal);
+      }
+
+      if (r.original && Array.isArray(r.original.divisiones)) {
+        r.original.divisiones.forEach((d) => partes.push(d));
+      }
+
+      return rankingAutoClave(partes.join(" "));
+    }
+
+    function rankingNumeroPeso(valor) {
+      const limpio = String(valor ?? "").replace(",", ".").trim();
+
+      if (!limpio || limpio === "-") {
+        return "";
+      }
+
+      const match = limpio.match(/\d+(\.\d+)?/);
+
+      return match ? match[0] : "";
+    }
+
+    function rankingCoincideDivision(a, r) {
+      const division = rankingDivisionTexto(r);
+
+      if (!division) {
+        return false;
+      }
+
+      const estilo = rankingAutoClave(a.estilo);
+      const grupo = rankingAutoClave(a.grupo);
+      const peso = rankingNumeroPeso(a.peso);
+
+      if (estilo && !division.split(" ").includes(estilo)) {
+        return false;
+      }
+
+      if (grupo && grupo !== "-") {
+        const tokensGrupo = rankingAutoTokens(grupo);
+
+        for (const tg of tokensGrupo) {
+          if (!division.split(" ").includes(tg)) {
+            return false;
+          }
+        }
+      }
+
+      if (peso) {
+        const numerosDivision = division.match(/\d+(\.\d+)?/g) || [];
+
+        if (!numerosDivision.includes(peso)) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function buscarRankingAutoFix(a) {
+      const nombreCompletoAtleta = rankingAutoClave(
+        a.nombre_completo || a.nombre_busqueda || a.nombre || ""
+      );
+
+      if (!nombreCompletoAtleta) {
+        return null;
+      }
+
+      const tokensAtleta = rankingAutoTokens(nombreCompletoAtleta);
+      const setAtleta = new Set(tokensAtleta);
+
+      if (tokensAtleta.length < 2) {
+        return null;
+      }
+
+      let mejor = null;
+      let mejorPuntos = 0;
+
+      for (const r of rankingAutoLista) {
+        if (!rankingCoincideDivision(a, r)) {
+          continue;
+        }
+
+        const tokensRanking = Array.isArray(r.tokens)
+          ? r.tokens.filter((t) => t.length >= 2)
+          : [];
+
+        if (tokensRanking.length < 2) {
+          continue;
+        }
+
+        const nombreRanking = rankingAutoClave(r.nombre || "");
+
+        if (nombreRanking && nombreCompletoAtleta === nombreRanking) {
+          return r;
+        }
+
+        const comunes = tokensRanking.filter((t) => setAtleta.has(t));
+        const cantidadComunes = comunes.length;
+
+        const todosRankingEnAtleta = tokensRanking.every((t) => setAtleta.has(t));
+
+        let puntos = 0;
+
+        if (todosRankingEnAtleta) {
+          puntos += 100;
+        }
+
+        puntos += cantidadComunes * 10;
+
+        const acepta =
+          todosRankingEnAtleta ||
+          cantidadComunes >= 2;
+
+        if (acepta && puntos > mejorPuntos) {
+          mejor = r;
+          mejorPuntos = puntos;
+        }
+      }
+
+      return mejor;
+    }
+
+    function htmlRankingAtleta(a) {
+      const r = a.ranking_auto_fix;
+
+      if (!r || !r.posicion) {
+        return "";
+      }
+
+      return `
+          <div class="pill pill-ranking-auto">
+            <small>Ranking</small>
+            <div class="ranking-auto-line">
+              <span class="ranking-auto-num">#${escapeHTML(r.posicion)}</span>
+            </div>
+          </div>
+      `;
+    }
+    // RANKING_DIVISION_SAFE_FIX_FIN
 
 
     ["buscar", "filtroEstilo", "filtroGrupo", "filtroPeso", "filtroClub"].forEach((id) => {
