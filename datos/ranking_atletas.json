@@ -3,7 +3,7 @@
   "titulo": "Ranking de Atletas",
   "evento": "TODOS VS TODOS",
   "filtro_usado": "EVENTO: TODOS VS TODOS",
-  "generado_en": "2026-05-26 17:27:54",
+  "generado_en": "2026-05-26 13:46:13",
   "conteos": {
     "Timing": 0,
     "Round Robin": 11,
@@ -12,7 +12,7 @@
   },
   "total_combates": 44,
   "total_atletas": 26,
-  "total_con_foto": 7,
+  "total_con_foto": 5,
   "total_divisiones": 5,
   "mejor_atleta": {
     "posicion": 1,
@@ -266,8 +266,8 @@
       "grupo": "",
       "peso": "",
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | BRONCE",
-      "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
-      "tiene_foto": true,
+      "foto": "",
+      "tiene_foto": false,
       "iniciales": "VG"
     },
     {
@@ -622,8 +622,8 @@
       "grupo": "",
       "peso": "",
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | BRONCE",
-      "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
-      "tiene_foto": true,
+      "foto": "",
+      "tiene_foto": false,
       "iniciales": "VG"
     },
     {
@@ -1126,8 +1126,8 @@
       "grupo": "",
       "peso": "",
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | Grupo B",
-      "foto": "fotos_atletas/atleta_0001_abrahem_arroyo_cruz.png",
-      "tiene_foto": true,
+      "foto": "",
+      "tiene_foto": false,
       "iniciales": "AA"
     },
     {
@@ -1552,8 +1552,8 @@
           "grupo": "",
           "peso": "",
           "division_principal": "FS U11/12 32 kg | Grupo B",
-          "foto": "fotos_atletas/atleta_0001_abrahem_arroyo_cruz.png",
-          "tiene_foto": true,
+          "foto": "",
+          "tiene_foto": false,
           "iniciales": "AA"
         },
         {
@@ -2064,8 +2064,8 @@
           "grupo": "",
           "peso": "",
           "division_principal": "FS U11/12 53 kg | BRONCE",
-          "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
-          "tiene_foto": true,
+          "foto": "",
+          "tiene_foto": false,
           "iniciales": "VG"
         },
         {
