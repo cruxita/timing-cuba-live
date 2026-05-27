@@ -1012,6 +1012,69 @@
     }
     /* RANKING_DIVISION_SAFE_FIX_FIN */
 
+  
+    /* RANKING_NOMBRE_FINO_FIX_INICIO */
+    .pill-ranking-auto {
+      grid-column: auto !important;
+      background: rgba(250,204,21,0.16) !important;
+      border: 1px solid rgba(250,204,21,0.70) !important;
+      min-height: 42px !important;
+      padding: 8px 9px !important;
+      display: block !important;
+    }
+
+    .pill-ranking-auto small {
+      display: block !important;
+      color: var(--muted) !important;
+      font-size: 10px !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.8px !important;
+      text-transform: uppercase !important;
+      margin-bottom: 3px !important;
+    }
+
+    .ranking-auto-line {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    .ranking-auto-num {
+      display: block !important;
+      color: #facc15 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+      font-size: 18px !important;
+      font-weight: 1000 !important;
+      line-height: 1.05 !important;
+      white-space: nowrap !important;
+    }
+
+    .ranking-auto-info,
+    .ranking-auto-div,
+    .ranking-auto-campeon {
+      display: none !important;
+    }
+
+    @media (max-width: 520px) {
+      .pill-ranking-auto {
+        min-height: 30px !important;
+        padding: 5px 4px !important;
+      }
+
+      .pill-ranking-auto small {
+        font-size: 7px !important;
+        margin-bottom: 2px !important;
+      }
+
+      .ranking-auto-num {
+        font-size: 11px !important;
+      }
+    }
+    /* RANKING_NOMBRE_FINO_FIX_FIN */
+
   </style>
 </head>
 <body>
@@ -1802,6 +1865,168 @@ llenarFiltros();
       `;
     }
     // RANKING_DIVISION_SAFE_FIX_FIN
+
+
+
+    // RANKING_NOMBRE_FINO_FIX_INICIO
+    // Uni?n fina:
+    // - NO usa foto
+    // - NO usa apellido solo
+    // - NO usa inicial + apellido
+    // - usa nombre completo
+    // - estilo/grupo/peso ayudan a desempatar, pero no bloquean al atleta correcto
+
+    function rankingExtraerDivisionTextoFino(r) {
+      const partes = [];
+
+      if (r.division) partes.push(r.division);
+
+      if (r.original && r.original.division_principal) {
+        partes.push(r.original.division_principal);
+      }
+
+      if (r.original && Array.isArray(r.original.divisiones)) {
+        r.original.divisiones.forEach((d) => partes.push(d));
+      }
+
+      return rankingAutoClave(partes.join(" "));
+    }
+
+    function rankingExtraerPesoFino(valor) {
+      const txt = String(valor ?? "").replace(",", ".").trim();
+      const m = txt.match(/\d+(\.\d+)?/);
+      return m ? m[0] : "";
+    }
+
+    function rankingPuntosDivisionFino(a, r) {
+      const division = rankingExtraerDivisionTextoFino(r);
+      let puntos = 0;
+
+      if (!division) {
+        return puntos;
+      }
+
+      const estilo = rankingAutoClave(a.estilo);
+      const grupo = rankingAutoClave(a.grupo);
+      const peso = rankingExtraerPesoFino(a.peso);
+      const tokensDivision = new Set(rankingAutoTokens(division));
+      const numerosDivision = division.match(/\d+(\.\d+)?/g) || [];
+
+      if (estilo && tokensDivision.has(estilo)) {
+        puntos += 20;
+      }
+
+      if (grupo) {
+        const tokensGrupo = rankingAutoTokens(grupo);
+        const okGrupo = tokensGrupo.length && tokensGrupo.every((t) => tokensDivision.has(t));
+
+        if (okGrupo) {
+          puntos += 20;
+        }
+      }
+
+      if (peso && numerosDivision.includes(peso)) {
+        puntos += 20;
+      }
+
+      return puntos;
+    }
+
+    function buscarRankingAutoFix(a) {
+      const nombreAtleta = rankingAutoClave(
+        a.nombre_completo || a.nombre_busqueda || a.nombre || ""
+      );
+
+      if (!nombreAtleta) {
+        return null;
+      }
+
+      const tokensAtleta = rankingAutoTokens(nombreAtleta);
+      const setAtleta = new Set(tokensAtleta);
+
+      if (tokensAtleta.length < 2) {
+        return null;
+      }
+
+      let mejor = null;
+      let mejorPuntos = 0;
+
+      for (const r of rankingAutoLista) {
+        const nombreRanking = rankingAutoClave(r.nombre || "");
+
+        if (!nombreRanking) {
+          continue;
+        }
+
+        const tokensRanking = Array.isArray(r.tokens)
+          ? r.tokens.filter((t) => t.length >= 2)
+          : rankingAutoTokens(nombreRanking);
+
+        if (tokensRanking.length < 2) {
+          continue;
+        }
+
+        let puntosNombre = 0;
+
+        if (nombreAtleta === nombreRanking) {
+          puntosNombre = 120;
+        } else {
+          const primerRanking = tokensRanking[0];
+          const ultimoRanking = tokensRanking[tokensRanking.length - 1];
+
+          const primerAtleta = tokensAtleta[0];
+          const ultimoAtleta = tokensAtleta[tokensAtleta.length - 1];
+
+          const rankingDentroAtleta = tokensRanking.every((t) => setAtleta.has(t));
+          const mismoPrimerNombre = primerRanking && primerAtleta && primerRanking === primerAtleta;
+          const mismoUltimoApellido = ultimoRanking && ultimoAtleta && ultimoRanking === ultimoAtleta;
+
+          const comunes = tokensRanking.filter((t) => setAtleta.has(t)).length;
+
+          if (rankingDentroAtleta && mismoPrimerNombre) {
+            puntosNombre = 100;
+          } else if (mismoPrimerNombre && mismoUltimoApellido) {
+            puntosNombre = 90;
+          } else if (mismoPrimerNombre && comunes >= 2) {
+            puntosNombre = 80;
+          } else {
+            puntosNombre = 0;
+          }
+        }
+
+        if (!puntosNombre) {
+          continue;
+        }
+
+        const puntosDivision = rankingPuntosDivisionFino(a, r);
+        const total = puntosNombre + puntosDivision;
+
+        if (total > mejorPuntos) {
+          mejor = r;
+          mejorPuntos = total;
+        }
+      }
+
+      return mejor;
+    }
+
+    function htmlRankingAtleta(a) {
+      const r = a.ranking_auto_fix;
+
+      if (!r || !r.posicion) {
+        return "";
+      }
+
+      return `
+          <div class="pill pill-ranking-auto">
+            <small>Ranking</small>
+            <div class="ranking-auto-line">
+              <span class="ranking-auto-num">#${escapeHTML(r.posicion)}</span>
+            </div>
+          </div>
+      `;
+    }
+    // RANKING_NOMBRE_FINO_FIX_FIN
 
 
     ["buscar", "filtroEstilo", "filtroGrupo", "filtroPeso", "filtroClub"].forEach((id) => {
