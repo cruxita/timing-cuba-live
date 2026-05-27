@@ -799,6 +799,92 @@
       }
     }
 
+  
+    /* ==========================================================
+      RANKING AUTO FIX - CUADRITO DENTRO DE LA TARJETA
+      ========================================================== */
+
+    .pill-ranking-auto {
+      grid-column: 1 / -1 !important;
+      background: linear-gradient(135deg, rgba(250,204,21,0.28), rgba(255,255,255,0.08)) !important;
+      border: 1px solid rgba(250,204,21,0.65) !important;
+      min-height: 52px !important;
+      display: block !important;
+    }
+
+    .ranking-auto-line {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 8px !important;
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    .ranking-auto-num {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-width: 54px !important;
+      padding: 6px 10px !important;
+      border-radius: 999px !important;
+      background: rgba(250,204,21,0.98) !important;
+      color: #111827 !important;
+      font-size: 18px !important;
+      font-weight: 1000 !important;
+      line-height: 1 !important;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.32) !important;
+    }
+
+    .ranking-auto-info {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-end !important;
+      min-width: 0 !important;
+      text-align: right !important;
+      gap: 2px !important;
+    }
+
+    .ranking-auto-div {
+      color: var(--text) !important;
+      font-size: 12px !important;
+      font-weight: 900 !important;
+      max-width: 135px !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+
+    .ranking-auto-campeon {
+      color: #facc15 !important;
+      font-size: 10px !important;
+      font-weight: 950 !important;
+      letter-spacing: 0.7px !important;
+      text-transform: uppercase !important;
+    }
+
+    @media (max-width: 520px) {
+      .pill-ranking-auto {
+        min-height: 38px !important;
+        padding: 6px !important;
+      }
+
+      .ranking-auto-num {
+        min-width: 40px !important;
+        padding: 4px 7px !important;
+        font-size: 13px !important;
+      }
+
+      .ranking-auto-div {
+        max-width: 85px !important;
+        font-size: 9px !important;
+      }
+
+      .ranking-auto-campeon {
+        font-size: 8px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1054,6 +1140,7 @@
         <div class="name">${escapeHTML(a.nombre)}</div>
         <div class="club">${escapeHTML(a.club || a.provincia || a.pais || "Sin club")}</div>
         <div class="meta">
+          ${htmlRankingAtleta(a)}
           <div class="pill"><small>ID</small><strong>${escapeHTML(a.id || "-")}</strong></div>
           <div class="pill pill-pais"><small>País</small>${htmlPaisConBandera(a.pais)}</div>
           <div class="pill"><small>Municipio</small><strong>${escapeHTML(municipioTexto || "-")}</strong></div>
@@ -1147,7 +1234,10 @@
         const data = await res.json();
         atletas = getListaDesdeJSON(data).map(normalizarAtleta);
 
-        llenarFiltros();
+        
+        await cargarRankingAutoFix();
+        aplicarRankingAutoFix();
+llenarFiltros();
         render();
 
         const fecha = new Date();
@@ -1164,6 +1254,209 @@
         console.error(err);
       }
     }
+
+
+    // ==========================================================
+    // RANKING_AUTO_FIX - Une atletas.html con datos/ranking_atletas.json
+    // ==========================================================
+
+    const RANKING_AUTO_FIX_URL = "datos/ranking_atletas.json";
+    let rankingAutoLista = [];
+    let rankingAutoPorFoto = new Map();
+
+    function rankingAutoTexto(valor) {
+      return String(valor ?? "").trim();
+    }
+
+    function rankingAutoClave(valor) {
+      return rankingAutoTexto(valor)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toUpperCase()
+        .replace(/[^A-Z0-9 ]/g, " ")
+        .replace(/\b(DE|DEL|LA|LAS|LOS|EL|Y)\b/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function rankingAutoTokens(valor) {
+      return rankingAutoClave(valor)
+        .split(" ")
+        .filter((t) => t.length >= 2);
+    }
+
+    function rankingAutoFotoArchivo(valor) {
+      const limpio = String(valor ?? "")
+        .replaceAll("\\", "/")
+        .trim()
+        .toLowerCase();
+
+      if (!limpio) return "";
+
+      return limpio.split("/").pop();
+    }
+
+    function rankingAutoListaDesdeJSON(data) {
+      if (Array.isArray(data)) return data;
+      if (Array.isArray(data.ranking)) return data.ranking;
+      if (Array.isArray(data.top_10)) return data.top_10;
+      if (Array.isArray(data.atletas)) return data.atletas;
+      if (Array.isArray(data.data)) return data.data;
+      return [];
+    }
+
+    function rankingAutoDivisionCorta(r) {
+      const division = rankingAutoTexto(
+        r.division_principal ||
+        (Array.isArray(r.divisiones) && r.divisiones.length ? r.divisiones[0] : "")
+      );
+
+      if (!division) return "";
+
+      const partes = division
+        .split("|")
+        .map((p) => rankingAutoTexto(p))
+        .filter(Boolean);
+
+      if (partes.length >= 2) {
+        return partes.slice(1).join(" | ");
+      }
+
+      return division;
+    }
+
+    async function cargarRankingAutoFix() {
+      rankingAutoLista = [];
+      rankingAutoPorFoto = new Map();
+
+      try {
+        const res = await fetch(RANKING_AUTO_FIX_URL + "?v=" + Date.now(), { cache: "no-store" });
+
+        if (!res.ok) {
+          console.warn("No se pudo leer ranking:", RANKING_AUTO_FIX_URL);
+          return;
+        }
+
+        const data = await res.json();
+        const lista = rankingAutoListaDesdeJSON(data);
+
+        rankingAutoLista = lista
+          .map((r) => {
+            const nombre = rankingAutoTexto(r.nombre);
+            const fotoArchivo = rankingAutoFotoArchivo(r.foto);
+
+            return {
+              original: r,
+              posicion: Number(r.posicion || 0),
+              nombre: nombre,
+              nombreClave: rankingAutoClave(nombre),
+              tokens: rankingAutoTokens(nombre),
+              fotoArchivo: fotoArchivo,
+              division: rankingAutoDivisionCorta(r),
+              campeon: Boolean(r.campeon)
+            };
+          })
+          .filter((r) => r.posicion && r.nombreClave);
+
+        rankingAutoLista.forEach((r) => {
+          if (r.fotoArchivo) {
+            rankingAutoPorFoto.set(r.fotoArchivo, r);
+          }
+        });
+
+        console.log("Ranking cargado para atletas:", rankingAutoLista.length);
+      } catch (err) {
+        console.warn("Ranking no disponible para atletas.html", err);
+      }
+    }
+
+    function buscarRankingAutoFix(a) {
+      const fotoAtleta = rankingAutoFotoArchivo(a.foto);
+
+      if (fotoAtleta && rankingAutoPorFoto.has(fotoAtleta)) {
+        return rankingAutoPorFoto.get(fotoAtleta);
+      }
+
+      const textoAtleta = rankingAutoClave([
+        a.nombre,
+        a.nombre_completo,
+        a.nombre_busqueda
+      ].join(" "));
+
+      const tokensAtleta = rankingAutoTokens(textoAtleta);
+      const setAtleta = new Set(tokensAtleta);
+
+      const inicialAtleta = tokensAtleta.length ? tokensAtleta[0][0] : "";
+
+      let mejor = null;
+      let mejorPuntos = 0;
+
+      for (const r of rankingAutoLista) {
+        if (r.nombreClave && textoAtleta.includes(r.nombreClave)) {
+          return r;
+        }
+
+        const tokensRanking = r.tokens || [];
+
+        if (!tokensRanking.length) {
+          continue;
+        }
+
+        const inicialRanking = tokensRanking[0] ? tokensRanking[0][0] : "";
+        const coincideInicial = inicialAtleta && inicialRanking && inicialAtleta === inicialRanking;
+
+        const comunes = tokensRanking.filter((t) => setAtleta.has(t));
+        const cantidadComunes = comunes.length;
+
+        let puntos = 0;
+
+        if (coincideInicial) puntos += 4;
+        puntos += cantidadComunes * 6;
+
+        const acepta =
+          cantidadComunes >= 2 ||
+          (coincideInicial && cantidadComunes >= 1);
+
+        if (acepta && puntos > mejorPuntos) {
+          mejor = r;
+          mejorPuntos = puntos;
+        }
+      }
+
+      return mejor;
+    }
+
+    function aplicarRankingAutoFix() {
+      atletas = atletas.map((a) => ({
+        ...a,
+        ranking_auto_fix: buscarRankingAutoFix(a)
+      }));
+    }
+
+    function htmlRankingAtleta(a) {
+      const r = a.ranking_auto_fix;
+
+      if (!r || !r.posicion) {
+        return "";
+      }
+
+      const division = r.division ? escapeHTML(r.division) : "";
+      const campeon = r.campeon ? `<span class="ranking-auto-campeon">Campe?n</span>` : "";
+
+      return `
+          <div class="pill pill-ranking-auto">
+            <small>Ranking</small>
+            <div class="ranking-auto-line">
+              <span class="ranking-auto-num">#${escapeHTML(r.posicion)}</span>
+              <span class="ranking-auto-info">
+                ${division ? `<span class="ranking-auto-div">${division}</span>` : ""}
+                ${campeon}
+              </span>
+            </div>
+          </div>
+      `;
+    }
+
 
     ["buscar", "filtroEstilo", "filtroGrupo", "filtroPeso", "filtroClub"].forEach((id) => {
       $(id).addEventListener("input", render);
