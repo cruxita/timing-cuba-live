@@ -3,7 +3,7 @@
   "titulo": "Ranking de Atletas",
   "evento": "TODOS VS TODOS",
   "filtro_usado": "EVENTO: TODOS VS TODOS",
-  "generado_en": "2026-05-26 13:46:13",
+  "generado_en": "2026-05-27 02:57:28",
   "conteos": {
     "Timing": 0,
     "Round Robin": 11,
@@ -12,8 +12,10 @@
   },
   "total_combates": 44,
   "total_atletas": 26,
-  "total_con_foto": 5,
+  "total_con_foto": 7,
+  "total_con_id": 5,
   "total_divisiones": 5,
+  "total_divisiones_con_id": 5,
   "mejor_atleta": {
     "posicion": 1,
     "nombre": "LESMAILIE COCA",
@@ -50,7 +52,9 @@
     "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | FINAL",
     "foto": "",
     "tiene_foto": false,
-    "iniciales": "LC"
+    "iniciales": "LC",
+    "atleta_id": "",
+    "id_atleta": ""
   },
   "top_10": [
     {
@@ -89,7 +93,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | FINAL",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "LC"
+      "iniciales": "LC",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 2,
@@ -127,7 +133,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | FINAL",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "HC"
+      "iniciales": "HC",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 3,
@@ -161,7 +169,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 46 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "FL"
+      "iniciales": "FL",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 4,
@@ -199,7 +209,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | FINAL",
       "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
       "tiene_foto": true,
-      "iniciales": "AA"
+      "iniciales": "AA",
+      "atleta_id": "58",
+      "id_atleta": "58"
     },
     {
       "posicion": 5,
@@ -233,7 +245,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 28 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "YJ"
+      "iniciales": "YJ",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 6,
@@ -266,9 +280,11 @@
       "grupo": "",
       "peso": "",
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | BRONCE",
-      "foto": "",
-      "tiene_foto": false,
-      "iniciales": "VG"
+      "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
+      "tiene_foto": true,
+      "iniciales": "VG",
+      "atleta_id": "2",
+      "id_atleta": "2"
     },
     {
       "posicion": 7,
@@ -303,7 +319,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | BRONCE",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "DR"
+      "iniciales": "DR",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 8,
@@ -338,7 +356,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | FINAL",
       "foto": "fotos_atletas/atleta_0053_frank_martinez_labrada.png",
       "tiene_foto": true,
-      "iniciales": "FM"
+      "iniciales": "FM",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 9,
@@ -373,7 +393,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | FINAL",
       "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
       "tiene_foto": true,
-      "iniciales": "CN"
+      "iniciales": "CN",
+      "atleta_id": "69",
+      "id_atleta": "69"
     },
     {
       "posicion": 10,
@@ -405,7 +427,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 46 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "YJ"
+      "iniciales": "YJ",
+      "atleta_id": "",
+      "id_atleta": ""
     }
   ],
   "ranking": [
@@ -445,7 +469,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | FINAL",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "LC"
+      "iniciales": "LC",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 2,
@@ -483,7 +509,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | FINAL",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "HC"
+      "iniciales": "HC",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 3,
@@ -517,7 +545,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 46 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "FL"
+      "iniciales": "FL",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 4,
@@ -555,7 +585,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | FINAL",
       "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
       "tiene_foto": true,
-      "iniciales": "AA"
+      "iniciales": "AA",
+      "atleta_id": "58",
+      "id_atleta": "58"
     },
     {
       "posicion": 5,
@@ -589,7 +621,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 28 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "YJ"
+      "iniciales": "YJ",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 6,
@@ -622,9 +656,11 @@
       "grupo": "",
       "peso": "",
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | BRONCE",
-      "foto": "",
-      "tiene_foto": false,
-      "iniciales": "VG"
+      "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
+      "tiene_foto": true,
+      "iniciales": "VG",
+      "atleta_id": "2",
+      "id_atleta": "2"
     },
     {
       "posicion": 7,
@@ -659,7 +695,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | BRONCE",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "DR"
+      "iniciales": "DR",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 8,
@@ -694,7 +732,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | FINAL",
       "foto": "fotos_atletas/atleta_0053_frank_martinez_labrada.png",
       "tiene_foto": true,
-      "iniciales": "FM"
+      "iniciales": "FM",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 9,
@@ -729,7 +769,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | FINAL",
       "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
       "tiene_foto": true,
-      "iniciales": "CN"
+      "iniciales": "CN",
+      "atleta_id": "69",
+      "id_atleta": "69"
     },
     {
       "posicion": 10,
@@ -761,7 +803,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 46 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "YJ"
+      "iniciales": "YJ",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 11,
@@ -793,7 +837,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 46 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "HP"
+      "iniciales": "HP",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 12,
@@ -828,7 +874,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | BRONCE",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "ED"
+      "iniciales": "ED",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 13,
@@ -863,7 +911,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | BRONCE",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "AM"
+      "iniciales": "AM",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 14,
@@ -898,7 +948,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | FINAL",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "NN"
+      "iniciales": "NN",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 15,
@@ -933,7 +985,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | BRONCE",
       "foto": "fotos_atletas/atleta_0052_matteo_ortiz_arriete.png",
       "tiene_foto": true,
-      "iniciales": "MO"
+      "iniciales": "MO",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 16,
@@ -965,7 +1019,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | Grupo A",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "CY"
+      "iniciales": "CY",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 17,
@@ -997,7 +1053,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 46 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "RT"
+      "iniciales": "RT",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 18,
@@ -1032,7 +1090,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | BRONCE",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "JB"
+      "iniciales": "JB",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 19,
@@ -1064,7 +1124,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 46 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "GP"
+      "iniciales": "GP",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 20,
@@ -1096,7 +1158,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | Grupo A",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "NA"
+      "iniciales": "NA",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 21,
@@ -1126,9 +1190,11 @@
       "grupo": "",
       "peso": "",
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | Grupo B",
-      "foto": "",
-      "tiene_foto": false,
-      "iniciales": "AA"
+      "foto": "fotos_atletas/atleta_0001_abrahem_arroyo_cruz.png",
+      "tiene_foto": true,
+      "iniciales": "AA",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 22,
@@ -1160,7 +1226,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 32 kg | Grupo A",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "AG"
+      "iniciales": "AG",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 23,
@@ -1192,7 +1260,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 28 kg",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "JL"
+      "iniciales": "JL",
+      "atleta_id": "75",
+      "id_atleta": "75"
     },
     {
       "posicion": 24,
@@ -1224,7 +1294,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 38 kg | Grupo B",
       "foto": "fotos_atletas/atleta_0061_enmanuel_abreu_veranes.png",
       "tiene_foto": true,
-      "iniciales": "EA"
+      "iniciales": "EA",
+      "atleta_id": "61",
+      "id_atleta": "61"
     },
     {
       "posicion": 25,
@@ -1256,7 +1328,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | Grupo B",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "MG"
+      "iniciales": "MG",
+      "atleta_id": "",
+      "id_atleta": ""
     },
     {
       "posicion": 26,
@@ -1288,7 +1362,9 @@
       "division_principal": "TODOS VS TODOS | FS U11/12 53 kg | Grupo A",
       "foto": "",
       "tiene_foto": false,
-      "iniciales": "YR"
+      "iniciales": "YR",
+      "atleta_id": "",
+      "id_atleta": ""
     }
   ],
   "divisiones": [
@@ -1334,7 +1410,9 @@
           "division_principal": "FS U11/12 28 kg",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "YJ"
+          "iniciales": "YJ",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 2,
@@ -1366,7 +1444,9 @@
           "division_principal": "FS U11/12 28 kg",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "JL"
+          "iniciales": "JL",
+          "atleta_id": "75",
+          "id_atleta": "75"
         }
       ]
     },
@@ -1417,7 +1497,9 @@
           "division_principal": "FS U11/12 32 kg",
           "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
           "tiene_foto": true,
-          "iniciales": "AA"
+          "iniciales": "AA",
+          "atleta_id": "58",
+          "id_atleta": "58"
         },
         {
           "posicion": 2,
@@ -1452,7 +1534,9 @@
           "division_principal": "FS U11/12 32 kg | BRONCE",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "DR"
+          "iniciales": "DR",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 3,
@@ -1487,7 +1571,9 @@
           "division_principal": "FS U11/12 32 kg | FINAL",
           "foto": "fotos_atletas/atleta_0053_frank_martinez_labrada.png",
           "tiene_foto": true,
-          "iniciales": "FM"
+          "iniciales": "FM",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 4,
@@ -1522,7 +1608,9 @@
           "division_principal": "FS U11/12 32 kg | BRONCE",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "JB"
+          "iniciales": "JB",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 5,
@@ -1552,9 +1640,11 @@
           "grupo": "",
           "peso": "",
           "division_principal": "FS U11/12 32 kg | Grupo B",
-          "foto": "",
-          "tiene_foto": false,
-          "iniciales": "AA"
+          "foto": "fotos_atletas/atleta_0001_abrahem_arroyo_cruz.png",
+          "tiene_foto": true,
+          "iniciales": "AA",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 6,
@@ -1586,7 +1676,9 @@
           "division_principal": "FS U11/12 32 kg | Grupo A",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "AG"
+          "iniciales": "AG",
+          "atleta_id": "",
+          "id_atleta": ""
         }
       ]
     },
@@ -1637,7 +1729,9 @@
           "division_principal": "FS U11/12 38 kg",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "LC"
+          "iniciales": "LC",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 2,
@@ -1672,7 +1766,9 @@
           "division_principal": "FS U11/12 38 kg | FINAL",
           "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
           "tiene_foto": true,
-          "iniciales": "CN"
+          "iniciales": "CN",
+          "atleta_id": "69",
+          "id_atleta": "69"
         },
         {
           "posicion": 3,
@@ -1707,7 +1803,9 @@
           "division_principal": "FS U11/12 38 kg | BRONCE",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "AM"
+          "iniciales": "AM",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 4,
@@ -1742,7 +1840,9 @@
           "division_principal": "FS U11/12 38 kg | BRONCE",
           "foto": "fotos_atletas/atleta_0052_matteo_ortiz_arriete.png",
           "tiene_foto": true,
-          "iniciales": "MO"
+          "iniciales": "MO",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 5,
@@ -1774,7 +1874,9 @@
           "division_principal": "FS U11/12 38 kg | Grupo A",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "NA"
+          "iniciales": "NA",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 6,
@@ -1806,7 +1908,9 @@
           "division_principal": "FS U11/12 38 kg | Grupo B",
           "foto": "fotos_atletas/atleta_0061_enmanuel_abreu_veranes.png",
           "tiene_foto": true,
-          "iniciales": "EA"
+          "iniciales": "EA",
+          "atleta_id": "61",
+          "id_atleta": "61"
         }
       ]
     },
@@ -1852,7 +1956,9 @@
           "division_principal": "FS U11/12 46 kg",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "FL"
+          "iniciales": "FL",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 2,
@@ -1884,7 +1990,9 @@
           "division_principal": "FS U11/12 46 kg",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "YJ"
+          "iniciales": "YJ",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 3,
@@ -1916,7 +2024,9 @@
           "division_principal": "FS U11/12 46 kg",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "HP"
+          "iniciales": "HP",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 4,
@@ -1948,7 +2058,9 @@
           "division_principal": "FS U11/12 46 kg",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "RT"
+          "iniciales": "RT",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 5,
@@ -1980,7 +2092,9 @@
           "division_principal": "FS U11/12 46 kg",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "GP"
+          "iniciales": "GP",
+          "atleta_id": "",
+          "id_atleta": ""
         }
       ]
     },
@@ -2031,7 +2145,9 @@
           "division_principal": "FS U11/12 53 kg",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "HC"
+          "iniciales": "HC",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 2,
@@ -2064,9 +2180,11 @@
           "grupo": "",
           "peso": "",
           "division_principal": "FS U11/12 53 kg | BRONCE",
-          "foto": "",
-          "tiene_foto": false,
-          "iniciales": "VG"
+          "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
+          "tiene_foto": true,
+          "iniciales": "VG",
+          "atleta_id": "2",
+          "id_atleta": "2"
         },
         {
           "posicion": 3,
@@ -2101,7 +2219,9 @@
           "division_principal": "FS U11/12 53 kg | BRONCE",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "ED"
+          "iniciales": "ED",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 4,
@@ -2136,7 +2256,9 @@
           "division_principal": "FS U11/12 53 kg | FINAL",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "NN"
+          "iniciales": "NN",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 5,
@@ -2168,7 +2290,9 @@
           "division_principal": "FS U11/12 53 kg | Grupo A",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "CY"
+          "iniciales": "CY",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 6,
@@ -2200,7 +2324,9 @@
           "division_principal": "FS U11/12 53 kg | Grupo B",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "MG"
+          "iniciales": "MG",
+          "atleta_id": "",
+          "id_atleta": ""
         },
         {
           "posicion": 7,
@@ -2232,7 +2358,9 @@
           "division_principal": "FS U11/12 53 kg | Grupo A",
           "foto": "",
           "tiene_foto": false,
-          "iniciales": "YR"
+          "iniciales": "YR",
+          "atleta_id": "",
+          "id_atleta": ""
         }
       ]
     }
