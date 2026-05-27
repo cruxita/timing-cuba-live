@@ -1138,6 +1138,69 @@
     }
     /* RANKING_FINAL_INTELIGENTE_FIX_FIN */
 
+  
+    /* RANKING_ID_PRIMERO_FIX_INICIO */
+    .pill-ranking-auto {
+      grid-column: auto !important;
+      background: rgba(250,204,21,0.16) !important;
+      border: 1px solid rgba(250,204,21,0.72) !important;
+      min-height: 42px !important;
+      padding: 8px 9px !important;
+      display: block !important;
+    }
+
+    .pill-ranking-auto small {
+      display: block !important;
+      color: var(--muted) !important;
+      font-size: 10px !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.8px !important;
+      text-transform: uppercase !important;
+      margin-bottom: 3px !important;
+    }
+
+    .ranking-auto-line {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    .ranking-auto-num {
+      display: block !important;
+      color: #facc15 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      min-width: 0 !important;
+      font-size: 18px !important;
+      font-weight: 1000 !important;
+      line-height: 1.05 !important;
+      white-space: nowrap !important;
+    }
+
+    .ranking-auto-info,
+    .ranking-auto-div,
+    .ranking-auto-campeon {
+      display: none !important;
+    }
+
+    @media (max-width: 520px) {
+      .pill-ranking-auto {
+        min-height: 30px !important;
+        padding: 5px 4px !important;
+      }
+
+      .pill-ranking-auto small {
+        font-size: 7px !important;
+        margin-bottom: 2px !important;
+      }
+
+      .ranking-auto-num {
+        font-size: 11px !important;
+      }
+    }
+    /* RANKING_ID_PRIMERO_FIX_FIN */
+
   </style>
 </head>
 <body>
@@ -2342,6 +2405,224 @@ llenarFiltros();
       `;
     }
     // RANKING_FINAL_INTELIGENTE_FIX_FIN
+
+
+
+    // RANKING_ID_PRIMERO_FIX_INICIO
+    // Regla final:
+    // 1) ID manda cuando existe en ranking_atletas.json.
+    // 2) Si no hay ID, usa respaldo por nombre completo + división.
+    // 3) Nunca usa foto sola ni apellido solo.
+
+    function rankingIdFixId(valor) {
+      const txt = String(valor ?? "").trim();
+
+      if (!txt || txt === "-") {
+        return "";
+      }
+
+      if (/^\d+$/.test(txt)) {
+        return String(parseInt(txt, 10));
+      }
+
+      return txt;
+    }
+
+    function rankingIdFixRankingId(r) {
+      const o = r.original || {};
+
+      return rankingIdFixId(
+        o.atleta_id ||
+        o.id_atleta ||
+        o.id ||
+        r.atleta_id ||
+        r.id_atleta ||
+        r.id
+      );
+    }
+
+    function rankingIdFixTextoDivision(r) {
+      const o = r.original || {};
+      const partes = [];
+
+      if (r.division) partes.push(r.division);
+      if (o.division_principal) partes.push(o.division_principal);
+      if (Array.isArray(o.divisiones)) o.divisiones.forEach((d) => partes.push(d));
+      if (o.estilo) partes.push(o.estilo);
+      if (o.grupo) partes.push(o.grupo);
+      if (o.peso) partes.push(o.peso);
+
+      return rankingAutoClave(partes.join(" "));
+    }
+
+    function rankingIdFixPeso(valor) {
+      const txt = String(valor ?? "").replace(",", ".").trim();
+
+      if (!txt || txt === "-") {
+        return "";
+      }
+
+      const m = txt.match(/\d+(\.\d+)?/);
+
+      return m ? m[0] : "";
+    }
+
+    function rankingIdFixDivisionScore(a, r) {
+      const division = rankingIdFixTextoDivision(r);
+
+      if (!division) {
+        return 0;
+      }
+
+      const tokensDivision = new Set(rankingAutoTokens(division));
+      const numerosDivision = division.match(/\d+(\.\d+)?/g) || [];
+
+      const estilo = rankingAutoClave(a.estilo);
+      const grupo = rankingAutoClave(a.grupo);
+      const peso = rankingIdFixPeso(a.peso);
+
+      let puntos = 0;
+
+      if (estilo && estilo !== "-" && tokensDivision.has(estilo)) {
+        puntos += 25;
+      }
+
+      if (grupo && grupo !== "-") {
+        const tokensGrupo = rankingAutoTokens(grupo);
+
+        if (tokensGrupo.length && tokensGrupo.every((t) => tokensDivision.has(t))) {
+          puntos += 25;
+        }
+      }
+
+      if (peso && numerosDivision.includes(peso)) {
+        puntos += 25;
+      }
+
+      return puntos;
+    }
+
+    function rankingIdFixNombreScore(a, r) {
+      const nombreAtleta = rankingAutoClave(
+        a.nombre_completo || a.nombre_busqueda || a.nombre || ""
+      );
+
+      const nombreRanking = rankingAutoClave(
+        (r.original && r.original.nombre) || r.nombre || ""
+      );
+
+      if (!nombreAtleta || !nombreRanking) {
+        return 0;
+      }
+
+      const tokensAtleta = rankingAutoTokens(nombreAtleta);
+      const tokensRanking = rankingAutoTokens(nombreRanking);
+
+      if (tokensAtleta.length < 2 || tokensRanking.length < 2) {
+        return 0;
+      }
+
+      const setAtleta = new Set(tokensAtleta);
+
+      if (nombreAtleta === nombreRanking) {
+        return 500;
+      }
+
+      const rankingDentroAtleta = tokensRanking.every((t) => setAtleta.has(t));
+      const mismoPrimerNombre = tokensRanking[0] === tokensAtleta[0];
+      const mismoUltimoApellido = tokensRanking[tokensRanking.length - 1] === tokensAtleta[tokensAtleta.length - 1];
+      const comunes = tokensRanking.filter((t) => setAtleta.has(t)).length;
+
+      if (rankingDentroAtleta && mismoPrimerNombre) {
+        return 420;
+      }
+
+      if (mismoPrimerNombre && mismoUltimoApellido) {
+        return 360;
+      }
+
+      if (mismoPrimerNombre && comunes >= 2) {
+        return 300;
+      }
+
+      return 0;
+    }
+
+    function buscarRankingAutoFix(a) {
+      const atletaId = rankingIdFixId(a.id);
+
+      if (atletaId) {
+        for (const r of rankingAutoLista) {
+          if (rankingIdFixRankingId(r) === atletaId) {
+            return r;
+          }
+        }
+      }
+
+      let candidatos = [];
+
+      for (const r of rankingAutoLista) {
+        const puntosNombre = rankingIdFixNombreScore(a, r);
+
+        if (!puntosNombre) {
+          continue;
+        }
+
+        const puntosDivision = rankingIdFixDivisionScore(a, r);
+        const total = puntosNombre + puntosDivision;
+
+        candidatos.push({
+          ranking: r,
+          total: total,
+          puntosNombre: puntosNombre,
+          puntosDivision: puntosDivision
+        });
+      }
+
+      if (!candidatos.length) {
+        return null;
+      }
+
+      candidatos.sort((a, b) => b.total - a.total);
+
+      const primero = candidatos[0];
+
+      if (candidatos.length === 1) {
+        return primero.ranking;
+      }
+
+      const segundo = candidatos[1];
+
+      // Si queda empate fuerte, no se muestra ranking para evitar error.
+      if (primero.total === segundo.total) {
+        return null;
+      }
+
+      // Si la diferencia es pequeña y no hubo ayuda de división, no arriesga.
+      if ((primero.total - segundo.total) < 40 && primero.puntosDivision === 0) {
+        return null;
+      }
+
+      return primero.ranking;
+    }
+
+    function htmlRankingAtleta(a) {
+      const r = a.ranking_auto_fix;
+
+      if (!r || !r.posicion) {
+        return "";
+      }
+
+      return `
+          <div class="pill pill-ranking-auto">
+            <small>Ranking</small>
+            <div class="ranking-auto-line">
+              <span class="ranking-auto-num">#${escapeHTML(r.posicion)}</span>
+            </div>
+          </div>
+      `;
+    }
+    // RANKING_ID_PRIMERO_FIX_FIN
 
 
     ["buscar", "filtroEstilo", "filtroGrupo", "filtroPeso", "filtroClub"].forEach((id) => {
