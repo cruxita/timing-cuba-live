@@ -3,7 +3,7 @@
   "titulo": "Ranking de Atletas",
   "evento": "TODOS VS TODOS",
   "filtro_usado": "EVENTO: TODOS VS TODOS",
-  "generado_en": "2026-05-27 02:59:07",
+  "generado_en": "2026-05-30 15:44:05",
   "conteos": {
     "Timing": 0,
     "Round Robin": 11,
@@ -13,9 +13,9 @@
   "total_combates": 44,
   "total_atletas": 26,
   "total_con_foto": 7,
-  "total_con_id": 5,
+  "total_con_id": 7,
   "total_divisiones": 5,
-  "total_divisiones_con_id": 5,
+  "total_divisiones_con_id": 7,
   "mejor_atleta": {
     "posicion": 1,
     "nombre": "LESMAILIE COCA",
@@ -912,8 +912,8 @@
       "foto": "",
       "tiene_foto": false,
       "iniciales": "AM",
-      "atleta_id": "",
-      "id_atleta": ""
+      "atleta_id": "81",
+      "id_atleta": "81"
     },
     {
       "posicion": 14,
@@ -1159,8 +1159,8 @@
       "foto": "",
       "tiene_foto": false,
       "iniciales": "NA",
-      "atleta_id": "",
-      "id_atleta": ""
+      "atleta_id": "78",
+      "id_atleta": "78"
     },
     {
       "posicion": 21,
@@ -1804,8 +1804,8 @@
           "foto": "",
           "tiene_foto": false,
           "iniciales": "AM",
-          "atleta_id": "",
-          "id_atleta": ""
+          "atleta_id": "81",
+          "id_atleta": "81"
         },
         {
           "posicion": 4,
@@ -1875,8 +1875,8 @@
           "foto": "",
           "tiene_foto": false,
           "iniciales": "NA",
-          "atleta_id": "",
-          "id_atleta": ""
+          "atleta_id": "78",
+          "id_atleta": "78"
         },
         {
           "posicion": 6,
