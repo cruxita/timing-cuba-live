@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -71,6 +71,36 @@
       text-align: center;
       min-width: 170px;
     }
+
+    /* RANKING_WEB_MENU_FIX_INICIO */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn-menu-principal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 160px;
+      text-decoration: none;
+      background: rgba(245,196,81,0.95);
+      color: #111111;
+      border: 1px solid rgba(245,196,81,0.95);
+      border-radius: 16px;
+      padding: 12px 16px;
+      font-weight: 950;
+      text-transform: uppercase;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+    }
+
+    .btn-menu-principal:hover {
+      filter: brightness(1.05);
+    }
+    /* RANKING_WEB_MENU_FIX_FIN */
 
     .stats-grid {
       display: grid;
@@ -407,6 +437,59 @@
       font-weight: 900;
     }
 
+    /* RANKING_MOVIMIENTOS_WEB_FIX_INICIO */
+    .mov-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 88px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 12px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .mov-sube {
+      background: rgba(16,185,129,0.14);
+      color: var(--green);
+      border-color: rgba(16,185,129,0.35);
+    }
+
+    .mov-baja {
+      background: rgba(239,68,68,0.14);
+      color: var(--red);
+      border-color: rgba(239,68,68,0.35);
+    }
+
+    .mov-igual {
+      background: rgba(245,196,81,0.14);
+      color: var(--gold);
+      border-color: rgba(245,196,81,0.35);
+    }
+
+    .mov-nuevo {
+      background: rgba(59,130,246,0.16);
+      color: #93c5fd;
+      border-color: rgba(59,130,246,0.38);
+    }
+
+    .mov-small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: none;
+    }
+    /* RANKING_MOVIMIENTOS_WEB_FIX_FIN */
+
     .loading, .error {
       background: rgba(13,19,32,0.94);
       border: 1px solid var(--line);
@@ -447,7 +530,7 @@
       }
 
       table {
-        min-width: 920px;
+        min-width: 1060px;
       }
     }
 
@@ -480,7 +563,10 @@
         <p id="subtitulo">Timing Cuba Live</p>
       </div>
 
-      <div class="badge" id="eventoBadge">Cargando...</div>
+      <div class="header-actions">
+        <a class="btn-menu-principal" href="index.html">Menu principal</a>
+        <div class="badge" id="eventoBadge">Cargando...</div>
+      </div>
     </header>
 
     <section class="stats-grid">
@@ -503,6 +589,11 @@
         <div class="stat-label">Champions</div>
         <div class="stat-value" id="totalCH">--</div>
       </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Llaves UWW</div>
+        <div class="stat-value" id="totalLL">--</div>
+      </div>
     </section>
 
     <section class="top-section" id="topSection"></section>
@@ -518,8 +609,8 @@
         <div id="filtroPeso"></div>
       
       </div>    
-      <button class="btn active" id="btnDivisiones">Por divisiones</button>
-      <button class="btn" id="btnGeneral">Top general</button>
+      <button class="btn active" id="btnGeneral">Top general</button>
+      <button class="btn" id="btnDivisiones">Por divisiones</button>
       <button class="btn" id="btnCampeones">Campeones</button>
     </section>
 
@@ -552,7 +643,9 @@
     window.fetch = async function(input, init) {
       const url = typeof input === "string" ? input : (input && input.url ? input.url : "");
 
-      if (url.includes("datos/ranking_atletas.json")) {
+      const esLocalhost = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+
+      if (!esLocalhost && url.includes("datos/ranking_atletas.json")) {
         const apiUrl = "https://api.github.com/repos/cruxita/timing-cuba-live/contents/datos/ranking_atletas.json?ref=main&v=" + Date.now();
 
         try {
@@ -582,7 +675,7 @@
     const JSON_URL = "datos/ranking_atletas.json?v=" + Date.now();
   
     let rankingData = null;
-    let modo = "divisiones";
+    let modo = "general";
   
     let filtroEstilo = "Todos";
     let filtroGrupo = "Todos";
@@ -735,6 +828,11 @@
         pf: a.pf || 0,
         pc: a.pc || 0,
         dif: a.dif || 0,
+
+        posicion_anterior: a.posicion_anterior ?? null,
+        movimiento: a.movimiento || "",
+        cambio_posicion: a.cambio_posicion || 0,
+        movimiento_texto: a.movimiento_texto || "",
   
         foto: fotoFinal,
         tiene_foto: tieneFotoFinal,
@@ -839,6 +937,30 @@
       return true;
     }
   
+    function movimientoHtml(a) {
+      const mov = String(a.movimiento || "").toUpperCase();
+      const cambio = Number(a.cambio_posicion || 0);
+      const anterior = a.posicion_anterior;
+
+      if (mov === "SUBE") {
+        return `<span class="mov-badge mov-sube">? SUBE ${Math.abs(cambio)}<span class="mov-small">Antes #${anterior}</span></span>`;
+      }
+
+      if (mov === "BAJA") {
+        return `<span class="mov-badge mov-baja">? BAJA ${Math.abs(cambio)}<span class="mov-small">Antes #${anterior}</span></span>`;
+      }
+
+      if (mov === "IGUAL") {
+        return `<span class="mov-badge mov-igual">= IGUAL<span class="mov-small">Antes #${anterior}</span></span>`;
+      }
+
+      if (mov === "NUEVO") {
+        return `<span class="mov-badge mov-nuevo">NUEVO</span>`;
+      }
+
+      return `<span class="mov-badge">--</span>`;
+    }
+
     function tablaRanking(lista) {
       if (!lista.length) {
         return `<div class="error">No hay atletas para mostrar con este filtro.</div>`;
@@ -851,6 +973,7 @@
               <tr>
                 <th>#</th>
                 <th>Atleta</th>
+                <th>Mov.</th>
                 <th>Tag/Club</th>
                 <th>Campeón</th>
                 <th>C</th>
@@ -1049,6 +1172,7 @@
       $("totalCombates").textContent = rankingData.total_combates || 0;
       $("totalRR").textContent = rankingData.conteos?.["Round Robin"] ?? 0;
       $("totalCH").textContent = rankingData.conteos?.["Champions"] ?? 0;
+      $("totalLL").textContent = rankingData.conteos?.["Llaves UWW"] ?? 0;
 
       $("footerInfo").textContent =
         `Timing Cuba Live | ${rankingData.ranking.length} atletas | ` +
