@@ -2,21 +2,22 @@
   "evento_nombre": "TODOS VS TODOS",
   "sistema": "UWW Original",
   "criterio": "Posición final",
-  "generado_en": "2026-05-31 00:57:13",
-  "total_equipos": 4,
-  "total_eventos": 2,
+  "generado_en": "2026-05-31 01:06:47",
+  "total_equipos": 3,
+  "total_eventos": 3,
   "eventos": [
     "TODOS VS TODOS",
     "FESTIVAL ESCOLAR DE LUCHA",
-    "TODOS VS TODOS"
+    "TODOS VS TODOS",
+    "frfrfrf"
   ],
   "clasificacion": [
     {
       "nombre": "CH",
       "equipo": "CH",
-      "primero": 2,
+      "primero": 1,
       "segundo": 1,
-      "tercero": 2,
+      "tercero": 1,
       "cuarto": 0,
       "quinto": 0,
       "sexto": 0,
@@ -24,26 +25,8 @@
       "octavo": 0,
       "noveno": 0,
       "decimo": 0,
-      "puntos_uww": 100,
+      "puntos_uww": 60,
       "divisiones": [
-        {
-          "evento": "FESTIVAL ESCOLAR DE LUCHA",
-          "sistema": "Champions",
-          "division": "FS U13/15 32 KG",
-          "posicion": 1,
-          "cantidad": 1,
-          "puntos": 25,
-          "atletas": "ANTHONY ARAMBURU"
-        },
-        {
-          "evento": "FESTIVAL ESCOLAR DE LUCHA",
-          "sistema": "Champions",
-          "division": "FS U13/15 38 KG",
-          "posicion": 3,
-          "cantidad": 1,
-          "puntos": 15,
-          "atletas": "ENMANUEL ABREU VERANES"
-        },
         {
           "evento": "TODOS VS TODOS",
           "sistema": "Champions",
@@ -75,11 +58,11 @@
       "lugar": 1
     },
     {
-      "nombre": "LA HABANA",
-      "equipo": "LA HABANA",
+      "nombre": "HAB",
+      "equipo": "HAB",
       "primero": 1,
-      "segundo": 2,
-      "tercero": 2,
+      "segundo": 1,
+      "tercero": 0,
       "cuarto": 0,
       "quinto": 0,
       "sexto": 0,
@@ -87,17 +70,44 @@
       "octavo": 0,
       "noveno": 0,
       "decimo": 0,
-      "puntos_uww": 95,
+      "puntos_uww": 45,
       "divisiones": [
         {
-          "evento": "FESTIVAL ESCOLAR DE LUCHA",
+          "evento": "frfrfrf",
           "sistema": "Champions",
-          "division": "FS U13/15 32 KG",
+          "division": "FS U13/15 60 KG",
+          "posicion": 1,
+          "cantidad": 1,
+          "puntos": 25,
+          "atletas": "ABRAHEM ARROYO"
+        },
+        {
+          "evento": "frfrfrf",
+          "sistema": "Champions",
+          "division": "FS U13/15 60 KG",
           "posicion": 2,
           "cantidad": 1,
           "puntos": 20,
-          "atletas": "FRANK MARTINEZ LABRADA"
-        },
+          "atletas": "ARIEL GARCIA"
+        }
+      ],
+      "lugar": 2
+    },
+    {
+      "nombre": "LA HABANA",
+      "equipo": "LA HABANA",
+      "primero": 1,
+      "segundo": 1,
+      "tercero": 0,
+      "cuarto": 0,
+      "quinto": 0,
+      "sexto": 0,
+      "septimo": 0,
+      "octavo": 0,
+      "noveno": 0,
+      "decimo": 0,
+      "puntos_uww": 45,
+      "divisiones": [
         {
           "evento": "FESTIVAL ESCOLAR DE LUCHA",
           "sistema": "Llaves UWW",
@@ -115,81 +125,9 @@
           "cantidad": 1,
           "puntos": 20,
           "atletas": "ERIT MANUEL DIAZ PEREZ"
-        },
-        {
-          "evento": "FESTIVAL ESCOLAR DE LUCHA",
-          "sistema": "Llaves UWW",
-          "division": "FS U13/15 53 KG",
-          "posicion": 3,
-          "cantidad": 2,
-          "puntos": 30,
-          "atletas": "YORDANIS RIVERA PEREZ | VICTOR GARCIA MARCHENA"
-        }
-      ],
-      "lugar": 2
-    },
-    {
-      "nombre": "10O",
-      "equipo": "10O",
-      "primero": 1,
-      "segundo": 0,
-      "tercero": 1,
-      "cuarto": 0,
-      "quinto": 0,
-      "sexto": 0,
-      "septimo": 0,
-      "octavo": 0,
-      "noveno": 0,
-      "decimo": 0,
-      "puntos_uww": 40,
-      "divisiones": [
-        {
-          "evento": "FESTIVAL ESCOLAR DE LUCHA",
-          "sistema": "Champions",
-          "division": "FS U13/15 32 KG",
-          "posicion": 3,
-          "cantidad": 1,
-          "puntos": 15,
-          "atletas": "RAINER MUÑOZ ROQUE"
-        },
-        {
-          "evento": "FESTIVAL ESCOLAR DE LUCHA",
-          "sistema": "Champions",
-          "division": "FS U13/15 38 KG",
-          "posicion": 1,
-          "cantidad": 1,
-          "puntos": 25,
-          "atletas": "LESMAILIE COCA DANGER"
         }
       ],
       "lugar": 3
-    },
-    {
-      "nombre": "HV",
-      "equipo": "HV",
-      "primero": 0,
-      "segundo": 1,
-      "tercero": 0,
-      "cuarto": 0,
-      "quinto": 0,
-      "sexto": 0,
-      "septimo": 0,
-      "octavo": 0,
-      "noveno": 0,
-      "decimo": 0,
-      "puntos_uww": 20,
-      "divisiones": [
-        {
-          "evento": "FESTIVAL ESCOLAR DE LUCHA",
-          "sistema": "Champions",
-          "division": "FS U13/15 38 KG",
-          "posicion": 2,
-          "cantidad": 1,
-          "puntos": 20,
-          "atletas": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN"
-        }
-      ],
-      "lugar": 4
     }
   ],
   "clasificaciones_por_evento": {
@@ -197,9 +135,9 @@
       {
         "nombre": "CH",
         "equipo": "CH",
-        "primero": 2,
+        "primero": 1,
         "segundo": 1,
-        "tercero": 2,
+        "tercero": 1,
         "cuarto": 0,
         "quinto": 0,
         "sexto": 0,
@@ -207,26 +145,8 @@
         "octavo": 0,
         "noveno": 0,
         "decimo": 0,
-        "puntos_uww": 100,
+        "puntos_uww": 60,
         "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
-            "posicion": 1,
-            "cantidad": 1,
-            "puntos": 25,
-            "atletas": "ANTHONY ARAMBURU"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 3,
-            "cantidad": 1,
-            "puntos": 15,
-            "atletas": "ENMANUEL ABREU VERANES"
-          },
           {
             "evento": "TODOS VS TODOS",
             "sistema": "Champions",
@@ -258,11 +178,11 @@
         "lugar": 1
       },
       {
-        "nombre": "LA HABANA",
-        "equipo": "LA HABANA",
+        "nombre": "HAB",
+        "equipo": "HAB",
         "primero": 1,
-        "segundo": 2,
-        "tercero": 2,
+        "segundo": 1,
+        "tercero": 0,
         "cuarto": 0,
         "quinto": 0,
         "sexto": 0,
@@ -270,17 +190,44 @@
         "octavo": 0,
         "noveno": 0,
         "decimo": 0,
-        "puntos_uww": 95,
+        "puntos_uww": 45,
         "divisiones": [
           {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
+            "evento": "frfrfrf",
             "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
+            "division": "FS U13/15 60 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ABRAHEM ARROYO"
+          },
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
             "posicion": 2,
             "cantidad": 1,
             "puntos": 20,
-            "atletas": "FRANK MARTINEZ LABRADA"
-          },
+            "atletas": "ARIEL GARCIA"
+          }
+        ],
+        "lugar": 2
+      },
+      {
+        "nombre": "LA HABANA",
+        "equipo": "LA HABANA",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 0,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 45,
+        "divisiones": [
           {
             "evento": "FESTIVAL ESCOLAR DE LUCHA",
             "sistema": "Llaves UWW",
@@ -298,90 +245,18 @@
             "cantidad": 1,
             "puntos": 20,
             "atletas": "ERIT MANUEL DIAZ PEREZ"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Llaves UWW",
-            "division": "FS U13/15 53 KG",
-            "posicion": 3,
-            "cantidad": 2,
-            "puntos": 30,
-            "atletas": "YORDANIS RIVERA PEREZ | VICTOR GARCIA MARCHENA"
-          }
-        ],
-        "lugar": 2
-      },
-      {
-        "nombre": "10O",
-        "equipo": "10O",
-        "primero": 1,
-        "segundo": 0,
-        "tercero": 1,
-        "cuarto": 0,
-        "quinto": 0,
-        "sexto": 0,
-        "septimo": 0,
-        "octavo": 0,
-        "noveno": 0,
-        "decimo": 0,
-        "puntos_uww": 40,
-        "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
-            "posicion": 3,
-            "cantidad": 1,
-            "puntos": 15,
-            "atletas": "RAINER MUÑOZ ROQUE"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 1,
-            "cantidad": 1,
-            "puntos": 25,
-            "atletas": "LESMAILIE COCA DANGER"
           }
         ],
         "lugar": 3
-      },
-      {
-        "nombre": "HV",
-        "equipo": "HV",
-        "primero": 0,
-        "segundo": 1,
-        "tercero": 0,
-        "cuarto": 0,
-        "quinto": 0,
-        "sexto": 0,
-        "septimo": 0,
-        "octavo": 0,
-        "noveno": 0,
-        "decimo": 0,
-        "puntos_uww": 20,
-        "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 2,
-            "cantidad": 1,
-            "puntos": 20,
-            "atletas": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN"
-          }
-        ],
-        "lugar": 4
       }
     ],
     "TODOS LOS EVENTOS": [
       {
         "nombre": "CH",
         "equipo": "CH",
-        "primero": 2,
+        "primero": 1,
         "segundo": 1,
-        "tercero": 2,
+        "tercero": 1,
         "cuarto": 0,
         "quinto": 0,
         "sexto": 0,
@@ -389,26 +264,8 @@
         "octavo": 0,
         "noveno": 0,
         "decimo": 0,
-        "puntos_uww": 100,
+        "puntos_uww": 60,
         "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
-            "posicion": 1,
-            "cantidad": 1,
-            "puntos": 25,
-            "atletas": "ANTHONY ARAMBURU"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 3,
-            "cantidad": 1,
-            "puntos": 15,
-            "atletas": "ENMANUEL ABREU VERANES"
-          },
           {
             "evento": "TODOS VS TODOS",
             "sistema": "Champions",
@@ -440,11 +297,11 @@
         "lugar": 1
       },
       {
-        "nombre": "LA HABANA",
-        "equipo": "LA HABANA",
+        "nombre": "HAB",
+        "equipo": "HAB",
         "primero": 1,
-        "segundo": 2,
-        "tercero": 2,
+        "segundo": 1,
+        "tercero": 0,
         "cuarto": 0,
         "quinto": 0,
         "sexto": 0,
@@ -452,17 +309,44 @@
         "octavo": 0,
         "noveno": 0,
         "decimo": 0,
-        "puntos_uww": 95,
+        "puntos_uww": 45,
         "divisiones": [
           {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
+            "evento": "frfrfrf",
             "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
+            "division": "FS U13/15 60 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ABRAHEM ARROYO"
+          },
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
             "posicion": 2,
             "cantidad": 1,
             "puntos": 20,
-            "atletas": "FRANK MARTINEZ LABRADA"
-          },
+            "atletas": "ARIEL GARCIA"
+          }
+        ],
+        "lugar": 2
+      },
+      {
+        "nombre": "LA HABANA",
+        "equipo": "LA HABANA",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 0,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 45,
+        "divisiones": [
           {
             "evento": "FESTIVAL ESCOLAR DE LUCHA",
             "sistema": "Llaves UWW",
@@ -480,90 +364,18 @@
             "cantidad": 1,
             "puntos": 20,
             "atletas": "ERIT MANUEL DIAZ PEREZ"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Llaves UWW",
-            "division": "FS U13/15 53 KG",
-            "posicion": 3,
-            "cantidad": 2,
-            "puntos": 30,
-            "atletas": "YORDANIS RIVERA PEREZ | VICTOR GARCIA MARCHENA"
-          }
-        ],
-        "lugar": 2
-      },
-      {
-        "nombre": "10O",
-        "equipo": "10O",
-        "primero": 1,
-        "segundo": 0,
-        "tercero": 1,
-        "cuarto": 0,
-        "quinto": 0,
-        "sexto": 0,
-        "septimo": 0,
-        "octavo": 0,
-        "noveno": 0,
-        "decimo": 0,
-        "puntos_uww": 40,
-        "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
-            "posicion": 3,
-            "cantidad": 1,
-            "puntos": 15,
-            "atletas": "RAINER MUÑOZ ROQUE"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 1,
-            "cantidad": 1,
-            "puntos": 25,
-            "atletas": "LESMAILIE COCA DANGER"
           }
         ],
         "lugar": 3
-      },
-      {
-        "nombre": "HV",
-        "equipo": "HV",
-        "primero": 0,
-        "segundo": 1,
-        "tercero": 0,
-        "cuarto": 0,
-        "quinto": 0,
-        "sexto": 0,
-        "septimo": 0,
-        "octavo": 0,
-        "noveno": 0,
-        "decimo": 0,
-        "puntos_uww": 20,
-        "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 2,
-            "cantidad": 1,
-            "puntos": 20,
-            "atletas": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN"
-          }
-        ],
-        "lugar": 4
       }
     ],
     "TODOS": [
       {
         "nombre": "CH",
         "equipo": "CH",
-        "primero": 2,
+        "primero": 1,
         "segundo": 1,
-        "tercero": 2,
+        "tercero": 1,
         "cuarto": 0,
         "quinto": 0,
         "sexto": 0,
@@ -571,26 +383,8 @@
         "octavo": 0,
         "noveno": 0,
         "decimo": 0,
-        "puntos_uww": 100,
+        "puntos_uww": 60,
         "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
-            "posicion": 1,
-            "cantidad": 1,
-            "puntos": 25,
-            "atletas": "ANTHONY ARAMBURU"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 3,
-            "cantidad": 1,
-            "puntos": 15,
-            "atletas": "ENMANUEL ABREU VERANES"
-          },
           {
             "evento": "TODOS VS TODOS",
             "sistema": "Champions",
@@ -622,11 +416,11 @@
         "lugar": 1
       },
       {
-        "nombre": "LA HABANA",
-        "equipo": "LA HABANA",
+        "nombre": "HAB",
+        "equipo": "HAB",
         "primero": 1,
-        "segundo": 2,
-        "tercero": 2,
+        "segundo": 1,
+        "tercero": 0,
         "cuarto": 0,
         "quinto": 0,
         "sexto": 0,
@@ -634,17 +428,44 @@
         "octavo": 0,
         "noveno": 0,
         "decimo": 0,
-        "puntos_uww": 95,
+        "puntos_uww": 45,
         "divisiones": [
           {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
+            "evento": "frfrfrf",
             "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
+            "division": "FS U13/15 60 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ABRAHEM ARROYO"
+          },
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
             "posicion": 2,
             "cantidad": 1,
             "puntos": 20,
-            "atletas": "FRANK MARTINEZ LABRADA"
-          },
+            "atletas": "ARIEL GARCIA"
+          }
+        ],
+        "lugar": 2
+      },
+      {
+        "nombre": "LA HABANA",
+        "equipo": "LA HABANA",
+        "primero": 1,
+        "segundo": 1,
+        "tercero": 0,
+        "cuarto": 0,
+        "quinto": 0,
+        "sexto": 0,
+        "septimo": 0,
+        "octavo": 0,
+        "noveno": 0,
+        "decimo": 0,
+        "puntos_uww": 45,
+        "divisiones": [
           {
             "evento": "FESTIVAL ESCOLAR DE LUCHA",
             "sistema": "Llaves UWW",
@@ -662,81 +483,9 @@
             "cantidad": 1,
             "puntos": 20,
             "atletas": "ERIT MANUEL DIAZ PEREZ"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Llaves UWW",
-            "division": "FS U13/15 53 KG",
-            "posicion": 3,
-            "cantidad": 2,
-            "puntos": 30,
-            "atletas": "YORDANIS RIVERA PEREZ | VICTOR GARCIA MARCHENA"
-          }
-        ],
-        "lugar": 2
-      },
-      {
-        "nombre": "10O",
-        "equipo": "10O",
-        "primero": 1,
-        "segundo": 0,
-        "tercero": 1,
-        "cuarto": 0,
-        "quinto": 0,
-        "sexto": 0,
-        "septimo": 0,
-        "octavo": 0,
-        "noveno": 0,
-        "decimo": 0,
-        "puntos_uww": 40,
-        "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
-            "posicion": 3,
-            "cantidad": 1,
-            "puntos": 15,
-            "atletas": "RAINER MUÑOZ ROQUE"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 1,
-            "cantidad": 1,
-            "puntos": 25,
-            "atletas": "LESMAILIE COCA DANGER"
           }
         ],
         "lugar": 3
-      },
-      {
-        "nombre": "HV",
-        "equipo": "HV",
-        "primero": 0,
-        "segundo": 1,
-        "tercero": 0,
-        "cuarto": 0,
-        "quinto": 0,
-        "sexto": 0,
-        "septimo": 0,
-        "octavo": 0,
-        "noveno": 0,
-        "decimo": 0,
-        "puntos_uww": 20,
-        "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 2,
-            "cantidad": 1,
-            "puntos": 20,
-            "atletas": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN"
-          }
-        ],
-        "lugar": 4
       }
     ],
     "FESTIVAL ESCOLAR DE LUCHA": [
@@ -744,8 +493,8 @@
         "nombre": "LA HABANA",
         "equipo": "LA HABANA",
         "primero": 1,
-        "segundo": 2,
-        "tercero": 2,
+        "segundo": 1,
+        "tercero": 0,
         "cuarto": 0,
         "quinto": 0,
         "sexto": 0,
@@ -753,17 +502,8 @@
         "octavo": 0,
         "noveno": 0,
         "decimo": 0,
-        "puntos_uww": 95,
+        "puntos_uww": 45,
         "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
-            "posicion": 2,
-            "cantidad": 1,
-            "puntos": 20,
-            "atletas": "FRANK MARTINEZ LABRADA"
-          },
           {
             "evento": "FESTIVAL ESCOLAR DE LUCHA",
             "sistema": "Llaves UWW",
@@ -781,95 +521,16 @@
             "cantidad": 1,
             "puntos": 20,
             "atletas": "ERIT MANUEL DIAZ PEREZ"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Llaves UWW",
-            "division": "FS U13/15 53 KG",
-            "posicion": 3,
-            "cantidad": 2,
-            "puntos": 30,
-            "atletas": "YORDANIS RIVERA PEREZ | VICTOR GARCIA MARCHENA"
           }
         ],
         "lugar": 1
-      },
+      }
+    ],
+    "frfrfrf": [
       {
-        "nombre": "10O",
-        "equipo": "10O",
+        "nombre": "HAB",
+        "equipo": "HAB",
         "primero": 1,
-        "segundo": 0,
-        "tercero": 1,
-        "cuarto": 0,
-        "quinto": 0,
-        "sexto": 0,
-        "septimo": 0,
-        "octavo": 0,
-        "noveno": 0,
-        "decimo": 0,
-        "puntos_uww": 40,
-        "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
-            "posicion": 3,
-            "cantidad": 1,
-            "puntos": 15,
-            "atletas": "RAINER MUÑOZ ROQUE"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 1,
-            "cantidad": 1,
-            "puntos": 25,
-            "atletas": "LESMAILIE COCA DANGER"
-          }
-        ],
-        "lugar": 2
-      },
-      {
-        "nombre": "CH",
-        "equipo": "CH",
-        "primero": 1,
-        "segundo": 0,
-        "tercero": 1,
-        "cuarto": 0,
-        "quinto": 0,
-        "sexto": 0,
-        "septimo": 0,
-        "octavo": 0,
-        "noveno": 0,
-        "decimo": 0,
-        "puntos_uww": 40,
-        "divisiones": [
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 32 KG",
-            "posicion": 1,
-            "cantidad": 1,
-            "puntos": 25,
-            "atletas": "ANTHONY ARAMBURU"
-          },
-          {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
-            "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
-            "posicion": 3,
-            "cantidad": 1,
-            "puntos": 15,
-            "atletas": "ENMANUEL ABREU VERANES"
-          }
-        ],
-        "lugar": 3
-      },
-      {
-        "nombre": "HV",
-        "equipo": "HV",
-        "primero": 0,
         "segundo": 1,
         "tercero": 0,
         "cuarto": 0,
@@ -879,19 +540,28 @@
         "octavo": 0,
         "noveno": 0,
         "decimo": 0,
-        "puntos_uww": 20,
+        "puntos_uww": 45,
         "divisiones": [
           {
-            "evento": "FESTIVAL ESCOLAR DE LUCHA",
+            "evento": "frfrfrf",
             "sistema": "Champions",
-            "division": "FS U13/15 38 KG",
+            "division": "FS U13/15 60 KG",
+            "posicion": 1,
+            "cantidad": 1,
+            "puntos": 25,
+            "atletas": "ABRAHEM ARROYO"
+          },
+          {
+            "evento": "frfrfrf",
+            "sistema": "Champions",
+            "division": "FS U13/15 60 KG",
             "posicion": 2,
             "cantidad": 1,
             "puntos": 20,
-            "atletas": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN"
+            "atletas": "ARIEL GARCIA"
           }
         ],
-        "lugar": 4
+        "lugar": 1
       }
     ]
   },
@@ -902,9 +572,9 @@
         {
           "nombre": "CH",
           "equipo": "CH",
-          "primero": 2,
+          "primero": 1,
           "segundo": 1,
-          "tercero": 2,
+          "tercero": 1,
           "cuarto": 0,
           "quinto": 0,
           "sexto": 0,
@@ -912,26 +582,8 @@
           "octavo": 0,
           "noveno": 0,
           "decimo": 0,
-          "puntos_uww": 100,
+          "puntos_uww": 60,
           "divisiones": [
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 32 KG",
-              "posicion": 1,
-              "cantidad": 1,
-              "puntos": 25,
-              "atletas": "ANTHONY ARAMBURU"
-            },
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 38 KG",
-              "posicion": 3,
-              "cantidad": 1,
-              "puntos": 15,
-              "atletas": "ENMANUEL ABREU VERANES"
-            },
             {
               "evento": "TODOS VS TODOS",
               "sistema": "Champions",
@@ -963,11 +615,11 @@
           "lugar": 1
         },
         {
-          "nombre": "LA HABANA",
-          "equipo": "LA HABANA",
+          "nombre": "HAB",
+          "equipo": "HAB",
           "primero": 1,
-          "segundo": 2,
-          "tercero": 2,
+          "segundo": 1,
+          "tercero": 0,
           "cuarto": 0,
           "quinto": 0,
           "sexto": 0,
@@ -975,17 +627,44 @@
           "octavo": 0,
           "noveno": 0,
           "decimo": 0,
-          "puntos_uww": 95,
+          "puntos_uww": 45,
           "divisiones": [
             {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
+              "evento": "frfrfrf",
               "sistema": "Champions",
-              "division": "FS U13/15 32 KG",
+              "division": "FS U13/15 60 KG",
+              "posicion": 1,
+              "cantidad": 1,
+              "puntos": 25,
+              "atletas": "ABRAHEM ARROYO"
+            },
+            {
+              "evento": "frfrfrf",
+              "sistema": "Champions",
+              "division": "FS U13/15 60 KG",
               "posicion": 2,
               "cantidad": 1,
               "puntos": 20,
-              "atletas": "FRANK MARTINEZ LABRADA"
-            },
+              "atletas": "ARIEL GARCIA"
+            }
+          ],
+          "lugar": 2
+        },
+        {
+          "nombre": "LA HABANA",
+          "equipo": "LA HABANA",
+          "primero": 1,
+          "segundo": 1,
+          "tercero": 0,
+          "cuarto": 0,
+          "quinto": 0,
+          "sexto": 0,
+          "septimo": 0,
+          "octavo": 0,
+          "noveno": 0,
+          "decimo": 0,
+          "puntos_uww": 45,
+          "divisiones": [
             {
               "evento": "FESTIVAL ESCOLAR DE LUCHA",
               "sistema": "Llaves UWW",
@@ -1003,84 +682,12 @@
               "cantidad": 1,
               "puntos": 20,
               "atletas": "ERIT MANUEL DIAZ PEREZ"
-            },
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Llaves UWW",
-              "division": "FS U13/15 53 KG",
-              "posicion": 3,
-              "cantidad": 2,
-              "puntos": 30,
-              "atletas": "YORDANIS RIVERA PEREZ | VICTOR GARCIA MARCHENA"
-            }
-          ],
-          "lugar": 2
-        },
-        {
-          "nombre": "10O",
-          "equipo": "10O",
-          "primero": 1,
-          "segundo": 0,
-          "tercero": 1,
-          "cuarto": 0,
-          "quinto": 0,
-          "sexto": 0,
-          "septimo": 0,
-          "octavo": 0,
-          "noveno": 0,
-          "decimo": 0,
-          "puntos_uww": 40,
-          "divisiones": [
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 32 KG",
-              "posicion": 3,
-              "cantidad": 1,
-              "puntos": 15,
-              "atletas": "RAINER MUÑOZ ROQUE"
-            },
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 38 KG",
-              "posicion": 1,
-              "cantidad": 1,
-              "puntos": 25,
-              "atletas": "LESMAILIE COCA DANGER"
             }
           ],
           "lugar": 3
-        },
-        {
-          "nombre": "HV",
-          "equipo": "HV",
-          "primero": 0,
-          "segundo": 1,
-          "tercero": 0,
-          "cuarto": 0,
-          "quinto": 0,
-          "sexto": 0,
-          "septimo": 0,
-          "octavo": 0,
-          "noveno": 0,
-          "decimo": 0,
-          "puntos_uww": 20,
-          "divisiones": [
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 38 KG",
-              "posicion": 2,
-              "cantidad": 1,
-              "puntos": 20,
-              "atletas": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN"
-            }
-          ],
-          "lugar": 4
         }
       ],
-      "total_equipos": 4
+      "total_equipos": 3
     },
     {
       "evento": "FESTIVAL ESCOLAR DE LUCHA",
@@ -1089,8 +696,8 @@
           "nombre": "LA HABANA",
           "equipo": "LA HABANA",
           "primero": 1,
-          "segundo": 2,
-          "tercero": 2,
+          "segundo": 1,
+          "tercero": 0,
           "cuarto": 0,
           "quinto": 0,
           "sexto": 0,
@@ -1098,17 +705,8 @@
           "octavo": 0,
           "noveno": 0,
           "decimo": 0,
-          "puntos_uww": 95,
+          "puntos_uww": 45,
           "divisiones": [
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 32 KG",
-              "posicion": 2,
-              "cantidad": 1,
-              "puntos": 20,
-              "atletas": "FRANK MARTINEZ LABRADA"
-            },
             {
               "evento": "FESTIVAL ESCOLAR DE LUCHA",
               "sistema": "Llaves UWW",
@@ -1126,120 +724,12 @@
               "cantidad": 1,
               "puntos": 20,
               "atletas": "ERIT MANUEL DIAZ PEREZ"
-            },
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Llaves UWW",
-              "division": "FS U13/15 53 KG",
-              "posicion": 3,
-              "cantidad": 2,
-              "puntos": 30,
-              "atletas": "YORDANIS RIVERA PEREZ | VICTOR GARCIA MARCHENA"
             }
           ],
           "lugar": 1
-        },
-        {
-          "nombre": "10O",
-          "equipo": "10O",
-          "primero": 1,
-          "segundo": 0,
-          "tercero": 1,
-          "cuarto": 0,
-          "quinto": 0,
-          "sexto": 0,
-          "septimo": 0,
-          "octavo": 0,
-          "noveno": 0,
-          "decimo": 0,
-          "puntos_uww": 40,
-          "divisiones": [
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 32 KG",
-              "posicion": 3,
-              "cantidad": 1,
-              "puntos": 15,
-              "atletas": "RAINER MUÑOZ ROQUE"
-            },
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 38 KG",
-              "posicion": 1,
-              "cantidad": 1,
-              "puntos": 25,
-              "atletas": "LESMAILIE COCA DANGER"
-            }
-          ],
-          "lugar": 2
-        },
-        {
-          "nombre": "CH",
-          "equipo": "CH",
-          "primero": 1,
-          "segundo": 0,
-          "tercero": 1,
-          "cuarto": 0,
-          "quinto": 0,
-          "sexto": 0,
-          "septimo": 0,
-          "octavo": 0,
-          "noveno": 0,
-          "decimo": 0,
-          "puntos_uww": 40,
-          "divisiones": [
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 32 KG",
-              "posicion": 1,
-              "cantidad": 1,
-              "puntos": 25,
-              "atletas": "ANTHONY ARAMBURU"
-            },
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 38 KG",
-              "posicion": 3,
-              "cantidad": 1,
-              "puntos": 15,
-              "atletas": "ENMANUEL ABREU VERANES"
-            }
-          ],
-          "lugar": 3
-        },
-        {
-          "nombre": "HV",
-          "equipo": "HV",
-          "primero": 0,
-          "segundo": 1,
-          "tercero": 0,
-          "cuarto": 0,
-          "quinto": 0,
-          "sexto": 0,
-          "septimo": 0,
-          "octavo": 0,
-          "noveno": 0,
-          "decimo": 0,
-          "puntos_uww": 20,
-          "divisiones": [
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 38 KG",
-              "posicion": 2,
-              "cantidad": 1,
-              "puntos": 20,
-              "atletas": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN"
-            }
-          ],
-          "lugar": 4
         }
       ],
-      "total_equipos": 4
+      "total_equipos": 1
     },
     {
       "evento": "TODOS VS TODOS",
@@ -1247,9 +737,9 @@
         {
           "nombre": "CH",
           "equipo": "CH",
-          "primero": 2,
+          "primero": 1,
           "segundo": 1,
-          "tercero": 2,
+          "tercero": 1,
           "cuarto": 0,
           "quinto": 0,
           "sexto": 0,
@@ -1257,26 +747,8 @@
           "octavo": 0,
           "noveno": 0,
           "decimo": 0,
-          "puntos_uww": 100,
+          "puntos_uww": 60,
           "divisiones": [
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 32 KG",
-              "posicion": 1,
-              "cantidad": 1,
-              "puntos": 25,
-              "atletas": "ANTHONY ARAMBURU"
-            },
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 38 KG",
-              "posicion": 3,
-              "cantidad": 1,
-              "puntos": 15,
-              "atletas": "ENMANUEL ABREU VERANES"
-            },
             {
               "evento": "TODOS VS TODOS",
               "sistema": "Champions",
@@ -1308,11 +780,11 @@
           "lugar": 1
         },
         {
-          "nombre": "LA HABANA",
-          "equipo": "LA HABANA",
+          "nombre": "HAB",
+          "equipo": "HAB",
           "primero": 1,
-          "segundo": 2,
-          "tercero": 2,
+          "segundo": 1,
+          "tercero": 0,
           "cuarto": 0,
           "quinto": 0,
           "sexto": 0,
@@ -1320,17 +792,44 @@
           "octavo": 0,
           "noveno": 0,
           "decimo": 0,
-          "puntos_uww": 95,
+          "puntos_uww": 45,
           "divisiones": [
             {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
+              "evento": "frfrfrf",
               "sistema": "Champions",
-              "division": "FS U13/15 32 KG",
+              "division": "FS U13/15 60 KG",
+              "posicion": 1,
+              "cantidad": 1,
+              "puntos": 25,
+              "atletas": "ABRAHEM ARROYO"
+            },
+            {
+              "evento": "frfrfrf",
+              "sistema": "Champions",
+              "division": "FS U13/15 60 KG",
               "posicion": 2,
               "cantidad": 1,
               "puntos": 20,
-              "atletas": "FRANK MARTINEZ LABRADA"
-            },
+              "atletas": "ARIEL GARCIA"
+            }
+          ],
+          "lugar": 2
+        },
+        {
+          "nombre": "LA HABANA",
+          "equipo": "LA HABANA",
+          "primero": 1,
+          "segundo": 1,
+          "tercero": 0,
+          "cuarto": 0,
+          "quinto": 0,
+          "sexto": 0,
+          "septimo": 0,
+          "octavo": 0,
+          "noveno": 0,
+          "decimo": 0,
+          "puntos_uww": 45,
+          "divisiones": [
             {
               "evento": "FESTIVAL ESCOLAR DE LUCHA",
               "sistema": "Llaves UWW",
@@ -1348,59 +847,20 @@
               "cantidad": 1,
               "puntos": 20,
               "atletas": "ERIT MANUEL DIAZ PEREZ"
-            },
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Llaves UWW",
-              "division": "FS U13/15 53 KG",
-              "posicion": 3,
-              "cantidad": 2,
-              "puntos": 30,
-              "atletas": "YORDANIS RIVERA PEREZ | VICTOR GARCIA MARCHENA"
-            }
-          ],
-          "lugar": 2
-        },
-        {
-          "nombre": "10O",
-          "equipo": "10O",
-          "primero": 1,
-          "segundo": 0,
-          "tercero": 1,
-          "cuarto": 0,
-          "quinto": 0,
-          "sexto": 0,
-          "septimo": 0,
-          "octavo": 0,
-          "noveno": 0,
-          "decimo": 0,
-          "puntos_uww": 40,
-          "divisiones": [
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 32 KG",
-              "posicion": 3,
-              "cantidad": 1,
-              "puntos": 15,
-              "atletas": "RAINER MUÑOZ ROQUE"
-            },
-            {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
-              "sistema": "Champions",
-              "division": "FS U13/15 38 KG",
-              "posicion": 1,
-              "cantidad": 1,
-              "puntos": 25,
-              "atletas": "LESMAILIE COCA DANGER"
             }
           ],
           "lugar": 3
-        },
+        }
+      ],
+      "total_equipos": 3
+    },
+    {
+      "evento": "frfrfrf",
+      "clasificacion": [
         {
-          "nombre": "HV",
-          "equipo": "HV",
-          "primero": 0,
+          "nombre": "HAB",
+          "equipo": "HAB",
+          "primero": 1,
           "segundo": 1,
           "tercero": 0,
           "cuarto": 0,
@@ -1410,29 +870,38 @@
           "octavo": 0,
           "noveno": 0,
           "decimo": 0,
-          "puntos_uww": 20,
+          "puntos_uww": 45,
           "divisiones": [
             {
-              "evento": "FESTIVAL ESCOLAR DE LUCHA",
+              "evento": "frfrfrf",
               "sistema": "Champions",
-              "division": "FS U13/15 38 KG",
+              "division": "FS U13/15 60 KG",
+              "posicion": 1,
+              "cantidad": 1,
+              "puntos": 25,
+              "atletas": "ABRAHEM ARROYO"
+            },
+            {
+              "evento": "frfrfrf",
+              "sistema": "Champions",
+              "division": "FS U13/15 60 KG",
               "posicion": 2,
               "cantidad": 1,
               "puntos": 20,
-              "atletas": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN"
+              "atletas": "ARIEL GARCIA"
             }
           ],
-          "lugar": 4
+          "lugar": 1
         }
       ],
-      "total_equipos": 4
+      "total_equipos": 1
     }
   ],
   "resumen": {
-    "divisiones": 6,
+    "divisiones": 5,
     "sistemas": {
-      "Champions": 15,
-      "Llaves UWW": 4
+      "Champions": 11,
+      "Llaves UWW": 2
     }
   }
 }
