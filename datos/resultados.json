@@ -2,7 +2,7 @@
   "evento_nombre": "TODOS LOS EVENTOS",
   "vista": "Resultados",
   "fuente": "Round Robin + Champions + Llaves UWW",
-  "generado_en": "2026-05-31 13:19:11",
+  "generado_en": "2026-06-03 13:28:42",
   "total_resultados": 86,
   "resultados": [
     {
@@ -669,13 +669,13 @@
       "rojo_equipo": "LA HABANA",
       "azul": "CRISTIAN OFARRILL COSME",
       "azul_equipo": "LA HABANA",
-      "marcador": "6-2",
+      "marcador": "2-0",
       "ganador_lado": "RED",
       "ganador": "YORDANIS RIVERA PEREZ",
       "ganador_equipo": "LA HABANA",
-      "tipo_victoria": "VPO1",
+      "tipo_victoria": "VPO",
       "tipo_victoria_original": "PTS",
-      "puntos_clasificacion": "3-1"
+      "puntos_clasificacion": "3-0"
     },
     {
       "evento": "FESTIVAL ESCOLAR DE LUCHA",
