@@ -1,7 +1,7 @@
 {
-  "generado_en": "2026-05-30 10:28:37",
-  "total_atletas": 42,
-  "total_fotos": 21,
+  "generado_en": "2026-06-03 14:15:51",
+  "total_atletas": 43,
+  "total_fotos": 38,
   "atletas": [
     {
       "id": 81,
@@ -22,8 +22,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png"
+      "activo": true
     },
     {
       "id": 69,
@@ -31,7 +30,7 @@
       "nombre": "CHRIS BRANDY",
       "apellidos": "NOA REGUEIFEROS",
       "nombre_publico": "C. NOA",
-      "sexo": "",
+      "sexo": "M",
       "fecha_nacimiento": "",
       "grupo": "U11/12",
       "peso": "",
@@ -149,8 +148,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0078_neymar_andres_tamarit_gonzalez.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0078_neymar_andres_tamarit_gonzalez.png"
+      "activo": true
     },
     {
       "id": 49,
@@ -255,8 +253,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
+      "activo": true
     },
     {
       "id": 80,
@@ -277,8 +274,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
+      "activo": true
     },
     {
       "id": 73,
@@ -286,7 +282,7 @@
       "nombre": "ERIT MANUEL",
       "apellidos": "DIAZ PEREZ",
       "nombre_publico": "E. DIAZ",
-      "sexo": "",
+      "sexo": "M",
       "fecha_nacimiento": "6/09/2013",
       "grupo": "U13/15",
       "peso": "",
@@ -299,8 +295,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png"
+      "activo": true
     },
     {
       "id": 74,
@@ -321,8 +316,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0074_fabian_leroy_donis.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0074_fabian_leroy_donis.png"
+      "activo": true
     },
     {
       "id": 53,
@@ -364,8 +358,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0083_geovany_pozo_santana.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0083_geovany_pozo_santana.png"
+      "activo": true
     },
     {
       "id": 71,
@@ -386,8 +379,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0071_jayro_bouso_valle.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0071_jayro_bouso_valle.png"
+      "activo": true
     },
     {
       "id": 77,
@@ -408,8 +400,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0077_lesmailie_coca_danger.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0077_lesmailie_coca_danger.png"
+      "activo": true
     },
     {
       "id": 72,
@@ -451,8 +442,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0082_rainer_munoz_roque.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0082_rainer_munoz_roque.png"
+      "activo": true
     },
     {
       "id": 86,
@@ -494,8 +484,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0085_yordanis_rivera_perez.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0085_yordanis_rivera_perez.png"
+      "activo": true
     },
     {
       "id": 76,
@@ -516,8 +505,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0076_yotuel_joba_suarez.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0076_yotuel_joba_suarez.png"
+      "activo": true
     },
     {
       "id": 52,
@@ -559,8 +547,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0070_hans_perez_felico.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0070_hans_perez_felico.png"
+      "activo": true
     },
     {
       "id": 65,
@@ -581,8 +568,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0065_maykol_ledsuy_gutierrez_hernandez.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0065_maykol_ledsuy_gutierrez_hernandez.png"
+      "activo": true
     },
     {
       "id": 64,
@@ -603,8 +589,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0064_taylor_maza_luna.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0064_taylor_maza_luna.png"
+      "activo": true
     },
     {
       "id": 3,
@@ -646,8 +631,7 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0084_abdiel_munoz_roque.png",
-      "activo": true,
-      "foto_web": "fotos_atletas/atleta_0084_abdiel_munoz_roque.png"
+      "activo": true
     },
     {
       "id": 66,
@@ -731,6 +715,27 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0051_yansiel_chala_herrera.png",
+      "activo": true
+    },
+    {
+      "id": 87,
+      "ci": "",
+      "nombre": "YAVIER",
+      "apellidos": "RODRIGUEZ ALFARO",
+      "nombre_publico": "Y. RODRIGUEZ",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U7/8",
+      "peso": "",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "CH",
+      "club": "",
+      "tag_publico": "CH",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0087_yavier_rodriguez_alfaro.png",
       "activo": true
     },
     {
