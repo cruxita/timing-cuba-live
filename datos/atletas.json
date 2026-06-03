@@ -1,7 +1,7 @@
 {
-  "generado_en": "2026-05-31 12:46:34",
+  "generado_en": "2026-05-30 10:28:37",
   "total_atletas": 42,
-  "total_fotos": 37,
+  "total_fotos": 21,
   "atletas": [
     {
       "id": 81,
@@ -21,7 +21,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -30,7 +30,7 @@
       "nombre": "CHRIS BRANDY",
       "apellidos": "NOA REGUEIFEROS",
       "nombre_publico": "C. NOA",
-      "sexo": "M",
+      "sexo": "",
       "fecha_nacimiento": "",
       "grupo": "U11/12",
       "peso": "",
@@ -147,7 +147,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0078_neymar_andres_tamarit_gonzalez.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -252,7 +252,7 @@
       "tag_publico": "HV",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -273,7 +273,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -282,7 +282,7 @@
       "nombre": "ERIT MANUEL",
       "apellidos": "DIAZ PEREZ",
       "nombre_publico": "E. DIAZ",
-      "sexo": "M",
+      "sexo": "",
       "fecha_nacimiento": "6/09/2013",
       "grupo": "U13/15",
       "peso": "",
@@ -294,7 +294,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -315,7 +315,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0074_fabian_leroy_donis.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -357,7 +357,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0083_geovany_pozo_santana.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -378,7 +378,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0071_jayro_bouso_valle.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -399,7 +399,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0077_lesmailie_coca_danger.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -441,7 +441,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0082_rainer_munoz_roque.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -483,7 +483,7 @@
       "tag_publico": "CERRO",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0085_yordanis_rivera_perez.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -504,7 +504,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0076_yotuel_joba_suarez.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -546,7 +546,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0070_hans_perez_felico.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -567,7 +567,7 @@
       "tag_publico": "CH",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0065_maykol_ledsuy_gutierrez_hernandez.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -588,7 +588,7 @@
       "tag_publico": "CH",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0064_taylor_maza_luna.png",
+      "foto": "",
       "activo": true
     },
     {
@@ -630,7 +630,7 @@
       "tag_publico": "10O",
       "telefono": "",
       "observaciones": "",
-      "foto": "fotos_atletas/atleta_0084_abdiel_munoz_roque.png",
+      "foto": "",
       "activo": true
     },
     {
