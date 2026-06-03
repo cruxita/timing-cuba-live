@@ -1,7 +1,7 @@
 {
-  "generado_en": "2026-06-03 13:32:36",
+  "generado_en": "2026-05-30 10:28:37",
   "total_atletas": 42,
-  "total_fotos": 37,
+  "total_fotos": 21,
   "atletas": [
     {
       "id": 81,
@@ -22,7 +22,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png"
     },
     {
       "id": 69,
@@ -30,7 +31,7 @@
       "nombre": "CHRIS BRANDY",
       "apellidos": "NOA REGUEIFEROS",
       "nombre_publico": "C. NOA",
-      "sexo": "M",
+      "sexo": "",
       "fecha_nacimiento": "",
       "grupo": "U11/12",
       "peso": "",
@@ -148,7 +149,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0078_neymar_andres_tamarit_gonzalez.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0078_neymar_andres_tamarit_gonzalez.png"
     },
     {
       "id": 49,
@@ -253,7 +255,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
     },
     {
       "id": 80,
@@ -274,7 +277,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
     },
     {
       "id": 73,
@@ -282,7 +286,7 @@
       "nombre": "ERIT MANUEL",
       "apellidos": "DIAZ PEREZ",
       "nombre_publico": "E. DIAZ",
-      "sexo": "M",
+      "sexo": "",
       "fecha_nacimiento": "6/09/2013",
       "grupo": "U13/15",
       "peso": "",
@@ -295,7 +299,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png"
     },
     {
       "id": 74,
@@ -316,7 +321,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0074_fabian_leroy_donis.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0074_fabian_leroy_donis.png"
     },
     {
       "id": 53,
@@ -358,7 +364,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0083_geovany_pozo_santana.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0083_geovany_pozo_santana.png"
     },
     {
       "id": 71,
@@ -379,7 +386,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0071_jayro_bouso_valle.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0071_jayro_bouso_valle.png"
     },
     {
       "id": 77,
@@ -400,7 +408,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0077_lesmailie_coca_danger.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0077_lesmailie_coca_danger.png"
     },
     {
       "id": 72,
@@ -442,7 +451,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0082_rainer_munoz_roque.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0082_rainer_munoz_roque.png"
     },
     {
       "id": 86,
@@ -484,7 +494,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0085_yordanis_rivera_perez.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0085_yordanis_rivera_perez.png"
     },
     {
       "id": 76,
@@ -505,7 +516,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0076_yotuel_joba_suarez.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0076_yotuel_joba_suarez.png"
     },
     {
       "id": 52,
@@ -547,7 +559,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0070_hans_perez_felico.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0070_hans_perez_felico.png"
     },
     {
       "id": 65,
@@ -568,7 +581,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0065_maykol_ledsuy_gutierrez_hernandez.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0065_maykol_ledsuy_gutierrez_hernandez.png"
     },
     {
       "id": 64,
@@ -589,7 +603,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0064_taylor_maza_luna.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0064_taylor_maza_luna.png"
     },
     {
       "id": 3,
@@ -631,7 +646,8 @@
       "telefono": "",
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0084_abdiel_munoz_roque.png",
-      "activo": true
+      "activo": true,
+      "foto_web": "fotos_atletas/atleta_0084_abdiel_munoz_roque.png"
     },
     {
       "id": 66,
