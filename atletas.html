@@ -52,50 +52,10 @@
       flex-wrap: wrap;
     }
 
-    .brand-wrap {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .web-logo {
-      width: 76px;
-      height: 76px;
-      flex: 0 0 76px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 20px;
-      padding: 7px;
-      background:
-        radial-gradient(circle at center, rgba(250,204,21,0.18), rgba(255,255,255,0.06)),
-        rgba(255,255,255,0.07);
-      border: 1px solid rgba(250,204,21,0.38);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.30);
-      overflow: hidden;
-    }
-
-    .web-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    .web-logo.logo-fallback {
-      color: var(--accent);
-      font-size: 24px;
-      font-weight: 1000;
-      letter-spacing: 1px;
-      text-align: center;
-    }
-
     .brand {
       display: flex;
       flex-direction: column;
       gap: 2px;
-      min-width: 0;
     }
 
     .brand h1 {
@@ -152,7 +112,7 @@
 
     .filters {
       display: grid;
-      grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(130px, 1fr));
+      grid-template-columns: minmax(220px, 2fr) repeat(4, minmax(130px, 1fr));
       gap: 10px;
       margin-bottom: 18px;
     }
@@ -351,56 +311,6 @@
       border-color: rgba(239,68,68,0.35);
     }
 
-    /* ==========================================================
-      FILTROS NUEVOS - ETAPA Y ESTILO
-      TODOS | ESCOLARES | CATEGORÍAS SUPERIORES
-      Todos los estilos | FS | GR | WW
-      ========================================================== */
-
-    .filtros-etapa,
-    .filtros-estilo-rapido {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .filtro-chip {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.07);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 12px 16px;
-      font-size: 14px;
-      font-weight: 950;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
-    }
-
-    .filtro-chip:hover {
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.11);
-    }
-
-    .filtro-chip.activo {
-      background: var(--accent);
-      color: #111827;
-      border-color: transparent;
-      box-shadow: 0 10px 22px rgba(250,204,21,0.18);
-    }
-
-    .filtros-estilo-rapido {
-      margin-bottom: 16px;
-    }
-
-    .filtros-estilo-rapido .filtro-chip {
-      min-width: 72px;
-      text-align: center;
-    }
-
     @media (max-width: 860px) {
       .filters {
         grid-template-columns: 1fr 1fr;
@@ -418,19 +328,6 @@
 
       .topbar-inner {
         align-items: stretch;
-      }
-
-      .brand-wrap {
-        width: 100%;
-        gap: 10px;
-      }
-
-      .web-logo {
-        width: 58px;
-        height: 58px;
-        flex-basis: 58px;
-        border-radius: 16px;
-        padding: 5px;
       }
 
       .brand h1 {
@@ -452,23 +349,6 @@
         padding: 9px 8px;
         border-radius: 10px;
         font-size: 12px;
-      }
-
-      .filtros-etapa,
-      .filtros-estilo-rapido {
-        gap: 7px;
-        margin-bottom: 9px;
-      }
-
-      .filtro-chip {
-        flex: 1;
-        padding: 9px 7px;
-        font-size: 11px;
-        border-radius: 12px;
-      }
-
-      .filtros-estilo-rapido .filtro-chip {
-        min-width: 0;
       }
 
       .filters {
@@ -1326,19 +1206,9 @@
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand-wrap">
-        <div class="web-logo" aria-label="Logo Timing Cuba">
-          <img
-            src="logo.png"
-            alt="Timing Cuba"
-            onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback'); this.parentElement.textContent='TC';"
-          />
-        </div>
-
-        <div class="brand">
-          <h1>Atletas</h1>
-          <span>Timing Cuba Live</span>
-        </div>
+      <div class="brand">
+        <h1>Atletas</h1>
+        <span>Timing Cuba Live</span>
       </div>
 
       <div class="actions">
@@ -1350,21 +1220,12 @@
   </header>
 
   <main>
-    <section class="filtros-etapa" aria-label="Filtro por etapa">
-      <button class="filtro-chip activo" type="button" data-etapa="">TODOS</button>
-      <button class="filtro-chip" type="button" data-etapa="escolares">ESCOLARES</button>
-      <button class="filtro-chip" type="button" data-etapa="superiores">CATEGORÍAS SUPERIORES</button>
-    </section>
-
-    <section class="filtros-estilo-rapido" aria-label="Filtro por estilo">
-      <button class="filtro-chip activo" type="button" data-estilo="">Todos los estilos</button>
-      <button class="filtro-chip" type="button" data-estilo="FS">FS</button>
-      <button class="filtro-chip" type="button" data-estilo="GR">GR</button>
-      <button class="filtro-chip" type="button" data-estilo="WW">WW</button>
-    </section>
-
     <section class="filters">
       <input id="buscar" type="search" placeholder="Buscar por nombre, club, país, peso..." />
+
+      <select id="filtroEstilo">
+        <option value="">Todos los estilos</option>
+      </select>
 
       <select id="filtroGrupo">
         <option value="">Todos los grupos</option>
@@ -1391,8 +1252,6 @@
     const DATA_URL = "datos/atletas.json";
 
     let atletas = [];
-    let filtroEtapaActual = "";
-    let filtroEstiloActual = "";
 
     const $ = (id) => document.getElementById(id);
 
@@ -1455,84 +1314,6 @@
         });
 
       select.value = valorActual;
-    }
-
-    function normalizarFiltro(valor) {
-      return texto(valor)
-        .normalize("NFD")
-        .replace(/[̀-ͯ]/g, "")
-        .toUpperCase()
-        .replace(/[^A-Z0-9]+/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-    }
-
-    function etapaAtleta(grupo) {
-      const g = normalizarFiltro(grupo);
-
-      if (!g) {
-        return "";
-      }
-
-      const esEscolar =
-        g.includes("U7") ||
-        g.includes("U8") ||
-        g.includes("U9") ||
-        g.includes("U10") ||
-        g.includes("U11") ||
-        g.includes("U12") ||
-        g.includes("U13") ||
-        g.includes("U14") ||
-        g.includes("U15");
-
-      if (esEscolar) {
-        return "escolares";
-      }
-
-      const esSuperior =
-        g.includes("U17") ||
-        g.includes("U20") ||
-        g.includes("U23") ||
-        g.includes("JUVENIL") ||
-        g.includes("JUNIOR") ||
-        g.includes("SENIOR") ||
-        g.includes("VETERAN") ||
-        g.includes("MASTER") ||
-        g.includes("MASTER");
-
-      if (esSuperior) {
-        return "superiores";
-      }
-
-      return "";
-    }
-
-    function codigoEstilo(valor) {
-      const e = normalizarFiltro(valor);
-
-      if (!e) {
-        return "";
-      }
-
-      if (e === "WW" || e.includes("FEMEN") || e.includes("WOMEN")) {
-        return "WW";
-      }
-
-      if (e === "GR" || e.includes("GRECO") || e.includes("GRECORROMANA") || e.includes("GRECORROMANO")) {
-        return "GR";
-      }
-
-      if (e === "FS" || e.includes("LIBRE") || e.includes("MASCULIN") || e.includes("FREESTYLE")) {
-        return "FS";
-      }
-
-      return e;
-    }
-
-    function activarBotonFiltro(selector, atributo, valorActual) {
-      document.querySelectorAll(selector).forEach((btn) => {
-        btn.classList.toggle("activo", (btn.dataset[atributo] || "") === valorActual);
-      });
     }
 
     function iniciales(nombre) {
@@ -1715,6 +1496,7 @@
 
     function filtrar() {
       const q = texto($("buscar").value).toLowerCase();
+      const estilo = $("filtroEstilo").value;
       const grupo = $("filtroGrupo").value;
       const peso = $("filtroPeso").value;
       const club = $("filtroClub").value;
@@ -1733,8 +1515,7 @@
         ].join(" ").toLowerCase();
 
         if (q && !textoCompleto.includes(q)) return false;
-        if (filtroEtapaActual && etapaAtleta(a.grupo) !== filtroEtapaActual) return false;
-        if (filtroEstiloActual && codigoEstilo(a.estilo) !== filtroEstiloActual) return false;
+        if (estilo && a.estilo !== estilo) return false;
         if (grupo && a.grupo !== grupo) return false;
         if (peso && a.peso !== peso) return false;
         if (club && a.club !== club) return false;
@@ -1762,6 +1543,7 @@
     }
 
     function llenarFiltros() {
+      crearOpciones("filtroEstilo", atletas.map(a => a.estilo), "Todos los estilos");
       crearOpciones("filtroGrupo", atletas.map(a => a.grupo), "Todos los grupos");
       crearOpciones("filtroPeso", atletas.map(a => a.peso), "Todos los pesos");
       crearOpciones("filtroClub", atletas.map(a => a.club), "Todos los clubes");
@@ -1782,7 +1564,7 @@
 
         await cargarRankingAutoFix();
         aplicarRankingAutoFix();
-        llenarFiltros();
+llenarFiltros();
         render();
 
         const fecha = new Date();
@@ -2843,25 +2625,9 @@
     // RANKING_ID_PRIMERO_FIX_FIN
 
 
-    ["buscar", "filtroGrupo", "filtroPeso", "filtroClub"].forEach((id) => {
+    ["buscar", "filtroEstilo", "filtroGrupo", "filtroPeso", "filtroClub"].forEach((id) => {
       $(id).addEventListener("input", render);
       $(id).addEventListener("change", render);
-    });
-
-    document.querySelectorAll(".filtros-etapa .filtro-chip").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        filtroEtapaActual = btn.dataset.etapa || "";
-        activarBotonFiltro(".filtros-etapa .filtro-chip", "etapa", filtroEtapaActual);
-        render();
-      });
-    });
-
-    document.querySelectorAll(".filtros-estilo-rapido .filtro-chip").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        filtroEstiloActual = btn.dataset.estilo || "";
-        activarBotonFiltro(".filtros-estilo-rapido .filtro-chip", "estilo", filtroEstiloActual);
-        render();
-      });
     });
 
     cargarAtletas();
