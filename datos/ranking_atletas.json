@@ -3,7 +3,7 @@
   "titulo": "Ranking de Atletas",
   "evento": "TODOS LOS EVENTOS",
   "filtro_usado": "EVENTOS REALES SIN TIMING",
-  "generado_en": "2026-06-05 07:40:51",
+  "generado_en": "2026-06-05 08:09:22",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS"
@@ -514,13 +514,13 @@
     }
   ],
   "movimientos": {
-    "archivo_anterior": "C:\\Users\\ARROYOS\\Desktop\\PIZARRAS\\TIMING-CUBA-BUILD\\dist\\Timing Cuba\\web_live_tapices_prueba\\datos\\ranking_atletas_anterior.json",
+    "archivo_anterior": "C:\\Users\\ARROYOS\\Desktop\\PIZARRAS\\TIMING-CUBA-BUILD\\web_live_tapices_prueba\\datos\\ranking_atletas_anterior.json",
     "anterior_existe": true,
-    "anterior_generado_en": "2026-05-31 01:57:55",
+    "anterior_generado_en": "2026-06-05 07:40:51",
     "anterior_total_atletas": 35,
-    "suben": 3,
-    "bajan": 1,
-    "igual": 31,
+    "suben": 0,
+    "bajan": 0,
+    "igual": 35,
     "nuevos": 0
   },
   "ranking": [
@@ -1851,10 +1851,10 @@
       "iniciales": "AG",
       "atleta_id": "",
       "id_atleta": "",
-      "posicion_anterior": 33,
-      "cambio_posicion": 1,
-      "movimiento": "SUBE",
-      "movimiento_texto": "Subi? 1 puesto(s)"
+      "posicion_anterior": 32,
+      "cambio_posicion": 0,
+      "movimiento": "IGUAL",
+      "movimiento_texto": "Se mantuvo"
     },
     {
       "posicion": 33,
@@ -1889,10 +1889,10 @@
       "iniciales": "E",
       "atleta_id": "",
       "id_atleta": "",
-      "posicion_anterior": 34,
-      "cambio_posicion": 1,
-      "movimiento": "SUBE",
-      "movimiento_texto": "Subi? 1 puesto(s)"
+      "posicion_anterior": 33,
+      "cambio_posicion": 0,
+      "movimiento": "IGUAL",
+      "movimiento_texto": "Se mantuvo"
     },
     {
       "posicion": 34,
@@ -1928,10 +1928,10 @@
       "atleta_id": "75",
       "id_atleta": "75",
       "id": "75",
-      "posicion_anterior": 35,
-      "cambio_posicion": 1,
-      "movimiento": "SUBE",
-      "movimiento_texto": "Subi? 1 puesto(s)"
+      "posicion_anterior": 34,
+      "cambio_posicion": 0,
+      "movimiento": "IGUAL",
+      "movimiento_texto": "Se mantuvo"
     },
     {
       "posicion": 35,
@@ -1967,10 +1967,10 @@
       "atleta_id": "80",
       "id_atleta": "80",
       "id": "80",
-      "posicion_anterior": 32,
-      "cambio_posicion": -3,
-      "movimiento": "BAJA",
-      "movimiento_texto": "Baj? 3 puesto(s)"
+      "posicion_anterior": 35,
+      "cambio_posicion": 0,
+      "movimiento": "IGUAL",
+      "movimiento_texto": "Se mantuvo"
     }
   ],
   "divisiones": [
