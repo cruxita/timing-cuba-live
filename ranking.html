@@ -1230,6 +1230,130 @@
     iniciar();
 
   </script>
+
+<!-- TC_RANKING_BANDEJA_EVENTOS_FIX_INICIO -->
+<style id="tc-ranking-bandeja-eventos-style">
+  .tc-eventos-select-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 16px 0;
+    flex-wrap: wrap;
+  }
+
+  .tc-eventos-label {
+    color: #f5c451;
+    font-weight: 1000;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tc-eventos-select {
+    background: #f5c451;
+    color: #111111;
+    border: 0;
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-weight: 1000;
+    min-width: 280px;
+    cursor: pointer;
+  }
+</style>
+
+<script id="tc-ranking-bandeja-eventos-script">
+(function () {
+  function limpiar(v) {
+    return String(v || "").trim();
+  }
+
+  function insertarSelect(eventos) {
+    if (document.getElementById("tc-ranking-eventos-select")) return;
+
+    if (!eventos || !eventos.length) {
+      eventos = ["TODOS LOS EVENTOS", "FESTIVAL ESCOLAR DE LUCHA", "TODOS VS TODOS"];
+    }
+
+    var ref =
+      document.getElementById("eventoBadge") ||
+      document.querySelector(".badge") ||
+      document.querySelector("main") ||
+      document.body;
+
+    if (!ref || !ref.parentNode) return;
+
+    var wrap = document.createElement("div");
+    wrap.id = "tc-ranking-eventos-wrap";
+    wrap.className = "tc-eventos-select-wrap";
+
+    var label = document.createElement("span");
+    label.className = "tc-eventos-label";
+    label.textContent = "Evento:";
+
+    var sel = document.createElement("select");
+    sel.id = "tc-ranking-eventos-select";
+    sel.className = "tc-eventos-select";
+
+    eventos.forEach(function (e) {
+      var op = document.createElement("option");
+      op.value = e;
+      op.textContent = e;
+      sel.appendChild(op);
+    });
+
+    sel.onchange = function () {
+      var badge = document.getElementById("eventoBadge");
+      if (badge) badge.textContent = this.value;
+    };
+
+    wrap.appendChild(label);
+    wrap.appendChild(sel);
+
+    ref.parentNode.insertBefore(wrap, ref.nextSibling);
+  }
+
+  function iniciar() {
+    fetch("datos/ranking_atletas.json?v=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var eventos = [];
+
+        if (Array.isArray(data.eventos_detectados)) {
+          eventos = eventos.concat(data.eventos_detectados);
+        }
+
+        if (Array.isArray(data.eventos)) {
+          eventos = eventos.concat(data.eventos);
+        }
+
+        eventos = eventos.map(limpiar).filter(function (x) {
+          return x && x.toUpperCase() !== "TODOS LOS EVENTOS";
+        });
+
+        var unicos = ["TODOS LOS EVENTOS"];
+
+        eventos.forEach(function (e) {
+          if (unicos.indexOf(e) < 0) unicos.push(e);
+        });
+
+        insertarSelect(unicos);
+      })
+      .catch(function () {
+        insertarSelect(["TODOS LOS EVENTOS", "FESTIVAL ESCOLAR DE LUCHA", "TODOS VS TODOS"]);
+      });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciar);
+  } else {
+    iniciar();
+  }
+
+  setInterval(iniciar, 1500);
+})();
+</script>
+<!-- TC_RANKING_BANDEJA_EVENTOS_FIX_FIN -->
+
 </body>
 </html>
 
