@@ -2632,5 +2632,191 @@ llenarFiltros();
 
     cargarAtletas();
   </script>
+
+<!-- TC_ATLETAS_LOGO_CATEGORIAS_FIX_INICIO -->
+<style id="tc-atletas-logo-categorias-style">
+  .tc-logo-app-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 10px 0 14px 0;
+  }
+
+  .tc-logo-app {
+    width: 66px;
+    height: 66px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(245,196,81,0.55);
+    padding: 6px;
+  }
+
+  .tc-categorias-wrap {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 12px 0 18px 0;
+  }
+
+  .tc-cat-btn {
+    border: 1px solid rgba(245,196,81,0.45);
+    background: rgba(255,255,255,0.06);
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 12px 18px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+  }
+
+  .tc-cat-btn.active {
+    background: #f5c451;
+    color: #111111;
+  }
+</style>
+
+<script id="tc-atletas-logo-categorias-script">
+(function () {
+  var categoriaActiva = "TODOS";
+
+  function texto(el) {
+    return (el.innerText || el.textContent || "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toUpperCase();
+  }
+
+  function detectarGrupo(card) {
+    var t = texto(card);
+
+    if (
+      t.indexOf("U17") >= 0 ||
+      t.indexOf("U20") >= 0 ||
+      t.indexOf("U23") >= 0 ||
+      t.indexOf("SENIOR") >= 0
+    ) {
+      return "SUPERIOR";
+    }
+
+    return "ESCOLAR";
+  }
+
+  function insertarLogo() {
+    if (document.getElementById("tc-logo-app-wrap")) return;
+
+    var h1 = document.querySelector("h1");
+    if (!h1) return;
+
+    var wrap = document.createElement("div");
+    wrap.id = "tc-logo-app-wrap";
+    wrap.className = "tc-logo-app-wrap";
+
+    var img = document.createElement("img");
+    img.className = "tc-logo-app";
+    img.src = "assets/app.ico?v=" + Date.now();
+    img.alt = "Timing Cuba";
+    img.onerror = function () {
+      this.style.display = "none";
+    };
+
+    h1.parentNode.insertBefore(wrap, h1);
+    wrap.appendChild(img);
+    wrap.appendChild(h1);
+  }
+
+  function contenedorTarjetas() {
+    return (
+      document.querySelector("#contenido") ||
+      document.querySelector("#grid") ||
+      document.querySelector(".grid") ||
+      document.querySelector("main") ||
+      document.body
+    );
+  }
+
+  function insertarCategorias() {
+    if (document.getElementById("tc-categorias-atletas")) return;
+
+    var contenedor = contenedorTarjetas();
+    if (!contenedor || !contenedor.parentNode) return;
+
+    var bar = document.createElement("div");
+    bar.id = "tc-categorias-atletas";
+    bar.className = "tc-categorias-wrap";
+
+    [
+      ["TODOS", "Todos"],
+      ["ESCOLAR", "Escolar"],
+      ["SUPERIOR", "Superior / U17+"]
+    ].forEach(function (item) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "tc-cat-btn" + (item[0] === categoriaActiva ? " active" : "");
+      b.dataset.cat = item[0];
+      b.textContent = item[1];
+
+      b.onclick = function () {
+        categoriaActiva = this.dataset.cat;
+
+        document.querySelectorAll(".tc-cat-btn").forEach(function (x) {
+          x.classList.remove("active");
+        });
+
+        this.classList.add("active");
+        aplicarCategoria();
+      };
+
+      bar.appendChild(b);
+    });
+
+    contenedor.parentNode.insertBefore(bar, contenedor);
+  }
+
+  function tarjetas() {
+    var posibles = Array.from(document.querySelectorAll(".card, .atleta-card, .athlete-card, article, main > div, #contenido > div, .grid > div"));
+
+    return posibles.filter(function (x) {
+      var t = texto(x);
+      return (
+        t.indexOf("GRUPO") >= 0 &&
+        (
+          t.indexOf("ESTILO") >= 0 ||
+          t.indexOf("PAIS") >= 0 ||
+          t.indexOf("PA?S") >= 0
+        )
+      );
+    });
+  }
+
+  function aplicarCategoria() {
+    tarjetas().forEach(function (card) {
+      var cat = detectarGrupo(card);
+
+      if (categoriaActiva === "TODOS" || categoriaActiva === cat) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  function iniciar() {
+    insertarLogo();
+    insertarCategorias();
+    aplicarCategoria();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciar);
+  } else {
+    iniciar();
+  }
+
+  setInterval(iniciar, 900);
+})();
+</script>
+<!-- TC_ATLETAS_LOGO_CATEGORIAS_FIX_FIN -->
+
 </body>
 </html>
