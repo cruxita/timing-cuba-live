@@ -646,7 +646,7 @@
       const esLocalhost = location.hostname === "localhost" || location.hostname === "127.0.0.1";
 
       if (!esLocalhost && url.includes("datos/ranking_atletas.json")) {
-        const apiUrl = "https://api.github.com/repos/cruxita/timing-cuba-live/contents/datos/ranking_atletas.json?ref=main&v=" + Date.now();
+        const apiUrl = "https://api.github.com/repos/cruxita/timing-cuba-live/contentsdatos/ranking_atletas.json?ref=main&v=" + Date.now();
 
         try {
           const respApi = await TIMING_CUBA_FETCH_ORIGINAL(apiUrl, { cache: "no-store" });
