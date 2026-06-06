@@ -1162,8 +1162,127 @@
       }
     }
   
+
+    // ==========================================================
+    // TIMING CUBA FIX EVENTO REAL
+    // Si el JSON trae rankings_por_evento, la web cambia
+    // realmente entre TODOS, FESTIVAL y TODOS VS TODOS.
+    // ==========================================================
+    let rankingRawDataEventoReal = null;
+
+    function timingEventoNorm(v) {
+      return String(v || "")
+        .trim()
+        .toUpperCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, " ");
+    }
+
+    function timingEventoActualWeb() {
+      const selects = Array.from(document.querySelectorAll("select"));
+
+      for (const sel of selects) {
+        const opciones = Array.from(sel.options || []).map(o => timingEventoNorm(o.value || o.textContent));
+        const tieneEventos = opciones.some(v =>
+          v.includes("TODOS LOS EVENTOS") ||
+          v.includes("FESTIVAL ESCOLAR DE LUCHA") ||
+          v.includes("TODOS VS TODOS")
+        );
+
+        if (tieneEventos) {
+          return sel.value || sel.options[sel.selectedIndex]?.textContent || "TODOS LOS EVENTOS";
+        }
+      }
+
+      const badge = document.getElementById("eventoBadge");
+      if (badge && badge.textContent) {
+        return badge.textContent;
+      }
+
+      return "TODOS LOS EVENTOS";
+    }
+
+    function timingBuscarPaqueteEvento(data, eventoSeleccionado) {
+      if (!data || !data.rankings_por_evento) {
+        return data;
+      }
+
+      const objetivo = timingEventoNorm(eventoSeleccionado || "TODOS LOS EVENTOS");
+
+      if (
+        !objetivo ||
+        objetivo === "TODOS" ||
+        objetivo === "TODOS LOS EVENTOS" ||
+        objetivo === "GENERAL"
+      ) {
+        return data.rankings_por_evento["TODOS LOS EVENTOS"] || data;
+      }
+
+      const claves = Object.keys(data.rankings_por_evento || {});
+
+      for (const k of claves) {
+        if (timingEventoNorm(k) === objetivo) {
+          return data.rankings_por_evento[k];
+        }
+      }
+
+      for (const k of claves) {
+        const nk = timingEventoNorm(k);
+
+        if (nk.includes(objetivo) || objetivo.includes(nk)) {
+          return data.rankings_por_evento[k];
+        }
+      }
+
+      return data.rankings_por_evento["TODOS LOS EVENTOS"] || data;
+    }
+
+    function timingPrepararDataEvento(data) {
+      const eventoSeleccionado = timingEventoActualWeb();
+      const paquete = timingBuscarPaqueteEvento(data, eventoSeleccionado);
+
+      if (!paquete || paquete === data) {
+        return data;
+      }
+
+      return Object.assign({}, data, paquete, {
+        generado_en: data.generado_en || paquete.generado_en || "",
+        eventos: data.eventos || [],
+        rankings_por_evento: data.rankings_por_evento || {},
+        evento: paquete.evento || eventoSeleccionado
+      });
+    }
+
+    function timingActivarCambioEventoReal() {
+      const selects = Array.from(document.querySelectorAll("select"));
+
+      for (const sel of selects) {
+        const opciones = Array.from(sel.options || []).map(o => timingEventoNorm(o.value || o.textContent));
+        const tieneEventos = opciones.some(v =>
+          v.includes("TODOS LOS EVENTOS") ||
+          v.includes("FESTIVAL ESCOLAR DE LUCHA") ||
+          v.includes("TODOS VS TODOS")
+        );
+
+        if (!tieneEventos || sel.dataset.timingEventoReal === "1") {
+          continue;
+        }
+
+        sel.dataset.timingEventoReal = "1";
+
+        sel.addEventListener("change", () => {
+          if (rankingRawDataEventoReal && typeof cargarDatos === "function") {
+            cargarDatos(rankingRawDataEventoReal);
+          }
+        });
+      }
+    }
+
     function cargarDatos(data) {
-      rankingData = normalizarData(data);
+      rankingRawDataEventoReal = data;
+      rankingData = normalizarData(timingPrepararDataEvento(data));
+      timingActivarCambioEventoReal();
 
       $("eventoBadge").textContent = rankingData.evento || "TODOS VS TODOS";
       $("subtitulo").textContent = `Generado: ${rankingData.generado_en || ""}`;
