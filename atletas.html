@@ -1202,24 +1202,245 @@
     /* RANKING_ID_PRIMERO_FIX_FIN */
 
   </style>
+
+
+
+
+
+
+
+<!-- TC_REPARAR_LOGO_BOTONES_ATLETAS_INICIO -->
+<style id="tc-reparar-logo-botones-atletas-style">
+  .topbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    background: rgba(5, 7, 13, 0.92) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+    padding: 16px 18px !important;
+  }
+
+  .topbar-inner {
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    gap: 14px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+  }
+
+  .brand-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    min-width: 0 !important;
+  }
+
+  .web-logo {
+    width: 76px !important;
+    height: 76px !important;
+    flex: 0 0 76px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 20px !important;
+    padding: 7px !important;
+    background:
+      radial-gradient(circle at center, rgba(250,204,21,0.18), rgba(255,255,255,0.06)),
+      rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(250,204,21,0.38) !important;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.30) !important;
+    overflow: hidden !important;
+  }
+
+  .web-logo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .brand {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+
+  .brand h1 {
+    margin: 0 !important;
+    font-size: clamp(26px, 4vw, 44px) !important;
+    line-height: 1 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+  }
+
+  .brand span {
+    color: #9ca3af !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    font-size: 13px !important;
+  }
+
+  .actions {
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  .btn {
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    background: rgba(255,255,255,0.06) !important;
+    color: #f9fafb !important;
+    text-decoration: none !important;
+    padding: 11px 14px !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+  }
+
+  .btn-main {
+    background: #facc15 !important;
+    color: #111827 !important;
+    border-color: transparent !important;
+  }
+
+  .filtros-etapa,
+  .filtros-estilo-rapido {
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  .filtros-estilo-rapido {
+    margin-bottom: 16px !important;
+  }
+
+  .filtro-chip {
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    background: rgba(255,255,255,0.07) !important;
+    color: #f9fafb !important;
+    border-radius: 999px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    font-weight: 950 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+  }
+
+  .filtro-chip.activo {
+    background: #facc15 !important;
+    color: #111827 !important;
+    border-color: transparent !important;
+    box-shadow: 0 10px 22px rgba(250,204,21,0.18) !important;
+  }
+
+  @media (max-width: 520px) {
+    .topbar {
+      padding: 12px 10px !important;
+    }
+
+    .brand-wrap {
+      width: 100% !important;
+      gap: 10px !important;
+    }
+
+    .web-logo {
+      width: 58px !important;
+      height: 58px !important;
+      flex-basis: 58px !important;
+      border-radius: 16px !important;
+      padding: 5px !important;
+    }
+
+    .brand h1 {
+      font-size: 30px !important;
+    }
+
+    .brand span {
+      font-size: 11px !important;
+    }
+
+    .actions {
+      width: 100% !important;
+      gap: 6px !important;
+    }
+
+    .btn {
+      flex: 1 !important;
+      text-align: center !important;
+      padding: 9px 8px !important;
+      border-radius: 10px !important;
+      font-size: 12px !important;
+    }
+
+    .filtro-chip {
+      flex: 1 !important;
+      padding: 9px 7px !important;
+      font-size: 11px !important;
+      border-radius: 12px !important;
+    }
+  }
+</style>
+<!-- TC_REPARAR_LOGO_BOTONES_ATLETAS_FIN -->
+
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
+  
+
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-wrap">
+      <div class="web-logo" aria-label="Logo Timing Cuba">
+        <img
+          src="logo.png?v=20260606_050415"
+          alt="Timing Cuba"
+          onerror="this.style.display='none'; this.parentElement.textContent='TC';"
+        />
+      </div>
+
       <div class="brand">
         <h1>Atletas</h1>
         <span>Timing Cuba Live</span>
       </div>
-
-      <div class="actions">
-        <a class="btn" href="index.html">Inicio</a>
-        <a class="btn btn-main" href="tapiz-a.html">Tapiz A</a>
-        <a class="btn btn-main" href="tapiz-b.html">Tapiz B</a>
-      </div>
     </div>
-  </header>
+
+    <div class="actions">
+      <a class="btn" href="index.html">Inicio</a>
+      <a class="btn btn-main" href="tapiz-a.html">Tapiz A</a>
+      <a class="btn btn-main" href="tapiz-b.html">Tapiz B</a>
+    </div>
+  </div>
+</header>
+
+
+
 
   <main>
+
+<section class="filtros-etapa" aria-label="Filtro por etapa">
+  <button class="filtro-chip activo" type="button" data-etapa="">TODOS</button>
+  <button class="filtro-chip" type="button" data-etapa="escolares">ESCOLARES</button>
+  <button class="filtro-chip" type="button" data-etapa="superiores">CATEGOR&Iacute;AS SUPERIORES</button>
+</section>
+
+
+<section class="filtros-estilo-rapido" aria-label="Filtro por estilo">
+  <button class="filtro-chip activo" type="button" data-estilo="">Todos los estilos</button>
+  <button class="filtro-chip" type="button" data-estilo="FS">FS</button>
+  <button class="filtro-chip" type="button" data-estilo="GR">GR</button>
+  <button class="filtro-chip" type="button" data-estilo="WW">WW</button>
+</section>
+
+
     <section class="filters">
       <input id="buscar" type="search" placeholder="Buscar por nombre, club, país, peso..." />
 
@@ -2634,6 +2855,126 @@ llenarFiltros();
   </script>
 
 
+
+
+
+
+
+
+
+
+<!-- TC_REPARAR_LOGO_BOTONES_ATLETAS_INICIO -->
+<script id="tc-reparar-logo-botones-atletas-script">
+(function () {
+  function texto(el) {
+    return (el.innerText || el.textContent || "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toUpperCase();
+  }
+
+  function normalizar(valor) {
+    return String(valor || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toUpperCase();
+  }
+
+  function tarjetas() {
+    return Array.from(document.querySelectorAll(".card, .atleta-card, article"));
+  }
+
+  function etapaCard(card) {
+    var t = normalizar(texto(card));
+
+    if (
+      t.indexOf("U17") >= 0 ||
+      t.indexOf("U20") >= 0 ||
+      t.indexOf("U23") >= 0 ||
+      t.indexOf("JUVENIL") >= 0 ||
+      t.indexOf("JUNIOR") >= 0 ||
+      t.indexOf("SENIOR") >= 0
+    ) {
+      return "superiores";
+    }
+
+    return "escolares";
+  }
+
+  function estiloCard(card) {
+    var t = normalizar(texto(card));
+
+    if (t.indexOf("WW") >= 0 || t.indexOf("FEMEN") >= 0) return "WW";
+    if (t.indexOf("GR") >= 0 || t.indexOf("GRECO") >= 0) return "GR";
+    if (t.indexOf("FS") >= 0 || t.indexOf("LIBRE") >= 0) return "FS";
+
+    return "";
+  }
+
+  function aplicarFiltrosVisuales() {
+    var etapa = "";
+    var estilo = "";
+
+    var bEtapa = document.querySelector(".filtros-etapa .filtro-chip.activo");
+    var bEstilo = document.querySelector(".filtros-estilo-rapido .filtro-chip.activo");
+
+    if (bEtapa) etapa = bEtapa.dataset.etapa || "";
+    if (bEstilo) estilo = bEstilo.dataset.estilo || "";
+
+    tarjetas().forEach(function (card) {
+      var ok = true;
+
+      if (etapa && etapaCard(card) !== etapa) ok = false;
+      if (estilo && estiloCard(card) !== estilo) ok = false;
+
+      card.style.display = ok ? "" : "none";
+    });
+  }
+
+  function activar(selector, btn) {
+    document.querySelectorAll(selector).forEach(function (x) {
+      x.classList.remove("activo");
+    });
+
+    btn.classList.add("activo");
+
+    setTimeout(aplicarFiltrosVisuales, 50);
+    setTimeout(aplicarFiltrosVisuales, 300);
+    setTimeout(aplicarFiltrosVisuales, 900);
+  }
+
+  function iniciar() {
+    document.querySelectorAll(".filtros-etapa .filtro-chip").forEach(function (btn) {
+      if (btn.dataset.tcClick) return;
+      btn.dataset.tcClick = "1";
+
+      btn.addEventListener("click", function () {
+        activar(".filtros-etapa .filtro-chip", btn);
+      });
+    });
+
+    document.querySelectorAll(".filtros-estilo-rapido .filtro-chip").forEach(function (btn) {
+      if (btn.dataset.tcClick) return;
+      btn.dataset.tcClick = "1";
+
+      btn.addEventListener("click", function () {
+        activar(".filtros-estilo-rapido .filtro-chip", btn);
+      });
+    });
+
+    aplicarFiltrosVisuales();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciar);
+  } else {
+    iniciar();
+  }
+
+  setInterval(iniciar, 1000);
+})();
+</script>
+<!-- TC_REPARAR_LOGO_BOTONES_ATLETAS_FIN -->
 
 </body>
 </html>
