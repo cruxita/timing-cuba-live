@@ -1508,7 +1508,8 @@
         peso: texto(a.peso),
         estilo: texto(a.estilo),
         tag_publico: texto(a.tag_publico),
-        foto: texto(a.foto || a.foto_web || a.foto_path || a.imagen)
+        foto: texto(a.foto || a.foto_web || a.foto_path || a.imagen),
+        foto_version: texto(a.foto_version || a.foto_ver || a.version_foto)
       };
     }
 
@@ -1660,7 +1661,14 @@
       if (a.foto) {
         const img = document.createElement("img");
         img.className = "photo";
-        img.src = a.foto.replaceAll("\\", "/");
+        // ATLETAS_RAPIDO_CACHE_FOTOS_20260806
+        const fotoBase = a.foto.replaceAll("\\", "/");
+        const fotoVersion = texto(a.foto_version);
+        const separadorFoto = fotoBase.includes("?") ? "&" : "?";
+
+        img.src = fotoVersion
+          ? `${fotoBase}${separadorFoto}v=${encodeURIComponent(fotoVersion)}`
+          : fotoBase;
         img.alt = a.nombre;
         img.loading = "lazy";
         img.onerror = () => {
