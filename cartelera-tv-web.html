@@ -1,0 +1,1393 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cartelera UWW - Timing Cuba</title>
+<style>
+:root{
+  --bg:#06101d;--panel:#0b192a;--panel2:#11243a;--text:#f8fafc;--muted:#a9bdd4;
+  --line:#29415e;--red:#cf171f;--red2:#7c1018;--blue:#075dcc;--blue2:#063578;
+  --gold:#f4b629;--green:#12a66a;--soft:#e9f1fb;
+}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;overflow:hidden}
+body{display:flex;flex-direction:column}
+header{min-height:92px;padding:12px 18px;border-bottom:2px solid var(--line);display:flex;align-items:center;gap:15px;background:#071525}
+.logo{width:60px;height:60px;border-radius:14px;background:#fff url('logo.png') center/contain no-repeat;flex:0 0 auto;box-shadow:0 0 0 2px rgba(255,255,255,.08)}
+.hmain{min-width:0;flex:1}.evento{font-size:clamp(22px,2.05vw,38px);font-weight:1000;line-height:1.02;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{margin-top:5px;color:var(--muted);font-weight:800;font-size:clamp(12px,.95vw,17px);display:flex;gap:14px;flex-wrap:wrap}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}.categoria{padding:10px 15px;border-radius:14px;background:var(--gold);color:#111827;font-size:clamp(15px,1.25vw,23px);font-weight:1000;text-align:center;min-width:170px}
+.modes{display:flex;gap:5px;background:#0c1d31;padding:5px;border:1px solid #29415e;border-radius:12px}.mode-btn{border:0;border-radius:9px;padding:8px 10px;background:#17304d;color:#c9d8e8;font-weight:900;font-size:11px;cursor:pointer;white-space:nowrap}.mode-btn.active{background:var(--gold);color:#111827}.mode-btn:hover{filter:brightness(1.08)}
+#grid{flex:1;min-height:0;display:grid;gap:10px;padding:10px;grid-template-columns:repeat(var(--mats),minmax(0,1fr))}
+.mat{min-width:0;min-height:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;overflow:hidden}.mat-head{padding:10px 13px;background:#142b47;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.mat-name{font-size:clamp(21px,1.8vw,32px);font-weight:1000}.mat-count{color:#c5d5e7;font-weight:900;font-size:clamp(12px,.9vw,16px)}
+.cards{padding:9px;display:flex;flex-direction:column;gap:8px;overflow:hidden;min-height:0}.empty{margin:auto;color:#7890ad;text-align:center;font-weight:900;font-size:clamp(18px,1.5vw,28px);padding:30px}
+/* COMBATE ACTUAL */
+.live-card{border:2px solid rgba(255,255,255,.18);border-radius:15px;overflow:hidden;background:#0c1d30;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.live-top{min-height:42px;padding:6px 9px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;background:linear-gradient(90deg,#17314f,#0d1f34);border-bottom:1px solid #2b4563}.bout{font-size:clamp(17px,1.15vw,23px);font-weight:1000;background:var(--soft);color:#0f172a;border-radius:9px;padding:4px 8px}.phase{min-width:0;font-weight:1000;font-size:clamp(12px,.95vw,17px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.status{font-size:clamp(10px,.78vw,14px);font-weight:1000;border-radius:999px;padding:6px 9px;white-space:nowrap}.status.ahora{background:var(--green)}.status.siguiente{background:var(--gold);color:#111827}.status.espera{background:#35506f}.status.definir{background:#606a78}
+.live-meta{padding:5px 9px;color:#d7e3f1;font-size:clamp(11px,.78vw,14px);font-weight:900;background:#0a192a;border-bottom:1px solid #243d59;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.live-match{display:grid;grid-template-columns:minmax(82px,23%) 1fr;min-height:154px}.live-clock{background:linear-gradient(180deg,#05080d,#101826);display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid rgba(255,255,255,.12);padding:8px}.timer{font-family:"Arial Narrow",Arial,sans-serif;font-weight:1000;font-size:clamp(34px,3vw,58px);line-height:1;letter-spacing:-2px}.clock-label{margin-top:5px;font-size:10px;color:#a8b9cd;font-weight:900}.win-banner{margin-top:8px;padding:5px 8px;border-radius:8px;background:var(--gold);color:#111827;font-weight:1000;font-size:11px;text-align:center;display:none}.win-banner.show{display:block}
+.live-sides{display:grid;grid-template-rows:1fr 1fr;min-width:0}.live-ath{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:9px;padding:7px 10px;min-width:0}.live-ath.red{background:linear-gradient(100deg,var(--red2) 0%,var(--red) 57%,#e34a4f 100%)}.live-ath.blue{background:linear-gradient(100deg,var(--blue2) 0%,var(--blue) 57%,#2684eb 100%)}.live-ath.red+.live-ath.blue{border-top:2px solid rgba(255,255,255,.2)}
+.photo-wrap{display:flex;align-items:center;justify-content:center;flex:0 0 auto}.photo{width:56px;height:56px;border-radius:50%;object-fit:cover;background:#24364d;border:2px solid rgba(255,255,255,.75);box-shadow:0 2px 8px rgba(0,0,0,.3)}.photo.placeholder{display:flex;align-items:center;justify-content:center;font-weight:1000;color:#e9f2fb;font-size:17px;background:rgba(4,15,28,.48)}
+.identity{min-width:0}.name{font-size:clamp(14px,1.13vw,21px);font-weight:1000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 2px rgba(0,0,0,.55)}.subline{margin-top:3px;display:flex;align-items:center;gap:8px;min-width:0;font-size:clamp(10px,.72vw,13px);font-weight:900;color:#edf5ff}.tag{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.country{display:flex;align-items:center;gap:5px;font-weight:1000;white-space:nowrap}.flag{width:29px;height:19px;object-fit:cover;border-radius:3px;background:#25364a;box-shadow:0 0 0 1px rgba(255,255,255,.25)}.score{min-width:58px;text-align:center;background:#f8fafc;color:#08111f;border-radius:10px;padding:6px 8px;font-weight:1000;font-size:clamp(32px,2.8vw,52px);line-height:1;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+/* COLA */
+.queue-card{background:var(--panel2);border:1px solid #2d4561;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.15)}.queue-top{min-height:34px;padding:4px 8px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:7px;background:#10233a;border-bottom:1px solid #2a4059}.queue-top .bout{font-size:clamp(14px,.95vw,19px);padding:3px 7px}.queue-top .phase{font-size:clamp(11px,.82vw,15px)}.queue-top .status{font-size:10px;padding:5px 8px}.queue-meta{padding:4px 8px;color:#cbd8e8;font-size:clamp(10px,.7vw,13px);font-weight:900;border-bottom:1px solid #263950;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.queue-match{display:grid;grid-template-columns:1fr 1fr;min-height:70px}.queue-ath{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:7px;padding:7px 8px;min-width:0}.queue-ath.red{background:linear-gradient(100deg,#6e1118,#bf1d26 75%,#d63840)}.queue-ath.blue{background:linear-gradient(100deg,#07306d,#0759bd 75%,#1d78dd)}.queue-ath+.queue-ath{border-left:2px solid rgba(255,255,255,.16)}.queue-ath .photo{width:39px;height:39px}.queue-ath .photo.placeholder{font-size:13px}.queue-ath .name{font-size:clamp(12px,.9vw,17px)}.queue-ath .subline{font-size:10px;margin-top:2px}.queue-ath .flag{width:24px;height:16px}
+/* MODOS DE VISUALIZACION */
+body.mode-uww .photo-wrap{display:none!important}body.mode-uww .live-ath,body.mode-uww .queue-ath{grid-template-columns:minmax(0,1fr) auto}body.mode-uww .queue-ath{grid-template-columns:minmax(0,1fr)}body.mode-uww .live-match{grid-template-columns:minmax(78px,21%) 1fr}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.photo-wrap{
+    display:none!important;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.queue-ath{
+    grid-template-columns:
+        minmax(0,1fr);
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.photo-wrap{
+    display:flex!important;
+}
+
+body.mode-mixto
+.queue-card.siguiente{
+    border-color:#f0b429;
+    box-shadow:
+        0 0 0 1px rgba(240,180,41,.45),
+        0 5px 16px rgba(0,0,0,.20);
+}
+
+body.mode-fotos .queue-match{min-height:78px}
+footer{min-height:32px;padding:6px 12px;background:#071525;border-top:1px solid var(--line);color:#8ea2bc;font-size:11px;display:flex;justify-content:space-between;gap:18px}.footer-right{display:flex;gap:12px}.conn.ok{color:#8fd8b9}.conn.warn{color:#f4b629}
+@media(max-width:1100px){header{min-height:80px;padding:9px 12px}.logo{width:52px;height:52px}.modes{display:none}.photo{width:46px;height:46px}.live-match{grid-template-columns:82px 1fr}.score{min-width:48px}.cards{padding:7px;gap:6px}.queue-match{min-height:62px}.queue-ath{padding:5px 6px}}
+@media(max-width:760px){.categoria{min-width:140px}.live-match{grid-template-columns:72px 1fr}.timer{font-size:31px}.live-ath{padding:6px}.queue-match{grid-template-columns:1fr}.queue-ath+.queue-ath{border-left:0;border-top:2px solid rgba(255,255,255,.16)}}
+
+/* AJUSTE FULLSCREEN UWW V2 */
+
+/*
+   En TV / monitor grande:
+   - evita que los combates se aplasten
+   - mantiene visibles banderas y TAG
+   - hace la cola m?s compacta tipo UWW
+*/
+@media (min-width:1101px) and (min-height:700px){
+
+    body.mode-mixto .cards,
+    body.mode-uww .cards {
+        padding:7px;
+        gap:6px;
+    }
+
+    body.mode-mixto .queue-card,
+    body.mode-uww .queue-card {
+        flex:0 0 auto;
+    }
+
+    body.mode-mixto .queue-top,
+    body.mode-uww .queue-top {
+        min-height:28px;
+        padding:2px 7px;
+    }
+
+    body.mode-mixto .queue-top .bout,
+    body.mode-uww .queue-top .bout {
+        font-size:15px;
+        padding:2px 6px;
+    }
+
+    body.mode-mixto .queue-top .phase,
+    body.mode-uww .queue-top .phase {
+        font-size:12px;
+    }
+
+    body.mode-mixto .queue-top .status,
+    body.mode-uww .queue-top .status {
+        font-size:9px;
+        padding:4px 7px;
+    }
+
+    body.mode-mixto .queue-meta,
+    body.mode-uww .queue-meta {
+        padding:2px 7px;
+        font-size:11px;
+        line-height:16px;
+    }
+
+    body.mode-mixto .queue-match,
+    body.mode-uww .queue-match {
+        min-height:52px;
+        height:52px;
+    }
+
+    body.mode-mixto .queue-ath,
+    body.mode-uww .queue-ath {
+        min-height:52px;
+        padding:4px 8px;
+        overflow:hidden;
+    }
+
+    body.mode-mixto .queue-ath .name,
+    body.mode-uww .queue-ath .name {
+        font-size:clamp(
+            13px,
+            .90vw,
+            17px
+        );
+        line-height:18px;
+    }
+
+    body.mode-mixto .queue-ath .subline,
+    body.mode-uww .queue-ath .subline {
+        margin-top:1px;
+        font-size:11px;
+        line-height:18px;
+        gap:7px;
+        overflow:visible;
+    }
+
+    body.mode-mixto .queue-ath .country,
+    body.mode-uww .queue-ath .country {
+        line-height:18px;
+        gap:6px;
+        overflow:visible;
+    }
+
+    body.mode-mixto .queue-ath .flag,
+    body.mode-uww .queue-ath .flag {
+        width:28px;
+        height:18px;
+        min-width:28px;
+        display:block;
+        flex:0 0 auto;
+    }
+}
+
+
+/*
+   En TV Full HD grande las banderas
+   pueden verse un poquito mayores.
+*/
+@media (min-width:1500px) and (min-height:800px){
+
+    body.mode-mixto .queue-ath .name,
+    body.mode-uww .queue-ath .name {
+        font-size:18px;
+    }
+
+    body.mode-mixto .queue-ath .flag,
+    body.mode-uww .queue-ath .flag {
+        width:30px;
+        height:20px;
+        min-width:30px;
+    }
+}
+
+
+/* MIXTO COMPACTO UWW V4 */
+
+/* =========================================================
+   COMBATE ACTUAL
+   Reloj compacto tipo UWW.
+   ========================================================= */
+
+body.mode-mixto .live-card{
+    flex:0 0 auto;
+}
+
+body.mode-mixto .live-top{
+    min-height:34px;
+    padding:4px 8px;
+}
+
+body.mode-mixto .live-meta{
+    padding:3px 8px;
+    font-size:11px;
+    line-height:16px;
+}
+
+/*
+   Antes el reloj ocupaba demasiado ancho.
+   Ahora solo ocupa una franja peque?a.
+*/
+body.mode-mixto .live-match{
+    grid-template-columns:
+        clamp(105px, 13vw, 155px)
+        minmax(0,1fr);
+
+    min-height:104px;
+    height:104px;
+}
+
+/* RELOJ */
+body.mode-mixto .live-clock{
+    padding:4px 6px;
+    min-width:0;
+}
+
+body.mode-mixto .timer{
+    font-size:
+        clamp(
+            30px,
+            2.7vw,
+            46px
+        );
+
+    line-height:.95;
+    letter-spacing:-1px;
+}
+
+body.mode-mixto .clock-label{
+    margin-top:4px;
+    font-size:9px;
+    line-height:11px;
+    text-align:center;
+}
+
+/* WIN solo peque?o */
+body.mode-mixto .win-banner{
+    margin-top:4px;
+    padding:3px 6px;
+    font-size:9px;
+}
+
+
+/* =========================================================
+   ROJO / AZUL DEL COMBATE ACTUAL
+   ========================================================= */
+
+body.mode-mixto .live-sides{
+    min-height:104px;
+    height:104px;
+}
+
+body.mode-mixto .live-ath{
+    min-height:52px;
+    height:52px;
+
+    padding:4px 8px;
+
+    grid-template-columns:
+        auto
+        minmax(0,1fr)
+        auto;
+
+    gap:7px;
+}
+
+/* FOTO DEL ACTUAL */
+body.mode-mixto .live-ath .photo{
+    width:42px;
+    height:42px;
+}
+
+body.mode-mixto .live-ath .photo.placeholder{
+    font-size:13px;
+}
+
+/* NOMBRE */
+body.mode-mixto .live-ath .name{
+    font-size:
+        clamp(
+            13px,
+            1vw,
+            18px
+        );
+
+    line-height:18px;
+}
+
+/* TAG + BANDERA */
+body.mode-mixto .live-ath .subline{
+    margin-top:1px;
+    font-size:10px;
+    line-height:15px;
+    gap:6px;
+}
+
+body.mode-mixto .live-ath .flag{
+    width:25px;
+    height:16px;
+}
+
+/* PUNTUACI?N */
+body.mode-mixto .score{
+    min-width:46px;
+
+    padding:
+        4px
+        7px;
+
+    border-radius:8px;
+
+    font-size:
+        clamp(
+            27px,
+            2.2vw,
+            40px
+        );
+}
+
+
+/* =========================================================
+   COLA
+   ========================================================= */
+
+body.mode-mixto .cards{
+    padding:6px;
+    gap:5px;
+}
+
+
+/* =========================================================
+   SIGUIENTE
+   Mediano + fotos peque?as
+   ========================================================= */
+
+body.mode-mixto
+.queue-card.siguiente{
+    border:
+        2px solid
+        rgba(240,180,41,.9);
+
+    box-shadow:
+        0 0 0 1px
+        rgba(240,180,41,.22);
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.queue-top{
+    min-height:28px;
+    padding:2px 6px;
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.queue-meta{
+    padding:2px 6px;
+    font-size:10px;
+    line-height:14px;
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.queue-match{
+    min-height:48px;
+    height:48px;
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.queue-ath{
+    min-height:48px;
+    height:48px;
+    padding:3px 6px;
+
+    grid-template-columns:
+        auto
+        minmax(0,1fr);
+
+    gap:6px;
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.photo-wrap{
+    display:flex!important;
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.photo{
+    width:34px;
+    height:34px;
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.name{
+    font-size:
+        clamp(
+            11px,
+            .82vw,
+            15px
+        );
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.subline{
+    font-size:9px;
+    margin-top:0;
+}
+
+body.mode-mixto
+.queue-card.siguiente
+.flag{
+    width:22px;
+    height:14px;
+}
+
+
+/* =========================================================
+   EN ESPERA / POR DEFINIR
+   Muy compactos estilo UWW.
+   ========================================================= */
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.queue-top{
+    min-height:24px;
+    padding:1px 6px;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.queue-top .bout{
+    font-size:13px;
+    padding:2px 5px;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.queue-top .phase{
+    font-size:10px;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.queue-top .status{
+    font-size:8px;
+    padding:3px 6px;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.queue-meta{
+    padding:1px 6px;
+    font-size:9px;
+    line-height:13px;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.queue-match{
+    min-height:39px;
+    height:39px;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.queue-ath{
+    min-height:39px;
+    height:39px;
+
+    padding:
+        2px
+        7px;
+
+    grid-template-columns:
+        minmax(0,1fr);
+}
+
+/* SIN FOTO */
+body.mode-mixto
+.queue-card:not(.siguiente)
+.photo-wrap{
+    display:none!important;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.name{
+    font-size:
+        clamp(
+            11px,
+            .78vw,
+            14px
+        );
+
+    line-height:15px;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.subline{
+    margin-top:0;
+    font-size:8px;
+    line-height:12px;
+}
+
+body.mode-mixto
+.queue-card:not(.siguiente)
+.flag{
+    width:20px;
+    height:13px;
+}
+
+
+/* =========================================================
+   3 MAT EN UNA PANTALLA
+   Preparado para columnas m?s estrechas.
+   ========================================================= */
+
+@media (min-width:1400px){
+
+    #grid{
+        gap:8px;
+        padding:8px;
+    }
+
+    .mat-head{
+        padding:
+            8px
+            10px;
+    }
+
+    .mat-name{
+        font-size:
+            clamp(
+                20px,
+                1.6vw,
+                30px
+            );
+    }
+
+    body.mode-mixto .live-match{
+        grid-template-columns:
+            clamp(95px, 11vw, 145px)
+            minmax(0,1fr);
+    }
+
+}
+
+
+/* TV Full HD */
+@media (min-width:1700px)
+       and (min-height:850px){
+
+    body.mode-mixto .live-match{
+        height:110px;
+        min-height:110px;
+    }
+
+    body.mode-mixto .live-sides{
+        height:110px;
+        min-height:110px;
+    }
+
+    body.mode-mixto .live-ath{
+        height:55px;
+        min-height:55px;
+    }
+}
+
+
+/* UWW PROFESIONAL DOS MODOS V5 */
+
+/* ========================================================
+   MODO UWW
+   Sin fotos, nombres protagonistas.
+   ======================================================== */
+
+body.mode-uww .photo-wrap{
+    display:none!important;
+}
+
+/* ROJO / AZUL */
+body.mode-uww .queue-ath{
+    grid-template-columns:minmax(0,1fr)!important;
+
+    padding:
+        6px
+        11px;
+
+    min-height:48px;
+
+    align-items:center;
+}
+
+/* Fondo m?s limpio tipo marcador UWW */
+body.mode-uww .queue-ath.red{
+    background:
+        linear-gradient(
+            105deg,
+            #8d111a 0%,
+            #b71924 45%,
+            #d63139 100%
+        );
+}
+
+body.mode-uww .queue-ath.blue{
+    background:
+        linear-gradient(
+            105deg,
+            #063b83 0%,
+            #075cbf 45%,
+            #207fdf 100%
+        );
+}
+
+
+/* ========================================================
+   IDENTIDAD
+   ======================================================== */
+
+body.mode-uww .queue-ath .identity{
+    min-width:0;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        auto;
+
+    grid-template-rows:
+        auto;
+
+    align-items:center;
+
+    column-gap:10px;
+}
+
+
+/* NOMBRE PRINCIPAL */
+body.mode-uww .queue-ath .name{
+    font-family:
+        "Arial Narrow",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            15px,
+            1.05vw,
+            21px
+        );
+
+    line-height:1;
+
+    font-weight:1000;
+
+    letter-spacing:.25px;
+
+    text-transform:uppercase;
+
+    color:#ffffff;
+
+    text-shadow:
+        0 1px 2px
+        rgba(0,0,0,.50);
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+
+/* TAG + BANDERA */
+body.mode-uww .queue-ath .subline{
+    margin:0;
+
+    display:flex;
+
+    justify-content:flex-end;
+    align-items:center;
+
+    gap:7px;
+
+    font-size:10px;
+
+    color:#ffffff;
+}
+
+
+/* TAG */
+body.mode-uww .queue-ath .tag{
+    padding:
+        2px
+        5px;
+
+    border-radius:5px;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            .18
+        );
+
+    font-weight:1000;
+
+    letter-spacing:.2px;
+}
+
+
+/* PA?S */
+body.mode-uww .queue-ath .country{
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    font-weight:1000;
+
+    font-size:11px;
+
+    letter-spacing:.3px;
+}
+
+
+/* BANDERA */
+body.mode-uww .queue-ath .flag{
+    width:28px;
+    height:18px;
+
+    flex:0 0 auto;
+
+    border-radius:2px;
+
+    box-shadow:
+        0 0 0 1px
+        rgba(
+            255,
+            255,
+            255,
+            .32
+        );
+}
+
+
+/* ========================================================
+   COMBATE ACTUAL EN UWW
+   Tambi?n sin fotos.
+   ======================================================== */
+
+body.mode-uww .live-ath{
+    grid-template-columns:
+        minmax(0,1fr)
+        auto!important;
+
+    padding:
+        5px
+        9px;
+}
+
+body.mode-uww .live-ath .identity{
+    min-width:0;
+}
+
+body.mode-uww .live-ath .name{
+    font-family:
+        "Arial Narrow",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            16px,
+            1.15vw,
+            22px
+        );
+
+    font-weight:1000;
+
+    letter-spacing:.3px;
+
+    text-transform:uppercase;
+}
+
+body.mode-uww .live-ath .subline{
+    margin-top:2px;
+}
+
+body.mode-uww .live-ath .flag{
+    width:27px;
+    height:18px;
+}
+
+
+/* ========================================================
+   BOTONES
+   SOLO MIXTO Y UWW
+   ======================================================== */
+
+.modes{
+    padding:4px;
+    gap:4px;
+}
+
+.mode-btn{
+    min-width:82px;
+}
+
+
+/* ========================================================
+   UWW EN PANTALLA GRANDE / VARIOS MAT
+   ======================================================== */
+
+@media (min-width:1400px){
+
+    body.mode-uww .queue-ath .name{
+        font-size:
+            clamp(
+                14px,
+                .95vw,
+                19px
+            );
+    }
+
+    body.mode-uww .queue-ath{
+        min-height:45px;
+    }
+}
+
+
+/* ACTUAL UWW DOS ATLETAS V6 */
+
+/* =========================================================
+   COMBATE ACTUAL - UWW
+   Dos atletas SIEMPRE visibles.
+   ========================================================= */
+
+body.mode-uww .live-match{
+    display:grid !important;
+
+    grid-template-columns:
+        clamp(120px, 20vw, 340px)
+        minmax(0,1fr) !important;
+
+    height:104px !important;
+    min-height:104px !important;
+
+    overflow:hidden;
+}
+
+
+/* RELOJ */
+body.mode-uww .live-clock{
+    height:104px !important;
+    min-height:104px !important;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:4px 8px;
+
+    overflow:hidden;
+}
+
+body.mode-uww .timer{
+    font-size:
+        clamp(
+            34px,
+            3vw,
+            54px
+        ) !important;
+
+    line-height:1 !important;
+
+    white-space:nowrap;
+}
+
+body.mode-uww .clock-label{
+    margin-top:3px;
+
+    font-size:9px !important;
+    line-height:11px !important;
+}
+
+
+/* =========================================================
+   CONTENEDOR ROJO / AZUL
+   ========================================================= */
+
+body.mode-uww .live-sides{
+    height:104px !important;
+    min-height:104px !important;
+
+    display:grid !important;
+
+    grid-template-rows:
+        52px
+        52px !important;
+
+    overflow:hidden !important;
+}
+
+
+/* CADA ATLETA */
+body.mode-uww .live-ath{
+    height:52px !important;
+    min-height:52px !important;
+    max-height:52px !important;
+
+    display:grid !important;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        auto !important;
+
+    align-items:center;
+
+    padding:
+        4px
+        8px !important;
+
+    gap:8px;
+
+    overflow:hidden !important;
+}
+
+
+/* ROJO */
+body.mode-uww .live-ath.red{
+    background:
+        linear-gradient(
+            100deg,
+            #9b141d 0%,
+            #c51823 55%,
+            #ed3f45 100%
+        ) !important;
+}
+
+
+/* AZUL */
+body.mode-uww .live-ath.blue{
+    background:
+        linear-gradient(
+            100deg,
+            #073b82 0%,
+            #075abd 55%,
+            #2580dd 100%
+        ) !important;
+
+    border-top:
+        2px solid
+        rgba(255,255,255,.30);
+}
+
+
+/* EN UWW NO HAY FOTO */
+body.mode-uww
+.live-ath
+.photo-wrap{
+    display:none !important;
+}
+
+
+/* IDENTIDAD */
+body.mode-uww
+.live-ath
+.identity{
+    min-width:0;
+
+    display:flex !important;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+
+/* NOMBRE */
+body.mode-uww
+.live-ath
+.name{
+    font-family:
+        "Arial Narrow",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            15px,
+            1.25vw,
+            22px
+        ) !important;
+
+    line-height:20px !important;
+
+    font-weight:1000 !important;
+
+    letter-spacing:.25px;
+
+    text-transform:uppercase;
+
+    color:#fff;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+
+/* TAG + BANDERA + PA?S */
+body.mode-uww
+.live-ath
+.subline{
+    height:17px;
+
+    margin-top:1px !important;
+
+    display:flex !important;
+
+    align-items:center;
+
+    gap:6px;
+
+    font-size:10px !important;
+
+    line-height:16px !important;
+
+    color:#fff;
+}
+
+body.mode-uww
+.live-ath
+.flag{
+    width:26px !important;
+    height:17px !important;
+
+    display:block !important;
+
+    flex:0 0 auto;
+}
+
+
+/* PUNTUACI?N */
+body.mode-uww
+.live-ath
+.score{
+    width:54px;
+    min-width:54px;
+
+    height:43px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:0 !important;
+
+    border-radius:8px;
+
+    font-size:
+        clamp(
+            28px,
+            2.4vw,
+            42px
+        ) !important;
+
+    line-height:1 !important;
+
+    font-weight:1000;
+
+    background:#f8fafc;
+    color:#08111e;
+
+    box-shadow:
+        0 2px 7px
+        rgba(0,0,0,.25);
+}
+
+
+/* En pantallas muy grandes mantenemos todo compacto */
+@media (min-width:1500px){
+
+    body.mode-uww .live-match{
+        grid-template-columns:
+            340px
+            minmax(0,1fr) !important;
+    }
+
+}
+
+
+/* NO APLASTAR COMBATE ACTUAL V7 */
+
+/* =========================================================
+   CLAVE:
+   impedir que FLEX encoja las tarjetas.
+   ========================================================= */
+
+body.mode-uww .live-card,
+body.mode-mixto .live-card{
+    flex:0 0 auto !important;
+    flex-shrink:0 !important;
+}
+
+body.mode-uww .queue-card,
+body.mode-mixto .queue-card{
+    flex:0 0 auto !important;
+    flex-shrink:0 !important;
+}
+
+
+/* =========================================================
+   UWW - COMBATE ACTUAL
+   Compacto pero con espacio REAL.
+   ========================================================= */
+
+body.mode-uww .live-match{
+    height:94px !important;
+    min-height:94px !important;
+    max-height:94px !important;
+
+    grid-template-columns:
+        clamp(125px, 18vw, 285px)
+        minmax(0,1fr) !important;
+
+    overflow:hidden !important;
+}
+
+body.mode-uww .live-clock{
+    height:94px !important;
+    min-height:94px !important;
+    max-height:94px !important;
+
+    padding:3px 6px !important;
+
+    justify-content:center !important;
+}
+
+
+/* RELOJ */
+body.mode-uww .timer{
+    font-size:
+        clamp(
+            32px,
+            2.7vw,
+            48px
+        ) !important;
+
+    line-height:1 !important;
+    letter-spacing:-1px !important;
+}
+
+body.mode-uww .clock-label{
+    margin-top:3px !important;
+
+    font-size:8px !important;
+    line-height:10px !important;
+}
+
+
+/* En UWW no necesitamos la pastilla WIN debajo del reloj */
+body.mode-uww .win-banner{
+    display:none !important;
+}
+
+
+/* =========================================================
+   DOS FILAS EXACTAMENTE IGUALES
+   ========================================================= */
+
+body.mode-uww .live-sides{
+    height:94px !important;
+    min-height:94px !important;
+    max-height:94px !important;
+
+    display:grid !important;
+
+    grid-template-rows:
+        47px
+        47px !important;
+
+    overflow:hidden !important;
+}
+
+body.mode-uww .live-ath{
+    height:47px !important;
+    min-height:47px !important;
+    max-height:47px !important;
+
+    padding:
+        3px
+        8px !important;
+
+    overflow:hidden !important;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        50px !important;
+}
+
+
+/* NOMBRES */
+body.mode-uww .live-ath .name{
+    font-size:
+        clamp(
+            14px,
+            1.15vw,
+            20px
+        ) !important;
+
+    line-height:17px !important;
+}
+
+
+/* TAG / BANDERA */
+body.mode-uww .live-ath .subline{
+    margin-top:0 !important;
+
+    height:14px !important;
+
+    font-size:9px !important;
+
+    line-height:14px !important;
+
+    overflow:hidden;
+}
+
+body.mode-uww .live-ath .flag{
+    width:23px !important;
+    height:15px !important;
+}
+
+
+/* PUNTOS */
+body.mode-uww .live-ath .score{
+    width:46px !important;
+    min-width:46px !important;
+
+    height:39px !important;
+
+    padding:0 !important;
+
+    font-size:
+        clamp(
+            25px,
+            2vw,
+            36px
+        ) !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+}
+
+
+/* Separaci?n clara rojo / azul */
+body.mode-uww .live-ath.blue{
+    border-top:
+        2px solid
+        rgba(255,255,255,.55) !important;
+}
+
+
+/* =========================================================
+   LAS TARJETAS DE ABAJO TAMPOCO SE ENCOGEN
+   ========================================================= */
+
+body.mode-uww .queue-card{
+    min-height:0 !important;
+}
+
+body.mode-uww .queue-match{
+    flex-shrink:0 !important;
+}
+
+
+/* =========================================================
+   MIXTO:
+   proteger tambi?n el combate actual.
+   ========================================================= */
+
+body.mode-mixto .live-match,
+body.mode-mixto .live-sides{
+    flex-shrink:0 !important;
+}
+
+body.mode-mixto .live-ath{
+    flex-shrink:0 !important;
+}
+
+
+/* =========================================================
+   PANTALLAS GRANDES
+   Dejamos el reloj angosto para futuros 3 MAT.
+   ========================================================= */
+
+@media (min-width:1500px){
+
+    body.mode-uww .live-match{
+        grid-template-columns:
+            285px
+            minmax(0,1fr) !important;
+    }
+}
+
+</style>
+</head>
+<body class="mode-mixto">
+<header>
+  <div class="logo"></div>
+  <div class="hmain">
+    <div id="evento" class="evento">TIMING CUBA</div>
+    <div class="meta"><span id="estilo">-</span><span id="resumen">Esperando cartelera...</span></div>
+  </div>
+  <div class="header-right">
+    <div class="modes" title="Modo de visualización">
+      
+      <button class="mode-btn" data-mode="uww">UWW</button>
+      <button class="mode-btn" data-mode="mixto">MIXTO</button>
+    </div>
+    <div id="categoria" class="categoria">SIN CATEGORÍA</div>
+  </div>
+</header>
+<main id="grid"></main>
+<footer>
+  <span>Timing Cuba · Cartelera UWW Central</span>
+  <span class="footer-right"><span id="conn" class="conn ok">LIVE LOCAL</span><span id="hora"></span></span>
+</footer>
+<script>
+const $=id=>document.getElementById(id);
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+function initials(n){return String(n||"").trim().split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase()||"TC"}
+function flagCode(p){p=String(p||"").trim().toUpperCase();const m={CUB:"cu",USA:"us",MEX:"mx",ESP:"es",COL:"co",VEN:"ve",DOM:"do",PUR:"pr",CAN:"ca",BRA:"br",ARG:"ar",CHI:"cl",PER:"pe",ECU:"ec",PAN:"pa",CRC:"cr",GUA:"gt",HON:"hn",NCA:"ni",ESA:"sv",URU:"uy",PAR:"py",BOL:"bo",FRA:"fr",GER:"de",ITA:"it",RUS:"ru",UKR:"ua",JPN:"jp",CHN:"cn",KOR:"kr",IRI:"ir",IRN:"ir",ARM:"am",GEO:"ge",GRE:"gr",UZB:"uz",TUR:"tr",MGL:"mn",SVK:"sk",AZE:"az",BUL:"bg",SUI:"ch",KAZ:"kz",ISR:"il",HUN:"hu",BRN:"bh",MDA:"md",MKD:"mk",IRQ:"iq",PRK:"kp"};if(m[p])return m[p];if(/^[A-Z]{2}$/.test(p))return p.toLowerCase();return ""}
+function photoHTML(a){const src=String(a?.foto||"").trim();const ph=`<div class="photo placeholder">${esc(initials(a?.nombre))}</div>`;if(!src)return `<div class="photo-wrap">${ph}</div>`;return `<div class="photo-wrap"><img class="photo" src="${esc(src)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="photo placeholder" style="display:none">${esc(initials(a?.nombre))}</div></div>`}
+function countryInline(a){const p=String(a?.pais||"").trim();const c=flagCode(p);const label=esc(p||a?.tag||"");if(!c)return `<span class="country">${label}</span>`;return `<span class="country"><img class="flag" src="flags/countries/${c}.svg" onerror="this.style.display='none'"><span>${label}</span></span>`}
+function identityHTML(a){a=a||{};return `<div class="identity"><div class="name">${esc(a.nombre||"POR DEFINIR")}</div><div class="subline"><span class="tag">${esc(a.tag||a.provincia||"")}</span>${countryInline(a)}</div></div>`}
+function statusClass(s){s=String(s||"").toUpperCase();if(s.includes("COLCH"))return"ahora";if(s.includes("SIGUIENTE"))return"siguiente";if(s.includes("DEFINIR"))return"definir";return"espera"}
+function metaLine(b){return `${esc(b.estilo||"")} · ${esc(b.categoria||"")} · ${esc(b.peso||"")} kg · ${esc(b.sistema||"")}`}
+function liveAthlete(a,side,score){return `<div class="live-ath ${side}">${photoHTML(a)}${identityHTML(a)}<div class="score">${esc(score??0)}</div></div>`}
+function queueAthlete(a,side){return `<div class="queue-ath ${side}">${photoHTML(a)}${identityHTML(a)}</div>`}
+function winnerText(live){const w=String(live?.highlight_win||"").toUpperCase();if(w==="RED")return"WIN ROJO";if(w==="BLUE")return"WIN AZUL";return""}
+function liveCard(b){const l=b.live||{};const st=b.display_status||"EN COLCHON";const win=winnerText(l);return `<section class="live-card"><div class="live-top"><div class="bout">#${esc(b.public_bout_number||"-")}</div><div class="phase">${esc(b.fase||b.sistema||"Combate")}</div><div class="status ${statusClass(st)}">${esc(st)}</div></div><div class="live-meta">${metaLine(b)}</div><div class="live-match"><div class="live-clock"><div class="timer">${esc(l.timer||"00:00")}</div><div class="clock-label">RELOJ EN VIVO</div><div class="win-banner ${win?'show':''}">${esc(win)}</div></div><div class="live-sides">${liveAthlete(b.red,"red",l.red_pts)}${liveAthlete(b.blue,"blue",l.blue_pts)}</div></div></section>`}
+function queueCard(b){const st=b.display_status||"EN ESPERA";return `<section class="queue-card ${statusClass(st)}"><div class="queue-top"><div class="bout">#${esc(b.public_bout_number||"-")}</div><div class="phase">${esc(b.fase||b.sistema||"Combate")}</div><div class="status ${statusClass(st)}">${esc(st)}</div></div><div class="queue-meta">${metaLine(b)}</div><div class="queue-match">${queueAthlete(b.red,"red")}${queueAthlete(b.blue,"blue")}</div></section>`}
+let viewMode="mixto";
+let lastData=null;
+let failCount=0;
+function setMode(mode,save=true){if(mode==="fotos")mode="mixto";if(!["uww","mixto"].includes(mode))mode="mixto";viewMode=mode;document.body.classList.remove("mode-fotos","mode-uww","mode-mixto");document.body.classList.add(`mode-${mode}`);document.querySelectorAll('.mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));if(save)try{localStorage.setItem('timingCubaCarteleraModo',mode)}catch(e){};if(lastData)render(lastData)}
+document.querySelectorAll('.mode-btn').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+document.addEventListener('keydown',e=>{
+        if(e.key==='1')setMode('mixto');
+        if(e.key==='2')setMode('uww');
+    });
+try{const qp=new URLSearchParams(location.search).get('modo');const saved=localStorage.getItem('timingCubaCarteleraModo');setMode(qp||saved||'mixto',false)}catch(e){setMode('mixto',false)}
+function render(d){lastData=d;$("evento").textContent=d.evento||"TIMING CUBA";$("categoria").textContent=d.categoria_actual?`CATEGORÍA ${d.categoria_actual}`:"EVENTO FINALIZADO";$("estilo").textContent=d.estilo_actual?`Estilo ${d.estilo_actual}`:"";$("resumen").textContent=`${d.pendientes||0} combates pendientes`;
+ const mats=(Array.isArray(d.mats)&&d.mats.length)?d.mats:["MAT A"];const grid=$("grid");grid.style.setProperty("--mats",mats.length);grid.innerHTML="";
+ for(const mat of mats){const lista=(d.por_mat&&Array.isArray(d.por_mat[mat]))?d.por_mat[mat]:[];const live=lista.find(x=>String(x.display_status||'').toUpperCase().includes('COLCH'))||null;const cola=lista.filter(x=>x!==live);const maxQueue=live?4:6;const col=document.createElement("section");col.className="mat";col.innerHTML=`<div class="mat-head"><div class="mat-name">${esc(mat)}</div><div class="mat-count">${lista.length} en cola</div></div><div class="cards">${live?liveCard(live):''}${cola.length?cola.slice(0,maxQueue).map(queueCard).join(''):(!live?'<div class="empty">Esperando combate</div>':'')}</div>`;grid.appendChild(col)}
+ $("hora").textContent="Actualizado "+new Date((d.actualizado||Date.now()/1000)*1000).toLocaleTimeString();$("conn").textContent="LIVE LOCAL";$("conn").className="conn ok"}
+async function load(){try{const r=await fetch("datos/cartelera_uww.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);const d=await r.json();failCount=0;render(d)}catch(e){failCount++;if(failCount>=5){$("conn").textContent="REINTENTANDO...";$("conn").className="conn warn"}/* Conserva la última cartelera buena: no parpadea ni borra atletas. */}}
+load();setInterval(load,800);
+</script>
+</body>
+</html>
