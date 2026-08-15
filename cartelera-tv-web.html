@@ -1385,9 +1385,146 @@ try{const qp=new URLSearchParams(location.search).get('modo');const saved=localS
 function render(d){lastData=d;$("evento").textContent=d.evento||"TIMING CUBA";$("categoria").textContent=d.categoria_actual?`CATEGORÍA ${d.categoria_actual}`:"EVENTO FINALIZADO";$("estilo").textContent=d.estilo_actual?`Estilo ${d.estilo_actual}`:"";$("resumen").textContent=`${d.pendientes||0} combates pendientes`;
  const mats=(Array.isArray(d.mats)&&d.mats.length)?d.mats:["MAT A"];const grid=$("grid");grid.style.setProperty("--mats",mats.length);grid.innerHTML="";
  for(const mat of mats){const lista=(d.por_mat&&Array.isArray(d.por_mat[mat]))?d.por_mat[mat]:[];const live=lista.find(x=>String(x.display_status||'').toUpperCase().includes('COLCH'))||null;const cola=lista.filter(x=>x!==live);const maxQueue=live?4:6;const col=document.createElement("section");col.className="mat";col.innerHTML=`<div class="mat-head"><div class="mat-name">${esc(mat)}</div><div class="mat-count">${lista.length} en cola</div></div><div class="cards">${live?liveCard(live):''}${cola.length?cola.slice(0,maxQueue).map(queueCard).join(''):(!live?'<div class="empty">Esperando combate</div>':'')}</div>`;grid.appendChild(col)}
- $("hora").textContent="Actualizado "+new Date((d.actualizado||Date.now()/1000)*1000).toLocaleTimeString();$("conn").textContent="LIVE LOCAL";$("conn").className="conn ok"}
-async function load(){try{const r=await fetch("datos/cartelera_uww.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);const d=await r.json();failCount=0;render(d)}catch(e){failCount++;if(failCount>=5){$("conn").textContent="REINTENTANDO...";$("conn").className="conn warn"}/* Conserva la última cartelera buena: no parpadea ni borra atletas. */}}
-load();setInterval(load,800);
+ $("hora").textContent="Actualizado "+new Date((d.actualizado||Date.now()/1000)*1000).toLocaleTimeString();$("conn").textContent="LIVE INTERNET";$("conn").className="conn ok"}
+/* CARTELERA_FIREBASE_LIVE_V1 */
+
+const FIREBASE_CARTELERA_URL =
+    "https://timing-cuba-live-2026-default-rtdb.firebaseio.com/"
+    + "evento/copa-habana-2026/"
+    + "cartelera_uww/actual.json";
+
+const RESPALDO_GITHUB_URL =
+    "datos/cartelera_uww.json";
+
+
+async function cargarJSONInternet(
+    url
+) {
+
+    const sep =
+        url.includes("?")
+        ? "&"
+        : "?";
+
+    const r = await fetch(
+        url
+        + sep
+        + "t="
+        + Date.now(),
+        {
+            cache:
+                "no-store"
+        }
+    );
+
+    if (!r.ok) {
+
+        throw new Error(
+            "HTTP "
+            + r.status
+        );
+    }
+
+    const data = await r.json();
+
+    if (
+        !data
+        || typeof data !== "object"
+    ) {
+
+        throw new Error(
+            "JSON vacio"
+        );
+    }
+
+    return data;
+}
+
+
+async function load() {
+
+    /*
+       1. FIREBASE LIVE
+       2. Si falla, conserva/rescata
+          la ultima copia de GitHub.
+    */
+
+    try {
+
+        const d =
+            await cargarJSONInternet(
+                FIREBASE_CARTELERA_URL
+            );
+
+        failCount = 0;
+
+        render(
+            d
+        );
+
+        $("conn").textContent =
+            "LIVE INTERNET";
+
+        $("conn").className =
+            "conn ok";
+
+        return;
+
+    } catch (
+        errorFirebase
+    ) {
+
+        try {
+
+            const d =
+                await cargarJSONInternet(
+                    RESPALDO_GITHUB_URL
+                );
+
+            render(
+                d
+            );
+
+            $("conn").textContent =
+                "RESPALDO WEB";
+
+            $("conn").className =
+                "conn warn";
+
+            return;
+
+        } catch (
+            errorGitHub
+        ) {
+
+            failCount++;
+
+            if (
+                failCount >= 3
+            ) {
+
+                $("conn").textContent =
+                    "REINTENTANDO...";
+
+                $("conn").className =
+                    "conn warn";
+            }
+
+            /*
+               NO borramos la ultima
+               cartelera buena.
+            */
+        }
+    }
+}
+
+
+load();
+
+setInterval(
+    load,
+    1000
+);
 </script>
 </body>
 </html>
