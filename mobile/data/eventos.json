@@ -6,11 +6,8 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-07T14:07:01.925576+00:00",
-  "current_event": {
-    "id": 22,
-    "name": "TODOS VS TODOS"
-  },
+  "updated_at": "2026-09-07T14:19:19.898378+00:00",
+  "current_event": null,
   "count": 2,
   "events": [
     {
@@ -41,7 +38,9 @@
         "cartelera_uww.db:mats",
         "clasificacion_equipos.db:medallas_posiciones",
         "clasificacion_equipos.db:resultados_combates"
-      ]
+      ],
+      "classification_level": "municipio",
+      "data_file": "data/eventos/festival_escolar.json"
     },
     {
       "id": 22,
@@ -52,7 +51,7 @@
       "status": "finalizado",
       "event_type": "ranking",
       "ranking_multiplier": 1.0,
-      "active": true,
+      "active": false,
       "legacy": false,
       "systems": [
         "round_robin",
@@ -67,7 +66,9 @@
         "cartelera_uww.db:mats",
         "clasificacion_equipos.db:medallas_posiciones",
         "clasificacion_equipos.db:resultados_combates"
-      ]
+      ],
+      "classification_level": "municipio",
+      "data_file": "data/eventos/todos_vs_todos.json"
     }
   ]
 }
