@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "source": "Timing Cuba Windows",
+  "logic": "clasificacion_equipos.py::resumen_total",
+  "database": "C:\\Users\\ARROYOS\\Desktop\\PIZARRAS\\TIMING-CUBA-BUILD\\dist\\Timing Cuba\\bd\\clasificacion_equipos.db",
+  "updated_at": "2026-09-04T16:22:17.558508+00:00",
+  "eventos": [
+    "FESTIVAL ESCOLAR DE LUCHA",
+    "TODOS VS TODOS"
+  ],
+  "clasificaciones_por_evento": {
+    "FESTIVAL ESCOLAR DE LUCHA": {
+      "evento": "FESTIVAL ESCOLAR DE LUCHA",
+      "total_equipos": 4,
+      "equipos": [
+        {
+          "lugar": 1,
+          "equipo_key": "CH",
+          "equipo": "CH",
+          "puntos_combate": 64,
+          "puntos_uww_posicion": 100,
+          "puntos_infantil_posicion": 40,
+          "total_uww": 164,
+          "total_infantil": 104,
+          "oro": 2,
+          "plata": 1,
+          "bronce": 2,
+          "ganados": 14,
+          "perdidos": 16
+        },
+        {
+          "lugar": 2,
+          "equipo_key": "10O",
+          "equipo": "10O",
+          "puntos_combate": 70,
+          "puntos_uww_posicion": 60,
+          "puntos_infantil_posicion": 24,
+          "total_uww": 130,
+          "total_infantil": 94,
+          "oro": 1,
+          "plata": 1,
+          "bronce": 1,
+          "ganados": 17,
+          "perdidos": 15
+        },
+        {
+          "lugar": 3,
+          "equipo_key": "HV",
+          "equipo": "HV",
+          "puntos_combate": 14,
+          "puntos_uww_posicion": 20,
+          "puntos_infantil_posicion": 8,
+          "total_uww": 34,
+          "total_infantil": 22,
+          "oro": 0,
+          "plata": 1,
+          "bronce": 0,
+          "ganados": 3,
+          "perdidos": 2
+        },
+        {
+          "lugar": 4,
+          "equipo_key": "CERRO",
+          "equipo": "CERRO",
+          "puntos_combate": 0,
+          "puntos_uww_posicion": 15,
+          "puntos_infantil_posicion": 6,
+          "total_uww": 15,
+          "total_infantil": 6,
+          "oro": 0,
+          "plata": 0,
+          "bronce": 1,
+          "ganados": 0,
+          "perdidos": 1
+        }
+      ]
+    },
+    "TODOS VS TODOS": {
+      "evento": "TODOS VS TODOS",
+      "total_equipos": 2,
+      "equipos": [
+        {
+          "lugar": 1,
+          "equipo_key": "CH",
+          "equipo": "CH",
+          "puntos_combate": 53,
+          "puntos_uww_posicion": 60,
+          "puntos_infantil_posicion": 24,
+          "total_uww": 113,
+          "total_infantil": 77,
+          "oro": 1,
+          "plata": 1,
+          "bronce": 1,
+          "ganados": 11,
+          "perdidos": 12
+        },
+        {
+          "lugar": 2,
+          "equipo_key": "10O",
+          "equipo": "10O",
+          "puntos_combate": 23,
+          "puntos_uww_posicion": 25,
+          "puntos_infantil_posicion": 10,
+          "total_uww": 48,
+          "total_infantil": 33,
+          "oro": 1,
+          "plata": 0,
+          "bronce": 0,
+          "ganados": 5,
+          "perdidos": 3
+        }
+      ]
+    }
+  }
+}
