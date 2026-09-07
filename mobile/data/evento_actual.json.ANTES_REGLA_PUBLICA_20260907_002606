@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "has_public_event": false,
+  "event": null,
+  "windows_event": {
+    "id": 21,
+    "name": "PRUEBA FINAL #1"
+  },
+  "reason": "El evento activo de Windows no pertenece a la lista publica.",
+  "source": "Timing Cuba Windows EXE",
+  "updated_at": "2026-09-02T20:42:00.415437+00:00"
+}
