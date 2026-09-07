@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "has_public_event": false,
+  "event": null,
+  "reason": "No hay evento publico activo.",
+  "source": "Timing Cuba Windows",
+  "updated_at": "2026-09-04T15:46:38.069170+00:00",
+  "mats": [],
+  "total_combates": 0,
+  "pendientes": 0,
+  "live_activo": false,
+  "live": {},
+  "por_mat": {}
+}
