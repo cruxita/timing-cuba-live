@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "source": "Timing Cuba Windows EXE",
+  "updated_at": "2026-09-02T20:33:38.539627+00:00",
+  "current_event": {
+    "id": 21,
+    "name": "PRUEBA FINAL #1"
+  },
+  "count": 2,
+  "events": [
+    {
+      "id": 5,
+      "panel_id": 5,
+      "name": "FESTIVAL ESCOLAR DE LUCHA",
+      "date": "30/MAYO/2026",
+      "venue": "PONTON",
+      "status": "preparando",
+      "event_type": "ranking",
+      "ranking_multiplier": 1.0,
+      "active": false,
+      "legacy": false,
+      "systems": [
+        "panel",
+        "round_robin",
+        "champions",
+        "llaves_uww",
+        "cartelera",
+        "clasificacion"
+      ],
+      "sources": [
+        "panel_evento.db:eventos",
+        "round_robin.db:rr_divisiones",
+        "champions.db:ch_divisiones",
+        "llaves_uww.db:llaves_eventos",
+        "cartelera_uww.db:categorias",
+        "cartelera_uww.db:mats",
+        "clasificacion_equipos.db:medallas_posiciones",
+        "clasificacion_equipos.db:resultados_combates"
+      ]
+    },
+    {
+      "id": "legacy-4d5eb42d06a1",
+      "panel_id": null,
+      "name": "TODOS VS TODOS",
+      "date": "",
+      "venue": "",
+      "status": "",
+      "event_type": "",
+      "ranking_multiplier": 1.0,
+      "active": false,
+      "legacy": true,
+      "systems": [
+        "round_robin",
+        "champions",
+        "cartelera",
+        "clasificacion"
+      ],
+      "sources": [
+        "round_robin.db:rr_divisiones",
+        "champions.db:ch_divisiones",
+        "cartelera_uww.db:categorias",
+        "cartelera_uww.db:mats",
+        "clasificacion_equipos.db:medallas_posiciones",
+        "clasificacion_equipos.db:resultados_combates"
+      ]
+    }
+  ]
+}
