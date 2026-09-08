@@ -9,7 +9,7 @@
     "divisions": 3,
     "athlete_registrations": 7,
     "bouts": 5,
-    "finished_bouts": 0,
+    "finished_bouts": 1,
     "systems": [
       "round_robin"
     ]
@@ -68,7 +68,7 @@
           "round": 1,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 188,
             "name": "ALEJANDRO MANUEL GONZALEZ RICARDO",
@@ -105,13 +105,13 @@
             "public_name": "A. RODRIGUEZ",
             "photo": "/fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 188,
+          "winner_name": "ALEJANDRO MANUEL GONZALEZ RICARDO",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "criterion": "PTS",
+          "winner_master_id": 92
         }
       ],
       "group_bouts": [],
@@ -447,9 +447,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-08T20:40:55.523147+00:00",
+  "updated_at": "2026-09-08T20:42:56.018365+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-08T20:40:53.863750+00:00",
+  "athlete_identity_updated_at": "2026-09-08T20:42:54.472766+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-08T20:40:55.601593+00:00"
+  "publisher_updated_at": "2026-09-08T20:42:56.153063+00:00"
 }
