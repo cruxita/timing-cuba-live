@@ -5,7 +5,7 @@
     "name": "PRUEBA#1"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-09T18:25:33.444600+00:00",
+  "updated_at": "2026-09-09T18:26:04.360892+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -15,8 +15,8 @@
   "pendientes": 3,
   "live_activo": true,
   "live": {
-    "timer": "01:27",
-    "red_pts": 7,
+    "timer": "01:23",
+    "red_pts": 9,
     "blue_pts": 13,
     "red_badges": "",
     "blue_badges": "",
@@ -26,7 +26,7 @@
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1788978294.6170948
+    "updated_at": 1788978363.8147478
   },
   "por_mat": {
     "MAT A": [
@@ -72,8 +72,8 @@
         "orden": 5,
         "public_bout_number": 5,
         "live": {
-          "timer": "01:27",
-          "red_pts": 7,
+          "timer": "01:23",
+          "red_pts": 9,
           "blue_pts": 13,
           "red_badges": "",
           "blue_badges": "",
@@ -83,7 +83,7 @@
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1788978294.6170948
+          "updated_at": 1788978363.8147478
         },
         "display_status": "EN COLCHON"
       },
@@ -108,8 +108,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 808,
-          "descanso_texto": "13:28"
+          "descanso_segundos": 776,
+          "descanso_texto": "12:56"
         },
         "blue": {
           "atleta_db_id": 43,
@@ -163,8 +163,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 808,
-          "descanso_texto": "13:28"
+          "descanso_segundos": 776,
+          "descanso_texto": "12:56"
         },
         "stage": 3,
         "ready": true,
