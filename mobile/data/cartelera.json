@@ -5,7 +5,7 @@
     "name": "PRUEBA#1"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-09T19:55:48.856898+00:00",
+  "updated_at": "2026-09-09T19:56:14.911945+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -13,8 +13,21 @@
   ],
   "total_combates": 5,
   "pendientes": 1,
-  "live_activo": false,
-  "live": {},
+  "live_activo": true,
+  "live": {
+    "timer": "04:00",
+    "red_pts": 0,
+    "blue_pts": 0,
+    "red_badges": "",
+    "blue_badges": "",
+    "highlight_win": "",
+    "highlight_adv": "",
+    "highlight_tied": true,
+    "activity_side": "",
+    "activity_left": null,
+    "mode": "fight",
+    "updated_at": 1788983757.4353304
+  },
   "por_mat": {
     "MAT A": [
       {
@@ -28,7 +41,7 @@
         "fase": "Ronda 3",
         "source_status": "pendiente",
         "finalizado": false,
-        "activo": false,
+        "activo": true,
         "red": {
           "atleta_db_id": 43,
           "nombre": "A. GARCIA",
@@ -58,7 +71,21 @@
         "mat": "MAT A",
         "orden": 4,
         "public_bout_number": 4,
-        "display_status": "SIGUIENTE"
+        "live": {
+          "timer": "04:00",
+          "red_pts": 0,
+          "blue_pts": 0,
+          "red_badges": "",
+          "blue_badges": "",
+          "highlight_win": "",
+          "highlight_adv": "",
+          "highlight_tied": true,
+          "activity_side": "",
+          "activity_left": null,
+          "mode": "fight",
+          "updated_at": 1788983757.4353304
+        },
+        "display_status": "EN COLCHON"
       }
     ]
   }
