@@ -5,7 +5,7 @@
     "name": "PRUEBA#1"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-09T18:31:02.800305+00:00",
+  "updated_at": "2026-09-09T18:31:32.416069+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -51,8 +51,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 478,
-          "descanso_texto": "07:58"
+          "descanso_segundos": 448,
+          "descanso_texto": "07:28"
         },
         "blue": {
           "atleta_db_id": 43,
@@ -120,8 +120,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 478,
-          "descanso_texto": "07:58"
+          "descanso_segundos": 448,
+          "descanso_texto": "07:28"
         },
         "stage": 3,
         "ready": true,
