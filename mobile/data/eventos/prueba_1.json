@@ -9,7 +9,7 @@
     "divisions": 3,
     "athlete_registrations": 7,
     "bouts": 5,
-    "finished_bouts": 3,
+    "finished_bouts": 4,
     "systems": [
       "round_robin"
     ]
@@ -240,7 +240,7 @@
           "round": 2,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 190,
             "name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
@@ -277,13 +277,13 @@
             "public_name": "A. GARCIA",
             "photo": "/fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "winner_id": 190,
+          "winner_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+          "victory_type": "PTS",
+          "red_score": 18,
+          "blue_score": 10,
+          "criterion": "PTS",
+          "winner_master_id": 79
         },
         {
           "id": 256,
@@ -447,9 +447,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-09T18:36:44.121452+00:00",
+  "updated_at": "2026-09-09T19:56:15.255165+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-09T18:36:41.826667+00:00",
+  "athlete_identity_updated_at": "2026-09-09T19:56:12.850458+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-09T18:36:44.209260+00:00"
+  "publisher_updated_at": "2026-09-09T19:56:15.357976+00:00"
 }
