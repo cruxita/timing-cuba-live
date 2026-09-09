@@ -5,7 +5,7 @@
     "name": "PRUEBA#1"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-09T18:36:15.351245+00:00",
+  "updated_at": "2026-09-09T18:36:43.685798+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -25,8 +25,8 @@
     "highlight_tied": false,
     "activity_side": "",
     "activity_left": null,
-    "mode": "fight",
-    "updated_at": 1788978655.4431198
+    "mode": "standby",
+    "updated_at": 1788979001.9597263
   },
   "por_mat": {
     "MAT A": [
@@ -51,8 +51,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 166,
-          "descanso_texto": "02:46"
+          "descanso_segundos": 1200,
+          "descanso_texto": "20:00"
         },
         "blue": {
           "atleta_db_id": 43,
@@ -62,9 +62,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
+          "descanso_en_curso": true,
+          "descanso_segundos": 1200,
+          "descanso_texto": "20:00"
         },
         "stage": 2,
         "ready": true,
@@ -82,8 +82,8 @@
           "highlight_tied": false,
           "activity_side": "",
           "activity_left": null,
-          "mode": "fight",
-          "updated_at": 1788978655.4431198
+          "mode": "standby",
+          "updated_at": 1788979001.9597263
         },
         "display_status": "EN COLCHON"
       },
@@ -107,9 +107,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
+          "descanso_en_curso": true,
+          "descanso_segundos": 1200,
+          "descanso_texto": "20:00"
         },
         "blue": {
           "atleta_db_id": 58,
@@ -120,8 +120,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 166,
-          "descanso_texto": "02:46"
+          "descanso_segundos": 138,
+          "descanso_texto": "02:18"
         },
         "stage": 3,
         "ready": true,
