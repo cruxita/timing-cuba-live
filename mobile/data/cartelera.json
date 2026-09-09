@@ -5,7 +5,7 @@
     "name": "PRUEBA#1"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-09T18:30:27.703857+00:00",
+  "updated_at": "2026-09-09T18:31:02.800305+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -15,18 +15,18 @@
   "pendientes": 2,
   "live_activo": true,
   "live": {
-    "timer": "04:00",
-    "red_pts": 0,
-    "blue_pts": 0,
+    "timer": "03:43",
+    "red_pts": 18,
+    "blue_pts": 10,
     "red_badges": "",
     "blue_badges": "",
-    "highlight_win": "",
+    "highlight_win": "RED",
     "highlight_adv": "",
-    "highlight_tied": true,
+    "highlight_tied": false,
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1788978623.8684378
+    "updated_at": 1788978655.4431198
   },
   "por_mat": {
     "MAT A": [
@@ -51,8 +51,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 513,
-          "descanso_texto": "08:33"
+          "descanso_segundos": 478,
+          "descanso_texto": "07:58"
         },
         "blue": {
           "atleta_db_id": 43,
@@ -72,18 +72,18 @@
         "orden": 3,
         "public_bout_number": 3,
         "live": {
-          "timer": "04:00",
-          "red_pts": 0,
-          "blue_pts": 0,
+          "timer": "03:43",
+          "red_pts": 18,
+          "blue_pts": 10,
           "red_badges": "",
           "blue_badges": "",
-          "highlight_win": "",
+          "highlight_win": "RED",
           "highlight_adv": "",
-          "highlight_tied": true,
+          "highlight_tied": false,
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1788978623.8684378
+          "updated_at": 1788978655.4431198
         },
         "display_status": "EN COLCHON"
       },
@@ -120,8 +120,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 513,
-          "descanso_texto": "08:33"
+          "descanso_segundos": 478,
+          "descanso_texto": "07:58"
         },
         "stage": 3,
         "ready": true,
