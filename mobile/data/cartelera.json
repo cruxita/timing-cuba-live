@@ -5,7 +5,7 @@
     "name": "PRUEBA MOBILE FINAL"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-10T14:48:02.713764+00:00",
+  "updated_at": "2026-09-10T14:48:24.814199+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -15,9 +15,9 @@
   "pendientes": 1,
   "live_activo": true,
   "live": {
-    "timer": "00:59",
+    "timer": "00:43",
     "red_pts": 2,
-    "blue_pts": 0,
+    "blue_pts": 1,
     "red_badges": "",
     "blue_badges": "",
     "highlight_win": "RED",
@@ -26,7 +26,7 @@
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1789051582.3862827
+    "updated_at": 1789051703.7318733
   },
   "por_mat": {
     "MAT A": [
@@ -72,9 +72,9 @@
         "orden": 1,
         "public_bout_number": 1,
         "live": {
-          "timer": "00:59",
+          "timer": "00:43",
           "red_pts": 2,
-          "blue_pts": 0,
+          "blue_pts": 1,
           "red_badges": "",
           "blue_badges": "",
           "highlight_win": "RED",
@@ -83,7 +83,7 @@
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1789051582.3862827
+          "updated_at": 1789051703.7318733
         },
         "display_status": "EN COLCHON"
       }
