@@ -6,11 +6,8 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-10T13:10:47.927068+00:00",
-  "current_event": {
-    "id": 23,
-    "name": "PRUEBA#1"
-  },
+  "updated_at": "2026-09-10T13:12:58.447476+00:00",
+  "current_event": null,
   "count": 3,
   "events": [
     {
@@ -79,11 +76,11 @@
       "name": "PRUEBA#1",
       "date": "8/9/2026",
       "venue": "home",
-      "status": "en competencia",
+      "status": "finalizado",
       "event_type": "oficial",
       "ranking_multiplier": 1.0,
       "legacy": false,
-      "active": true,
+      "active": false,
       "systems": [
         "panel"
       ],
