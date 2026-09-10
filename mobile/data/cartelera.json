@@ -5,7 +5,7 @@
     "name": "PRUEBA MOBILE FINAL 2"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-10T15:33:15.623240+00:00",
+  "updated_at": "2026-09-10T15:33:41.171695+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -38,8 +38,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 605,
-          "descanso_texto": "10:05"
+          "descanso_segundos": 579,
+          "descanso_texto": "09:39"
         },
         "blue": {
           "atleta_db_id": 90,
@@ -93,8 +93,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 605,
-          "descanso_texto": "10:05"
+          "descanso_segundos": 579,
+          "descanso_texto": "09:39"
         },
         "stage": 3,
         "ready": true,
