@@ -5,7 +5,7 @@
     "name": "PRUEBA MOBILE FINAL"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-10T14:50:40.932646+00:00",
+  "updated_at": "2026-09-10T14:51:02.151460+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -15,18 +15,18 @@
   "pendientes": 1,
   "live_activo": true,
   "live": {
-    "timer": "00:41",
+    "timer": "00:22",
     "red_pts": 2,
-    "blue_pts": 1,
+    "blue_pts": 3,
     "red_badges": "",
     "blue_badges": "",
-    "highlight_win": "RED",
+    "highlight_win": "BLUE",
     "highlight_adv": "",
     "highlight_tied": false,
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1789051705.6054623
+    "updated_at": 1789051861.284299
   },
   "por_mat": {
     "MAT A": [
@@ -72,18 +72,18 @@
         "orden": 1,
         "public_bout_number": 1,
         "live": {
-          "timer": "00:41",
+          "timer": "00:22",
           "red_pts": 2,
-          "blue_pts": 1,
+          "blue_pts": 3,
           "red_badges": "",
           "blue_badges": "",
-          "highlight_win": "RED",
+          "highlight_win": "BLUE",
           "highlight_adv": "",
           "highlight_tied": false,
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1789051705.6054623
+          "updated_at": 1789051861.284299
         },
         "display_status": "EN COLCHON"
       }
