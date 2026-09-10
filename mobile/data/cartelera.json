@@ -5,88 +5,18 @@
     "name": "PRUEBA MOBILE FINAL 2"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-10T15:22:59.256683+00:00",
+  "updated_at": "2026-09-10T15:23:24.619996+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
     "MAT A"
   ],
   "total_combates": 3,
-  "pendientes": 3,
-  "live_activo": true,
-  "live": {
-    "timer": "04:00",
-    "red_pts": 0,
-    "blue_pts": 0,
-    "red_badges": "",
-    "blue_badges": "",
-    "highlight_win": "",
-    "highlight_adv": "",
-    "highlight_tied": true,
-    "activity_side": "",
-    "activity_left": null,
-    "mode": "fight",
-    "updated_at": 1789053186.8945777
-  },
+  "pendientes": 2,
+  "live_activo": false,
+  "live": {},
   "por_mat": {
     "MAT A": [
-      {
-        "sistema": "Round Robin",
-        "division_key": "rr:58",
-        "bout_key": "fight:259",
-        "source_key": "Round Robin|rr:58|fight:259",
-        "estilo": "FS",
-        "categoria": "U13/15",
-        "peso": "22",
-        "fase": "Ronda 1",
-        "source_status": "pendiente",
-        "finalizado": false,
-        "activo": true,
-        "red": {
-          "atleta_db_id": 69,
-          "nombre": "C. NOA",
-          "nombre_descanso": "CHRIS BRANDY",
-          "tag": "CH",
-          "pais": "CUB",
-          "provincia": "LA HABANA",
-          "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "blue": {
-          "atleta_db_id": 80,
-          "nombre": "C. OFARRILL",
-          "nombre_descanso": "CRISTIAN",
-          "tag": "10O",
-          "pais": "CUB",
-          "provincia": "LA HABANA",
-          "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "stage": 1,
-        "ready": true,
-        "mat": "MAT A",
-        "orden": 1,
-        "public_bout_number": 1,
-        "live": {
-          "timer": "04:00",
-          "red_pts": 0,
-          "blue_pts": 0,
-          "red_badges": "",
-          "blue_badges": "",
-          "highlight_win": "",
-          "highlight_adv": "",
-          "highlight_tied": true,
-          "activity_side": "",
-          "activity_left": null,
-          "mode": "fight",
-          "updated_at": 1789053186.8945777
-        },
-        "display_status": "EN COLCHON"
-      },
       {
         "sistema": "Round Robin",
         "division_key": "rr:58",
@@ -107,9 +37,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
+          "descanso_en_curso": true,
+          "descanso_segundos": 1196,
+          "descanso_texto": "19:56"
         },
         "blue": {
           "atleta_db_id": 90,
@@ -162,9 +92,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
+          "descanso_en_curso": true,
+          "descanso_segundos": 1196,
+          "descanso_texto": "19:56"
         },
         "stage": 3,
         "ready": true,
