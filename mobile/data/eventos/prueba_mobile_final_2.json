@@ -80,6 +80,38 @@
           "photo": ""
         }
       ],
+      "podium": {
+        "gold": [
+          {
+            "name": "CHRIS BRANDY",
+            "team": "CH",
+            "position": 1,
+            "master_id": 69,
+            "public_name": "C. NOA",
+            "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa.png"
+          }
+        ],
+        "silver": [
+          {
+            "name": "DAYAN REYES IZNAGA",
+            "team": "10O",
+            "position": 2,
+            "master_id": 90,
+            "public_name": "D. REYES",
+            "photo": ""
+          }
+        ],
+        "bronze": [
+          {
+            "name": "CRISTIAN",
+            "team": "10O",
+            "position": 3,
+            "master_id": 80,
+            "public_name": "C. OFARRILL",
+            "photo": "/fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
+          }
+        ]
+      },
       "bouts": [
         {
           "id": 259,
@@ -239,9 +271,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-10T15:59:13.373670+00:00",
+  "updated_at": "2026-09-10T16:00:13.687919+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-10T15:59:12.489773+00:00",
+  "athlete_identity_updated_at": "2026-09-10T16:00:12.900153+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-10T15:59:13.469547+00:00"
+  "publisher_updated_at": "2026-09-10T16:00:13.765467+00:00"
 }
