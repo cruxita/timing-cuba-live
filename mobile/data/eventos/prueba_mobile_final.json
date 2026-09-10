@@ -9,7 +9,7 @@
     "divisions": 1,
     "athlete_registrations": 2,
     "bouts": 1,
-    "finished_bouts": 0,
+    "finished_bouts": 1,
     "systems": [
       "round_robin"
     ]
@@ -68,7 +68,7 @@
           "round": 1,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 195,
             "name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
@@ -105,13 +105,13 @@
             "public_name": "A. ARAMBURU",
             "photo": "/fotos_atletas/atleta_0058_anthony_aramburu.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "winner_id": 196,
+          "winner_name": "ANTHONY ARAMBURU",
+          "victory_type": "PTS",
+          "red_score": 2,
+          "blue_score": 3,
+          "criterion": "PTS",
+          "winner_master_id": 58
         }
       ],
       "group_bouts": [],
@@ -121,9 +121,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-10T14:51:27.694389+00:00",
+  "updated_at": "2026-09-10T14:51:50.109717+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-10T14:51:26.522061+00:00",
+  "athlete_identity_updated_at": "2026-09-10T14:51:49.013305+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-10T14:51:27.770157+00:00"
+  "publisher_updated_at": "2026-09-10T14:51:50.214642+00:00"
 }
