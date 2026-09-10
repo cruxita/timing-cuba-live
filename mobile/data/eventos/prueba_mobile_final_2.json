@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "event": {
+    "name": "PRUEBA MOBILE FINAL 2",
+    "legacy": false,
+    "real": true
+  },
+  "summary": {
+    "divisions": 0,
+    "athlete_registrations": 0,
+    "bouts": 0,
+    "finished_bouts": 0,
+    "systems": []
+  },
+  "divisions": [],
+  "source": "Timing Cuba Windows EXE",
+  "updated_at": "2026-09-10T15:00:21.385264+00:00",
+  "athlete_identity_version": 1,
+  "athlete_identity_updated_at": "2026-09-10T15:00:20.494904+00:00",
+  "_timing_cuba_dynamic_event_v1": true,
+  "publisher_updated_at": "2026-09-10T15:00:21.467365+00:00"
+}
