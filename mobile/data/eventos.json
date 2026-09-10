@@ -6,9 +6,9 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-10T14:59:55.705672+00:00",
+  "updated_at": "2026-09-10T15:00:20.417751+00:00",
   "current_event": null,
-  "count": 4,
+  "count": 5,
   "events": [
     {
       "id": 5,
@@ -109,6 +109,26 @@
       ],
       "classification_level": "municipio",
       "data_file": "data/eventos/prueba_mobile_final.json"
+    },
+    {
+      "id": 25,
+      "panel_id": 25,
+      "name": "PRUEBA MOBILE FINAL 2",
+      "date": "10/09/2026",
+      "venue": "",
+      "status": "preparando",
+      "event_type": "oficial",
+      "ranking_multiplier": 1.0,
+      "legacy": false,
+      "active": false,
+      "systems": [
+        "panel"
+      ],
+      "sources": [
+        "panel_evento.db:eventos"
+      ],
+      "classification_level": "municipio",
+      "data_file": "data/eventos/prueba_mobile_final_2.json"
     }
   ]
 }
