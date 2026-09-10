@@ -1,65 +1,14 @@
 {
   "version": 1,
-  "has_public_event": true,
-  "event": {
-    "name": "PRUEBA#1"
-  },
-  "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-10T13:10:48.684626+00:00",
-  "categoria_actual": "U13/15",
-  "estilo_actual": "FS",
-  "mats": [
-    "MAT A"
-  ],
-  "total_combates": 5,
-  "pendientes": 1,
+  "has_public_event": false,
+  "event": null,
+  "reason": "No hay evento publico activo.",
+  "source": "Timing Cuba Windows",
+  "updated_at": "2026-09-10T13:12:59.236404+00:00",
+  "mats": [],
+  "total_combates": 0,
+  "pendientes": 0,
   "live_activo": false,
   "live": {},
-  "por_mat": {
-    "MAT A": [
-      {
-        "sistema": "Round Robin",
-        "division_key": "rr:55",
-        "bout_key": "fight:256",
-        "source_key": "Round Robin|rr:55|fight:256",
-        "estilo": "FS",
-        "categoria": "U13/15",
-        "peso": "35",
-        "fase": "Ronda 3",
-        "source_status": "pendiente",
-        "finalizado": false,
-        "activo": false,
-        "red": {
-          "atleta_db_id": 43,
-          "nombre": "A. GARCIA",
-          "nombre_descanso": "ARIEL AMAURY GARCIA MARCHENA",
-          "tag": "CH",
-          "pais": "CUB",
-          "provincia": "LA HABANA",
-          "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "blue": {
-          "atleta_db_id": 58,
-          "nombre": "A. ARAMBURU",
-          "nombre_descanso": "ANTHONY ARAMBURU",
-          "tag": "CH",
-          "pais": "CUB",
-          "provincia": "LA HABANA",
-          "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "stage": 3,
-        "ready": true,
-        "mat": "MAT A",
-        "orden": 4,
-        "public_bout_number": 4,
-        "display_status": "SIGUIENTE"
-      }
-    ]
-  }
+  "por_mat": {}
 }
