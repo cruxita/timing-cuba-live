@@ -8,7 +8,7 @@
   "summary": {
     "divisions": 1,
     "athlete_registrations": 2,
-    "bouts": 0,
+    "bouts": 1,
     "finished_bouts": 0,
     "systems": [
       "round_robin"
@@ -62,17 +62,68 @@
           "photo": "/fotos_atletas/atleta_0058_anthony_aramburu.png"
         }
       ],
-      "bouts": [],
+      "bouts": [
+        {
+          "id": 258,
+          "round": 1,
+          "phase": "",
+          "group": "",
+          "status": "pendiente",
+          "red": {
+            "id": 195,
+            "name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "full_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "club": "LA HABANA",
+            "tag": "HV",
+            "draw": 1,
+            "group": "",
+            "athlete_db_id": 79,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "HV",
+            "original_event_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "identity_method": "atleta_db_id",
+            "master_id": 79,
+            "public_name": "A. MARTINEZ",
+            "photo": "/fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
+          },
+          "blue": {
+            "id": 196,
+            "name": "ANTHONY ARAMBURU",
+            "full_name": "ANTHONY ARAMBURU",
+            "club": "LA HABANA",
+            "tag": "CH",
+            "draw": 2,
+            "group": "",
+            "athlete_db_id": 58,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "CH",
+            "original_event_name": "ANTHONY ARAMBURU",
+            "identity_method": "atleta_db_id",
+            "master_id": 58,
+            "public_name": "A. ARAMBURU",
+            "photo": "/fotos_atletas/atleta_0058_anthony_aramburu.png"
+          },
+          "winner_id": null,
+          "winner_name": "",
+          "victory_type": "",
+          "red_score": 0,
+          "blue_score": 0,
+          "criterion": "",
+          "winner_master_id": null
+        }
+      ],
       "group_bouts": [],
       "playoffs": [],
       "athlete_count": 2,
-      "bout_count": 0
+      "bout_count": 1
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-10T13:55:02.426207+00:00",
+  "updated_at": "2026-09-10T13:56:52.632038+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-10T13:55:01.496549+00:00",
+  "athlete_identity_updated_at": "2026-09-10T13:56:51.785278+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-10T13:55:02.509519+00:00"
+  "publisher_updated_at": "2026-09-10T13:56:52.698450+00:00"
 }
