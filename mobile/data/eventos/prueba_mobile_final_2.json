@@ -9,7 +9,7 @@
     "divisions": 1,
     "athlete_registrations": 3,
     "bouts": 3,
-    "finished_bouts": 1,
+    "finished_bouts": 2,
     "systems": [
       "round_robin"
     ]
@@ -136,7 +136,7 @@
           "round": 2,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 197,
             "name": "CHRIS BRANDY",
@@ -173,13 +173,13 @@
             "public_name": "D. REYES",
             "photo": ""
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 197,
+          "winner_name": "CHRIS BRANDY",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "criterion": "PTS",
+          "winner_master_id": 69
         },
         {
           "id": 261,
@@ -239,9 +239,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-10T15:43:33.209280+00:00",
+  "updated_at": "2026-09-10T15:44:13.007873+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-10T15:43:32.353885+00:00",
+  "athlete_identity_updated_at": "2026-09-10T15:44:12.166062+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-10T15:43:33.311794+00:00"
+  "publisher_updated_at": "2026-09-10T15:44:13.093158+00:00"
 }
