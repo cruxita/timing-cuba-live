@@ -5,7 +5,7 @@
     "name": "PRUEBA MOBILE FINAL 2"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-10T15:48:15.004159+00:00",
+  "updated_at": "2026-09-10T15:48:38.654033+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -13,8 +13,21 @@
   ],
   "total_combates": 3,
   "pendientes": 1,
-  "live_activo": false,
-  "live": {},
+  "live_activo": true,
+  "live": {
+    "timer": "04:00",
+    "red_pts": 0,
+    "blue_pts": 0,
+    "red_badges": "",
+    "blue_badges": "",
+    "highlight_win": "",
+    "highlight_adv": "",
+    "highlight_tied": true,
+    "activity_side": "",
+    "activity_left": null,
+    "mode": "fight",
+    "updated_at": 1789055302.9049587
+  },
   "por_mat": {
     "MAT A": [
       {
@@ -28,7 +41,7 @@
         "fase": "Ronda 3",
         "source_status": "pendiente",
         "finalizado": false,
-        "activo": false,
+        "activo": true,
         "red": {
           "atleta_db_id": 90,
           "nombre": "D. REYES",
@@ -38,8 +51,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 935,
-          "descanso_texto": "15:35"
+          "descanso_segundos": 911,
+          "descanso_texto": "15:11"
         },
         "blue": {
           "atleta_db_id": 80,
@@ -58,7 +71,21 @@
         "mat": "MAT A",
         "orden": 3,
         "public_bout_number": 3,
-        "display_status": "SIGUIENTE"
+        "live": {
+          "timer": "04:00",
+          "red_pts": 0,
+          "blue_pts": 0,
+          "red_badges": "",
+          "blue_badges": "",
+          "highlight_win": "",
+          "highlight_adv": "",
+          "highlight_tied": true,
+          "activity_side": "",
+          "activity_left": null,
+          "mode": "fight",
+          "updated_at": 1789055302.9049587
+        },
+        "display_status": "EN COLCHON"
       }
     ]
   }
