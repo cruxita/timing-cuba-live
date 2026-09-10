@@ -1,17 +1,9 @@
 {
   "version": 4,
-  "has_public_event": true,
-  "event": {
-    "id": 24,
-    "name": "PRUEBA MOBILE FINAL"
-  },
-  "windows_event": {
-    "id": 24,
-    "name": "PRUEBA MOBILE FINAL",
-    "status": "en competencia",
-    "event_type": "oficial"
-  },
-  "reason": "",
+  "has_public_event": false,
+  "event": null,
+  "windows_event": null,
+  "reason": "No hay evento oficial activo para Mobile.",
   "source": "Timing Cuba Windows - Panel de Eventos",
-  "updated_at": "2026-09-10T14:51:26.415902+00:00"
+  "updated_at": "2026-09-10T14:51:48.909715+00:00"
 }
