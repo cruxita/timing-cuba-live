@@ -3,12 +3,13 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\Desktop\\PIZARRAS\\TIMING-CUBA-BUILD\\dist\\Timing Cuba\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-09-10T14:59:56.344434+00:00",
+  "updated_at": "2026-09-10T15:00:21.063434+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS",
     "PRUEBA#1",
-    "PRUEBA MOBILE FINAL"
+    "PRUEBA MOBILE FINAL",
+    "PRUEBA MOBILE FINAL 2"
   ],
   "clasificaciones_por_evento": {
     "FESTIVAL ESCOLAR DE LUCHA": {
@@ -199,6 +200,11 @@
           "perdidos": 1
         }
       ]
+    },
+    "PRUEBA MOBILE FINAL 2": {
+      "evento": "PRUEBA MOBILE FINAL 2",
+      "total_equipos": 0,
+      "equipos": []
     }
   }
 }
