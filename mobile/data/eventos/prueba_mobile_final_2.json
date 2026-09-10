@@ -9,7 +9,7 @@
     "divisions": 1,
     "athlete_registrations": 3,
     "bouts": 3,
-    "finished_bouts": 0,
+    "finished_bouts": 1,
     "systems": [
       "round_robin"
     ]
@@ -86,7 +86,7 @@
           "round": 1,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 197,
             "name": "CHRIS BRANDY",
@@ -123,13 +123,13 @@
             "public_name": "C. OFARRILL",
             "photo": "/fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 197,
+          "winner_name": "CHRIS BRANDY",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "criterion": "PTS",
+          "winner_master_id": 69
         },
         {
           "id": 260,
@@ -239,9 +239,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-10T15:22:59.414309+00:00",
+  "updated_at": "2026-09-10T15:23:24.828096+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-10T15:22:58.541409+00:00",
+  "athlete_identity_updated_at": "2026-09-10T15:23:23.731884+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-10T15:22:59.511900+00:00"
+  "publisher_updated_at": "2026-09-10T15:23:24.932653+00:00"
 }
