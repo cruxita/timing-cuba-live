@@ -2,7 +2,7 @@
   "version": 1,
   "source": "Timing Cuba Windows",
   "logic": "ranking_atletas.py",
-  "updated_at": "2026-09-10T14:52:11.264560+00:00",
+  "updated_at": "2026-09-10T14:52:35.515814+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS"
@@ -134,7 +134,7 @@
         "pc": 24,
         "dif": -2,
         "estilo": "FS",
-        "peso": "54",
+        "peso": "53",
         "divisiones": [
           "FESTIVAL ESCOLAR DE LUCHA | FS U13/15 54 kg",
           "FESTIVAL ESCOLAR DE LUCHA | FS|U13/15|53",
@@ -976,7 +976,7 @@
         "pc": 36,
         "dif": -36,
         "estilo": "FS",
-        "peso": "54",
+        "peso": "53",
         "divisiones": [
           "FESTIVAL ESCOLAR DE LUCHA | FS U13/15 54 kg",
           "FESTIVAL ESCOLAR DE LUCHA | FS|U13/15|53",
