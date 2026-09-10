@@ -9,7 +9,7 @@
     "divisions": 1,
     "athlete_registrations": 3,
     "bouts": 3,
-    "finished_bouts": 2,
+    "finished_bouts": 3,
     "systems": [
       "round_robin"
     ]
@@ -186,7 +186,7 @@
           "round": 3,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 199,
             "name": "DAYAN REYES IZNAGA",
@@ -223,13 +223,13 @@
             "public_name": "C. OFARRILL",
             "photo": "/fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 199,
+          "winner_name": "DAYAN REYES IZNAGA",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "criterion": "PTS",
+          "winner_master_id": 90
         }
       ],
       "group_bouts": [],
@@ -239,9 +239,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-10T15:48:38.835261+00:00",
+  "updated_at": "2026-09-10T15:49:25.655591+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-10T15:48:37.892960+00:00",
+  "athlete_identity_updated_at": "2026-09-10T15:49:24.612220+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-10T15:48:38.926003+00:00"
+  "publisher_updated_at": "2026-09-10T15:49:25.830084+00:00"
 }
