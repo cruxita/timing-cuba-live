@@ -5,7 +5,7 @@
     "name": "PRUEBA MOBILE FINAL"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-10T14:51:02.151460+00:00",
+  "updated_at": "2026-09-10T14:51:27.490140+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -15,7 +15,7 @@
   "pendientes": 1,
   "live_activo": true,
   "live": {
-    "timer": "00:22",
+    "timer": "00:00.00",
     "red_pts": 2,
     "blue_pts": 3,
     "red_badges": "",
@@ -25,8 +25,8 @@
     "highlight_tied": false,
     "activity_side": "",
     "activity_left": null,
-    "mode": "fight",
-    "updated_at": 1789051861.284299
+    "mode": "standby",
+    "updated_at": 1789051887.0471652
   },
   "por_mat": {
     "MAT A": [
@@ -50,9 +50,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
+          "descanso_en_curso": true,
+          "descanso_segundos": 1200,
+          "descanso_texto": "20:00"
         },
         "blue": {
           "atleta_db_id": 58,
@@ -62,9 +62,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
+          "descanso_en_curso": true,
+          "descanso_segundos": 1200,
+          "descanso_texto": "20:00"
         },
         "stage": 1,
         "ready": true,
@@ -72,7 +72,7 @@
         "orden": 1,
         "public_bout_number": 1,
         "live": {
-          "timer": "00:22",
+          "timer": "00:00.00",
           "red_pts": 2,
           "blue_pts": 3,
           "red_badges": "",
@@ -82,8 +82,8 @@
           "highlight_tied": false,
           "activity_side": "",
           "activity_left": null,
-          "mode": "fight",
-          "updated_at": 1789051861.284299
+          "mode": "standby",
+          "updated_at": 1789051887.0471652
         },
         "display_status": "EN COLCHON"
       }
