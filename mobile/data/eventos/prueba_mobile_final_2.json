@@ -6,17 +6,91 @@
     "real": true
   },
   "summary": {
-    "divisions": 0,
-    "athlete_registrations": 0,
+    "divisions": 1,
+    "athlete_registrations": 3,
     "bouts": 0,
     "finished_bouts": 0,
-    "systems": []
+    "systems": [
+      "round_robin"
+    ]
   },
-  "divisions": [],
+  "divisions": [
+    {
+      "id": "rr-58",
+      "database_id": 58,
+      "system": "round_robin",
+      "system_label": "Round Robin",
+      "style": "FS",
+      "age_group": "U13/15",
+      "weight": "22",
+      "status": "abierta",
+      "athletes": [
+        {
+          "id": 197,
+          "name": "CHRIS BRANDY",
+          "full_name": "CHRIS BRANDY",
+          "club": "LA HABANA",
+          "tag": "CH",
+          "draw": 1,
+          "group": "",
+          "athlete_db_id": 69,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "CH",
+          "original_event_name": "CHRIS BRANDY",
+          "identity_method": "atleta_db_id",
+          "master_id": 69,
+          "public_name": "C. NOA",
+          "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa.png"
+        },
+        {
+          "id": 198,
+          "name": "CRISTIAN",
+          "full_name": "CRISTIAN",
+          "club": "LA HABANA",
+          "tag": "10O",
+          "draw": 2,
+          "group": "",
+          "athlete_db_id": 80,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "10O",
+          "original_event_name": "CRISTIAN",
+          "identity_method": "atleta_db_id",
+          "master_id": 80,
+          "public_name": "C. OFARRILL",
+          "photo": "/fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
+        },
+        {
+          "id": 199,
+          "name": "DAYAN REYES IZNAGA",
+          "full_name": "DAYAN REYES IZNAGA",
+          "club": "LA HABANA",
+          "tag": "10O",
+          "draw": 3,
+          "group": "",
+          "athlete_db_id": 90,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "10O",
+          "original_event_name": "DAYAN REYES IZNAGA",
+          "identity_method": "atleta_db_id",
+          "master_id": 90,
+          "public_name": "D. REYES",
+          "photo": ""
+        }
+      ],
+      "bouts": [],
+      "group_bouts": [],
+      "playoffs": [],
+      "athlete_count": 3,
+      "bout_count": 0
+    }
+  ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-10T15:00:21.385264+00:00",
+  "updated_at": "2026-09-10T15:00:45.178441+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-10T15:00:20.494904+00:00",
+  "athlete_identity_updated_at": "2026-09-10T15:00:44.201453+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-10T15:00:21.467365+00:00"
+  "publisher_updated_at": "2026-09-10T15:00:45.267602+00:00"
 }
