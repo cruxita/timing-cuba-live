@@ -5,7 +5,7 @@
     "name": "PRUEBA MOBILE FINAL 2"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-10T15:47:51.635370+00:00",
+  "updated_at": "2026-09-10T15:48:15.004159+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -38,8 +38,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 958,
-          "descanso_texto": "15:58"
+          "descanso_segundos": 935,
+          "descanso_texto": "15:35"
         },
         "blue": {
           "atleta_db_id": 80,
