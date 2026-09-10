@@ -62,6 +62,29 @@
           "photo": "/fotos_atletas/atleta_0058_anthony_aramburu.png"
         }
       ],
+      "podium": {
+        "gold": [
+          {
+            "name": "ANTHONY ARAMBURU",
+            "team": "CH",
+            "position": 1,
+            "master_id": 58,
+            "public_name": "A. ARAMBURU",
+            "photo": "/fotos_atletas/atleta_0058_anthony_aramburu.png"
+          }
+        ],
+        "silver": [
+          {
+            "name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "team": "HV",
+            "position": 2,
+            "master_id": 79,
+            "public_name": "A. MARTINEZ",
+            "photo": "/fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
+          }
+        ],
+        "bronze": []
+      },
       "bouts": [
         {
           "id": 258,
@@ -121,9 +144,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-10T15:59:13.368672+00:00",
+  "updated_at": "2026-09-10T16:00:13.683515+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-10T15:59:12.489773+00:00",
+  "athlete_identity_updated_at": "2026-09-10T16:00:12.900153+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-10T15:59:13.453503+00:00"
+  "publisher_updated_at": "2026-09-10T16:00:13.751971+00:00"
 }
