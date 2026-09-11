@@ -1,6 +1,6 @@
 {
-  "generado_en": "2026-09-12 05:12:26",
-  "total_atletas": 55,
+  "generado_en": "2026-09-12 05:35:20",
+  "total_atletas": 56,
   "total_fotos": 42,
   "fotos_copiadas": 0,
   "fotos_sin_cambios": 42,
@@ -257,6 +257,29 @@
       "foto": "fotos_atletas/atleta_0049_jeissy_antuanet_miranda_gonzalez.png",
       "foto_web": "fotos_atletas/atleta_0049_jeissy_antuanet_miranda_gonzalez.png",
       "foto_version": "74751-1779199417034387300",
+      "activo": true
+    },
+    {
+      "id": 101,
+      "ci": "",
+      "nombre": "LISMAILIN",
+      "apellidos": "COCA DANGER",
+      "nombre_publico": "L. COCA",
+      "sexo": "F",
+      "fecha_nacimiento": "",
+      "grupo": "U11/12",
+      "peso": "",
+      "estilo": "WW",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "10O",
+      "club": "",
+      "tag_publico": "10O",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
+      "foto_version": "",
       "activo": true
     },
     {
