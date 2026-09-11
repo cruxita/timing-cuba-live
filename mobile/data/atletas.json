@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-11T19:18:43.681699+00:00",
+  "updated_at": "2026-09-11T19:19:19.794257+00:00",
   "privacy": {
     "published_fields": [
       "full_name",
@@ -695,7 +695,7 @@
       "full_name": "HANNEL COFFINY",
       "public_name": "H. COFFINY",
       "sex": "M",
-      "age_group": "U13/15",
+      "age_group": "U17",
       "weight": "",
       "style": "FS",
       "country": "CUB",
