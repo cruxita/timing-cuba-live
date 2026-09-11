@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-11T19:11:04.014360+00:00",
+  "updated_at": "2026-09-11T19:12:02.064094+00:00",
   "privacy": {
     "published_fields": [
       "full_name",
@@ -868,7 +868,7 @@
       "municipality": "10O",
       "club": "",
       "tag": "10O",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0101_lismailin_coca_danger.png"
     },
     {
       "id": 102,
