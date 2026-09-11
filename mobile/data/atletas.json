@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-11T19:10:17.823257+00:00",
+  "updated_at": "2026-09-11T19:11:04.014360+00:00",
   "privacy": {
     "published_fields": [
       "full_name",
@@ -929,7 +929,22 @@
       "club": "",
       "tag": "CUB",
       "photo": "/fotos_atletas/atleta_0105_dadier_yanes_fajardo.png"
+    },
+    {
+      "id": 106,
+      "full_name": "DARIEL RICARDO AGRAMONTE MENENDEZ",
+      "public_name": "D. AGRAMONTE",
+      "sex": "M",
+      "age_group": "U9/10",
+      "weight": "",
+      "style": "FS",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "",
+      "club": "",
+      "tag": "CUB",
+      "photo": ""
     }
   ],
-  "count": 60
+  "count": 61
 }
