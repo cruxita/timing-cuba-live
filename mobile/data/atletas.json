@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-11T18:58:41.901168+00:00",
+  "updated_at": "2026-09-11T19:08:31.831275+00:00",
   "privacy": {
     "published_fields": [
       "full_name",
@@ -884,7 +884,22 @@
       "club": "",
       "tag": "COTORRO",
       "photo": "/fotos_atletas/atleta_0102_fatima_furone_duran.png"
+    },
+    {
+      "id": 103,
+      "full_name": "ANABEL RODRIGUEZ PEREZ",
+      "public_name": "A. RODRIGUEZ",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "",
+      "style": "WW",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "",
+      "club": "",
+      "tag": "CUB",
+      "photo": "/fotos_atletas/atleta_0103_anabel_rodriguez_perez.png"
     }
   ],
-  "count": 57
+  "count": 58
 }
