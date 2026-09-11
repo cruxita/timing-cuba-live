@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-11T17:08:18.387568+00:00",
+  "updated_at": "2026-09-11T18:19:59.360341+00:00",
   "privacy": {
     "published_fields": [
       "full_name",
@@ -320,7 +320,7 @@
       "full_name": "TAYLOR MAZA LUNA",
       "public_name": "T. MAZA",
       "sex": "M",
-      "age_group": "U13/15",
+      "age_group": "U17",
       "weight": "59",
       "style": "FS",
       "country": "CUB",
@@ -854,7 +854,22 @@
       "club": "",
       "tag": "10O",
       "photo": ""
+    },
+    {
+      "id": 101,
+      "full_name": "LISMAILIN COCA DANGER",
+      "public_name": "L. COCA",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "",
+      "style": "WW",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "10O",
+      "club": "",
+      "tag": "10O",
+      "photo": ""
     }
   ],
-  "count": 55
+  "count": 56
 }
