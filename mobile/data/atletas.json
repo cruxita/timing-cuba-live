@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-11T19:09:21.219602+00:00",
+  "updated_at": "2026-09-11T19:10:17.823257+00:00",
   "privacy": {
     "published_fields": [
       "full_name",
@@ -914,7 +914,22 @@
       "club": "",
       "tag": "CUB",
       "photo": "/fotos_atletas/atleta_0104_sady_lorenyn_betansoz_aguirre.png"
+    },
+    {
+      "id": 105,
+      "full_name": "DADIER YANES FAJARDO",
+      "public_name": "D. YANES",
+      "sex": "M",
+      "age_group": "U7/8",
+      "weight": "",
+      "style": "FS",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "",
+      "club": "",
+      "tag": "CUB",
+      "photo": "/fotos_atletas/atleta_0105_dadier_yanes_fajardo.png"
     }
   ],
-  "count": 59
+  "count": 60
 }
