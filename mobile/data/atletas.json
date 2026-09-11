@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-11T18:39:17.910591+00:00",
+  "updated_at": "2026-09-11T18:53:28.218460+00:00",
   "privacy": {
     "published_fields": [
       "full_name",
@@ -869,7 +869,22 @@
       "club": "",
       "tag": "10O",
       "photo": ""
+    },
+    {
+      "id": 102,
+      "full_name": "FATIMA FURONE DURAN",
+      "public_name": "F. FURONE",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "",
+      "style": "WW",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "COTORRO",
+      "club": "",
+      "tag": "COTORRO",
+      "photo": "/fotos_atletas/atleta_0102_fatima_furone_duran.png"
     }
   ],
-  "count": 56
+  "count": 57
 }
