@@ -3,13 +3,10 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\Desktop\\PIZARRAS\\TIMING-CUBA-BUILD\\dist\\Timing Cuba\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-09-10T16:58:55.863112+00:00",
+  "updated_at": "2026-09-11T17:08:19.534996+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
-    "TODOS VS TODOS",
-    "PRUEBA#1",
-    "PRUEBA MOBILE FINAL",
-    "PRUEBA MOBILE FINAL 2"
+    "TODOS VS TODOS"
   ],
   "clasificaciones_por_evento": {
     "FESTIVAL ESCOLAR DE LUCHA": {
@@ -111,129 +108,6 @@
           "bronce": 0,
           "ganados": 5,
           "perdidos": 3
-        }
-      ]
-    },
-    "PRUEBA#1": {
-      "evento": "PRUEBA#1",
-      "total_equipos": 3,
-      "equipos": [
-        {
-          "lugar": 1,
-          "equipo_key": "CH",
-          "equipo": "CH",
-          "puntos_combate": 12,
-          "puntos_uww_posicion": 85,
-          "puntos_infantil_posicion": 34,
-          "total_uww": 97,
-          "total_infantil": 46,
-          "oro": 2,
-          "plata": 1,
-          "bronce": 1,
-          "ganados": 3,
-          "perdidos": 3
-        },
-        {
-          "lugar": 2,
-          "equipo_key": "10O",
-          "equipo": "10O",
-          "puntos_combate": 4,
-          "puntos_uww_posicion": 45,
-          "puntos_infantil_posicion": 18,
-          "total_uww": 49,
-          "total_infantil": 22,
-          "oro": 1,
-          "plata": 1,
-          "bronce": 0,
-          "ganados": 1,
-          "perdidos": 1
-        },
-        {
-          "lugar": 3,
-          "equipo_key": "HV",
-          "equipo": "HV",
-          "puntos_combate": 4,
-          "puntos_uww_posicion": 20,
-          "puntos_infantil_posicion": 8,
-          "total_uww": 24,
-          "total_infantil": 12,
-          "oro": 0,
-          "plata": 1,
-          "bronce": 0,
-          "ganados": 1,
-          "perdidos": 1
-        }
-      ]
-    },
-    "PRUEBA MOBILE FINAL": {
-      "evento": "PRUEBA MOBILE FINAL",
-      "total_equipos": 2,
-      "equipos": [
-        {
-          "lugar": 1,
-          "equipo_key": "CH",
-          "equipo": "CH",
-          "puntos_combate": 3,
-          "puntos_uww_posicion": 25,
-          "puntos_infantil_posicion": 10,
-          "total_uww": 28,
-          "total_infantil": 13,
-          "oro": 1,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 1,
-          "perdidos": 0
-        },
-        {
-          "lugar": 2,
-          "equipo_key": "HV",
-          "equipo": "HV",
-          "puntos_combate": 1,
-          "puntos_uww_posicion": 20,
-          "puntos_infantil_posicion": 8,
-          "total_uww": 21,
-          "total_infantil": 9,
-          "oro": 0,
-          "plata": 1,
-          "bronce": 0,
-          "ganados": 0,
-          "perdidos": 1
-        }
-      ]
-    },
-    "PRUEBA MOBILE FINAL 2": {
-      "evento": "PRUEBA MOBILE FINAL 2",
-      "total_equipos": 2,
-      "equipos": [
-        {
-          "lugar": 1,
-          "equipo_key": "10O",
-          "equipo": "10O",
-          "puntos_combate": 3,
-          "puntos_uww_posicion": 35,
-          "puntos_infantil_posicion": 14,
-          "total_uww": 38,
-          "total_infantil": 17,
-          "oro": 0,
-          "plata": 1,
-          "bronce": 1,
-          "ganados": 1,
-          "perdidos": 3
-        },
-        {
-          "lugar": 2,
-          "equipo_key": "CH",
-          "equipo": "CH",
-          "puntos_combate": 6,
-          "puntos_uww_posicion": 25,
-          "puntos_infantil_posicion": 10,
-          "total_uww": 31,
-          "total_infantil": 16,
-          "oro": 1,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 2,
-          "perdidos": 0
         }
       ]
     }
