@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-09-12 05:35:20",
-  "total_atletas": 56,
-  "total_fotos": 42,
-  "fotos_copiadas": 0,
+  "generado_en": "2026-09-12 06:53:15",
+  "total_atletas": 57,
+  "total_fotos": 43,
+  "fotos_copiadas": 1,
   "fotos_sin_cambios": 42,
   "fotos_conservadas": 0,
   "atletas": [
@@ -234,6 +234,29 @@
       "foto": "",
       "foto_web": "",
       "foto_version": "",
+      "activo": true
+    },
+    {
+      "id": 102,
+      "ci": "",
+      "nombre": "FATIMA",
+      "apellidos": "FURONE DURAN",
+      "nombre_publico": "F. FURONE",
+      "sexo": "F",
+      "fecha_nacimiento": "",
+      "grupo": "U11/12",
+      "peso": "",
+      "estilo": "WW",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "COTORRO",
+      "club": "",
+      "tag_publico": "COTORRO",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0102_fatima_furone_duran.png",
+      "foto_web": "fotos_atletas/atleta_0102_fatima_furone_duran.png",
+      "foto_version": "71210-1789152699144838100",
       "activo": true
     },
     {
