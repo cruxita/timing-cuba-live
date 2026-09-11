@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-11T19:08:31.831275+00:00",
+  "updated_at": "2026-09-11T19:09:21.219602+00:00",
   "privacy": {
     "published_fields": [
       "full_name",
@@ -899,7 +899,22 @@
       "club": "",
       "tag": "CUB",
       "photo": "/fotos_atletas/atleta_0103_anabel_rodriguez_perez.png"
+    },
+    {
+      "id": 104,
+      "full_name": "SADY LORENYN BETANSOZ AGUIRRE",
+      "public_name": "S. BETANSOZ",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "",
+      "style": "WW",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "",
+      "club": "",
+      "tag": "CUB",
+      "photo": "/fotos_atletas/atleta_0104_sady_lorenyn_betansoz_aguirre.png"
     }
   ],
-  "count": 58
+  "count": 59
 }
