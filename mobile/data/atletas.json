@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-11T19:19:54.682236+00:00",
+  "updated_at": "2026-09-11T19:20:54.320015+00:00",
   "privacy": {
     "published_fields": [
       "full_name",
@@ -170,7 +170,7 @@
       "full_name": "ROBEISY MIRANDA TITO",
       "public_name": "R. MIRANDA",
       "sex": "M",
-      "age_group": "U9/10",
+      "age_group": "U11/12",
       "weight": "",
       "style": "FS",
       "country": "CUB",
@@ -245,7 +245,7 @@
       "full_name": "MICHAEL KIM LOPEZ",
       "public_name": "M. KIM",
       "sex": "M",
-      "age_group": "U9/10",
+      "age_group": "U11/12",
       "weight": "",
       "style": "FS",
       "country": "CUB",
