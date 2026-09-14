@@ -6,17 +6,78 @@
     "real": true
   },
   "summary": {
-    "divisions": 0,
-    "athlete_registrations": 0,
+    "divisions": 1,
+    "athlete_registrations": 2,
     "bouts": 0,
     "finished_bouts": 0,
-    "systems": []
+    "systems": [
+      "round_robin"
+    ]
   },
-  "divisions": [],
+  "divisions": [
+    {
+      "id": "rr-69",
+      "database_id": 69,
+      "system": "round_robin",
+      "system_label": "Round Robin",
+      "style": "FS",
+      "age_group": "U13/15",
+      "weight": "11",
+      "status": "abierta",
+      "athletes": [
+        {
+          "id": 227,
+          "name": "ALDIEL",
+          "full_name": "ALDIEL",
+          "club": "LA HABANA",
+          "tag": "10O",
+          "draw": 1,
+          "group": "",
+          "athlete_db_id": 81,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "10O",
+          "original_event_name": "ALDIEL",
+          "identity_method": "atleta_db_id",
+          "master_id": 81,
+          "public_name": "A. MARIN",
+          "photo": "/fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png"
+        },
+        {
+          "id": 228,
+          "name": "ALEJANDRO MANUEL GONZALEZ RICARDO",
+          "full_name": "ALEJANDRO MANUEL GONZALEZ RICARDO",
+          "club": "LA HABANA",
+          "tag": "10O",
+          "draw": 2,
+          "group": "",
+          "athlete_db_id": 92,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "10O",
+          "original_event_name": "ALEJANDRO MANUEL GONZALEZ RICARDO",
+          "identity_method": "atleta_db_id",
+          "master_id": 92,
+          "public_name": "A. GONZALEZ",
+          "photo": ""
+        }
+      ],
+      "podium": {
+        "gold": [],
+        "silver": [],
+        "bronze": []
+      },
+      "bouts": [],
+      "group_bouts": [],
+      "playoffs": [],
+      "athlete_count": 2,
+      "bout_count": 0
+    }
+  ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-14T21:19:11.470317+00:00",
+  "updated_at": "2026-09-14T21:19:37.201300+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-14T21:19:10.766478+00:00",
+  "athlete_identity_updated_at": "2026-09-14T21:19:36.507865+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-14T21:19:11.516809+00:00"
+  "publisher_updated_at": "2026-09-14T21:19:37.238179+00:00"
 }
