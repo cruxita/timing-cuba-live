@@ -6,9 +6,9 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-14T21:14:28.827881+00:00",
+  "updated_at": "2026-09-14T21:15:06.992140+00:00",
   "current_event": null,
-  "count": 2,
+  "count": 3,
   "events": [
     {
       "id": 5,
@@ -69,6 +69,26 @@
       ],
       "classification_level": "municipio",
       "data_file": "data/eventos/todos_vs_todos.json"
+    },
+    {
+      "id": 28,
+      "panel_id": 28,
+      "name": "PRUEBA 5S",
+      "date": "15/09/2026",
+      "venue": "",
+      "status": "preparando",
+      "event_type": "oficial",
+      "ranking_multiplier": 1.0,
+      "legacy": false,
+      "active": false,
+      "systems": [
+        "panel"
+      ],
+      "sources": [
+        "panel_evento.db:eventos"
+      ],
+      "classification_level": "municipio",
+      "data_file": "data/eventos/prueba_5s.json"
     }
   ]
 }
