@@ -9,7 +9,7 @@
     "divisions": 3,
     "athlete_registrations": 19,
     "bouts": 21,
-    "finished_bouts": 0,
+    "finished_bouts": 1,
     "systems": [
       "round_robin",
       "llaves_uww",
@@ -75,7 +75,7 @@
           "round": 1,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 227,
             "name": "ALDIEL",
@@ -112,12 +112,12 @@
             "public_name": "A. GONZALEZ",
             "photo": ""
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 227,
+          "winner_name": "ALDIEL",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
-          "criterion": "",
+          "criterion": "PTS",
           "winner_master_id": null
         }
       ],
@@ -1354,9 +1354,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-15T10:24:32.118688+00:00",
+  "updated_at": "2026-09-15T12:20:18.445619+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-15T10:24:31.130871+00:00",
+  "athlete_identity_updated_at": "2026-09-15T12:20:17.737031+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-15T10:24:32.541022+00:00"
+  "publisher_updated_at": "2026-09-15T12:20:18.492561+00:00"
 }
