@@ -6,9 +6,9 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-15T18:45:00.886306+00:00",
+  "updated_at": "2026-09-17T14:10:38.137885+00:00",
   "current_event": null,
-  "count": 3,
+  "count": 4,
   "events": [
     {
       "id": 5,
@@ -89,6 +89,26 @@
       ],
       "classification_level": "municipio",
       "data_file": "data/eventos/prueba_5s.json"
+    },
+    {
+      "id": 30,
+      "panel_id": 30,
+      "name": "TOPE DE CONTROL GR1",
+      "date": "17/09/2026",
+      "venue": "ESFAAR",
+      "status": "preparando",
+      "event_type": "oficial",
+      "ranking_multiplier": 1.0,
+      "legacy": false,
+      "active": false,
+      "systems": [
+        "panel"
+      ],
+      "sources": [
+        "panel_evento.db:eventos"
+      ],
+      "classification_level": "municipio",
+      "data_file": "data/eventos/tope_de_control_gr1.json"
     }
   ]
 }
