@@ -5,7 +5,7 @@
     "name": "PRUEBA 5S"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-21T14:55:22.901847+00:00",
+  "updated_at": "2026-09-21T17:50:02.051169+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -16,7 +16,7 @@
   "pendientes": 25,
   "live_activo": true,
   "live": {
-    "timer": "04:00",
+    "timer": "03:23",
     "red_pts": 0,
     "blue_pts": 0,
     "red_badges": "",
@@ -27,7 +27,7 @@
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1790002505.031344
+    "updated_at": 1790002970.8343139
   },
   "por_mat": {
     "MAT A": [
@@ -73,7 +73,7 @@
         "orden": 9,
         "public_bout_number": 9,
         "live": {
-          "timer": "04:00",
+          "timer": "03:23",
           "red_pts": 0,
           "blue_pts": 0,
           "red_badges": "",
@@ -84,7 +84,7 @@
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1790002505.031344
+          "updated_at": 1790002970.8343139
         },
         "display_status": "EN COLCHON"
       },
