@@ -1,9 +1,17 @@
 {
   "version": 4,
-  "has_public_event": false,
-  "event": null,
-  "windows_event": null,
-  "reason": "No hay evento oficial activo para Mobile.",
+  "has_public_event": true,
+  "event": {
+    "id": 30,
+    "name": "TOPE DE CONTROL GR1",
+    "event_type": "oficial",
+    "ranking_multiplier": 1.0
+  },
+  "windows_event": {
+    "id": 30,
+    "name": "TOPE DE CONTROL GR1"
+  },
+  "reason": "",
   "source": "Timing Cuba Windows - Panel de Eventos",
-  "updated_at": "2026-09-21T12:21:25.813583+00:00"
+  "updated_at": "2026-09-21T12:27:28.156491+00:00"
 }
