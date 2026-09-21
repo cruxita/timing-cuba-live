@@ -9,7 +9,7 @@
     "divisions": 2,
     "athlete_registrations": 8,
     "bouts": 16,
-    "finished_bouts": 0,
+    "finished_bouts": 1,
     "systems": [
       "round_robin"
     ]
@@ -73,7 +73,7 @@
           "round": 1,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 247,
             "name": "OSMANI COBA",
@@ -110,13 +110,13 @@
             "public_name": "E. FIGUERAS",
             "photo": ""
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "winner_id": 247,
+          "winner_name": "OSMANI COBA",
+          "victory_type": "PTS",
+          "red_score": 5,
+          "blue_score": 2,
+          "criterion": "PTS",
+          "winner_master_id": 113
         }
       ],
       "group_bouts": [],
@@ -1007,9 +1007,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-17T14:40:21.605524+00:00",
+  "updated_at": "2026-09-21T11:27:37.965955+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-17T14:40:20.861574+00:00",
+  "athlete_identity_updated_at": "2026-09-21T11:27:36.066234+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-17T14:40:21.682102+00:00"
+  "publisher_updated_at": "2026-09-21T11:27:38.200559+00:00"
 }
