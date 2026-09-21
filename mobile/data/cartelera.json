@@ -5,7 +5,7 @@
     "name": "TOPE DE CONTROL GR1"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-21T13:20:54.433859+00:00",
+  "updated_at": "2026-09-21T13:21:20.618637+00:00",
   "categoria_actual": "SENIOR",
   "estilo_actual": "GR",
   "mats": [
@@ -15,7 +15,7 @@
   "pendientes": 14,
   "live_activo": true,
   "live": {
-    "timer": "05:39",
+    "timer": "05:13",
     "red_pts": 0,
     "blue_pts": 0,
     "red_badges": "",
@@ -26,7 +26,7 @@
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1789996853.9752195
+    "updated_at": 1789996879.3060586
   },
   "por_mat": {
     "MAT A": [
@@ -72,7 +72,7 @@
         "orden": 3,
         "public_bout_number": 3,
         "live": {
-          "timer": "05:39",
+          "timer": "05:13",
           "red_pts": 0,
           "blue_pts": 0,
           "red_badges": "",
@@ -83,7 +83,7 @@
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1789996853.9752195
+          "updated_at": 1789996879.3060586
         },
         "display_status": "EN COLCHON"
       },
@@ -151,8 +151,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 111,
-          "descanso_texto": "01:51"
+          "descanso_segundos": 86,
+          "descanso_texto": "01:26"
         },
         "blue": {
           "atleta_db_id": 110,
@@ -249,8 +249,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 111,
-          "descanso_texto": "01:51"
+          "descanso_segundos": 86,
+          "descanso_texto": "01:26"
         },
         "stage": 2,
         "ready": true,
@@ -280,8 +280,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 111,
-          "descanso_texto": "01:51"
+          "descanso_segundos": 86,
+          "descanso_texto": "01:26"
         },
         "blue": {
           "atleta_db_id": 107,
