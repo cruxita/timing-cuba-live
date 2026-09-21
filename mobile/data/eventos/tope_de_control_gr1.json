@@ -9,7 +9,7 @@
     "divisions": 2,
     "athlete_registrations": 8,
     "bouts": 16,
-    "finished_bouts": 1,
+    "finished_bouts": 2,
     "systems": [
       "round_robin"
     ]
@@ -254,7 +254,7 @@
           "round": 1,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 241,
             "name": "FILIBERTO AZCUY",
@@ -291,13 +291,13 @@
             "public_name": "G. POLLO",
             "photo": ""
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "winner_id": 241,
+          "winner_name": "FILIBERTO AZCUY",
+          "victory_type": "PTS",
+          "red_score": 6,
+          "blue_score": 4,
+          "criterion": "PTS",
+          "winner_master_id": 109
         },
         {
           "id": 309,
@@ -1007,9 +1007,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-21T13:02:48.821971+00:00",
+  "updated_at": "2026-09-21T13:08:00.591405+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-21T13:02:47.336749+00:00",
+  "athlete_identity_updated_at": "2026-09-21T13:07:58.648723+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-21T13:02:48.977439+00:00"
+  "publisher_updated_at": "2026-09-21T13:08:00.840228+00:00"
 }
