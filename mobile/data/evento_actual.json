@@ -2,16 +2,16 @@
   "version": 4,
   "has_public_event": true,
   "event": {
-    "id": 28,
-    "name": "PRUEBA 5S",
+    "id": 30,
+    "name": "TOPE DE CONTROL GR1",
     "event_type": "oficial",
     "ranking_multiplier": 1.0
   },
   "windows_event": {
-    "id": 28,
-    "name": "PRUEBA 5S"
+    "id": 30,
+    "name": "TOPE DE CONTROL GR1"
   },
   "reason": "",
   "source": "Timing Cuba Windows - Panel de Eventos",
-  "updated_at": "2026-09-21T12:29:47.193696+00:00"
+  "updated_at": "2026-09-21T12:44:04.245974+00:00"
 }
