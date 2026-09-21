@@ -5,61 +5,31 @@
     "name": "TOPE DE CONTROL GR1"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-21T13:02:48.495750+00:00",
+  "updated_at": "2026-09-21T13:08:00.154343+00:00",
   "categoria_actual": "SENIOR",
   "estilo_actual": "GR",
   "mats": [
     "MAT A"
   ],
   "total_combates": 16,
-  "pendientes": 15,
-  "live_activo": false,
-  "live": {},
+  "pendientes": 14,
+  "live_activo": true,
+  "live": {
+    "timer": "06:00",
+    "red_pts": 0,
+    "blue_pts": 0,
+    "red_badges": "",
+    "blue_badges": "",
+    "highlight_win": "",
+    "highlight_adv": "",
+    "highlight_tied": true,
+    "activity_side": "",
+    "activity_left": null,
+    "mode": "fight",
+    "updated_at": 1789995784.3203094
+  },
   "por_mat": {
     "MAT A": [
-      {
-        "sistema": "Round Robin",
-        "division_key": "rr:73",
-        "bout_key": "fight:308",
-        "source_key": "Round Robin|rr:73|fight:308",
-        "estilo": "GR",
-        "categoria": "SENIOR",
-        "peso": "77",
-        "fase": "Ronda 1",
-        "source_status": "pendiente",
-        "finalizado": false,
-        "activo": false,
-        "red": {
-          "atleta_db_id": 109,
-          "nombre": "F. AZCUY",
-          "nombre_descanso": "FILIBERTO AZCUY",
-          "tag": "CUB",
-          "pais": "CUB",
-          "provincia": "LA HABANA",
-          "foto": "",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "blue": {
-          "atleta_db_id": 108,
-          "nombre": "G. POLLO",
-          "nombre_descanso": "GUILLERMO POLLO",
-          "tag": "CUB",
-          "pais": "CUB",
-          "provincia": "LA HABANA",
-          "foto": "",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "stage": 1,
-        "ready": true,
-        "mat": "MAT A",
-        "orden": 2,
-        "public_bout_number": 2,
-        "display_status": "SIGUIENTE"
-      },
       {
         "sistema": "Round Robin",
         "division_key": "rr:73",
@@ -71,7 +41,7 @@
         "fase": "Ronda 1",
         "source_status": "pendiente",
         "finalizado": false,
-        "activo": false,
+        "activo": true,
         "red": {
           "atleta_db_id": 110,
           "nombre": "J. MANZANO",
@@ -101,7 +71,21 @@
         "mat": "MAT A",
         "orden": 3,
         "public_bout_number": 3,
-        "display_status": "EN ESPERA"
+        "live": {
+          "timer": "06:00",
+          "red_pts": 0,
+          "blue_pts": 0,
+          "red_badges": "",
+          "blue_badges": "",
+          "highlight_win": "",
+          "highlight_adv": "",
+          "highlight_tied": true,
+          "activity_side": "",
+          "activity_left": null,
+          "mode": "fight",
+          "updated_at": 1789995784.3203094
+        },
+        "display_status": "EN COLCHON"
       },
       {
         "sistema": "Round Robin",
@@ -144,7 +128,7 @@
         "mat": "MAT A",
         "orden": 4,
         "public_bout_number": 4,
-        "display_status": "EN ESPERA"
+        "display_status": "SIGUIENTE"
       },
       {
         "sistema": "Round Robin",
@@ -166,9 +150,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
+          "descanso_en_curso": true,
+          "descanso_segundos": 886,
+          "descanso_texto": "14:46"
         },
         "blue": {
           "atleta_db_id": 110,
@@ -264,15 +248,58 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
+          "descanso_en_curso": true,
+          "descanso_segundos": 886,
+          "descanso_texto": "14:46"
         },
         "stage": 2,
         "ready": true,
         "mat": "MAT A",
         "orden": 7,
         "public_bout_number": 7,
+        "display_status": "EN ESPERA"
+      },
+      {
+        "sistema": "Round Robin",
+        "division_key": "rr:73",
+        "bout_key": "fight:314",
+        "source_key": "Round Robin|rr:73|fight:314",
+        "estilo": "GR",
+        "categoria": "SENIOR",
+        "peso": "77",
+        "fase": "Ronda 3",
+        "source_status": "pendiente",
+        "finalizado": false,
+        "activo": false,
+        "red": {
+          "atleta_db_id": 109,
+          "nombre": "F. AZCUY",
+          "nombre_descanso": "FILIBERTO AZCUY",
+          "tag": "CUB",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "",
+          "descanso_en_curso": true,
+          "descanso_segundos": 886,
+          "descanso_texto": "14:46"
+        },
+        "blue": {
+          "atleta_db_id": 107,
+          "nombre": "J. SABLON",
+          "nombre_descanso": "JULIO SABLON",
+          "tag": "CUB",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "stage": 3,
+        "ready": true,
+        "mat": "MAT A",
+        "orden": 8,
+        "public_bout_number": 8,
         "display_status": "EN ESPERA"
       }
     ]
