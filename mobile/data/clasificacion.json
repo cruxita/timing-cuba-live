@@ -3,7 +3,7 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\Desktop\\PIZARRAS\\TIMING-CUBA-BUILD\\dist\\Timing Cuba\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-09-17T14:40:21.335421+00:00",
+  "updated_at": "2026-09-21T11:27:37.201609+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS",
@@ -151,8 +151,24 @@
     },
     "TOPE DE CONTROL GR1": {
       "evento": "TOPE DE CONTROL GR1",
-      "total_equipos": 0,
-      "equipos": []
+      "total_equipos": 1,
+      "equipos": [
+        {
+          "lugar": 1,
+          "equipo_key": "CUB",
+          "equipo": "CUB",
+          "puntos_combate": 4,
+          "puntos_uww_posicion": 0,
+          "puntos_infantil_posicion": 0,
+          "total_uww": 4,
+          "total_infantil": 4,
+          "oro": 0,
+          "plata": 0,
+          "bronce": 0,
+          "ganados": 1,
+          "perdidos": 1
+        }
+      ]
     }
   }
 }
