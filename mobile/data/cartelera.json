@@ -5,7 +5,7 @@
     "name": "TOPE DE CONTROL GR1"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-21T13:12:43.654538+00:00",
+  "updated_at": "2026-09-21T13:13:09.017642+00:00",
   "categoria_actual": "SENIOR",
   "estilo_actual": "GR",
   "mats": [
@@ -151,8 +151,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 602,
-          "descanso_texto": "10:02"
+          "descanso_segundos": 577,
+          "descanso_texto": "09:37"
         },
         "blue": {
           "atleta_db_id": 110,
@@ -249,8 +249,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 602,
-          "descanso_texto": "10:02"
+          "descanso_segundos": 577,
+          "descanso_texto": "09:37"
         },
         "stage": 2,
         "ready": true,
@@ -280,8 +280,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 602,
-          "descanso_texto": "10:02"
+          "descanso_segundos": 577,
+          "descanso_texto": "09:37"
         },
         "blue": {
           "atleta_db_id": 107,
