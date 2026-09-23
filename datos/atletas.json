@@ -1,11 +1,186 @@
 {
-  "generado_en": "2026-09-12 07:21:46",
-  "total_atletas": 61,
+  "generado_en": "2026-09-24 01:37:50",
+  "total_atletas": 69,
   "total_fotos": 47,
-  "fotos_copiadas": 0,
-  "fotos_sin_cambios": 47,
+  "fotos_copiadas": 47,
   "fotos_conservadas": 0,
   "atletas": [
+    {
+      "id": 108,
+      "ci": "",
+      "nombre": "GUILLERMO",
+      "apellidos": "POLL",
+      "nombre_publico": "G. POLLO",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "SENIOR",
+      "peso": "",
+      "estilo": "GR",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
+      "activo": true
+    },
+    {
+      "id": 114,
+      "ci": "",
+      "nombre": "EMERSON",
+      "apellidos": "FIGUERAS",
+      "nombre_publico": "E. FIGUERAS",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "SENIOR",
+      "peso": "60",
+      "estilo": "GR",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
+      "activo": true
+    },
+    {
+      "id": 113,
+      "ci": "",
+      "nombre": "OSMANI",
+      "apellidos": "COBA",
+      "nombre_publico": "O. COBA",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "SENIOR",
+      "peso": "60",
+      "estilo": "GR",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
+      "activo": true
+    },
+    {
+      "id": 109,
+      "ci": "",
+      "nombre": "FILIBERTO",
+      "apellidos": "AZCUY",
+      "nombre_publico": "F. AZCUY",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "SENIOR",
+      "peso": "77",
+      "estilo": "GR",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
+      "activo": true
+    },
+    {
+      "id": 110,
+      "ci": "",
+      "nombre": "JAIRON",
+      "apellidos": "MANZANO",
+      "nombre_publico": "J. MANZANO",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "SENIOR",
+      "peso": "77",
+      "estilo": "GR",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
+      "activo": true
+    },
+    {
+      "id": 107,
+      "ci": "",
+      "nombre": "JULIO",
+      "apellidos": "SABLON",
+      "nombre_publico": "J. SABLON",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "SENIOR",
+      "peso": "77",
+      "estilo": "GR",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
+      "activo": true
+    },
+    {
+      "id": 111,
+      "ci": "",
+      "nombre": "YOEL",
+      "apellidos": "ANTOMACHY",
+      "nombre_publico": "Y. ANTOMACHY",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "SENIOR",
+      "peso": "77",
+      "estilo": "GR",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
+      "activo": true
+    },
+    {
+      "id": 112,
+      "ci": "",
+      "nombre": "YONEL",
+      "apellidos": "MEJIA",
+      "nombre_publico": "Y. MEJIA",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "SENIOR",
+      "peso": "77",
+      "estilo": "GR",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
+      "activo": true
+    },
     {
       "id": 81,
       "ci": "",
@@ -26,7 +201,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png",
       "foto_web": "fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png",
-      "foto_version": "74734-1780243617921125900",
       "activo": true
     },
     {
@@ -49,7 +223,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
       "foto_web": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
-      "foto_version": "79971-1779753881699612900",
       "activo": true
     },
     {
@@ -72,7 +245,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -95,7 +267,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0060_eaan_carlos_vina.png",
       "foto_web": "fotos_atletas/atleta_0060_eaan_carlos_vina.png",
-      "foto_version": "78433-1778719027882172700",
       "activo": true
     },
     {
@@ -118,7 +289,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0061_enmanuel_abreu_veranes.png",
       "foto_web": "fotos_atletas/atleta_0061_enmanuel_abreu_veranes.png",
-      "foto_version": "74469-1778719412938726200",
       "activo": true
     },
     {
@@ -141,7 +311,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0096_jhon_cesar_flores_torres.png",
       "foto_web": "fotos_atletas/atleta_0096_jhon_cesar_flores_torres.png",
-      "foto_version": "68763-1787173704710356900",
       "activo": true
     },
     {
@@ -164,7 +333,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -187,7 +355,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0055_leonyd_zamora_barrera.png",
       "foto_web": "fotos_atletas/atleta_0055_leonyd_zamora_barrera.png",
-      "foto_version": "75314-1778718758846761600",
       "activo": true
     },
     {
@@ -210,7 +377,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0067_maykol_machado_zuniga.png",
       "foto_web": "fotos_atletas/atleta_0067_maykol_machado_zuniga.png",
-      "foto_version": "71204-1779754093700474900",
       "activo": true
     },
     {
@@ -233,7 +399,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0059_michael_kim_lopez.png",
       "foto_web": "fotos_atletas/atleta_0059_michael_kim_lopez.png",
-      "foto_version": "70834-1778719193647141100",
       "activo": true
     },
     {
@@ -256,7 +421,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0078_neymar_andres_tamarit_gonzalez.png",
       "foto_web": "fotos_atletas/atleta_0078_neymar_andres_tamarit_gonzalez.png",
-      "foto_version": "73070-1780242957673218100",
       "activo": true
     },
     {
@@ -279,7 +443,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0054_robeisy_miranda_tito.png",
       "foto_web": "fotos_atletas/atleta_0054_robeisy_miranda_tito.png",
-      "foto_version": "70473-1778718637640206300",
       "activo": true
     },
     {
@@ -302,7 +465,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -325,7 +487,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0103_anabel_rodriguez_perez.png",
       "foto_web": "fotos_atletas/atleta_0103_anabel_rodriguez_perez.png",
-      "foto_version": "75613-1789153430688936800",
       "activo": true
     },
     {
@@ -348,7 +509,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0102_fatima_furone_duran.png",
       "foto_web": "fotos_atletas/atleta_0102_fatima_furone_duran.png",
-      "foto_version": "71210-1789152699144838100",
       "activo": true
     },
     {
@@ -371,7 +531,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0049_jeissy_antuanet_miranda_gonzalez.png",
       "foto_web": "fotos_atletas/atleta_0049_jeissy_antuanet_miranda_gonzalez.png",
-      "foto_version": "74751-1779199417034387300",
       "activo": true
     },
     {
@@ -394,7 +553,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0101_lismailin_coca_danger.png",
       "foto_web": "fotos_atletas/atleta_0101_lismailin_coca_danger.png",
-      "foto_version": "78664-1789153321463847700",
       "activo": true
     },
     {
@@ -417,7 +575,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0104_sady_lorenyn_betansoz_aguirre.png",
       "foto_web": "fotos_atletas/atleta_0104_sady_lorenyn_betansoz_aguirre.png",
-      "foto_version": "73179-1789153551751100900",
       "activo": true
     },
     {
@@ -440,7 +597,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0058_anthony_aramburu.png",
       "foto_web": "fotos_atletas/atleta_0058_anthony_aramburu.png",
-      "foto_version": "73686-1778718933633384000",
       "activo": true
     },
     {
@@ -463,7 +619,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
       "foto_web": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
-      "foto_version": "77889-1778719116195910800",
       "activo": true
     },
     {
@@ -486,7 +641,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0001_abrahem_arroyo_cruz.png",
       "foto_web": "fotos_atletas/atleta_0001_abrahem_arroyo_cruz.png",
-      "foto_version": "68881-1779801977111816000",
       "activo": true
     },
     {
@@ -509,7 +663,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -532,7 +685,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
       "foto_web": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
-      "foto_version": "72308-1780243032692135500",
       "activo": true
     },
     {
@@ -555,7 +707,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
       "foto_web": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
-      "foto_version": "74146-1780243221662415900",
       "activo": true
     },
     {
@@ -578,7 +729,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -601,7 +751,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png",
       "foto_web": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png",
-      "foto_version": "79257-1780243809991784900",
       "activo": true
     },
     {
@@ -624,7 +773,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0074_fabian_leroy_donis.png",
       "foto_web": "fotos_atletas/atleta_0074_fabian_leroy_donis.png",
-      "foto_version": "76558-1780242704549286700",
       "activo": true
     },
     {
@@ -647,7 +795,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0053_frank_martinez_labrada.png",
       "foto_web": "fotos_atletas/atleta_0053_frank_martinez_labrada.png",
-      "foto_version": "69361-1779199328060015600",
       "activo": true
     },
     {
@@ -670,7 +817,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0083_geovany_pozo_santana.png",
       "foto_web": "fotos_atletas/atleta_0083_geovany_pozo_santana.png",
-      "foto_version": "72115-1780243303735879700",
       "activo": true
     },
     {
@@ -693,7 +839,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0071_jayro_bouso_valle.png",
       "foto_web": "fotos_atletas/atleta_0071_jayro_bouso_valle.png",
-      "foto_version": "69280-1780243146586880200",
       "activo": true
     },
     {
@@ -716,7 +861,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -739,7 +883,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0077_lesmailie_coca_danger.png",
       "foto_web": "fotos_atletas/atleta_0077_lesmailie_coca_danger.png",
-      "foto_version": "71725-1780243385502212800",
       "activo": true
     },
     {
@@ -762,7 +905,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -785,7 +927,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0082_rainer_munoz_roque.png",
       "foto_web": "fotos_atletas/atleta_0082_rainer_munoz_roque.png",
-      "foto_version": "76457-1780243467342636100",
       "activo": true
     },
     {
@@ -808,7 +949,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -831,7 +971,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0085_yordanis_rivera_perez.png",
       "foto_web": "fotos_atletas/atleta_0085_yordanis_rivera_perez.png",
-      "foto_version": "76838-1780243958713281500",
       "activo": true
     },
     {
@@ -854,7 +993,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0076_yotuel_joba_suarez.png",
       "foto_web": "fotos_atletas/atleta_0076_yotuel_joba_suarez.png",
-      "foto_version": "73643-1780243541930270700",
       "activo": true
     },
     {
@@ -877,7 +1015,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0095_ana_maura_martinez_santiesteban.png",
       "foto_web": "fotos_atletas/atleta_0095_ana_maura_martinez_santiesteban.png",
-      "foto_version": "75768-1787173209610737800",
       "activo": true
     },
     {
@@ -900,7 +1037,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0098_kissandra_melany_hernandez_gomez.png",
       "foto_web": "fotos_atletas/atleta_0098_kissandra_melany_hernandez_gomez.png",
-      "foto_version": "69622-1787175589669381800",
       "activo": true
     },
     {
@@ -923,7 +1059,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0052_matteo_ortiz_arriete.png",
       "foto_web": "fotos_atletas/atleta_0052_matteo_ortiz_arriete.png",
-      "foto_version": "74121-1779199237396757400",
       "activo": true
     },
     {
@@ -946,7 +1081,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0070_hans_perez_felico.png",
       "foto_web": "fotos_atletas/atleta_0070_hans_perez_felico.png",
-      "foto_version": "72743-1780243887006785700",
       "activo": true
     },
     {
@@ -969,7 +1103,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0065_maykol_ledsuy_gutierrez_hernandez.png",
       "foto_web": "fotos_atletas/atleta_0065_maykol_ledsuy_gutierrez_hernandez.png",
-      "foto_version": "70651-1780242877851570900",
       "activo": true
     },
     {
@@ -992,7 +1125,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -1015,7 +1147,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -1038,7 +1169,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0097_yassiel_heredia_labarrere.png",
       "foto_web": "fotos_atletas/atleta_0097_yassiel_heredia_labarrere.png",
-      "foto_version": "67131-1787175297599609400",
       "activo": true
     },
     {
@@ -1061,7 +1191,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -1084,7 +1213,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0064_taylor_maza_luna.png",
       "foto_web": "fotos_atletas/atleta_0064_taylor_maza_luna.png",
-      "foto_version": "70063-1780242789977209800",
       "activo": true
     },
     {
@@ -1107,7 +1235,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0084_abdiel_munoz_roque.png",
       "foto_web": "fotos_atletas/atleta_0084_abdiel_munoz_roque.png",
-      "foto_version": "77451-1780243693711713600",
       "activo": true
     },
     {
@@ -1130,7 +1257,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png",
       "foto_web": "fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png",
-      "foto_version": "71623-1779199032246146900",
       "activo": true
     },
     {
@@ -1153,7 +1279,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0105_dadier_yanes_fajardo.png",
       "foto_web": "fotos_atletas/atleta_0105_dadier_yanes_fajardo.png",
-      "foto_version": "77496-1789153635219945000",
       "activo": true
     },
     {
@@ -1176,7 +1301,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0057_lazaro_ali_rojas_garzon.png",
       "foto_web": "fotos_atletas/atleta_0057_lazaro_ali_rojas_garzon.png",
-      "foto_version": "61791-1778719295810610600",
       "activo": true
     },
     {
@@ -1199,7 +1323,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0056_maykol_obispo_sainz.png",
       "foto_web": "fotos_atletas/atleta_0056_maykol_obispo_sainz.png",
-      "foto_version": "67499-1778718521103713400",
       "activo": true
     },
     {
@@ -1222,7 +1345,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0051_yansiel_chala_herrera.png",
       "foto_web": "fotos_atletas/atleta_0051_yansiel_chala_herrera.png",
-      "foto_version": "78952-1779198844473813500",
       "activo": true
     },
     {
@@ -1245,7 +1367,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0087_yavier_rodriguez_alfaro.png",
       "foto_web": "fotos_atletas/atleta_0087_yavier_rodriguez_alfaro.png",
-      "foto_version": "70584-1779754005879823900",
       "activo": true
     },
     {
@@ -1268,7 +1389,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -1291,7 +1411,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -1314,7 +1433,6 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
-      "foto_version": "",
       "activo": true
     },
     {
@@ -1337,7 +1455,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0050_jeishon_antuan_miranda_gonzalez.png",
       "foto_web": "fotos_atletas/atleta_0050_jeishon_antuan_miranda_gonzalez.png",
-      "foto_version": "72357-1779199502967051600",
       "activo": true
     },
     {
@@ -1360,7 +1477,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0063_lesdian_antuan_hernandez_serrano.png",
       "foto_web": "fotos_atletas/atleta_0063_lesdian_antuan_hernandez_serrano.png",
-      "foto_version": "76114-1778719499476875500",
       "activo": true
     },
     {
@@ -1383,7 +1499,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0068_randy_despaine.png",
       "foto_web": "fotos_atletas/atleta_0068_randy_despaine.png",
-      "foto_version": "74235-1779754199813493400",
       "activo": true
     },
     {
@@ -1406,7 +1521,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0062_yan_lucas_guerra_santovenia.png",
       "foto_web": "fotos_atletas/atleta_0062_yan_lucas_guerra_santovenia.png",
-      "foto_version": "73525-1778718839051643600",
       "activo": true
     }
   ]
