@@ -1,34 +1,4 @@
 {
-  "version": 1,
-  "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-21T21:11:02.431165+00:00",
-  "privacy": {
-    "published_fields": [
-      "full_name",
-      "public_name",
-      "sex",
-      "age_group",
-      "weight",
-      "style",
-      "country",
-      "province",
-      "municipality",
-      "club",
-      "tag",
-      "photo"
-    ],
-    "excluded_fields": [
-      "ci",
-      "telefono",
-      "fecha_nacimiento",
-      "datos_medicos"
-    ]
-  },
-  "summary": {
-    "active_athletes": 55,
-    "photos_copied": 42,
-    "missing_photo_files": 0
-  },
   "athletes": [
     {
       "id": 1,
@@ -403,7 +373,7 @@
       "municipality": "CH",
       "club": "",
       "tag": "CH",
-      "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa.png"
+      "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png"
     },
     {
       "id": 70,
@@ -962,7 +932,7 @@
     },
     {
       "id": 108,
-      "full_name": "GUILLERMO POLLO",
+      "full_name": "GUILLERMO POLL",
       "public_name": "G. POLLO",
       "sex": "M",
       "age_group": "SENIOR",
@@ -1066,5 +1036,6 @@
       "photo": ""
     }
   ],
-  "count": 69
+  "count": 69,
+  "updated_at": "2026-09-23T12:49:08.715378+00:00"
 }
