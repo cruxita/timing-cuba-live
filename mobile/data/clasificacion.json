@@ -3,10 +3,11 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\AppData\\Local\\Timing Cuba\\data\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-09-29T10:33:10.197433+00:00",
+  "updated_at": "2026-09-29T11:46:59.912010+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
-    "TODOS VS TODOS"
+    "TODOS VS TODOS",
+    "PRUEBA DE ORO"
   ],
   "clasificaciones_por_evento": {
     "FESTIVAL ESCOLAR DE LUCHA": {
@@ -110,6 +111,11 @@
           "perdidos": 3
         }
       ]
+    },
+    "PRUEBA DE ORO": {
+      "evento": "PRUEBA DE ORO",
+      "total_equipos": 0,
+      "equipos": []
     }
   }
 }
