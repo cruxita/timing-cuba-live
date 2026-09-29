@@ -2,7 +2,7 @@
   "version": 1,
   "source": "Timing Cuba Windows",
   "logic": "ranking_atletas.py",
-  "updated_at": "2026-09-21T21:11:03.119708+00:00",
+  "updated_at": "2026-09-29T10:33:09.948639+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS"
@@ -384,8 +384,8 @@
         ],
         "division_principal": "",
         "campeon_en": [],
-        "foto": "",
-        "tiene_foto": false,
+        "foto": "/fotos_atletas/atleta_0090_dayan_reyes_iznaga.png",
+        "tiene_foto": true,
         "record": "3-1",
         "points": 15
       },
@@ -473,7 +473,7 @@
         ],
         "division_principal": "",
         "campeon_en": [],
-        "foto": "/fotos_atletas/atleta_0069_chris_brandy_noa.png",
+        "foto": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png",
         "tiene_foto": true,
         "record": "3-4",
         "points": 15
@@ -791,8 +791,8 @@
         ],
         "division_principal": "",
         "campeon_en": [],
-        "foto": "",
-        "tiene_foto": false,
+        "foto": "/fotos_atletas/atleta_0088_kevin_luciano_diaz_kessell.png",
+        "tiene_foto": true,
         "record": "1-1",
         "points": 4
       },
@@ -928,8 +928,8 @@
         ],
         "division_principal": "",
         "campeon_en": [],
-        "foto": "",
-        "tiene_foto": false,
+        "foto": "/fotos_atletas/atleta_0094_enzo_reinier_diaz_jeanjaque.png",
+        "tiene_foto": true,
         "record": "0-1",
         "points": 0
       },
@@ -976,7 +976,7 @@
         "pc": 36,
         "dif": -36,
         "estilo": "FS",
-        "peso": "53",
+        "peso": "54",
         "divisiones": [
           "FESTIVAL ESCOLAR DE LUCHA | FS U13/15 54 kg",
           "FESTIVAL ESCOLAR DE LUCHA | FS|U13/15|53",
@@ -1512,8 +1512,8 @@
           ],
           "division_principal": "",
           "campeon_en": [],
-          "foto": "",
-          "tiene_foto": false,
+          "foto": "/fotos_atletas/atleta_0088_kevin_luciano_diaz_kessell.png",
+          "tiene_foto": true,
           "record": "1-1",
           "points": 4
         },
@@ -1593,7 +1593,7 @@
           ],
           "division_principal": "",
           "campeon_en": [],
-          "foto": "/fotos_atletas/atleta_0069_chris_brandy_noa.png",
+          "foto": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png",
           "tiene_foto": true,
           "record": "0-3",
           "points": 2
@@ -1701,8 +1701,8 @@
           ],
           "division_principal": "",
           "campeon_en": [],
-          "foto": "",
-          "tiene_foto": false,
+          "foto": "/fotos_atletas/atleta_0094_enzo_reinier_diaz_jeanjaque.png",
+          "tiene_foto": true,
           "record": "0-1",
           "points": 0
         },
@@ -1977,8 +1977,8 @@
           ],
           "division_principal": "",
           "campeon_en": [],
-          "foto": "",
-          "tiene_foto": false,
+          "foto": "/fotos_atletas/atleta_0090_dayan_reyes_iznaga.png",
+          "tiene_foto": true,
           "record": "3-1",
           "points": 15
         },
@@ -2035,7 +2035,7 @@
           ],
           "division_principal": "",
           "campeon_en": [],
-          "foto": "/fotos_atletas/atleta_0069_chris_brandy_noa.png",
+          "foto": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png",
           "tiene_foto": true,
           "record": "3-1",
           "points": 13
