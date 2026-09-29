@@ -6,9 +6,9 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-29T10:33:09.347173+00:00",
+  "updated_at": "2026-09-29T11:46:58.773807+00:00",
   "current_event": null,
-  "count": 2,
+  "count": 3,
   "events": [
     {
       "id": 5,
@@ -36,6 +36,24 @@
       "venue": "",
       "status": "finalizado",
       "event_type": "ranking",
+      "ranking_multiplier": 1.0,
+      "legacy": false,
+      "active": false,
+      "systems": [
+        "panel"
+      ],
+      "sources": [
+        "panel_evento.db:eventos"
+      ]
+    },
+    {
+      "id": 34,
+      "panel_id": 34,
+      "name": "PRUEBA DE ORO",
+      "date": "29/09/2026",
+      "venue": "",
+      "status": "preparando",
+      "event_type": "oficial",
       "ranking_multiplier": 1.0,
       "legacy": false,
       "active": false,
