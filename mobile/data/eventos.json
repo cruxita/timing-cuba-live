@@ -6,12 +6,9 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-21T21:11:27.053983+00:00",
-  "current_event": {
-    "id": 28,
-    "name": "PRUEBA 5S"
-  },
-  "count": 3,
+  "updated_at": "2026-09-29T10:33:09.347173+00:00",
+  "current_event": null,
+  "count": 2,
   "events": [
     {
       "id": 5,
@@ -22,28 +19,14 @@
       "status": "finalizado",
       "event_type": "ranking",
       "ranking_multiplier": 1.0,
-      "active": false,
       "legacy": false,
+      "active": false,
       "systems": [
-        "panel",
-        "round_robin",
-        "champions",
-        "llaves_uww",
-        "cartelera",
-        "clasificacion"
+        "panel"
       ],
       "sources": [
-        "panel_evento.db:eventos",
-        "round_robin.db:rr_divisiones",
-        "champions.db:ch_divisiones",
-        "llaves_uww.db:llaves_eventos",
-        "cartelera_uww.db:categorias",
-        "cartelera_uww.db:mats",
-        "clasificacion_equipos.db:medallas_posiciones",
-        "clasificacion_equipos.db:resultados_combates"
-      ],
-      "classification_level": "municipio",
-      "data_file": "data/eventos/festival_escolar.json"
+        "panel_evento.db:eventos"
+      ]
     },
     {
       "id": 22,
@@ -54,44 +37,14 @@
       "status": "finalizado",
       "event_type": "ranking",
       "ranking_multiplier": 1.0,
+      "legacy": false,
       "active": false,
-      "legacy": false,
-      "systems": [
-        "round_robin",
-        "champions",
-        "cartelera",
-        "clasificacion"
-      ],
-      "sources": [
-        "round_robin.db:rr_divisiones",
-        "champions.db:ch_divisiones",
-        "cartelera_uww.db:categorias",
-        "cartelera_uww.db:mats",
-        "clasificacion_equipos.db:medallas_posiciones",
-        "clasificacion_equipos.db:resultados_combates"
-      ],
-      "classification_level": "municipio",
-      "data_file": "data/eventos/todos_vs_todos.json"
-    },
-    {
-      "id": 28,
-      "panel_id": 28,
-      "name": "PRUEBA 5S",
-      "date": "15/09/2026",
-      "venue": "",
-      "status": "preparando",
-      "event_type": "oficial",
-      "ranking_multiplier": 1.0,
-      "legacy": false,
-      "active": true,
       "systems": [
         "panel"
       ],
       "sources": [
         "panel_evento.db:eventos"
-      ],
-      "classification_level": "municipio",
-      "data_file": "data/eventos/prueba_5s.json"
+      ]
     }
   ]
 }
