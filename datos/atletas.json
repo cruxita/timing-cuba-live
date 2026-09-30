@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-09-29 13:01:23",
-  "total_atletas": 84,
-  "total_fotos": 65,
-  "fotos_copiadas": 65,
+  "generado_en": "2026-09-30 09:28:55",
+  "total_atletas": 85,
+  "total_fotos": 66,
+  "fotos_copiadas": 66,
   "fotos_conservadas": 0,
   "atletas": [
     {
@@ -575,6 +575,28 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0104_sady_lorenyn_betansoz_aguirre.png",
       "foto_web": "fotos_atletas/atleta_0104_sady_lorenyn_betansoz_aguirre.png",
+      "activo": true
+    },
+    {
+      "id": 130,
+      "ci": "",
+      "nombre": "ABEL",
+      "apellidos": "GOVEA GOMEZ",
+      "nombre_publico": "A. GOVEA",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U11/12",
+      "peso": "28",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "SANTIAGO DE CUBA",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0130_abel_govea_gomez.png",
+      "foto_web": "fotos_atletas/atleta_0130_abel_govea_gomez.png",
       "activo": true
     },
     {
