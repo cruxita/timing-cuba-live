@@ -5,7 +5,7 @@
     "name": "PRUEBA DE ORO"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-30T07:14:20.859730+00:00",
+  "updated_at": "2026-09-30T07:14:45.319581+00:00",
   "categoria_actual": "U9/10",
   "estilo_actual": "FS",
   "mats": [
@@ -109,8 +109,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0050_jeishon_antuan_miranda_gonzalez.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 37,
-          "descanso_texto": "00:37"
+          "descanso_segundos": 11,
+          "descanso_texto": "00:11"
         },
         "blue": {
           "atleta_db_id": 68,
@@ -238,8 +238,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0063_lesdian_antuan_hernandez_serrano.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 37,
-          "descanso_texto": "00:37"
+          "descanso_segundos": 11,
+          "descanso_texto": "00:11"
         },
         "blue": {
           "atleta_db_id": 68,
