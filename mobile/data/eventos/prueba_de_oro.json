@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 39,
     "bouts": 46,
-    "finished_bouts": 5,
+    "finished_bouts": 6,
     "systems": [
       "champions",
       "round_robin",
@@ -2342,7 +2342,7 @@
           "round": 2,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 280,
             "name": "DYLAN ALE GONZALEZ CAUSA",
@@ -2379,13 +2379,13 @@
             "public_name": "D. YANES",
             "photo": "/fotos_atletas/atleta_0105_dadier_yanes_fajardo.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 280,
+          "winner_name": "DYLAN ALE GONZALEZ CAUSA",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "criterion": "PTS",
+          "winner_master_id": 100
         },
         {
           "id": 372,
@@ -2924,9 +2924,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-30T17:01:06.915823+00:00",
+  "updated_at": "2026-09-30T17:01:32.079891+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-30T17:01:05.735232+00:00",
+  "athlete_identity_updated_at": "2026-09-30T17:01:31.050841+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-30T17:01:07.036153+00:00"
+  "publisher_updated_at": "2026-09-30T17:01:32.275985+00:00"
 }
