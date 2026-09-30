@@ -5,7 +5,7 @@
     "name": "PRUEBA DE ORO"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-30T07:15:37.774953+00:00",
+  "updated_at": "2026-09-30T07:16:04.411313+00:00",
   "categoria_actual": "U9/10",
   "estilo_actual": "FS",
   "mats": [
@@ -16,7 +16,7 @@
   "pendientes": 48,
   "live_activo": true,
   "live": {
-    "timer": "30",
+    "timer": "12",
     "red_pts": 2,
     "blue_pts": 0,
     "red_badges": "",
@@ -27,7 +27,7 @@
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1790752455.0754437
+    "updated_at": 1790752563.1046228
   },
   "por_mat": {
     "MAT A": [
@@ -73,7 +73,7 @@
         "orden": 49,
         "public_bout_number": 49,
         "live": {
-          "timer": "30",
+          "timer": "12",
           "red_pts": 2,
           "blue_pts": 0,
           "red_badges": "",
@@ -84,7 +84,7 @@
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1790752455.0754437
+          "updated_at": 1790752563.1046228
         },
         "display_status": "EN COLCHON"
       },
