@@ -6,9 +6,12 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-29T13:20:43.526024+00:00",
-  "current_event": null,
-  "count": 3,
+  "updated_at": "2026-09-29T10:19:48.236548+00:00",
+  "current_event": {
+    "id": 5,
+    "name": "FESTIVAL ESCOLAR DE LUCHA"
+  },
+  "count": 2,
   "events": [
     {
       "id": 5,
@@ -16,53 +19,59 @@
       "name": "FESTIVAL ESCOLAR DE LUCHA",
       "date": "30/MAYO/2026",
       "venue": "PONTON",
-      "status": "finalizado",
+      "status": "preparando",
       "event_type": "ranking",
       "ranking_multiplier": 1.0,
+      "active": true,
       "legacy": false,
-      "active": false,
       "systems": [
-        "panel"
+        "panel",
+        "round_robin",
+        "champions",
+        "llaves_uww",
+        "cartelera",
+        "clasificacion"
       ],
       "sources": [
-        "panel_evento.db:eventos"
-      ]
+        "panel_evento.db:eventos",
+        "round_robin.db:rr_divisiones",
+        "champions.db:ch_divisiones",
+        "llaves_uww.db:llaves_eventos",
+        "cartelera_uww.db:categorias",
+        "cartelera_uww.db:mats",
+        "clasificacion_equipos.db:medallas_posiciones",
+        "clasificacion_equipos.db:resultados_combates"
+      ],
+      "classification_level": "municipio",
+      "data_file": "data/eventos/festival_escolar.json"
     },
     {
-      "id": 22,
-      "panel_id": 22,
+      "id": 21,
+      "panel_id": 21,
       "name": "TODOS VS TODOS",
       "date": "",
       "venue": "",
       "status": "finalizado",
       "event_type": "ranking",
       "ranking_multiplier": 1.0,
-      "legacy": false,
       "active": false,
+      "legacy": false,
       "systems": [
-        "panel"
+        "round_robin",
+        "champions",
+        "cartelera",
+        "clasificacion"
       ],
       "sources": [
-        "panel_evento.db:eventos"
-      ]
-    },
-    {
-      "id": 34,
-      "panel_id": 34,
-      "name": "PRUEBA DE ORO",
-      "date": "29/09/2026",
-      "venue": "",
-      "status": "preparando",
-      "event_type": "oficial",
-      "ranking_multiplier": 1.0,
-      "legacy": false,
-      "active": false,
-      "systems": [
-        "panel"
+        "round_robin.db:rr_divisiones",
+        "champions.db:ch_divisiones",
+        "cartelera_uww.db:categorias",
+        "cartelera_uww.db:mats",
+        "clasificacion_equipos.db:medallas_posiciones",
+        "clasificacion_equipos.db:resultados_combates"
       ],
-      "sources": [
-        "panel_evento.db:eventos"
-      ]
+      "classification_level": "municipio",
+      "data_file": "data/eventos/todos_vs_todos.json"
     }
   ]
 }
