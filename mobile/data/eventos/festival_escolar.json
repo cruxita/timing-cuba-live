@@ -12,8 +12,8 @@
     "finished_bouts": 40,
     "systems": [
       "champions",
-      "llaves_uww",
-      "round_robin"
+      "round_robin",
+      "llaves_uww"
     ]
   },
   "divisions": [
@@ -69,7 +69,7 @@
           "name": "FRANK MARTINEZ LABRADA",
           "full_name": "FRANK MARTINEZ LABRADA",
           "club": "LA HABANA",
-          "tag": "CH",
+          "tag": "LA HABANA",
           "draw": 3,
           "group": "A",
           "athlete_db_id": null,
@@ -87,7 +87,7 @@
           "name": "JEISSY ANTUANET MIRANDA GONZALEZ",
           "full_name": "JEISSY ANTUANET MIRANDA GONZALEZ",
           "club": "LA HABANA",
-          "tag": "CH",
+          "tag": "LA HABANA",
           "draw": 4,
           "group": "B",
           "athlete_db_id": null,
@@ -105,7 +105,7 @@
           "name": "ABRAHEM ARROYO CRUZ",
           "full_name": "ABRAHEM ARROYO CRUZ",
           "club": "LA HABANA",
-          "tag": "CH",
+          "tag": "LA HABANA",
           "draw": 5,
           "group": "A",
           "athlete_db_id": null,
@@ -168,7 +168,7 @@
             "name": "FRANK MARTINEZ LABRADA",
             "full_name": "FRANK MARTINEZ LABRADA",
             "club": "LA HABANA",
-            "tag": "CH",
+            "tag": "LA HABANA",
             "draw": 3,
             "group": "A",
             "athlete_db_id": null,
@@ -218,7 +218,7 @@
             "name": "ABRAHEM ARROYO CRUZ",
             "full_name": "ABRAHEM ARROYO CRUZ",
             "club": "LA HABANA",
-            "tag": "CH",
+            "tag": "LA HABANA",
             "draw": 5,
             "group": "A",
             "athlete_db_id": null,
@@ -250,7 +250,7 @@
             "name": "FRANK MARTINEZ LABRADA",
             "full_name": "FRANK MARTINEZ LABRADA",
             "club": "LA HABANA",
-            "tag": "CH",
+            "tag": "LA HABANA",
             "draw": 3,
             "group": "A",
             "athlete_db_id": null,
@@ -268,7 +268,7 @@
             "name": "ABRAHEM ARROYO CRUZ",
             "full_name": "ABRAHEM ARROYO CRUZ",
             "club": "LA HABANA",
-            "tag": "CH",
+            "tag": "LA HABANA",
             "draw": 5,
             "group": "A",
             "athlete_db_id": null,
@@ -318,7 +318,7 @@
             "name": "JEISSY ANTUANET MIRANDA GONZALEZ",
             "full_name": "JEISSY ANTUANET MIRANDA GONZALEZ",
             "club": "LA HABANA",
-            "tag": "CH",
+            "tag": "LA HABANA",
             "draw": 4,
             "group": "B",
             "athlete_db_id": null,
@@ -400,7 +400,7 @@
             "name": "JEISSY ANTUANET MIRANDA GONZALEZ",
             "full_name": "JEISSY ANTUANET MIRANDA GONZALEZ",
             "club": "LA HABANA",
-            "tag": "CH",
+            "tag": "LA HABANA",
             "draw": 4,
             "group": "B",
             "athlete_db_id": null,
@@ -453,7 +453,7 @@
             "name": "FRANK MARTINEZ LABRADA",
             "full_name": "FRANK MARTINEZ LABRADA",
             "club": "LA HABANA",
-            "tag": "CH",
+            "tag": "LA HABANA",
             "draw": 3,
             "group": "A",
             "athlete_db_id": null,
@@ -606,7 +606,7 @@
             "name": "FRANK MARTINEZ LABRADA",
             "full_name": "FRANK MARTINEZ LABRADA",
             "club": "LA HABANA",
-            "tag": "CH",
+            "tag": "LA HABANA",
             "draw": 3,
             "group": "A",
             "athlete_db_id": null,
@@ -1704,6 +1704,38 @@
           "photo": ""
         }
       ],
+      "podium": {
+        "gold": [
+          {
+            "name": "FABIAN LEROY DONIS",
+            "team": "10O",
+            "position": 1,
+            "master_id": 74,
+            "public_name": "F. LEROY",
+            "photo": "/fotos_atletas/atleta_0074_fabian_leroy_donis.png"
+          }
+        ],
+        "silver": [
+          {
+            "name": "HANS PEREZ FELICO",
+            "team": "10O",
+            "position": 2,
+            "master_id": 70,
+            "public_name": "H. PEREZ",
+            "photo": "/fotos_atletas/atleta_0070_hans_perez_felico.png"
+          }
+        ],
+        "bronze": [
+          {
+            "name": "RANDY TITO IBAÑEZ",
+            "team": "10O",
+            "position": 3,
+            "master_id": 86,
+            "public_name": "R. TITO",
+            "photo": ""
+          }
+        ]
+      },
       "bouts": [
         {
           "id": 178,
@@ -2131,20 +2163,20 @@
         },
         {
           "id": 10006,
-          "name": "KEVIN LUCIANO DIAZ KESSELL",
-          "full_name": "KEVIN LUCIANO DIAZ KESSELL",
+          "name": "KEVIN DUARTE",
+          "full_name": "KEVIN DUARTE",
           "club": "",
-          "tag": "CH",
+          "tag": "",
           "draw": 7,
           "group": "",
           "athlete_db_id": null,
-          "country": "CUB",
-          "province": "LA HABANA",
-          "municipality": "CH",
+          "country": "",
+          "province": "CUB",
+          "municipality": "",
           "original_event_name": "KEVIN DUARTE",
-          "identity_method": "alias_confirmado",
-          "master_id": 88,
-          "public_name": "K. DIAZ",
+          "identity_method": "",
+          "master_id": null,
+          "public_name": "KEVIN DUARTE",
           "photo": ""
         }
       ],
@@ -2275,29 +2307,29 @@
           },
           "blue": {
             "id": 10006,
-            "name": "KEVIN LUCIANO DIAZ KESSELL",
-            "full_name": "KEVIN LUCIANO DIAZ KESSELL",
+            "name": "KEVIN DUARTE",
+            "full_name": "KEVIN DUARTE",
             "club": "",
-            "tag": "CH",
+            "tag": "",
             "draw": 7,
             "group": "",
             "athlete_db_id": null,
-            "country": "CUB",
-            "province": "LA HABANA",
-            "municipality": "CH",
+            "country": "",
+            "province": "CUB",
+            "municipality": "",
             "original_event_name": "KEVIN DUARTE",
-            "identity_method": "alias_confirmado",
-            "master_id": 88,
-            "public_name": "K. DIAZ",
+            "identity_method": "",
+            "master_id": null,
+            "public_name": "KEVIN DUARTE",
             "photo": ""
           },
           "winner_id": 10006,
-          "winner_name": "KEVIN LUCIANO DIAZ KESSELL",
+          "winner_name": "KEVIN DUARTE",
           "victory_type": "PTS",
           "red_score": 5,
           "blue_score": 6,
           "criterion": "QUAL",
-          "winner_master_id": 88
+          "winner_master_id": null
         },
         {
           "id": 4,
@@ -2375,20 +2407,20 @@
           },
           "blue": {
             "id": 10006,
-            "name": "KEVIN LUCIANO DIAZ KESSELL",
-            "full_name": "KEVIN LUCIANO DIAZ KESSELL",
+            "name": "KEVIN DUARTE",
+            "full_name": "KEVIN DUARTE",
             "club": "",
-            "tag": "CH",
+            "tag": "",
             "draw": 7,
             "group": "",
             "athlete_db_id": null,
-            "country": "CUB",
-            "province": "LA HABANA",
-            "municipality": "CH",
+            "country": "",
+            "province": "CUB",
+            "municipality": "",
             "original_event_name": "KEVIN DUARTE",
-            "identity_method": "alias_confirmado",
-            "master_id": 88,
-            "public_name": "K. DIAZ",
+            "identity_method": "",
+            "master_id": null,
+            "public_name": "KEVIN DUARTE",
             "photo": ""
           },
           "winner_id": 10004,
@@ -2502,6 +2534,29 @@
           "photo": "/fotos_atletas/atleta_0085_yordanis_rivera_perez.png"
         }
       ],
+      "podium": {
+        "gold": [
+          {
+            "name": "VICTOR GARCIA MARCHENA",
+            "team": "CH",
+            "position": 1,
+            "master_id": 2,
+            "public_name": "V. GARCIA",
+            "photo": ""
+          }
+        ],
+        "silver": [
+          {
+            "name": "YORDANIS RIVERA PEREZ",
+            "team": "CERRO",
+            "position": 2,
+            "master_id": 85,
+            "public_name": "Y. RIVERA",
+            "photo": "/fotos_atletas/atleta_0085_yordanis_rivera_perez.png"
+          }
+        ],
+        "bronze": []
+      },
       "bouts": [
         {
           "id": 185,
@@ -2592,7 +2647,7 @@
           "name": "ENZO",
           "full_name": "ENZO",
           "club": "CUB",
-          "tag": "10O",
+          "tag": "CUB",
           "draw": 2,
           "group": "",
           "athlete_db_id": null,
@@ -2606,6 +2661,29 @@
           "photo": ""
         }
       ],
+      "podium": {
+        "gold": [
+          {
+            "name": "TAYLOR MAZA LUNA",
+            "team": "CH",
+            "position": 1,
+            "master_id": 64,
+            "public_name": "T. MAZA",
+            "photo": "/fotos_atletas/atleta_0064_taylor_maza_luna.png"
+          }
+        ],
+        "silver": [
+          {
+            "name": "ENZO",
+            "team": "10O",
+            "position": 2,
+            "master_id": 94,
+            "public_name": "ENZO",
+            "photo": ""
+          }
+        ],
+        "bronze": []
+      },
       "bouts": [
         {
           "id": 184,
@@ -2636,7 +2714,7 @@
             "name": "ENZO",
             "full_name": "ENZO",
             "club": "CUB",
-            "tag": "10O",
+            "tag": "CUB",
             "draw": 2,
             "group": "",
             "athlete_db_id": null,
@@ -2665,7 +2743,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-02T21:35:14.928409+00:00",
+  "updated_at": "2026-09-22T09:39:16.101934+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-02T22:01:37.740250+00:00"
+  "athlete_identity_updated_at": "2026-09-22T09:39:14.787481+00:00",
+  "_timing_cuba_dynamic_event_v1": true,
+  "publisher_updated_at": "2026-09-30T04:33:05.435698+00:00"
 }
