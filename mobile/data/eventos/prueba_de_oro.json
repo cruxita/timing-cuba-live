@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 39,
     "bouts": 46,
-    "finished_bouts": 4,
+    "finished_bouts": 5,
     "systems": [
       "champions",
       "round_robin",
@@ -2292,7 +2292,7 @@
           "round": 2,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 277,
             "name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
@@ -2329,13 +2329,13 @@
             "public_name": "D. AGRAMONTE",
             "photo": ""
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
+          "winner_id": 279,
+          "winner_name": "DARIEL RICARDO AGRAMONTE MENENDEZ",
+          "victory_type": "PTS",
           "red_score": 0,
-          "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "blue_score": 2,
+          "criterion": "PTS",
+          "winner_master_id": 106
         },
         {
           "id": 371,
@@ -2924,9 +2924,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-30T08:35:39.840236+00:00",
+  "updated_at": "2026-09-30T08:36:41.953724+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-30T08:35:39.235939+00:00",
+  "athlete_identity_updated_at": "2026-09-30T08:36:41.355508+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-30T08:35:39.911977+00:00"
+  "publisher_updated_at": "2026-09-30T08:36:42.050710+00:00"
 }
