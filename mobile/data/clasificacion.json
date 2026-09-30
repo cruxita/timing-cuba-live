@@ -3,7 +3,7 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\AppData\\Local\\Timing Cuba\\data\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-09-30T06:43:31.644291+00:00",
+  "updated_at": "2026-09-30T06:44:48.554852+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS",
@@ -114,10 +114,25 @@
     },
     "PRUEBA DE ORO": {
       "evento": "PRUEBA DE ORO",
-      "total_equipos": 2,
+      "total_equipos": 3,
       "equipos": [
         {
           "lugar": 1,
+          "equipo_key": "CUB",
+          "equipo": "CUB",
+          "puntos_combate": 4,
+          "puntos_uww_posicion": 0,
+          "puntos_infantil_posicion": 0,
+          "total_uww": 4,
+          "total_infantil": 4,
+          "oro": 0,
+          "plata": 0,
+          "bronce": 0,
+          "ganados": 1,
+          "perdidos": 1
+        },
+        {
+          "lugar": 2,
           "equipo_key": "CH",
           "equipo": "CH",
           "puntos_combate": 3,
@@ -132,14 +147,14 @@
           "perdidos": 0
         },
         {
-          "lugar": 2,
-          "equipo_key": "CUB",
-          "equipo": "CUB",
-          "puntos_combate": 1,
+          "lugar": 3,
+          "equipo_key": "10O",
+          "equipo": "10O",
+          "puntos_combate": 0,
           "puntos_uww_posicion": 0,
           "puntos_infantil_posicion": 0,
-          "total_uww": 1,
-          "total_infantil": 1,
+          "total_uww": 0,
+          "total_infantil": 0,
           "oro": 0,
           "plata": 0,
           "bronce": 0,
