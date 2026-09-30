@@ -6,7 +6,7 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-30T06:54:57.674067+00:00",
+  "updated_at": "2026-09-30T07:01:46.048436+00:00",
   "current_event": {
     "id": 34,
     "name": "PRUEBA DE ORO"
@@ -29,7 +29,8 @@
       ],
       "sources": [
         "panel_evento.db:eventos"
-      ]
+      ],
+      "data_file": "data/eventos/festival_escolar_de_lucha.json"
     },
     {
       "id": 22,
@@ -47,7 +48,8 @@
       ],
       "sources": [
         "panel_evento.db:eventos"
-      ]
+      ],
+      "data_file": "data/eventos/todos_vs_todos.json"
     },
     {
       "id": 34,
@@ -65,7 +67,8 @@
       ],
       "sources": [
         "panel_evento.db:eventos"
-      ]
+      ],
+      "data_file": "data/eventos/prueba_de_oro.json"
     }
   ]
 }
