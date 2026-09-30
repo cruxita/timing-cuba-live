@@ -5,7 +5,7 @@
     "name": "PRUEBA DE ORO"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-30T07:13:27.848911+00:00",
+  "updated_at": "2026-09-30T07:13:55.451528+00:00",
   "categoria_actual": "U9/10",
   "estilo_actual": "FS",
   "mats": [
@@ -16,7 +16,7 @@
   "pendientes": 48,
   "live_activo": true,
   "live": {
-    "timer": "02:47",
+    "timer": "02:20",
     "red_pts": 2,
     "blue_pts": 0,
     "red_badges": "",
@@ -27,7 +27,7 @@
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1790752407.0354483
+    "updated_at": 1790752434.0692742
   },
   "por_mat": {
     "MAT A": [
@@ -73,7 +73,7 @@
         "orden": 49,
         "public_bout_number": 49,
         "live": {
-          "timer": "02:47",
+          "timer": "02:20",
           "red_pts": 2,
           "blue_pts": 0,
           "red_badges": "",
@@ -84,7 +84,7 @@
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1790752407.0354483
+          "updated_at": 1790752434.0692742
         },
         "display_status": "EN COLCHON"
       },
@@ -109,8 +109,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0050_jeishon_antuan_miranda_gonzalez.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 89,
-          "descanso_texto": "01:29"
+          "descanso_segundos": 62,
+          "descanso_texto": "01:02"
         },
         "blue": {
           "atleta_db_id": 68,
@@ -238,8 +238,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0063_lesdian_antuan_hernandez_serrano.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 89,
-          "descanso_texto": "01:29"
+          "descanso_segundos": 62,
+          "descanso_texto": "01:02"
         },
         "blue": {
           "atleta_db_id": 68,
