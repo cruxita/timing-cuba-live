@@ -1259,8 +1259,23 @@
       "club": "",
       "tag": "CUB",
       "photo": "/fotos_atletas/atleta_0129_ferddy_esteban_tellez_canizares.png"
+    },
+    {
+      "id": 130,
+      "full_name": "ABEL GOVEA GOMEZ",
+      "public_name": "A. GOVEA",
+      "sex": "M",
+      "age_group": "U11/12",
+      "weight": "28",
+      "style": "FS",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "",
+      "club": "",
+      "tag": "CUB",
+      "photo": "/fotos_atletas/atleta_0130_abel_govea_gomez.png"
     }
   ],
-  "count": 84,
-  "updated_at": "2026-09-30T05:03:37.290208+00:00"
+  "count": 85,
+  "updated_at": "2026-09-30T05:28:59.522498+00:00"
 }
