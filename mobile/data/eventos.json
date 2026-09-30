@@ -6,12 +6,12 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-09-29T10:19:48.236548+00:00",
+  "updated_at": "2026-09-30T04:56:27.405976+00:00",
   "current_event": {
-    "id": 5,
-    "name": "FESTIVAL ESCOLAR DE LUCHA"
+    "id": 34,
+    "name": "PRUEBA DE ORO"
   },
-  "count": 2,
+  "count": 3,
   "events": [
     {
       "id": 5,
@@ -19,59 +19,53 @@
       "name": "FESTIVAL ESCOLAR DE LUCHA",
       "date": "30/MAYO/2026",
       "venue": "PONTON",
-      "status": "preparando",
+      "status": "finalizado",
       "event_type": "ranking",
       "ranking_multiplier": 1.0,
-      "active": true,
       "legacy": false,
+      "active": false,
       "systems": [
-        "panel",
-        "round_robin",
-        "champions",
-        "llaves_uww",
-        "cartelera",
-        "clasificacion"
+        "panel"
       ],
       "sources": [
-        "panel_evento.db:eventos",
-        "round_robin.db:rr_divisiones",
-        "champions.db:ch_divisiones",
-        "llaves_uww.db:llaves_eventos",
-        "cartelera_uww.db:categorias",
-        "cartelera_uww.db:mats",
-        "clasificacion_equipos.db:medallas_posiciones",
-        "clasificacion_equipos.db:resultados_combates"
-      ],
-      "classification_level": "municipio",
-      "data_file": "data/eventos/festival_escolar.json"
+        "panel_evento.db:eventos"
+      ]
     },
     {
-      "id": 21,
-      "panel_id": 21,
+      "id": 22,
+      "panel_id": 22,
       "name": "TODOS VS TODOS",
       "date": "",
       "venue": "",
       "status": "finalizado",
       "event_type": "ranking",
       "ranking_multiplier": 1.0,
-      "active": false,
       "legacy": false,
+      "active": false,
       "systems": [
-        "round_robin",
-        "champions",
-        "cartelera",
-        "clasificacion"
+        "panel"
       ],
       "sources": [
-        "round_robin.db:rr_divisiones",
-        "champions.db:ch_divisiones",
-        "cartelera_uww.db:categorias",
-        "cartelera_uww.db:mats",
-        "clasificacion_equipos.db:medallas_posiciones",
-        "clasificacion_equipos.db:resultados_combates"
+        "panel_evento.db:eventos"
+      ]
+    },
+    {
+      "id": 34,
+      "panel_id": 34,
+      "name": "PRUEBA DE ORO",
+      "date": "29/09/2026",
+      "venue": "",
+      "status": "preparando",
+      "event_type": "oficial",
+      "ranking_multiplier": 1.0,
+      "legacy": false,
+      "active": true,
+      "systems": [
+        "panel"
       ],
-      "classification_level": "municipio",
-      "data_file": "data/eventos/todos_vs_todos.json"
+      "sources": [
+        "panel_evento.db:eventos"
+      ]
     }
   ]
 }
