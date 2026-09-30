@@ -1,34 +1,4 @@
 {
-  "version": 1,
-  "source": "Timing Cuba Windows EXE atletas.db",
-  "updated_at": "2026-09-30T04:33:03.572169+00:00",
-  "privacy": {
-    "published_fields": [
-      "full_name",
-      "public_name",
-      "sex",
-      "age_group",
-      "weight",
-      "style",
-      "country",
-      "province",
-      "municipality",
-      "club",
-      "tag",
-      "photo"
-    ],
-    "excluded_fields": [
-      "ci",
-      "telefono",
-      "fecha_nacimiento",
-      "datos_medicos"
-    ]
-  },
-  "summary": {
-    "active_athletes": 55,
-    "photos_copied": 42,
-    "missing_photo_files": 0
-  },
   "athletes": [
     {
       "id": 1,
@@ -403,7 +373,7 @@
       "municipality": "CH",
       "club": "",
       "tag": "CH",
-      "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa.png"
+      "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png"
     },
     {
       "id": 70,
@@ -688,7 +658,7 @@
       "municipality": "CH",
       "club": "",
       "tag": "CH",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0088_kevin_luciano_diaz_kessell.png"
     },
     {
       "id": 89,
@@ -718,7 +688,7 @@
       "municipality": "10O",
       "club": "",
       "tag": "10O",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0090_dayan_reyes_iznaga.png"
     },
     {
       "id": 91,
@@ -763,7 +733,7 @@
       "municipality": "10O",
       "club": "",
       "tag": "10O",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0094_enzo_reinier_diaz_jeanjaque.png"
     },
     {
       "id": 95,
@@ -1078,7 +1048,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0115_jorge_erick_acosta_pena.png"
     },
     {
       "id": 116,
@@ -1093,7 +1063,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0116_junior_lacoste_benitez.png"
     },
     {
       "id": 117,
@@ -1108,7 +1078,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0117_yadier_alejandro_sanchez_borrego.png"
     },
     {
       "id": 118,
@@ -1123,7 +1093,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0118_daychel_martinez_iznaga.png"
     },
     {
       "id": 119,
@@ -1138,7 +1108,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0119_angel_denis_guzman_viliches.png"
     },
     {
       "id": 120,
@@ -1153,7 +1123,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0120_miguel_alejandro_quesada_hultado.png"
     },
     {
       "id": 121,
@@ -1168,7 +1138,7 @@
       "municipality": "CERRO",
       "club": "",
       "tag": "CERRO",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0121_john_navi_alfonso_parra.png"
     },
     {
       "id": 122,
@@ -1183,7 +1153,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0122_leonel_blanco_rodriguez.png"
     },
     {
       "id": 123,
@@ -1198,7 +1168,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0123_yordan_alejandro_romero_galloso.png"
     },
     {
       "id": 124,
@@ -1213,7 +1183,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0124_anthony_pla_alfonso.png"
     },
     {
       "id": 125,
@@ -1228,7 +1198,7 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0125_maicel_jesus_rodriguez_suarez.png"
     },
     {
       "id": 126,
@@ -1243,7 +1213,7 @@
       "municipality": "CERRO",
       "club": "",
       "tag": "CERRO",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0126_jason_eduardo_montoya_martinez.png"
     },
     {
       "id": 127,
@@ -1258,7 +1228,7 @@
       "municipality": "CERRO",
       "club": "",
       "tag": "CERRO",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0127_yariel_martin_gutierrez_jauma.png"
     },
     {
       "id": 128,
@@ -1273,7 +1243,7 @@
       "municipality": "CERRO",
       "club": "",
       "tag": "CERRO",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0128_yainer_vigilio_gutierrez_jauma.png"
     },
     {
       "id": 129,
@@ -1288,8 +1258,9 @@
       "municipality": "",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0129_ferddy_esteban_tellez_canizares.png"
     }
   ],
-  "count": 84
+  "count": 84,
+  "updated_at": "2026-09-30T04:57:59.991921+00:00"
 }
