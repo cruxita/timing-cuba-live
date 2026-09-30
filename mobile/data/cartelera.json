@@ -5,15 +5,15 @@
     "name": "PRUEBA DE ORO"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-09-30T19:16:43.584585+00:00",
+  "updated_at": "2026-09-30T19:17:07.609644+00:00",
   "categoria_actual": "U9/10",
   "estilo_actual": "FS",
   "mats": [
     "MAT A",
     "MAT B"
   ],
-  "total_combates": 56,
-  "pendientes": 37,
+  "total_combates": 60,
+  "pendientes": 31,
   "live_activo": true,
   "live": {
     "timer": "00:00.00",
@@ -70,7 +70,7 @@
         "stage": 3,
         "ready": true,
         "mat": "MAT A",
-        "orden": 49,
+        "orden": 53,
         "public_bout_number": 45,
         "live": {
           "timer": "00:00.00",
@@ -127,7 +127,7 @@
         "stage": 3,
         "ready": true,
         "mat": "MAT A",
-        "orden": 50,
+        "orden": 54,
         "public_bout_number": 46,
         "display_status": "SIGUIENTE"
       },
@@ -170,7 +170,7 @@
         "stage": 12,
         "ready": true,
         "mat": "MAT A",
-        "orden": 53,
+        "orden": 57,
         "public_bout_number": 49,
         "display_status": "EN ESPERA"
       },
@@ -213,7 +213,7 @@
         "stage": 12,
         "ready": true,
         "mat": "MAT A",
-        "orden": 54,
+        "orden": 58,
         "public_bout_number": 50,
         "display_status": "EN ESPERA"
       },
@@ -256,7 +256,7 @@
         "stage": 13,
         "ready": true,
         "mat": "MAT A",
-        "orden": 55,
+        "orden": 59,
         "public_bout_number": 51,
         "display_status": "EN ESPERA"
       },
@@ -299,7 +299,7 @@
         "stage": 13,
         "ready": true,
         "mat": "MAT A",
-        "orden": 56,
+        "orden": 60,
         "public_bout_number": 52,
         "display_status": "EN ESPERA"
       }
