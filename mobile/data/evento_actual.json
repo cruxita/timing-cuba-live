@@ -1,17 +1,9 @@
 {
   "version": 4,
-  "has_public_event": true,
-  "event": {
-    "id": 34,
-    "name": "PRUEBA DE ORO",
-    "event_type": "oficial",
-    "ranking_multiplier": 1.0
-  },
-  "windows_event": {
-    "id": 34,
-    "name": "PRUEBA DE ORO"
-  },
-  "reason": "",
+  "has_public_event": false,
+  "event": null,
+  "windows_event": null,
+  "reason": "No hay evento oficial activo para Mobile.",
   "source": "Timing Cuba Windows - Panel de Eventos",
-  "updated_at": "2026-10-01T16:34:13.038612+00:00"
+  "updated_at": "2026-10-01T17:18:23.934741+00:00"
 }
