@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 39,
     "bouts": 58,
-    "finished_bouts": 53,
+    "finished_bouts": 55,
     "systems": [
       "champions",
       "round_robin",
@@ -1331,7 +1331,7 @@
           "round": 5,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 276,
             "name": "CHRIS BRANDY",
@@ -1368,20 +1368,20 @@
             "public_name": "A. MARTINEZ",
             "photo": "/fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
+          "winner_id": 273,
+          "winner_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+          "victory_type": "PTS",
           "red_score": 0,
-          "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "blue_score": 4,
+          "criterion": "PTS",
+          "winner_master_id": 79
         },
         {
           "id": 383,
           "round": 5,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 275,
             "name": "ARIEL AMAURY GARCIA MARCHENA",
@@ -1418,13 +1418,13 @@
             "public_name": "A. PLA",
             "photo": "/fotos_atletas/atleta_0124_anthony_pla_alfonso.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 275,
+          "winner_name": "ARIEL AMAURY GARCIA MARCHENA",
+          "victory_type": "PTS",
+          "red_score": 5,
           "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "criterion": "PTS",
+          "winner_master_id": 43
         }
       ],
       "group_bouts": [],
@@ -3755,9 +3755,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-01T16:28:51.390568+00:00",
+  "updated_at": "2026-10-01T16:30:33.336271+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-01T16:28:50.055146+00:00",
+  "athlete_identity_updated_at": "2026-10-01T16:30:32.372870+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-01T16:28:51.582163+00:00"
+  "publisher_updated_at": "2026-10-01T16:30:33.496081+00:00"
 }
