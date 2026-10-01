@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 39,
     "bouts": 56,
-    "finished_bouts": 50,
+    "finished_bouts": 52,
     "systems": [
       "champions",
       "round_robin",
@@ -1693,7 +1693,7 @@
           "round": 1,
           "phase": "1/4",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10004,
             "name": "FRANK MARTINEZ LABRADA",
@@ -1730,13 +1730,13 @@
             "public_name": "G. POZO",
             "photo": "/fotos_atletas/atleta_0083_geovany_pozo_santana.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
+          "winner_id": 10004,
+          "winner_name": "FRANK MARTINEZ LABRADA",
+          "victory_type": "PTS",
+          "red_score": 5,
+          "blue_score": 4,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 53
         },
         {
           "id": 4,
@@ -1793,7 +1793,7 @@
           "round": 2,
           "phase": "1/2",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10000,
             "name": "CRISTIAN",
@@ -1830,13 +1830,13 @@
             "public_name": "F. LEROY",
             "photo": "/fotos_atletas/atleta_0074_fabian_leroy_donis.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 10000,
+          "winner_name": "CRISTIAN",
+          "victory_type": "PTS",
+          "red_score": 4,
           "blue_score": 0,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 80
         },
         {
           "id": 6,
@@ -1844,7 +1844,24 @@
           "phase": "1/2",
           "group": "",
           "status": "pendiente",
-          "red": null,
+          "red": {
+            "id": 10004,
+            "name": "FRANK MARTINEZ LABRADA",
+            "full_name": "FRANK MARTINEZ LABRADA",
+            "club": "LA HABANA",
+            "tag": "CH",
+            "draw": 5,
+            "group": "",
+            "athlete_db_id": 53,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "CH",
+            "original_event_name": "FRANK MARTINEZ LABRADA",
+            "identity_method": "atleta_db_id",
+            "master_id": 53,
+            "public_name": "F. MARTINEZ",
+            "photo": "/fotos_atletas/atleta_0053_frank_martinez_labrada.png"
+          },
           "blue": {
             "id": 10006,
             "name": "HANS",
@@ -1877,7 +1894,24 @@
           "phase": "FINAL",
           "group": "",
           "status": "pendiente",
-          "red": null,
+          "red": {
+            "id": 10000,
+            "name": "CRISTIAN",
+            "full_name": "CRISTIAN",
+            "club": "LA HABANA",
+            "tag": "10O",
+            "draw": 1,
+            "group": "",
+            "athlete_db_id": 80,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "10O",
+            "original_event_name": "CRISTIAN",
+            "identity_method": "atleta_db_id",
+            "master_id": 80,
+            "public_name": "C. OFARRILL",
+            "photo": "/fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
+          },
           "blue": null,
           "winner_id": null,
           "winner_name": "",
@@ -3604,9 +3638,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-01T16:25:57.661934+00:00",
+  "updated_at": "2026-10-01T16:27:05.130689+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-01T16:25:56.650576+00:00",
+  "athlete_identity_updated_at": "2026-10-01T16:27:04.102456+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-01T16:25:57.825954+00:00"
+  "publisher_updated_at": "2026-10-01T16:27:05.305446+00:00"
 }
