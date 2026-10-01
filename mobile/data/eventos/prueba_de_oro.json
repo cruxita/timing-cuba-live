@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 39,
     "bouts": 58,
-    "finished_bouts": 56,
+    "finished_bouts": 57,
     "systems": [
       "champions",
       "round_robin",
@@ -1993,7 +1993,7 @@
           "round": 200,
           "phase": "BRONCE-B",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10007,
             "name": "JAYRO",
@@ -2030,13 +2030,13 @@
             "public_name": "F. MARTINEZ",
             "photo": "/fotos_atletas/atleta_0053_frank_martinez_labrada.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 10007,
+          "winner_name": "JAYRO",
+          "victory_type": "PTS",
+          "red_score": 4,
           "blue_score": 0,
           "criterion": "BRONCE",
-          "winner_master_id": null
+          "winner_master_id": 71
         }
       ],
       "group_bouts": [],
@@ -3755,9 +3755,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-01T16:31:19.545710+00:00",
+  "updated_at": "2026-10-01T16:31:51.174102+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-01T16:31:18.469426+00:00",
+  "athlete_identity_updated_at": "2026-10-01T16:31:50.166363+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-01T16:31:19.831743+00:00"
+  "publisher_updated_at": "2026-10-01T16:31:51.334345+00:00"
 }
