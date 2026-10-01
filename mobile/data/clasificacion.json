@@ -3,7 +3,7 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\AppData\\Local\\Timing Cuba\\data\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-09-30T20:15:21.306721+00:00",
+  "updated_at": "2026-10-01T16:24:17.854697+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS",
@@ -114,52 +114,67 @@
     },
     "PRUEBA DE ORO": {
       "evento": "PRUEBA DE ORO",
-      "total_equipos": 3,
+      "total_equipos": 4,
       "equipos": [
         {
           "lugar": 1,
-          "equipo_key": "CUB",
-          "equipo": "CUB",
-          "puntos_combate": 7,
+          "equipo_key": "10O",
+          "equipo": "10O",
+          "puntos_combate": 45,
           "puntos_uww_posicion": 0,
           "puntos_infantil_posicion": 0,
-          "total_uww": 7,
-          "total_infantil": 7,
+          "total_uww": 45,
+          "total_infantil": 45,
           "oro": 0,
           "plata": 0,
           "bronce": 0,
-          "ganados": 2,
-          "perdidos": 2
+          "ganados": 15,
+          "perdidos": 11
         },
         {
           "lugar": 2,
-          "equipo_key": "10O",
-          "equipo": "10O",
-          "puntos_combate": 6,
+          "equipo_key": "CH",
+          "equipo": "CH",
+          "puntos_combate": 36,
           "puntos_uww_posicion": 0,
           "puntos_infantil_posicion": 0,
-          "total_uww": 6,
-          "total_infantil": 6,
+          "total_uww": 36,
+          "total_infantil": 36,
           "oro": 0,
           "plata": 0,
           "bronce": 0,
-          "ganados": 2,
-          "perdidos": 1
+          "ganados": 12,
+          "perdidos": 12
         },
         {
           "lugar": 3,
-          "equipo_key": "CH",
-          "equipo": "CH",
-          "puntos_combate": 6,
+          "equipo_key": "CUB",
+          "equipo": "CUB",
+          "puntos_combate": 13,
           "puntos_uww_posicion": 0,
           "puntos_infantil_posicion": 0,
-          "total_uww": 6,
-          "total_infantil": 6,
+          "total_uww": 13,
+          "total_infantil": 13,
           "oro": 0,
           "plata": 0,
           "bronce": 0,
-          "ganados": 2,
-          "perdidos": 3
+          "ganados": 4,
+          "perdidos": 4
+        },
+        {
+          "lugar": 4,
+          "equipo_key": "HV",
+          "equipo": "HV",
+          "puntos_combate": 0,
+          "puntos_uww_posicion": 0,
+          "puntos_infantil_posicion": 0,
+          "total_uww": 0,
+          "total_infantil": 0,
+          "oro": 0,
+          "plata": 0,
+          "bronce": 0,
+          "ganados": 0,
+          "perdidos": 4
         }
       ]
     }
