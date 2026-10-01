@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 39,
     "bouts": 56,
-    "finished_bouts": 48,
+    "finished_bouts": 50,
     "systems": [
       "champions",
       "round_robin",
@@ -1281,7 +1281,7 @@
           "round": 4,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 274,
             "name": "ANTHONY PLA ALFONSO",
@@ -1318,13 +1318,13 @@
             "public_name": "A. MARTINEZ",
             "photo": "/fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 274,
+          "winner_name": "ANTHONY PLA ALFONSO",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "criterion": "PTS",
+          "winner_master_id": 124
         },
         {
           "id": 382,
@@ -1743,7 +1743,7 @@
           "round": 1,
           "phase": "1/4",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10006,
             "name": "HANS",
@@ -1780,13 +1780,13 @@
             "public_name": "J. BOUSO",
             "photo": "/fotos_atletas/atleta_0071_jayro_bouso_valle.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 10006,
+          "winner_name": "HANS",
+          "victory_type": "PTS",
+          "red_score": 4,
           "blue_score": 0,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 70
         },
         {
           "id": 5,
@@ -1845,7 +1845,24 @@
           "group": "",
           "status": "pendiente",
           "red": null,
-          "blue": null,
+          "blue": {
+            "id": 10006,
+            "name": "HANS",
+            "full_name": "HANS",
+            "club": "LA HABANA",
+            "tag": "10O",
+            "draw": 7,
+            "group": "",
+            "athlete_db_id": 70,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "10O",
+            "original_event_name": "HANS",
+            "identity_method": "atleta_db_id",
+            "master_id": 70,
+            "public_name": "H. PEREZ",
+            "photo": "/fotos_atletas/atleta_0070_hans_perez_felico.png"
+          },
           "winner_id": null,
           "winner_name": "",
           "victory_type": "",
@@ -3587,9 +3604,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-01T16:24:53.530542+00:00",
+  "updated_at": "2026-10-01T16:25:57.661934+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-01T16:24:52.082466+00:00",
+  "athlete_identity_updated_at": "2026-10-01T16:25:56.650576+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-01T16:24:53.667585+00:00"
+  "publisher_updated_at": "2026-10-01T16:25:57.825954+00:00"
 }
