@@ -3,11 +3,11 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\AppData\\Local\\Timing Cuba\\data\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-10-01T17:41:06.860596+00:00",
+  "updated_at": "2026-10-02T15:47:32.096561+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS",
-    "PRUEBA DE ORO"
+    "LAST PROF"
   ],
   "clasificaciones_por_evento": {
     "FESTIVAL ESCOLAR DE LUCHA": {
@@ -112,71 +112,10 @@
         }
       ]
     },
-    "PRUEBA DE ORO": {
-      "evento": "PRUEBA DE ORO",
-      "total_equipos": 4,
-      "equipos": [
-        {
-          "lugar": 1,
-          "equipo_key": "10O",
-          "equipo": "10O",
-          "puntos_combate": 64,
-          "puntos_uww_posicion": 0,
-          "puntos_infantil_posicion": 0,
-          "total_uww": 64,
-          "total_infantil": 64,
-          "oro": 0,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 21,
-          "perdidos": 16
-        },
-        {
-          "lugar": 2,
-          "equipo_key": "CH",
-          "equipo": "CH",
-          "puntos_combate": 42,
-          "puntos_uww_posicion": 0,
-          "puntos_infantil_posicion": 0,
-          "total_uww": 42,
-          "total_infantil": 42,
-          "oro": 0,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 14,
-          "perdidos": 15
-        },
-        {
-          "lugar": 3,
-          "equipo_key": "CUB",
-          "equipo": "CUB",
-          "puntos_combate": 16,
-          "puntos_uww_posicion": 0,
-          "puntos_infantil_posicion": 0,
-          "total_uww": 16,
-          "total_infantil": 16,
-          "oro": 0,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 5,
-          "perdidos": 5
-        },
-        {
-          "lugar": 4,
-          "equipo_key": "HV",
-          "equipo": "HV",
-          "puntos_combate": 3,
-          "puntos_uww_posicion": 0,
-          "puntos_infantil_posicion": 0,
-          "total_uww": 3,
-          "total_infantil": 3,
-          "oro": 0,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 1,
-          "perdidos": 5
-        }
-      ]
+    "LAST PROF": {
+      "evento": "LAST PROF",
+      "total_equipos": 0,
+      "equipos": []
     }
   }
 }
