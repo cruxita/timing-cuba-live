@@ -1,9 +1,17 @@
 {
   "version": 4,
-  "has_public_event": false,
-  "event": null,
-  "windows_event": null,
-  "reason": "No hay evento oficial activo para Mobile.",
+  "has_public_event": true,
+  "event": {
+    "id": 36,
+    "name": "LAST PROF",
+    "event_type": "oficial",
+    "ranking_multiplier": 1.0
+  },
+  "windows_event": {
+    "id": 36,
+    "name": "LAST PROF"
+  },
+  "reason": "",
   "source": "Timing Cuba Windows - Panel de Eventos",
-  "updated_at": "2026-10-01T17:41:06.012041+00:00"
+  "updated_at": "2026-10-02T15:47:31.620062+00:00"
 }
