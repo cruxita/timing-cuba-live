@@ -6,8 +6,11 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-10-01T17:41:06.012041+00:00",
-  "current_event": null,
+  "updated_at": "2026-10-02T15:47:31.620062+00:00",
+  "current_event": {
+    "id": 36,
+    "name": "LAST PROF"
+  },
   "count": 3,
   "events": [
     {
@@ -49,23 +52,22 @@
       "data_file": "data/eventos/todos_vs_todos.json"
     },
     {
-      "id": 34,
-      "panel_id": 34,
-      "name": "PRUEBA DE ORO",
-      "date": "29/09/2026",
+      "id": 36,
+      "panel_id": 36,
+      "name": "LAST PROF",
+      "date": "",
       "venue": "",
-      "status": "finalizado",
+      "status": "preparando",
       "event_type": "oficial",
       "ranking_multiplier": 1.0,
       "legacy": false,
-      "active": false,
+      "active": true,
       "systems": [
         "panel"
       ],
       "sources": [
         "panel_evento.db:eventos"
-      ],
-      "data_file": "data/eventos/prueba_de_oro.json"
+      ]
     }
   ]
 }
