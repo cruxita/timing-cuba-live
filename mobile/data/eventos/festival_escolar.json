@@ -750,7 +750,7 @@
           "identity_method": "nombre_completo",
           "master_id": 69,
           "public_name": "C. NOA",
-          "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa.png"
+          "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png"
         },
         {
           "id": 101,
@@ -881,7 +881,7 @@
             "identity_method": "nombre_completo",
             "master_id": 69,
             "public_name": "C. NOA",
-            "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa.png"
+            "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png"
           },
           "blue": {
             "id": 102,
@@ -949,7 +949,7 @@
             "identity_method": "nombre_completo",
             "master_id": 69,
             "public_name": "C. NOA",
-            "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa.png"
+            "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png"
           },
           "winner_id": 96,
           "winner_name": "LESMAILIE COCA DANGER",
@@ -1099,7 +1099,7 @@
             "identity_method": "nombre_completo",
             "master_id": 69,
             "public_name": "C. NOA",
-            "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa.png"
+            "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png"
           },
           "winner_id": 98,
           "winner_name": "ALDIEL MARIN GONZALEZ",
@@ -2651,12 +2651,12 @@
           "draw": 2,
           "group": "",
           "athlete_db_id": null,
-          "country": "CUB",
-          "province": "LA HABANA",
-          "municipality": "10O",
+          "country": "",
+          "province": "",
+          "municipality": "",
           "original_event_name": "ENZO",
-          "identity_method": "nombre_completo",
-          "master_id": 94,
+          "identity_method": "",
+          "master_id": null,
           "public_name": "ENZO",
           "photo": ""
         }
@@ -2677,7 +2677,7 @@
             "name": "ENZO",
             "team": "10O",
             "position": 2,
-            "master_id": 94,
+            "master_id": null,
             "public_name": "ENZO",
             "photo": ""
           }
@@ -2718,12 +2718,12 @@
             "draw": 2,
             "group": "",
             "athlete_db_id": null,
-            "country": "CUB",
-            "province": "LA HABANA",
-            "municipality": "10O",
+            "country": "",
+            "province": "",
+            "municipality": "",
             "original_event_name": "ENZO",
-            "identity_method": "nombre_completo",
-            "master_id": 94,
+            "identity_method": "",
+            "master_id": null,
             "public_name": "ENZO",
             "photo": ""
           },
@@ -2743,9 +2743,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-09-22T09:39:16.101934+00:00",
+  "updated_at": "2026-10-04T21:01:32.050589+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-09-22T09:39:14.787481+00:00",
+  "athlete_identity_updated_at": "2026-10-04T21:01:30.461803+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-09-30T04:33:05.435698+00:00"
+  "publisher_updated_at": "2026-10-04T21:01:32.262597+00:00"
 }
