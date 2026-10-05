@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-05T20:01:49.778657+00:00",
+  "updated_at": "2026-10-05T20:02:17.248028+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -16,7 +16,7 @@
   "pendientes": 29,
   "live_activo": true,
   "live": {
-    "timer": "03:50",
+    "timer": "03:23",
     "red_pts": 0,
     "blue_pts": 0,
     "red_badges": "",
@@ -27,7 +27,7 @@
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1791230509.0506213
+    "updated_at": 1791230536.5619118
   },
   "por_mat": {
     "MAT A": [
@@ -52,8 +52,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1020,
-          "descanso_texto": "17:00"
+          "descanso_segundos": 993,
+          "descanso_texto": "16:33"
         },
         "blue": {
           "atleta_db_id": 73,
@@ -64,8 +64,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 984,
-          "descanso_texto": "16:24"
+          "descanso_segundos": 957,
+          "descanso_texto": "15:57"
         },
         "stage": 3,
         "ready": true,
@@ -73,7 +73,7 @@
         "orden": 20,
         "public_bout_number": 20,
         "live": {
-          "timer": "03:50",
+          "timer": "03:23",
           "red_pts": 0,
           "blue_pts": 0,
           "red_badges": "",
@@ -84,7 +84,7 @@
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1791230509.0506213
+          "updated_at": 1791230536.5619118
         },
         "display_status": "EN COLCHON"
       },
@@ -121,8 +121,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1020,
-          "descanso_texto": "17:00"
+          "descanso_segundos": 993,
+          "descanso_texto": "16:33"
         },
         "stage": 200,
         "ready": true,
@@ -164,8 +164,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0070_hans_perez_felico.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 984,
-          "descanso_texto": "16:24"
+          "descanso_segundos": 957,
+          "descanso_texto": "15:57"
         },
         "stage": 200,
         "ready": true,
