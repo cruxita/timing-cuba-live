@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-05T20:18:35.093158+00:00",
+  "updated_at": "2026-10-05T20:19:01.633570+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -51,9 +51,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
-          "descanso_en_curso": true,
-          "descanso_segundos": 15,
-          "descanso_texto": "00:15"
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
         },
         "blue": {
           "atleta_db_id": 73,
@@ -120,9 +120,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
-          "descanso_en_curso": true,
-          "descanso_segundos": 15,
-          "descanso_texto": "00:15"
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
         },
         "stage": 200,
         "ready": true,
