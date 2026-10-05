@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-05T16:32:39.462321+00:00",
+  "updated_at": "2026-10-05T16:33:19.080167+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
@@ -39,8 +39,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 339,
-          "descanso_texto": "05:39"
+          "descanso_segundos": 300,
+          "descanso_texto": "05:00"
         },
         "blue": {
           "atleta_db_id": 106,
