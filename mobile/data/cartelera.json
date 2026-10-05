@@ -5,15 +5,15 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-05T19:59:34.956402+00:00",
+  "updated_at": "2026-10-05T20:00:00.056230+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
     "MAT A",
     "MAT B"
   ],
-  "total_combates": 45,
-  "pendientes": 27,
+  "total_combates": 47,
+  "pendientes": 29,
   "live_activo": false,
   "live": {},
   "por_mat": {
@@ -39,8 +39,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1155,
-          "descanso_texto": "19:15"
+          "descanso_segundos": 1130,
+          "descanso_texto": "18:50"
         },
         "blue": {
           "atleta_db_id": 73,
@@ -51,8 +51,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1119,
-          "descanso_texto": "18:39"
+          "descanso_segundos": 1094,
+          "descanso_texto": "18:14"
         },
         "stage": 3,
         "ready": true,
@@ -60,6 +60,92 @@
         "orden": 20,
         "public_bout_number": 20,
         "display_status": "SIGUIENTE"
+      },
+      {
+        "sistema": "Llaves UWW",
+        "division_key": "ll:36:FS|U13/15|35",
+        "bout_key": "bout:9",
+        "source_key": "Llaves UWW|ll:36:FS|U13/15|35|bout:9",
+        "estilo": "FS",
+        "categoria": "U13/15",
+        "peso": "35",
+        "fase": "BRONCE-A",
+        "source_status": "pendiente",
+        "finalizado": false,
+        "activo": false,
+        "red": {
+          "atleta_db_id": 90,
+          "nombre": "D. REYES",
+          "nombre_descanso": "DAYAN REYES IZNAGA",
+          "tag": "10O",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0090_dayan_reyes_iznaga.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "blue": {
+          "atleta_db_id": 79,
+          "nombre": "A. MARTINEZ",
+          "nombre_descanso": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+          "tag": "HV",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
+          "descanso_en_curso": true,
+          "descanso_segundos": 1130,
+          "descanso_texto": "18:50"
+        },
+        "stage": 200,
+        "ready": true,
+        "mat": "MAT A",
+        "orden": 22,
+        "public_bout_number": 46,
+        "display_status": "EN ESPERA"
+      },
+      {
+        "sistema": "Llaves UWW",
+        "division_key": "ll:36:FS|U13/15|35",
+        "bout_key": "bout:10",
+        "source_key": "Llaves UWW|ll:36:FS|U13/15|35|bout:10",
+        "estilo": "FS",
+        "categoria": "U13/15",
+        "peso": "35",
+        "fase": "BRONCE-B",
+        "source_status": "pendiente",
+        "finalizado": false,
+        "activo": false,
+        "red": {
+          "atleta_db_id": 53,
+          "nombre": "F. MARTINEZ",
+          "nombre_descanso": "FRANK MARTINEZ LABRADA",
+          "tag": "CH",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0053_frank_martinez_labrada.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "blue": {
+          "atleta_db_id": 70,
+          "nombre": "H. PEREZ",
+          "nombre_descanso": "HANS PEREZ FELICO",
+          "tag": "10O",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0070_hans_perez_felico.png",
+          "descanso_en_curso": true,
+          "descanso_segundos": 1094,
+          "descanso_texto": "18:14"
+        },
+        "stage": 200,
+        "ready": true,
+        "mat": "MAT A",
+        "orden": 23,
+        "public_bout_number": 47,
+        "display_status": "EN ESPERA"
       },
       {
         "sistema": "Llaves UWW",
@@ -100,7 +186,7 @@
         "stage": 3,
         "ready": true,
         "mat": "MAT A",
-        "orden": 28,
+        "orden": 30,
         "public_bout_number": 28,
         "display_status": "EN ESPERA"
       },
@@ -143,7 +229,7 @@
         "stage": 200,
         "ready": true,
         "mat": "MAT A",
-        "orden": 32,
+        "orden": 34,
         "public_bout_number": 45,
         "display_status": "EN ESPERA"
       },
@@ -186,7 +272,7 @@
         "stage": 3,
         "ready": true,
         "mat": "MAT A",
-        "orden": 36,
+        "orden": 38,
         "public_bout_number": 33,
         "display_status": "EN ESPERA"
       }
@@ -317,7 +403,7 @@
         "stage": 1,
         "ready": true,
         "mat": "MAT B",
-        "orden": 33,
+        "orden": 35,
         "public_bout_number": 30,
         "display_status": "EN ESPERA"
       },
@@ -360,7 +446,7 @@
         "stage": 11,
         "ready": true,
         "mat": "MAT B",
-        "orden": 37,
+        "orden": 39,
         "public_bout_number": 34,
         "display_status": "EN ESPERA"
       },
