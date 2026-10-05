@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 36,
-    "finished_bouts": 9,
+    "finished_bouts": 10,
     "systems": [
       "champions",
       "llaves_uww",
@@ -2282,7 +2282,7 @@
           "round": 2,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 283,
             "name": "DADIER YANES FAJARDO",
@@ -2319,13 +2319,13 @@
             "public_name": "D. CALMOUSE",
             "photo": ""
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 283,
+          "winner_name": "DADIER YANES FAJARDO",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "criterion": "PTS",
+          "winner_master_id": 105
         },
         {
           "id": 387,
@@ -2385,9 +2385,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T16:18:00.703166+00:00",
+  "updated_at": "2026-10-05T16:19:26.706763+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T16:18:00.068653+00:00",
+  "athlete_identity_updated_at": "2026-10-05T16:19:25.941043+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T16:18:00.747456+00:00"
+  "publisher_updated_at": "2026-10-05T16:19:26.769160+00:00"
 }
