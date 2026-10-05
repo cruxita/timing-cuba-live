@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 36,
-    "finished_bouts": 14,
+    "finished_bouts": 15,
     "systems": [
       "champions",
       "llaves_uww",
@@ -1235,7 +1235,7 @@
           "round": 1,
           "phase": "1/4",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10015,
             "name": "GEOVANY",
@@ -1272,13 +1272,13 @@
             "public_name": "H. PEREZ",
             "photo": "/fotos_atletas/atleta_0070_hans_perez_felico.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
+          "winner_id": 10016,
+          "winner_name": "HANS",
+          "victory_type": "PTS",
+          "red_score": 2,
+          "blue_score": 4,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 70
         },
         {
           "id": 6,
@@ -1337,7 +1337,24 @@
             "public_name": "E. DIAZ",
             "photo": "/fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png"
           },
-          "blue": null,
+          "blue": {
+            "id": 10016,
+            "name": "HANS",
+            "full_name": "HANS",
+            "club": "LA HABANA",
+            "tag": "10O",
+            "draw": 9,
+            "group": "",
+            "athlete_db_id": 70,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "10O",
+            "original_event_name": "HANS",
+            "identity_method": "atleta_db_id",
+            "master_id": 70,
+            "public_name": "H. PEREZ",
+            "photo": "/fotos_atletas/atleta_0070_hans_perez_felico.png"
+          },
           "winner_id": null,
           "winner_name": "",
           "victory_type": "",
@@ -2436,9 +2453,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T19:43:00.370162+00:00",
+  "updated_at": "2026-10-05T19:43:57.226260+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T19:42:59.805876+00:00",
+  "athlete_identity_updated_at": "2026-10-05T19:43:56.665328+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T19:43:00.408743+00:00"
+  "publisher_updated_at": "2026-10-05T19:43:57.274720+00:00"
 }
