@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-05T18:03:28.192849+00:00",
+  "updated_at": "2026-10-05T18:03:56.357982+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
@@ -175,13 +175,16 @@
         "finalizado": false,
         "activo": false,
         "red": {
-          "atleta_db_id": null,
-          "nombre": "POR DEFINIR",
-          "nombre_descanso": "POR DEFINIR",
-          "tag": "",
-          "pais": "",
-          "provincia": "",
-          "foto": ""
+          "atleta_db_id": 115,
+          "nombre": "J. ACOSTA",
+          "nombre_descanso": "JORGE ERICK ACOSTA PEÑA",
+          "tag": "CUB",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0115_jorge_erick_acosta_pena.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
         },
         "blue": {
           "atleta_db_id": 52,
@@ -196,11 +199,11 @@
           "descanso_texto": ""
         },
         "stage": 200,
-        "ready": false,
+        "ready": true,
         "mat": "MAT A",
         "orden": 31,
         "public_bout_number": 44,
-        "display_status": "POR DEFINIR"
+        "display_status": "EN ESPERA"
       },
       {
         "sistema": "Llaves UWW",
