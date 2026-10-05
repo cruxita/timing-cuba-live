@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-05T16:48:04.669687+00:00",
+  "updated_at": "2026-10-05T16:49:15.554074+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
@@ -168,8 +168,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0115_jorge_erick_acosta_pena.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1181,
-          "descanso_texto": "19:41"
+          "descanso_segundos": 1110,
+          "descanso_texto": "18:30"
         },
         "blue": {
           "atleta_db_id": 71,
@@ -180,8 +180,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0071_jayro_bouso_valle.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1181,
-          "descanso_texto": "19:41"
+          "descanso_segundos": 1110,
+          "descanso_texto": "18:30"
         },
         "stage": 100,
         "ready": true,
