@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 33,
-    "finished_bouts": 6,
+    "finished_bouts": 7,
     "systems": [
       "champions",
       "llaves_uww",
@@ -1713,7 +1713,7 @@
           "round": 1,
           "phase": "1/4",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10024,
             "name": "RAINER MUÑOZ ROQUE",
@@ -1750,13 +1750,13 @@
             "public_name": "R. TITO",
             "photo": ""
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
+          "winner_id": 10025,
+          "winner_name": "RANDY",
+          "victory_type": "PTS",
+          "red_score": 1,
+          "blue_score": 4,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 86
         },
         {
           "id": 6,
@@ -1832,7 +1832,24 @@
             "public_name": "M. GUTIERREZ",
             "photo": "/fotos_atletas/atleta_0065_maykol_ledsuy_gutierrez_hernandez.png"
           },
-          "blue": null,
+          "blue": {
+            "id": 10025,
+            "name": "RANDY",
+            "full_name": "RANDY",
+            "club": "LA HABANA",
+            "tag": "10O",
+            "draw": 9,
+            "group": "",
+            "athlete_db_id": 86,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "10O",
+            "original_event_name": "RANDY",
+            "identity_method": "atleta_db_id",
+            "master_id": 86,
+            "public_name": "R. TITO",
+            "photo": ""
+          },
           "winner_id": null,
           "winner_name": "",
           "victory_type": "",
@@ -2201,9 +2218,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T15:24:17.508949+00:00",
+  "updated_at": "2026-10-05T15:24:54.299848+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T15:24:16.922603+00:00",
+  "athlete_identity_updated_at": "2026-10-05T15:24:53.433828+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T15:24:17.544541+00:00"
+  "publisher_updated_at": "2026-10-05T15:24:54.340740+00:00"
 }
