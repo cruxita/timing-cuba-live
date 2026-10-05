@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 36,
-    "finished_bouts": 11,
+    "finished_bouts": 12,
     "systems": [
       "champions",
       "llaves_uww",
@@ -1963,7 +1963,7 @@
           "round": 200,
           "phase": "BRONCE-A",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10018,
             "name": "JORGE ERICK ACOSTA PEÑA",
@@ -2000,13 +2000,13 @@
             "public_name": "M. ORTIZ",
             "photo": "/fotos_atletas/atleta_0052_matteo_ortiz_arriete.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
+          "winner_id": 10021,
+          "winner_name": "MATTEO ORTIZ ARRIETE",
+          "victory_type": "PTS",
           "red_score": 0,
-          "blue_score": 0,
+          "blue_score": 2,
           "criterion": "BRONCE",
-          "winner_master_id": null
+          "winner_master_id": 52
         },
         {
           "id": 11,
@@ -2402,9 +2402,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T18:10:09.389992+00:00",
+  "updated_at": "2026-10-05T18:10:51.291019+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T18:10:08.874474+00:00",
+  "athlete_identity_updated_at": "2026-10-05T18:10:50.676614+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T18:10:09.432488+00:00"
+  "publisher_updated_at": "2026-10-05T18:10:51.340481+00:00"
 }
