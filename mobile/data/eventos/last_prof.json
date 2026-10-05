@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 36,
-    "finished_bouts": 15,
+    "finished_bouts": 16,
     "systems": [
       "champions",
       "llaves_uww",
@@ -1085,7 +1085,7 @@
           "round": 1,
           "phase": "1/4",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10008,
             "name": "ALEJANDRO MANUEL GONZALEZ RICARDO",
@@ -1122,13 +1122,13 @@
             "public_name": "A. MARTINEZ",
             "photo": "/fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
+          "winner_id": 10009,
+          "winner_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+          "victory_type": "PTS",
           "red_score": 0,
-          "blue_score": 0,
+          "blue_score": 2,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 79
         },
         {
           "id": 3,
@@ -1286,7 +1286,24 @@
           "phase": "1/2",
           "group": "",
           "status": "pendiente",
-          "red": null,
+          "red": {
+            "id": 10009,
+            "name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "full_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "club": "LA HABANA",
+            "tag": "HV",
+            "draw": 2,
+            "group": "",
+            "athlete_db_id": 79,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "HV",
+            "original_event_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "identity_method": "atleta_db_id",
+            "master_id": 79,
+            "public_name": "A. MARTINEZ",
+            "photo": "/fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
+          },
           "blue": {
             "id": 10011,
             "name": "CRISTIAN",
@@ -2453,9 +2470,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T19:43:57.226260+00:00",
+  "updated_at": "2026-10-05T19:48:59.881489+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T19:43:56.665328+00:00",
+  "athlete_identity_updated_at": "2026-10-05T19:48:59.225067+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T19:43:57.274720+00:00"
+  "publisher_updated_at": "2026-10-05T19:48:59.912416+00:00"
 }
