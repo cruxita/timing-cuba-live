@@ -2,7 +2,7 @@
   "version": 1,
   "source": "Timing Cuba Windows",
   "logic": "ranking_atletas.py",
-  "updated_at": "2026-10-05T15:11:31.839850+00:00",
+  "updated_at": "2026-10-05T15:12:03.639971+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS"
