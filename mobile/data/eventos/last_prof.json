@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 36,
-    "finished_bouts": 17,
+    "finished_bouts": 18,
     "systems": [
       "champions",
       "llaves_uww",
@@ -1285,7 +1285,7 @@
           "round": 2,
           "phase": "1/2",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10009,
             "name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
@@ -1322,13 +1322,13 @@
             "public_name": "C. OFARRILL",
             "photo": "/fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
+          "winner_id": 10011,
+          "winner_name": "CRISTIAN",
+          "victory_type": "PTS",
           "red_score": 0,
-          "blue_score": 0,
+          "blue_score": 2,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 80
         },
         {
           "id": 7,
@@ -1386,7 +1386,24 @@
           "phase": "FINAL",
           "group": "",
           "status": "pendiente",
-          "red": null,
+          "red": {
+            "id": 10011,
+            "name": "CRISTIAN",
+            "full_name": "CRISTIAN",
+            "club": "LA HABANA",
+            "tag": "10O",
+            "draw": 4,
+            "group": "",
+            "athlete_db_id": 80,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "10O",
+            "original_event_name": "CRISTIAN",
+            "identity_method": "atleta_db_id",
+            "master_id": 80,
+            "public_name": "C. OFARRILL",
+            "photo": "/fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
+          },
           "blue": {
             "id": 10013,
             "name": "ERIT MANUEL",
@@ -2487,9 +2504,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T19:58:44.003301+00:00",
+  "updated_at": "2026-10-05T19:59:09.260460+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T19:58:43.417736+00:00",
+  "athlete_identity_updated_at": "2026-10-05T19:59:08.695606+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T19:58:44.035520+00:00"
+  "publisher_updated_at": "2026-10-05T19:59:09.297721+00:00"
 }
