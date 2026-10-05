@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 36,
-    "finished_bouts": 12,
+    "finished_bouts": 13,
     "systems": [
       "champions",
       "llaves_uww",
@@ -1035,7 +1035,7 @@
           "round": 0,
           "phase": "QUAL",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10009,
             "name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
@@ -1072,13 +1072,13 @@
             "public_name": "A. PLA",
             "photo": "/fotos_atletas/atleta_0124_anthony_pla_alfonso.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 10009,
+          "winner_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
           "criterion": "QUAL",
-          "winner_master_id": null
+          "winner_master_id": 79
         },
         {
           "id": 2,
@@ -1104,7 +1104,24 @@
             "public_name": "A. GONZALEZ",
             "photo": ""
           },
-          "blue": null,
+          "blue": {
+            "id": 10009,
+            "name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "full_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "club": "LA HABANA",
+            "tag": "HV",
+            "draw": 2,
+            "group": "",
+            "athlete_db_id": 79,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "HV",
+            "original_event_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+            "identity_method": "atleta_db_id",
+            "master_id": 79,
+            "public_name": "A. MARTINEZ",
+            "photo": "/fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
+          },
           "winner_id": null,
           "winner_name": "",
           "victory_type": "",
@@ -2402,9 +2419,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T18:11:24.969338+00:00",
+  "updated_at": "2026-10-05T18:11:54.425265+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T18:11:24.397782+00:00",
+  "athlete_identity_updated_at": "2026-10-05T18:11:53.844915+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T18:11:25.003080+00:00"
+  "publisher_updated_at": "2026-10-05T18:11:54.467830+00:00"
 }
