@@ -1964,7 +1964,24 @@
           "phase": "BRONCE-A",
           "group": "",
           "status": "pendiente",
-          "red": null,
+          "red": {
+            "id": 10018,
+            "name": "JORGE ERICK ACOSTA PEÑA",
+            "full_name": "JORGE ERICK ACOSTA PEÑA",
+            "club": "LA HABANA",
+            "tag": "CUB",
+            "draw": 2,
+            "group": "",
+            "athlete_db_id": 115,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "",
+            "original_event_name": "JORGE ERICK ACOSTA PEÑA",
+            "identity_method": "atleta_db_id",
+            "master_id": 115,
+            "public_name": "J. ACOSTA",
+            "photo": "/fotos_atletas/atleta_0115_jorge_erick_acosta_pena.png"
+          },
           "blue": {
             "id": 10021,
             "name": "MATTEO ORTIZ ARRIETE",
@@ -2385,9 +2402,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T18:03:28.373816+00:00",
+  "updated_at": "2026-10-05T18:03:56.535274+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T18:03:27.757390+00:00",
+  "athlete_identity_updated_at": "2026-10-05T18:03:55.871504+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T18:03:28.413816+00:00"
+  "publisher_updated_at": "2026-10-05T18:03:56.588106+00:00"
 }
