@@ -5,8 +5,8 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-05T20:01:22.431065+00:00",
-  "categoria_actual": "U11/12",
+  "updated_at": "2026-10-05T20:01:49.778657+00:00",
+  "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
     "MAT A",
@@ -14,8 +14,21 @@
   ],
   "total_combates": 47,
   "pendientes": 29,
-  "live_activo": false,
-  "live": {},
+  "live_activo": true,
+  "live": {
+    "timer": "03:50",
+    "red_pts": 0,
+    "blue_pts": 0,
+    "red_badges": "",
+    "blue_badges": "",
+    "highlight_win": "",
+    "highlight_adv": "",
+    "highlight_tied": true,
+    "activity_side": "",
+    "activity_left": null,
+    "mode": "fight",
+    "updated_at": 1791230509.0506213
+  },
   "por_mat": {
     "MAT A": [
       {
@@ -29,7 +42,7 @@
         "fase": "FINAL",
         "source_status": "pendiente",
         "finalizado": false,
-        "activo": false,
+        "activo": true,
         "red": {
           "atleta_db_id": 80,
           "nombre": "C. OFARRILL",
@@ -39,8 +52,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1049,
-          "descanso_texto": "17:29"
+          "descanso_segundos": 1020,
+          "descanso_texto": "17:00"
         },
         "blue": {
           "atleta_db_id": 73,
@@ -51,15 +64,29 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0073_erit_manuel_diaz_perez.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1013,
-          "descanso_texto": "16:53"
+          "descanso_segundos": 984,
+          "descanso_texto": "16:24"
         },
         "stage": 3,
         "ready": true,
         "mat": "MAT A",
         "orden": 20,
         "public_bout_number": 20,
-        "display_status": "SIGUIENTE"
+        "live": {
+          "timer": "03:50",
+          "red_pts": 0,
+          "blue_pts": 0,
+          "red_badges": "",
+          "blue_badges": "",
+          "highlight_win": "",
+          "highlight_adv": "",
+          "highlight_tied": true,
+          "activity_side": "",
+          "activity_left": null,
+          "mode": "fight",
+          "updated_at": 1791230509.0506213
+        },
+        "display_status": "EN COLCHON"
       },
       {
         "sistema": "Llaves UWW",
@@ -94,15 +121,15 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1049,
-          "descanso_texto": "17:29"
+          "descanso_segundos": 1020,
+          "descanso_texto": "17:00"
         },
         "stage": 200,
         "ready": true,
         "mat": "MAT A",
         "orden": 22,
         "public_bout_number": 46,
-        "display_status": "EN ESPERA"
+        "display_status": "SIGUIENTE"
       },
       {
         "sistema": "Llaves UWW",
@@ -137,8 +164,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0070_hans_perez_felico.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1013,
-          "descanso_texto": "16:53"
+          "descanso_segundos": 984,
+          "descanso_texto": "16:24"
         },
         "stage": 200,
         "ready": true,
