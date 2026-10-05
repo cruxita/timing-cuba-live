@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-05T18:11:54.261089+00:00",
+  "updated_at": "2026-10-05T18:12:23.064027+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
@@ -66,8 +66,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 1176,
-          "descanso_texto": "19:36"
+          "descanso_segundos": 1146,
+          "descanso_texto": "19:06"
         },
         "stage": 1,
         "ready": true,
