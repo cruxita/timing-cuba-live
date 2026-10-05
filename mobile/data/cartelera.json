@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-05T16:21:05.428073+00:00",
+  "updated_at": "2026-10-05T16:21:42.767875+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
@@ -14,23 +14,8 @@
   ],
   "total_combates": 45,
   "pendientes": 35,
-  "live_activo": true,
-  "live": {
-    "timer": "00:00",
-    "red_pts": 4,
-    "blue_pts": 2,
-    "red_badges": "",
-    "blue_badges": "",
-    "highlight_win": "",
-    "highlight_adv": "",
-    "highlight_tied": false,
-    "activity_side": "",
-    "activity_left": null,
-    "mode": "EN VIVO",
-    "updated_at": 1791182167.6368878,
-    "remote_clock": true,
-    "reloj_corriendo": true
-  },
+  "live_activo": false,
+  "live": {},
   "por_mat": {
     "MAT A": [
       {
@@ -54,8 +39,8 @@
           "provincia": "LA HABANA",
           "foto": "",
           "descanso_en_curso": true,
-          "descanso_segundos": 1033,
-          "descanso_texto": "17:13"
+          "descanso_segundos": 996,
+          "descanso_texto": "16:36"
         },
         "blue": {
           "atleta_db_id": 106,
@@ -298,7 +283,7 @@
         "fase": "1/4",
         "source_status": "pendiente",
         "finalizado": false,
-        "activo": true,
+        "activo": false,
         "red": {
           "atleta_db_id": 61,
           "nombre": "E. ABREU",
@@ -328,65 +313,6 @@
         "mat": "MAT B",
         "orden": 7,
         "public_bout_number": 7,
-        "live": {
-          "timer": "00:00",
-          "red_pts": 4,
-          "blue_pts": 2,
-          "red_badges": "",
-          "blue_badges": "",
-          "highlight_win": "",
-          "highlight_adv": "",
-          "highlight_tied": false,
-          "activity_side": "",
-          "activity_left": null,
-          "mode": "EN VIVO",
-          "updated_at": 1791182167.6368878,
-          "remote_clock": true,
-          "reloj_corriendo": true
-        },
-        "display_status": "EN COLCHON"
-      },
-      {
-        "sistema": "Llaves UWW",
-        "division_key": "ll:36:FS|U11/12|32",
-        "bout_key": "bout:2",
-        "source_key": "Llaves UWW|ll:36:FS|U11/12|32|bout:2",
-        "estilo": "FS",
-        "categoria": "U11/12",
-        "peso": "32",
-        "fase": "1/4",
-        "source_status": "pendiente",
-        "finalizado": false,
-        "activo": false,
-        "red": {
-          "atleta_db_id": 96,
-          "nombre": "J. FLORES",
-          "nombre_descanso": "JHON CESAR FLORES TORRES",
-          "tag": "CUB",
-          "pais": "CUB",
-          "provincia": "CUB",
-          "foto": "fotos_atletas/atleta_0096_jhon_cesar_flores_torres.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "blue": {
-          "atleta_db_id": 121,
-          "nombre": "J. ALFONSO",
-          "nombre_descanso": "JOHN NAVI ALFONSO PARRA",
-          "tag": "CERRO",
-          "pais": "CUB",
-          "provincia": "LA HABANA",
-          "foto": "fotos_atletas/atleta_0121_john_navi_alfonso_parra.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "stage": 1,
-        "ready": true,
-        "mat": "MAT B",
-        "orden": 8,
-        "public_bout_number": 8,
         "display_status": "SIGUIENTE"
       },
       {
@@ -516,6 +442,49 @@
         "mat": "MAT B",
         "orden": 37,
         "public_bout_number": 34,
+        "display_status": "EN ESPERA"
+      },
+      {
+        "sistema": "Llaves UWW",
+        "division_key": "ll:36:FS|U11/12|32",
+        "bout_key": "bout:2",
+        "source_key": "Llaves UWW|ll:36:FS|U11/12|32|bout:2",
+        "estilo": "FS",
+        "categoria": "U11/12",
+        "peso": "32",
+        "fase": "1/4",
+        "source_status": "pendiente",
+        "finalizado": false,
+        "activo": false,
+        "red": {
+          "atleta_db_id": 96,
+          "nombre": "J. FLORES",
+          "nombre_descanso": "JHON CESAR FLORES TORRES",
+          "tag": "CUB",
+          "pais": "CUB",
+          "provincia": "CUB",
+          "foto": "fotos_atletas/atleta_0096_jhon_cesar_flores_torres.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "blue": {
+          "atleta_db_id": 121,
+          "nombre": "J. ALFONSO",
+          "nombre_descanso": "JOHN NAVI ALFONSO PARRA",
+          "tag": "CERRO",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0121_john_navi_alfonso_parra.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "stage": 1,
+        "ready": true,
+        "mat": "MAT B",
+        "orden": 8,
+        "public_bout_number": 8,
         "display_status": "EN ESPERA"
       },
       {
