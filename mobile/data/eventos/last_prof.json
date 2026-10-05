@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 33,
-    "finished_bouts": 2,
+    "finished_bouts": 4,
     "systems": [
       "champions",
       "llaves_uww",
@@ -1118,7 +1118,7 @@
           "round": 1,
           "phase": "1/4",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10011,
             "name": "CRISTIAN",
@@ -1155,13 +1155,13 @@
             "public_name": "D. REYES",
             "photo": "/fotos_atletas/atleta_0090_dayan_reyes_iznaga.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 10011,
+          "winner_name": "CRISTIAN",
+          "victory_type": "PTS",
+          "red_score": 4,
           "blue_score": 0,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 80
         },
         {
           "id": 4,
@@ -1270,7 +1270,24 @@
           "group": "",
           "status": "pendiente",
           "red": null,
-          "blue": null,
+          "blue": {
+            "id": 10011,
+            "name": "CRISTIAN",
+            "full_name": "CRISTIAN",
+            "club": "LA HABANA",
+            "tag": "10O",
+            "draw": 4,
+            "group": "",
+            "athlete_db_id": 80,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "10O",
+            "original_event_name": "CRISTIAN",
+            "identity_method": "atleta_db_id",
+            "master_id": 80,
+            "public_name": "C. OFARRILL",
+            "photo": "/fotos_atletas/atleta_0080_cristian_ofarrill_cosme.png"
+          },
           "winner_id": null,
           "winner_name": "",
           "victory_type": "",
@@ -1596,7 +1613,7 @@
           "round": 1,
           "phase": "1/4",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10020,
             "name": "LESMAILIE",
@@ -1633,13 +1650,13 @@
             "public_name": "M. ORTIZ",
             "photo": "/fotos_atletas/atleta_0052_matteo_ortiz_arriete.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
+          "winner_id": 10021,
+          "winner_name": "MATTEO ORTIZ ARRIETE",
+          "victory_type": "PTS",
+          "red_score": 2,
+          "blue_score": 4,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 52
         },
         {
           "id": 4,
@@ -1748,7 +1765,24 @@
           "group": "",
           "status": "pendiente",
           "red": null,
-          "blue": null,
+          "blue": {
+            "id": 10021,
+            "name": "MATTEO ORTIZ ARRIETE",
+            "full_name": "MATTEO ORTIZ ARRIETE",
+            "club": "LA HABANA",
+            "tag": "CH",
+            "draw": 5,
+            "group": "",
+            "athlete_db_id": 52,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "CH",
+            "original_event_name": "MATTEO ORTIZ ARRIETE",
+            "identity_method": "atleta_db_id",
+            "master_id": 52,
+            "public_name": "M. ORTIZ",
+            "photo": "/fotos_atletas/atleta_0052_matteo_ortiz_arriete.png"
+          },
           "winner_id": null,
           "winner_name": "",
           "victory_type": "",
@@ -2133,9 +2167,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T06:25:10.651137+00:00",
+  "updated_at": "2026-10-05T06:53:54.616891+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T06:25:09.486495+00:00",
+  "athlete_identity_updated_at": "2026-10-05T06:53:53.159122+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T06:25:10.718369+00:00"
+  "publisher_updated_at": "2026-10-05T06:53:54.710860+00:00"
 }
