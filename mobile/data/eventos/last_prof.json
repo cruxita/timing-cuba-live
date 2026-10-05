@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 33,
-    "finished_bouts": 1,
+    "finished_bouts": 2,
     "systems": [
       "champions",
       "llaves_uww",
@@ -1496,7 +1496,7 @@
           "round": 0,
           "phase": "QUAL",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10018,
             "name": "JORGE ERICK ACOSTA PEÑA",
@@ -1533,13 +1533,13 @@
             "public_name": "K. DIAZ",
             "photo": "/fotos_atletas/atleta_0088_kevin_luciano_diaz_kessell.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
+          "winner_id": 10019,
+          "winner_name": "KEVIN LUCIANO",
+          "victory_type": "PTS",
+          "red_score": 2,
+          "blue_score": 4,
           "criterion": "QUAL",
-          "winner_master_id": null
+          "winner_master_id": 88
         },
         {
           "id": 2,
@@ -1565,7 +1565,24 @@
             "public_name": "J. BOUSO",
             "photo": "/fotos_atletas/atleta_0071_jayro_bouso_valle.png"
           },
-          "blue": null,
+          "blue": {
+            "id": 10019,
+            "name": "KEVIN LUCIANO",
+            "full_name": "KEVIN LUCIANO",
+            "club": "LA HABANA",
+            "tag": "CH",
+            "draw": 3,
+            "group": "",
+            "athlete_db_id": 88,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "CH",
+            "original_event_name": "KEVIN LUCIANO",
+            "identity_method": "atleta_db_id",
+            "master_id": 88,
+            "public_name": "K. DIAZ",
+            "photo": "/fotos_atletas/atleta_0088_kevin_luciano_diaz_kessell.png"
+          },
           "winner_id": null,
           "winner_name": "",
           "victory_type": "",
@@ -2116,9 +2133,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-05T05:01:13.649521+00:00",
+  "updated_at": "2026-10-05T05:30:38.758490+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-05T05:01:12.888131+00:00",
+  "athlete_identity_updated_at": "2026-10-05T05:30:38.138052+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-05T05:01:13.688512+00:00"
+  "publisher_updated_at": "2026-10-05T05:30:38.789283+00:00"
 }
