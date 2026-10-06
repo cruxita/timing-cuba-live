@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-06T18:50:01.751382+00:00",
+  "updated_at": "2026-10-06T18:50:54.854117+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -92,24 +92,24 @@
     "MAT B": [
       {
         "sistema": "REMOTO_MAT_B",
-        "division_key": "REMOTO_MAT_B|U1112|28",
-        "bout_key": "REMOTO_MAT_B|AMARIN|CNOA",
-        "source_key": "REMOTO_MAT_B|REMOTO_MAT_B|U1112|28|REMOTO_MAT_B|AMARIN|CNOA",
+        "division_key": "REMOTO_MAT_B|U1112|32",
+        "bout_key": "REMOTO_MAT_B|JMONTOYA|JFLORES",
+        "source_key": "REMOTO_MAT_B|REMOTO_MAT_B|U1112|32|REMOTO_MAT_B|JMONTOYA|JFLORES",
         "estilo": "LIBRE",
         "categoria": "U11/12",
-        "peso": "28",
-        "fase": "SEMIFINAL 2",
+        "peso": "32",
+        "fase": "1/2",
         "source_status": "EN CURSO",
         "finalizado": false,
         "activo": true,
         "red": {
-          "nombre": "A. MARIN",
+          "nombre": "J. MONTOYA",
           "descanso_en_curso": false,
           "descanso_segundos": 0,
           "descanso_texto": ""
         },
         "blue": {
-          "nombre": "C. NOA",
+          "nombre": "J. FLORES",
           "descanso_en_curso": false,
           "descanso_segundos": 0,
           "descanso_texto": ""
@@ -119,8 +119,8 @@
         "mat": "MAT B",
         "orden": -1,
         "live": {
-          "timer": "00:07",
-          "red_pts": 2,
+          "timer": "04:00",
+          "red_pts": 0,
           "blue_pts": 0,
           "red_badges": "",
           "blue_badges": "",
@@ -130,7 +130,7 @@
           "activity_side": "",
           "activity_left": null,
           "mode": "PAUSADO",
-          "updated_at": 1791311779.359196,
+          "updated_at": 1791312648.5697196,
           "remote_clock": true,
           "reloj_corriendo": false
         },
