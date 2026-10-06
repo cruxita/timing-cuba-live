@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-06T17:44:05.061903+00:00",
+  "updated_at": "2026-10-06T17:44:59.815537+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -46,7 +46,7 @@
         "red": {
           "atleta_db_id": 80,
           "nombre": "C. OFARRILL",
-          "nombre_descanso": "CRISTIAN",
+          "nombre_descanso": "CRISTIAN OFARRILL COSME",
           "tag": "10O",
           "pais": "CUB",
           "provincia": "LA HABANA",
@@ -58,7 +58,7 @@
         "blue": {
           "atleta_db_id": 73,
           "nombre": "E. DIAZ",
-          "nombre_descanso": "ERIT MANUEL",
+          "nombre_descanso": "ERIT MANUEL DIAZ PEREZ",
           "tag": "10O",
           "pais": "CUB",
           "provincia": "LA HABANA",
@@ -105,7 +105,7 @@
         "red": {
           "atleta_db_id": 78,
           "nombre": "N. TAMARIT",
-          "nombre_descanso": "N. TAMARIT",
+          "nombre_descanso": "NEYMAR ANDRES TAMARIT GONZALEZ",
           "tag": "10O",
           "pais": "CUB",
           "provincia": "LA HABANA",
@@ -117,7 +117,7 @@
         "blue": {
           "atleta_db_id": 54,
           "nombre": "R. MIRANDA",
-          "nombre_descanso": "R. MIRANDA",
+          "nombre_descanso": "ROBEISY MIRANDA TITO",
           "tag": "CH",
           "pais": "CUB",
           "provincia": "LA HABANA",
@@ -277,7 +277,7 @@
         "red": {
           "atleta_db_id": 51,
           "nombre": "Y. CHALA",
-          "nombre_descanso": "Y. CHALA",
+          "nombre_descanso": "YANSIEL CHALA HERRERA",
           "tag": "CH",
           "pais": "CUB",
           "provincia": "LA HABANA",
@@ -289,7 +289,7 @@
         "blue": {
           "atleta_db_id": 91,
           "nombre": "Y. LOPEZ",
-          "nombre_descanso": "Y. LOPEZ",
+          "nombre_descanso": "YURIANDY JOSUE LOPEZ MESA",
           "tag": "10O",
           "pais": "CUB",
           "provincia": "LA HABANA",
@@ -320,7 +320,7 @@
         "red": {
           "atleta_db_id": 68,
           "nombre": "R. DESPAINE",
-          "nombre_descanso": "R. DESPAINE",
+          "nombre_descanso": "RANDY DESPAINE",
           "tag": "HV",
           "pais": "CUB",
           "provincia": "LA HABANA",
@@ -332,7 +332,7 @@
         "blue": {
           "atleta_db_id": 62,
           "nombre": "Y. GUERRA",
-          "nombre_descanso": "Y. GUERRA",
+          "nombre_descanso": "YAN LUCAS GUERRA SANTOVENIA",
           "tag": "CH",
           "pais": "CUB",
           "provincia": "LA HABANA",
