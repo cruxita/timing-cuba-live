@@ -5,15 +5,15 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-06T18:18:48.080459+00:00",
+  "updated_at": "2026-10-06T18:20:38.437049+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
     "MAT A",
     "MAT B"
   ],
-  "total_combates": 48,
-  "pendientes": 25,
+  "total_combates": 47,
+  "pendientes": 24,
   "live_activo": true,
   "live": {
     "timer": "02:00",
@@ -90,52 +90,6 @@
       }
     ],
     "MAT B": [
-      {
-        "sistema": "REMOTO_MAT_B",
-        "division_key": "REMOTO_MAT_B|U1112|28",
-        "bout_key": "REMOTO_MAT_B|AMARIN|CNOA",
-        "source_key": "REMOTO_MAT_B|REMOTO_MAT_B|U1112|28|REMOTO_MAT_B|AMARIN|CNOA",
-        "estilo": "LIBRE",
-        "categoria": "U11/12",
-        "peso": "28",
-        "fase": "SEMIFINAL 2",
-        "source_status": "EN CURSO",
-        "finalizado": false,
-        "activo": true,
-        "red": {
-          "nombre": "A. MARIN",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "blue": {
-          "nombre": "C. NOA",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "stage": 0,
-        "ready": true,
-        "mat": "MAT B",
-        "orden": -1,
-        "live": {
-          "timer": "00:48",
-          "red_pts": 0,
-          "blue_pts": 0,
-          "red_badges": "",
-          "blue_badges": "",
-          "highlight_win": "",
-          "highlight_adv": "",
-          "highlight_tied": false,
-          "activity_side": "",
-          "activity_left": null,
-          "mode": "PAUSADO",
-          "updated_at": 1791308639.0660532,
-          "remote_clock": true,
-          "reloj_corriendo": false
-        },
-        "display_status": "EN COLCHON"
-      },
       {
         "sistema": "Champions",
         "division_key": "ch:24",
@@ -349,6 +303,49 @@
         "mat": "MAT B",
         "orden": 2,
         "public_bout_number": 2,
+        "display_status": "EN ESPERA"
+      },
+      {
+        "sistema": "Champions",
+        "division_key": "ch:24",
+        "bout_key": "group:229",
+        "source_key": "Champions|ch:24|group:229",
+        "estilo": "FS",
+        "categoria": "U11/12",
+        "peso": "28",
+        "fase": "Grupo A · Ronda 2",
+        "source_status": "pendiente",
+        "finalizado": false,
+        "activo": false,
+        "red": {
+          "atleta_db_id": 1,
+          "nombre": "A. ARROYO",
+          "nombre_descanso": "ABRAHEM ARROYO CRUZ",
+          "tag": "CH",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0001_abrahem_arroyo_cruz.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "blue": {
+          "atleta_db_id": 69,
+          "nombre": "C. NOA",
+          "nombre_descanso": "CHRIS BRANDY NOA REGUEIFEROS",
+          "tag": "CH",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0069_chris_brandy_noa.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "stage": 12,
+        "ready": true,
+        "mat": "MAT B",
+        "orden": 3,
+        "public_bout_number": 3,
         "display_status": "EN ESPERA"
       }
     ]
