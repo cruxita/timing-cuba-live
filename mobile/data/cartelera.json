@@ -5,8 +5,8 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-06T17:09:03.258557+00:00",
-  "categoria_actual": "U11/12",
+  "updated_at": "2026-10-06T17:09:35.306687+00:00",
+  "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
     "MAT A",
@@ -14,8 +14,21 @@
   ],
   "total_combates": 47,
   "pendientes": 24,
-  "live_activo": false,
-  "live": {},
+  "live_activo": true,
+  "live": {
+    "timer": "04:00",
+    "red_pts": 0,
+    "blue_pts": 0,
+    "red_badges": "",
+    "blue_badges": "",
+    "highlight_win": "",
+    "highlight_adv": "",
+    "highlight_tied": true,
+    "activity_side": "",
+    "activity_left": null,
+    "mode": "fight",
+    "updated_at": 1791306569.6352694
+  },
   "por_mat": {
     "MAT A": [
       {
@@ -29,7 +42,7 @@
         "fase": "FINAL",
         "source_status": "pendiente",
         "finalizado": false,
-        "activo": false,
+        "activo": true,
         "red": {
           "atleta_db_id": 80,
           "nombre": "C. OFARRILL",
@@ -59,7 +72,21 @@
         "mat": "MAT A",
         "orden": 20,
         "public_bout_number": 20,
-        "display_status": "SIGUIENTE"
+        "live": {
+          "timer": "04:00",
+          "red_pts": 0,
+          "blue_pts": 0,
+          "red_badges": "",
+          "blue_badges": "",
+          "highlight_win": "",
+          "highlight_adv": "",
+          "highlight_tied": true,
+          "activity_side": "",
+          "activity_left": null,
+          "mode": "fight",
+          "updated_at": 1791306569.6352694
+        },
+        "display_status": "EN COLCHON"
       }
     ],
     "MAT B": [
