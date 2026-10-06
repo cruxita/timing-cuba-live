@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-06T19:40:19.670390+00:00",
+  "updated_at": "2026-10-06T19:42:07.484950+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -103,13 +103,25 @@
         "finalizado": false,
         "activo": true,
         "red": {
+          "atleta_db_id": 126,
           "nombre": "J. MONTOYA",
+          "nombre_descanso": "JASON EDUARDO MONTOYA MARTINEZ",
+          "tag": "CERRO",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0126_jason_eduardo_montoya_martinez.png",
           "descanso_en_curso": false,
           "descanso_segundos": 0,
           "descanso_texto": ""
         },
         "blue": {
+          "atleta_db_id": 96,
           "nombre": "J. FLORES",
+          "nombre_descanso": "JHON CESAR FLORES TORRES",
+          "tag": "CUB",
+          "pais": "CUB",
+          "provincia": "",
+          "foto": "fotos_atletas/atleta_0096_jhon_cesar_flores_torres.png",
           "descanso_en_curso": false,
           "descanso_segundos": 0,
           "descanso_texto": ""
