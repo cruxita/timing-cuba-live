@@ -3,7 +3,7 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\AppData\\Local\\Timing Cuba\\data\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-10-06T09:47:23.751223+00:00",
+  "updated_at": "2026-10-06T15:14:10.405987+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS",
@@ -120,31 +120,31 @@
           "lugar": 1,
           "equipo_key": "10O",
           "equipo": "10O",
-          "puntos_combate": 28,
+          "puntos_combate": 37,
           "puntos_uww_posicion": 0,
           "puntos_infantil_posicion": 0,
-          "total_uww": 28,
-          "total_infantil": 28,
+          "total_uww": 37,
+          "total_infantil": 37,
           "oro": 0,
           "plata": 0,
           "bronce": 0,
-          "ganados": 8,
-          "perdidos": 12
+          "ganados": 11,
+          "perdidos": 14
         },
         {
           "lugar": 2,
           "equipo_key": "CH",
           "equipo": "CH",
-          "puntos_combate": 19,
+          "puntos_combate": 23,
           "puntos_uww_posicion": 0,
           "puntos_infantil_posicion": 0,
-          "total_uww": 19,
-          "total_infantil": 19,
+          "total_uww": 23,
+          "total_infantil": 23,
           "oro": 0,
           "plata": 0,
           "bronce": 0,
-          "ganados": 6,
-          "perdidos": 3
+          "ganados": 7,
+          "perdidos": 5
         },
         {
           "lugar": 3,
@@ -159,21 +159,21 @@
           "plata": 0,
           "bronce": 0,
           "ganados": 5,
-          "perdidos": 5
+          "perdidos": 6
         },
         {
           "lugar": 4,
           "equipo_key": "HV",
           "equipo": "HV",
-          "puntos_combate": 6,
+          "puntos_combate": 9,
           "puntos_uww_posicion": 0,
           "puntos_infantil_posicion": 0,
-          "total_uww": 6,
-          "total_infantil": 6,
+          "total_uww": 9,
+          "total_infantil": 9,
           "oro": 0,
           "plata": 0,
           "bronce": 0,
-          "ganados": 2,
+          "ganados": 3,
           "perdidos": 1
         }
       ]
