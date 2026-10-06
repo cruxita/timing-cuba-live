@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 38,
-    "finished_bouts": 18,
+    "finished_bouts": 23,
     "systems": [
       "champions",
       "llaves_uww",
@@ -1435,7 +1435,7 @@
           "round": 200,
           "phase": "BRONCE-A",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10012,
             "name": "DAYAN REYES IZNAGA",
@@ -1472,20 +1472,20 @@
             "public_name": "A. MARTINEZ",
             "photo": "/fotos_atletas/atleta_0079_angel_damian_martinez_santiesteban.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
+          "winner_id": 10009,
+          "winner_name": "ANGEL DAMIAN MARTINEZ SANTIESTEBAN",
+          "victory_type": "PTS",
           "red_score": 0,
-          "blue_score": 0,
+          "blue_score": 2,
           "criterion": "BRONCE",
-          "winner_master_id": null
+          "winner_master_id": 79
         },
         {
           "id": 10,
           "round": 200,
           "phase": "BRONCE-B",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10014,
             "name": "FRANK MARTINEZ LABRADA",
@@ -1522,13 +1522,13 @@
             "public_name": "H. PEREZ",
             "photo": "/fotos_atletas/atleta_0070_hans_perez_felico.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
+          "winner_id": 10016,
+          "winner_name": "HANS",
+          "victory_type": "PTS",
           "red_score": 0,
-          "blue_score": 0,
+          "blue_score": 4,
           "criterion": "BRONCE",
-          "winner_master_id": null
+          "winner_master_id": 70
         }
       ],
       "group_bouts": [],
@@ -1544,7 +1544,7 @@
       "style": "FS",
       "age_group": "U13/15",
       "weight": "45",
-      "status": "abierta",
+      "status": "finalizado",
       "athletes": [
         {
           "id": 10017,
@@ -2065,7 +2065,7 @@
           "round": 3,
           "phase": "FINAL",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10019,
             "name": "KEVIN LUCIANO",
@@ -2102,13 +2102,13 @@
             "public_name": "R. TITO",
             "photo": ""
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 10019,
+          "winner_name": "KEVIN LUCIANO",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 88
         },
         {
           "id": 9,
@@ -2215,7 +2215,7 @@
           "round": 200,
           "phase": "BRONCE-B",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10024,
             "name": "RAINER MUÑOZ ROQUE",
@@ -2252,13 +2252,13 @@
             "public_name": "M. GUTIERREZ",
             "photo": "/fotos_atletas/atleta_0065_maykol_ledsuy_gutierrez_hernandez.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
+          "winner_id": 10024,
+          "winner_name": "RAINER MUÑOZ ROQUE",
+          "victory_type": "PTS",
+          "red_score": 6,
+          "blue_score": 4,
           "criterion": "BRONCE",
-          "winner_master_id": null
+          "winner_master_id": 82
         }
       ],
       "group_bouts": [],
@@ -2551,7 +2551,7 @@
           "round": 3,
           "phase": "",
           "group": "",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 285,
             "name": "DYLAN FRANCHESCO CALMOUSE FUENTES",
@@ -2588,13 +2588,13 @@
             "public_name": "D. AGRAMONTE",
             "photo": ""
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 285,
+          "winner_name": "DYLAN FRANCHESCO CALMOUSE FUENTES",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "criterion": "PTS",
+          "winner_master_id": 99
         }
       ],
       "group_bouts": [],
@@ -2604,9 +2604,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-06T09:47:50.094461+00:00",
+  "updated_at": "2026-10-06T15:14:10.722958+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-06T09:47:49.577610+00:00",
+  "athlete_identity_updated_at": "2026-10-06T15:14:10.045871+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-06T09:47:50.129764+00:00"
+  "publisher_updated_at": "2026-10-06T15:14:10.760966+00:00"
 }
