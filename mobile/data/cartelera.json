@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-06T18:23:32.927148+00:00",
+  "updated_at": "2026-10-06T18:25:18.123326+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -119,8 +119,8 @@
         "mat": "MAT B",
         "orden": -1,
         "live": {
-          "timer": "00:48",
-          "red_pts": 0,
+          "timer": "00:18",
+          "red_pts": 2,
           "blue_pts": 0,
           "red_badges": "",
           "blue_badges": "",
@@ -130,7 +130,7 @@
           "activity_side": "",
           "activity_left": null,
           "mode": "PAUSADO",
-          "updated_at": 1791308639.0660532,
+          "updated_at": 1791311033.0608814,
           "remote_clock": true,
           "reloj_corriendo": false
         },
