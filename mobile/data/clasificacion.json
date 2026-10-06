@@ -3,7 +3,7 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\AppData\\Local\\Timing Cuba\\data\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-10-06T09:31:23.275032+00:00",
+  "updated_at": "2026-10-06T09:31:59.420975+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS",
