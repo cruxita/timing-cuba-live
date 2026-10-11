@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-11T20:26:55.776537+00:00",
+  "updated_at": "2026-10-11T20:27:19.116757+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
@@ -16,18 +16,18 @@
   "pendientes": 22,
   "live_activo": true,
   "live": {
-    "timer": "03:47",
-    "red_pts": 0,
+    "timer": "03:41",
+    "red_pts": 2,
     "blue_pts": 0,
     "red_badges": "",
     "blue_badges": "",
-    "highlight_win": "",
+    "highlight_win": "RED",
     "highlight_adv": "",
-    "highlight_tied": true,
+    "highlight_tied": false,
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1791750415.1617455
+    "updated_at": 1791750421.4343796
   },
   "por_mat": {
     "MAT A": [
@@ -118,18 +118,18 @@
         "orden": 1,
         "public_bout_number": 1,
         "live": {
-          "timer": "03:47",
-          "red_pts": 0,
+          "timer": "03:41",
+          "red_pts": 2,
           "blue_pts": 0,
           "red_badges": "",
           "blue_badges": "",
-          "highlight_win": "",
+          "highlight_win": "RED",
           "highlight_adv": "",
-          "highlight_tied": true,
+          "highlight_tied": false,
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1791750415.1617455
+          "updated_at": 1791750421.4343796
         },
         "display_status": "EN COLCHON"
       },
