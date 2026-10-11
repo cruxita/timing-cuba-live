@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-11T20:55:14.036745+00:00",
+  "updated_at": "2026-10-11T20:55:37.180299+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
@@ -255,9 +255,9 @@
           "pais": "CUB",
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0001_abrahem_arroyo_cruz.png",
-          "descanso_en_curso": true,
-          "descanso_segundos": 24,
-          "descanso_texto": "00:24"
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
         },
         "blue": {
           "atleta_db_id": 69,
