@@ -3,7 +3,7 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\AppData\\Local\\Timing Cuba\\data\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-10-07T10:38:32.683615+00:00",
+  "updated_at": "2026-10-11T18:02:56.662953+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS",
@@ -114,7 +114,7 @@
     },
     "LAST PROF": {
       "evento": "LAST PROF",
-      "total_equipos": 4,
+      "total_equipos": 5,
       "equipos": [
         {
           "lugar": 1,
@@ -135,30 +135,30 @@
           "lugar": 2,
           "equipo_key": "CH",
           "equipo": "CH",
-          "puntos_combate": 23,
+          "puntos_combate": 26,
           "puntos_uww_posicion": 0,
           "puntos_infantil_posicion": 0,
-          "total_uww": 23,
-          "total_infantil": 23,
+          "total_uww": 26,
+          "total_infantil": 26,
           "oro": 0,
           "plata": 0,
           "bronce": 0,
-          "ganados": 7,
+          "ganados": 8,
           "perdidos": 5
         },
         {
           "lugar": 3,
           "equipo_key": "CUB",
           "equipo": "CUB",
-          "puntos_combate": 17,
+          "puntos_combate": 20,
           "puntos_uww_posicion": 0,
           "puntos_infantil_posicion": 0,
-          "total_uww": 17,
-          "total_infantil": 17,
+          "total_uww": 20,
+          "total_infantil": 20,
           "oro": 0,
           "plata": 0,
           "bronce": 0,
-          "ganados": 5,
+          "ganados": 6,
           "perdidos": 6
         },
         {
@@ -175,6 +175,21 @@
           "bronce": 0,
           "ganados": 3,
           "perdidos": 1
+        },
+        {
+          "lugar": 5,
+          "equipo_key": "CERRO",
+          "equipo": "CERRO",
+          "puntos_combate": 0,
+          "puntos_uww_posicion": 0,
+          "puntos_infantil_posicion": 0,
+          "total_uww": 0,
+          "total_infantil": 0,
+          "oro": 0,
+          "plata": 0,
+          "bronce": 0,
+          "ganados": 0,
+          "perdidos": 2
         }
       ]
     }
