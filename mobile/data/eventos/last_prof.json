@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 38,
-    "finished_bouts": 25,
+    "finished_bouts": 26,
     "systems": [
       "champions",
       "llaves_uww",
@@ -144,7 +144,7 @@
           "round": 1,
           "phase": "",
           "group": "A",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 145,
             "name": "ABRAHEM ARROYO CRUZ",
@@ -181,13 +181,13 @@
             "public_name": "A. ARAMBURU",
             "photo": "/fotos_atletas/atleta_0058_anthony_aramburu.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "winner_id": 145,
+          "winner_name": "ABRAHEM ARROYO CRUZ",
+          "victory_type": "PTS",
+          "red_score": 4,
+          "blue_score": 2,
+          "criterion": "PTS",
+          "winner_master_id": 1
         },
         {
           "id": 229,
@@ -2638,9 +2638,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-11T20:35:30.206611+00:00",
+  "updated_at": "2026-10-11T20:35:54.454243+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-11T20:35:29.723475+00:00",
+  "athlete_identity_updated_at": "2026-10-11T20:35:53.863152+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-11T20:35:30.253619+00:00"
+  "publisher_updated_at": "2026-10-11T20:35:54.489343+00:00"
 }
