@@ -1529,8 +1529,23 @@
       "club": "",
       "tag": "SANTIAGO DE CUBA",
       "photo": "/fotos_atletas/atleta_0147_dianelis_castillo_alvarez.png"
+    },
+    {
+      "id": 148,
+      "full_name": "ADNELIS PAOLA JAY TORRES",
+      "public_name": "A. JAY",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "28",
+      "style": "WW",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag": "SANTIAGO DE CUBA",
+      "photo": "/fotos_atletas/atleta_0148_adnelis_paola_jay_torres.png"
     }
   ],
-  "count": 102,
-  "updated_at": "2026-10-20T09:37:36.838477+00:00"
+  "count": 103,
+  "updated_at": "2026-10-20T09:39:12.353257+00:00"
 }
