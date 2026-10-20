@@ -1484,8 +1484,23 @@
       "club": "",
       "tag": "SANTIAGO DE CUBA",
       "photo": "/fotos_atletas/atleta_0144_yefree_r_prior_carmenate.png"
+    },
+    {
+      "id": 145,
+      "full_name": "GEORQUIS ROMERO SAVIGNE",
+      "public_name": "G. ROMERO",
+      "sex": "M",
+      "age_group": "U9/10",
+      "weight": "46",
+      "style": "FS",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag": "SANTIAGO DE CUBA",
+      "photo": ""
     }
   ],
-  "count": 99,
-  "updated_at": "2026-10-19T22:24:11.655335+00:00"
+  "count": 100,
+  "updated_at": "2026-10-20T09:34:03.627386+00:00"
 }
