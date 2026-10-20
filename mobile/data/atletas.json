@@ -1544,8 +1544,53 @@
       "club": "",
       "tag": "SANTIAGO DE CUBA",
       "photo": "/fotos_atletas/atleta_0148_adnelis_paola_jay_torres.png"
+    },
+    {
+      "id": 149,
+      "full_name": "ANGELO VERANES KASESE",
+      "public_name": "A. VERANES",
+      "sex": "M",
+      "age_group": "U11/12",
+      "weight": "50",
+      "style": "FS",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag": "SANTIAGO DE CUBA",
+      "photo": "/fotos_atletas/atleta_0149_angelo_veranes_kasese.png"
+    },
+    {
+      "id": 150,
+      "full_name": "HANSEL MANUEL MASO BELL",
+      "public_name": "H. MASO",
+      "sex": "M",
+      "age_group": "U11/12",
+      "weight": "46",
+      "style": "FS",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag": "SANTIAGO DE CUBA",
+      "photo": "/fotos_atletas/atleta_0150_hansel_manuel_maso_bell.png"
+    },
+    {
+      "id": 151,
+      "full_name": "AZUMI LIANET ZAMORA BAZAN",
+      "public_name": "A. ZAMORA",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "39",
+      "style": "WW",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag": "SANTIAGO DE CUBA",
+      "photo": "/fotos_atletas/atleta_0151_azumi_lianet_zamora_bazan.png"
     }
   ],
-  "count": 103,
-  "updated_at": "2026-10-20T09:39:06.782361+00:00"
+  "count": 106,
+  "updated_at": "2026-10-20T20:56:56.001491+00:00"
 }
