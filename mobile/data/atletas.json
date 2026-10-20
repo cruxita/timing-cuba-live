@@ -1499,8 +1499,23 @@
       "club": "",
       "tag": "SANTIAGO DE CUBA",
       "photo": ""
+    },
+    {
+      "id": 146,
+      "full_name": "NAILA ISABEL PEREZ CRESPO",
+      "public_name": "N. PEREZ",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "43",
+      "style": "WW",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag": "SANTIAGO DE CUBA",
+      "photo": "/fotos_atletas/atleta_0146_naila_isabel_perez_crespo.png"
     }
   ],
-  "count": 100,
-  "updated_at": "2026-10-20T09:34:03.627386+00:00"
+  "count": 101,
+  "updated_at": "2026-10-20T09:36:07.263941+00:00"
 }
