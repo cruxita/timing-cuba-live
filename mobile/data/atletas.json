@@ -1514,8 +1514,23 @@
       "club": "",
       "tag": "SANTIAGO DE CUBA",
       "photo": "/fotos_atletas/atleta_0146_naila_isabel_perez_crespo.png"
+    },
+    {
+      "id": 147,
+      "full_name": "DIANELIS CASTILLO ALVAREZ",
+      "public_name": "D. CASTILLO",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "31",
+      "style": "WW",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag": "SANTIAGO DE CUBA",
+      "photo": "/fotos_atletas/atleta_0147_dianelis_castillo_alvarez.png"
     }
   ],
-  "count": 101,
-  "updated_at": "2026-10-20T09:36:07.263941+00:00"
+  "count": 102,
+  "updated_at": "2026-10-20T09:37:36.838477+00:00"
 }
