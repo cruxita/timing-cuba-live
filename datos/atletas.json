@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-10-20 11:39:09",
-  "total_atletas": 103,
-  "total_fotos": 83,
-  "fotos_copiadas": 83,
+  "generado_en": "2026-10-20 18:17:24",
+  "total_atletas": 106,
+  "total_fotos": 87,
+  "fotos_copiadas": 87,
   "fotos_conservadas": 0,
   "atletas": [
     {
@@ -974,6 +974,28 @@
       "activo": true
     },
     {
+      "id": 151,
+      "ci": "",
+      "nombre": "AZUMI LIANET",
+      "apellidos": "ZAMORA BAZAN",
+      "nombre_publico": "A. ZAMORA",
+      "sexo": "F",
+      "fecha_nacimiento": "15011764432",
+      "grupo": "U11/12",
+      "peso": "39",
+      "estilo": "WW",
+      "pais": "CUB",
+      "provincia": "SANTIAGO DE CUBA",
+      "municipio": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag_publico": "SANTIAGO DE CUBA",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0151_azumi_lianet_zamora_bazan.png",
+      "foto_web": "fotos_atletas/atleta_0151_azumi_lianet_zamora_bazan.png",
+      "activo": true
+    },
+    {
       "id": 132,
       "ci": "",
       "nombre": "NATALI DE LA CARIDAD",
@@ -1062,6 +1084,28 @@
       "activo": true
     },
     {
+      "id": 150,
+      "ci": "",
+      "nombre": "HANSEL MANUEL",
+      "apellidos": "MASO BELL",
+      "nombre_publico": "H. MASO",
+      "sexo": "M",
+      "fecha_nacimiento": "15030466603",
+      "grupo": "U11/12",
+      "peso": "46",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "SANTIAGO DE CUBA",
+      "municipio": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag_publico": "SANTIAGO DE CUBA",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0150_hansel_manuel_maso_bell.png",
+      "foto_web": "fotos_atletas/atleta_0150_hansel_manuel_maso_bell.png",
+      "activo": true
+    },
+    {
       "id": 131,
       "ci": "",
       "nombre": "YAN CARLOS",
@@ -1081,6 +1125,28 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0131_yan_carlos_correa_dominguez.png",
       "foto_web": "fotos_atletas/atleta_0131_yan_carlos_correa_dominguez.png",
+      "activo": true
+    },
+    {
+      "id": 149,
+      "ci": "",
+      "nombre": "ANGELO",
+      "apellidos": "VERANES KASESE",
+      "nombre_publico": "A. VERANES",
+      "sexo": "M",
+      "fecha_nacimiento": "15012265520",
+      "grupo": "U11/12",
+      "peso": "50",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "SANTIAGO DE CUBA",
+      "municipio": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag_publico": "SANTIAGO DE CUBA",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0149_angelo_veranes_kasese.png",
+      "foto_web": "fotos_atletas/atleta_0149_angelo_veranes_kasese.png",
       "activo": true
     },
     {
@@ -2267,8 +2333,8 @@
       "tag_publico": "SANTIAGO DE CUBA",
       "telefono": "",
       "observaciones": "",
-      "foto": "",
-      "foto_web": "",
+      "foto": "fotos_atletas/atleta_0145_georquis_romero_savigne.png",
+      "foto_web": "fotos_atletas/atleta_0145_georquis_romero_savigne.png",
       "activo": true
     }
   ]
