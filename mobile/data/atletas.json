@@ -1589,8 +1589,23 @@
       "club": "",
       "tag": "SANTIAGO DE CUBA",
       "photo": "/fotos_atletas/atleta_0151_azumi_lianet_zamora_bazan.png"
+    },
+    {
+      "id": 152,
+      "full_name": "ANDRIU DISNEY LOPEZ GARCIA",
+      "public_name": "A. LOPEZ",
+      "sex": "M",
+      "age_group": "U11/12",
+      "weight": "",
+      "style": "FS",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "CH",
+      "club": "",
+      "tag": "CH",
+      "photo": ""
     }
   ],
-  "count": 106,
-  "updated_at": "2026-10-22T12:57:10.600763+00:00"
+  "count": 107,
+  "updated_at": "2026-10-22T15:05:13.886356+00:00"
 }
