@@ -320,8 +320,8 @@
       "full_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
       "public_name": "A. RODRIGUEZ",
       "sex": "M",
-      "age_group": "U7/8",
-      "weight": "",
+      "age_group": "U9/10",
+      "weight": "24",
       "style": "FS",
       "country": "CUB",
       "province": "LA HABANA",
@@ -711,7 +711,7 @@
       "public_name": "A. GONZALEZ",
       "sex": "M",
       "age_group": "U13/15",
-      "weight": "",
+      "weight": "35",
       "style": "FS",
       "country": "CUB",
       "province": "LA HABANA",
@@ -1420,14 +1420,14 @@
       "style": "FS",
       "country": "CUB",
       "province": "SANTIAGO DE CUBA",
-      "municipality": "",
+      "municipality": "SANTIAGO DE CUBA",
       "club": "",
-      "tag": "CUB",
+      "tag": "SANTIAGO DE CUBA",
       "photo": "/fotos_atletas/atleta_0140_anyelo_fabian_bosque_sanchez.png"
     },
     {
       "id": 141,
-      "full_name": "MANFRD DE JESUS CALZADO DARROMAN",
+      "full_name": "MANFRED DE JESUS CALZADO DARROMAN",
       "public_name": "M. CALZADO",
       "sex": "M",
       "age_group": "U11/12",
@@ -1435,9 +1435,9 @@
       "style": "FS",
       "country": "CUB",
       "province": "SANTIAGO DE CUBA",
-      "municipality": "",
+      "municipality": "SANTIAGO DE CUBA",
       "club": "",
-      "tag": "CUB",
+      "tag": "SANTIAGO DE CUBA",
       "photo": "/fotos_atletas/atleta_0141_manfrd_de_jesus_calzado_darroman.png"
     },
     {
@@ -1566,7 +1566,7 @@
       "public_name": "H. MASO",
       "sex": "M",
       "age_group": "U11/12",
-      "weight": "46",
+      "weight": "42",
       "style": "FS",
       "country": "CUB",
       "province": "SANTIAGO DE CUBA",
@@ -1592,5 +1592,5 @@
     }
   ],
   "count": 106,
-  "updated_at": "2026-10-20T22:17:29.517984+00:00"
+  "updated_at": "2026-10-22T03:52:34.810273+00:00"
 }
