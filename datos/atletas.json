@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-10-28 20:59:53",
-  "total_atletas": 112,
-  "total_fotos": 87,
-  "fotos_copiadas": 87,
+  "generado_en": "2026-10-29 07:04:13",
+  "total_atletas": 113,
+  "total_fotos": 88,
+  "fotos_copiadas": 88,
   "fotos_conservadas": 0,
   "atletas": [
     {
@@ -487,6 +487,28 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
+      "activo": true
+    },
+    {
+      "id": 158,
+      "ci": "",
+      "nombre": "ALENNA ALEJANDRA",
+      "apellidos": "CAMPO RAMIREZ",
+      "nombre_publico": "A. CAMPO",
+      "sexo": "F",
+      "fecha_nacimiento": "15111864110",
+      "grupo": "U11/12",
+      "peso": "",
+      "estilo": "WW",
+      "pais": "CUB",
+      "provincia": "SANTIAGO DE CUBA",
+      "municipio": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag_publico": "SANTIAGO DE CUBA",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0158_alenna_alejandra_campo_ramirez.png",
+      "foto_web": "fotos_atletas/atleta_0158_alenna_alejandra_campo_ramirez.png",
       "activo": true
     },
     {
