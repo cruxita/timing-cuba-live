@@ -1679,8 +1679,23 @@
       "club": "",
       "tag": "CUB",
       "photo": ""
+    },
+    {
+      "id": 158,
+      "full_name": "ALENNA ALEJANDRA CAMPO RAMIREZ",
+      "public_name": "A. CAMPO",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "",
+      "style": "WW",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag": "SANTIAGO DE CUBA",
+      "photo": "/fotos_atletas/atleta_0158_alenna_alejandra_campo_ramirez.png"
     }
   ],
-  "count": 112,
-  "updated_at": "2026-10-29T00:59:58.138735+00:00"
+  "count": 113,
+  "updated_at": "2026-10-29T11:04:18.239875+00:00"
 }
