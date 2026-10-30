@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-10-30 01:58:52",
-  "total_atletas": 115,
-  "total_fotos": 89,
-  "fotos_copiadas": 89,
+  "generado_en": "2026-10-30 08:22:46",
+  "total_atletas": 116,
+  "total_fotos": 92,
+  "fotos_copiadas": 92,
   "fotos_conservadas": 0,
   "atletas": [
     {
@@ -927,6 +927,28 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0128_yainer_vigilio_gutierrez_jauma.png",
       "foto_web": "fotos_atletas/atleta_0128_yainer_vigilio_gutierrez_jauma.png",
+      "activo": true
+    },
+    {
+      "id": 161,
+      "ci": "",
+      "nombre": "YANSEL",
+      "apellidos": "DACHE ROSABAL",
+      "nombre_publico": "Y. DACHE",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U11/12",
+      "peso": "32",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "CH",
+      "club": "",
+      "tag_publico": "CH",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0161_yansel_dache_rosabal.png",
+      "foto_web": "fotos_atletas/atleta_0161_yansel_dache_rosabal.png",
       "activo": true
     },
     {
@@ -2355,8 +2377,8 @@
       "tag_publico": "CH",
       "telefono": "",
       "observaciones": "",
-      "foto": "",
-      "foto_web": "",
+      "foto": "fotos_atletas/atleta_0154_myder_rodriguez_c_pierre.png",
+      "foto_web": "fotos_atletas/atleta_0154_myder_rodriguez_c_pierre.png",
       "activo": true
     },
     {
@@ -2443,8 +2465,8 @@
       "tag_publico": "CH",
       "telefono": "",
       "observaciones": "",
-      "foto": "",
-      "foto_web": "",
+      "foto": "fotos_atletas/atleta_0156_yasmani_mirabal_ulacia.png",
+      "foto_web": "fotos_atletas/atleta_0156_yasmani_mirabal_ulacia.png",
       "activo": true
     },
     {
