@@ -1739,8 +1739,23 @@
       "club": "",
       "tag": "CH",
       "photo": "/fotos_atletas/atleta_0161_yansel_dache_rosabal.png"
+    },
+    {
+      "id": 162,
+      "full_name": "JAIRON LERIAN CASTILLO SUAREZ",
+      "public_name": "J. CASTILLO",
+      "sex": "M",
+      "age_group": "U9/10",
+      "weight": "",
+      "style": "FS",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "CH",
+      "club": "",
+      "tag": "CH",
+      "photo": "/fotos_atletas/atleta_0162_jairon_lerian_castillo_suarez.png"
     }
   ],
-  "count": 116,
-  "updated_at": "2026-10-30T13:02:51.590674+00:00"
+  "count": 117,
+  "updated_at": "2026-10-30T13:14:07.213676+00:00"
 }
