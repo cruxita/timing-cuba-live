@@ -1,6 +1,6 @@
 {
-  "generado_en": "2026-10-29 07:04:13",
-  "total_atletas": 113,
+  "generado_en": "2026-10-30 00:38:00",
+  "total_atletas": 114,
   "total_fotos": 88,
   "fotos_copiadas": 88,
   "fotos_conservadas": 0,
@@ -817,6 +817,28 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
       "foto_web": "fotos_atletas/atleta_0043_ariel_amaury_garcia_marchena.png",
+      "activo": true
+    },
+    {
+      "id": 159,
+      "ci": "",
+      "nombre": "DAMIAN ALEJANDRO",
+      "apellidos": "HERNANDEZ GARRIDO",
+      "nombre_publico": "D. HERNANDEZ",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U11/12",
+      "peso": "32",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "SANTIAGO DE CUBA",
+      "municipio": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag_publico": "SANTIAGO DE CUBA",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
       "activo": true
     },
     {
