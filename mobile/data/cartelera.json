@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-30T13:47:50.039859+00:00",
+  "updated_at": "2026-10-30T13:48:24.465952+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -23,11 +23,11 @@
     "blue_badges": "",
     "highlight_win": "",
     "highlight_adv": "",
-    "highlight_tied": false,
+    "highlight_tied": true,
     "activity_side": "",
     "activity_left": null,
     "mode": "fight",
-    "updated_at": 1793368062.2344034
+    "updated_at": 1793368070.2954192
   },
   "por_mat": {
     "MAT A": [
@@ -80,11 +80,11 @@
           "blue_badges": "",
           "highlight_win": "",
           "highlight_adv": "",
-          "highlight_tied": false,
+          "highlight_tied": true,
           "activity_side": "",
           "activity_left": null,
           "mode": "fight",
-          "updated_at": 1793368062.2344034
+          "updated_at": 1793368070.2954192
         },
         "display_status": "EN COLCHON"
       }
@@ -295,8 +295,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0067_maykol_machado_zuniga.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 65,
-          "descanso_texto": "01:05"
+          "descanso_segundos": 31,
+          "descanso_texto": "00:31"
         },
         "stage": 2,
         "ready": true,
