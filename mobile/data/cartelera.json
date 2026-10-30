@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-30T13:39:34.075223+00:00",
+  "updated_at": "2026-10-30T13:40:10.382983+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
@@ -256,8 +256,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0055_leonyd_zamora_barrera.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 56,
-          "descanso_texto": "00:56"
+          "descanso_segundos": 20,
+          "descanso_texto": "00:20"
         },
         "blue": {
           "atleta_db_id": 67,
@@ -268,8 +268,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0067_maykol_machado_zuniga.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 561,
-          "descanso_texto": "09:21"
+          "descanso_segundos": 525,
+          "descanso_texto": "08:45"
         },
         "stage": 2,
         "ready": true,
