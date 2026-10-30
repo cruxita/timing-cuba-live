@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-10-30 08:42:00",
-  "total_atletas": 116,
-  "total_fotos": 92,
-  "fotos_copiadas": 92,
+  "generado_en": "2026-10-30 09:14:03",
+  "total_atletas": 117,
+  "total_fotos": 93,
+  "fotos_copiadas": 93,
   "fotos_conservadas": 0,
   "atletas": [
     {
@@ -2291,6 +2291,28 @@
       "observaciones": "",
       "foto": "",
       "foto_web": "",
+      "activo": true
+    },
+    {
+      "id": 162,
+      "ci": "",
+      "nombre": "JAIRON LERIAN",
+      "apellidos": "CASTILLO SUAREZ",
+      "nombre_publico": "J. CASTILLO",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U9/10",
+      "peso": "",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "CH",
+      "club": "",
+      "tag_publico": "CH",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0162_jairon_lerian_castillo_suarez.png",
+      "foto_web": "fotos_atletas/atleta_0162_jairon_lerian_castillo_suarez.png",
       "activo": true
     },
     {
