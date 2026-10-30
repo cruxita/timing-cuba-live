@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 38,
-    "finished_bouts": 28,
+    "finished_bouts": 29,
     "systems": [
       "champions",
       "llaves_uww",
@@ -194,7 +194,7 @@
           "round": 2,
           "phase": "",
           "group": "A",
-          "status": "pendiente",
+          "status": "finalizado",
           "red": {
             "id": 145,
             "name": "ABRAHEM ARROYO CRUZ",
@@ -231,13 +231,13 @@
             "public_name": "C. NOA",
             "photo": "/fotos_atletas/atleta_0069_chris_brandy_noa_regueiferos.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
+          "winner_id": 149,
+          "winner_name": "CHRIS BRANDY",
+          "victory_type": "PTS",
+          "red_score": 2,
+          "blue_score": 4,
+          "criterion": "PTS",
+          "winner_master_id": 69
         },
         {
           "id": 230,
@@ -2655,9 +2655,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-30T13:26:50.455124+00:00",
+  "updated_at": "2026-10-30T13:27:29.234231+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-30T13:26:49.128735+00:00",
+  "athlete_identity_updated_at": "2026-10-30T13:27:27.773265+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-30T13:26:50.536021+00:00"
+  "publisher_updated_at": "2026-10-30T13:27:29.313914+00:00"
 }
