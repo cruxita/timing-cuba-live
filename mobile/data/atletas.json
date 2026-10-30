@@ -1709,8 +1709,23 @@
       "club": "",
       "tag": "SANTIAGO DE CUBA",
       "photo": ""
+    },
+    {
+      "id": 160,
+      "full_name": "YESANDER CASTILLO BORRERO",
+      "public_name": "Y. CASTILLO",
+      "sex": "M",
+      "age_group": "U9/10",
+      "weight": "32",
+      "style": "FS",
+      "country": "CUB",
+      "province": "SANTIAGO DE CUBA",
+      "municipality": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag": "SANTIAGO DE CUBA",
+      "photo": "/fotos_atletas/atleta_0160_yesander_castillo_borrero.png"
     }
   ],
-  "count": 114,
-  "updated_at": "2026-10-30T05:10:10.160302+00:00"
+  "count": 115,
+  "updated_at": "2026-10-30T05:32:06.674447+00:00"
 }
