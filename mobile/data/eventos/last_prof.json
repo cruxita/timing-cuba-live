@@ -9,7 +9,7 @@
     "divisions": 6,
     "athlete_registrations": 37,
     "bouts": 38,
-    "finished_bouts": 29,
+    "finished_bouts": 30,
     "systems": [
       "champions",
       "llaves_uww",
@@ -757,7 +757,7 @@
           "round": 1,
           "phase": "1/4",
           "group": "",
-          "status": "pendiente",
+          "status": "terminado",
           "red": {
             "id": 10006,
             "name": "MAYKOL MACHADO ZUÑIGA",
@@ -794,13 +794,13 @@
             "public_name": "M. KIM",
             "photo": "/fotos_atletas/atleta_0059_michael_kim_lopez.png"
           },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
+          "winner_id": 10006,
+          "winner_name": "MAYKOL MACHADO ZUÑIGA",
+          "victory_type": "PTS",
+          "red_score": 2,
           "blue_score": 0,
           "criterion": "MAIN",
-          "winner_master_id": null
+          "winner_master_id": 67
         },
         {
           "id": 5,
@@ -876,7 +876,24 @@
             "public_name": "L. ZAMORA",
             "photo": "/fotos_atletas/atleta_0055_leonyd_zamora_barrera.png"
           },
-          "blue": null,
+          "blue": {
+            "id": 10006,
+            "name": "MAYKOL MACHADO ZUÑIGA",
+            "full_name": "MAYKOL MACHADO ZUÑIGA",
+            "club": "LA HABANA",
+            "tag": "CH",
+            "draw": 7,
+            "group": "",
+            "athlete_db_id": 67,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "CH",
+            "original_event_name": "MAYKOL MACHADO ZUÑIGA",
+            "identity_method": "atleta_db_id",
+            "master_id": 67,
+            "public_name": "M. MACHADO",
+            "photo": "/fotos_atletas/atleta_0067_maykol_machado_zuniga.png"
+          },
           "winner_id": null,
           "winner_name": "",
           "victory_type": "",
@@ -2655,9 +2672,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-10-30T13:28:40.991774+00:00",
+  "updated_at": "2026-10-30T13:29:14.066850+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-10-30T13:28:39.680937+00:00",
+  "athlete_identity_updated_at": "2026-10-30T13:29:12.818033+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-10-30T13:28:41.065620+00:00"
+  "publisher_updated_at": "2026-10-30T13:29:14.146370+00:00"
 }
