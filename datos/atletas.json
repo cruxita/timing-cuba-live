@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-10-30 00:38:00",
-  "total_atletas": 114,
-  "total_fotos": 88,
-  "fotos_copiadas": 88,
+  "generado_en": "2026-10-30 01:32:02",
+  "total_atletas": 115,
+  "total_fotos": 89,
+  "fotos_copiadas": 89,
   "fotos_conservadas": 0,
   "atletas": [
     {
@@ -2467,6 +2467,28 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png",
       "foto_web": "fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png",
+      "activo": true
+    },
+    {
+      "id": 160,
+      "ci": "",
+      "nombre": "YESANDER",
+      "apellidos": "CASTILLO BORRERO",
+      "nombre_publico": "Y. CASTILLO",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U9/10",
+      "peso": "32",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "SANTIAGO DE CUBA",
+      "municipio": "SANTIAGO DE CUBA",
+      "club": "",
+      "tag_publico": "SANTIAGO DE CUBA",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0160_yesander_castillo_borrero.png",
+      "foto_web": "fotos_atletas/atleta_0160_yesander_castillo_borrero.png",
       "activo": true
     },
     {
