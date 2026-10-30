@@ -5,7 +5,7 @@
     "name": "LAST PROF"
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-10-30T13:42:30.495634+00:00",
+  "updated_at": "2026-10-30T13:43:08.546588+00:00",
   "categoria_actual": "U11/12",
   "estilo_actual": "FS",
   "mats": [
@@ -268,8 +268,8 @@
           "provincia": "LA HABANA",
           "foto": "fotos_atletas/atleta_0067_maykol_machado_zuniga.png",
           "descanso_en_curso": true,
-          "descanso_segundos": 386,
-          "descanso_texto": "06:26"
+          "descanso_segundos": 346,
+          "descanso_texto": "05:46"
         },
         "stage": 2,
         "ready": true,
