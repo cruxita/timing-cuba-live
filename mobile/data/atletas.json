@@ -1633,7 +1633,7 @@
       "municipality": "CH",
       "club": "",
       "tag": "CH",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0154_myder_rodriguez_c_pierre.png"
     },
     {
       "id": 155,
@@ -1663,7 +1663,7 @@
       "municipality": "CH",
       "club": "",
       "tag": "CH",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0156_yasmani_mirabal_ulacia.png"
     },
     {
       "id": 157,
@@ -1724,8 +1724,23 @@
       "club": "",
       "tag": "SANTIAGO DE CUBA",
       "photo": "/fotos_atletas/atleta_0160_yesander_castillo_borrero.png"
+    },
+    {
+      "id": 161,
+      "full_name": "YANSEL DACHE ROSABAL",
+      "public_name": "Y. DACHE",
+      "sex": "M",
+      "age_group": "U11/12",
+      "weight": "32",
+      "style": "FS",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "CH",
+      "club": "",
+      "tag": "CH",
+      "photo": "/fotos_atletas/atleta_0161_yansel_dache_rosabal.png"
     }
   ],
-  "count": 115,
-  "updated_at": "2026-10-30T11:42:43.197815+00:00"
+  "count": 116,
+  "updated_at": "2026-10-30T12:22:50.782625+00:00"
 }
