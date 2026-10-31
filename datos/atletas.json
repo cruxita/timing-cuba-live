@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-10-30 09:14:03",
+  "generado_en": "2026-10-31 11:25:01",
   "total_atletas": 117,
-  "total_fotos": 93,
-  "fotos_copiadas": 93,
+  "total_fotos": 94,
+  "fotos_copiadas": 94,
   "fotos_conservadas": 0,
   "atletas": [
     {
@@ -2363,7 +2363,7 @@
       "id": 153,
       "ci": "",
       "nombre": "LIANGER",
-      "apellidos": "RODRIGUEZ QUEBEDO",
+      "apellidos": "RODRIGUEZ QUEVEDO",
       "nombre_publico": "L. RODRIGUEZ",
       "sexo": "M",
       "fecha_nacimiento": "",
@@ -2377,8 +2377,8 @@
       "tag_publico": "CH",
       "telefono": "",
       "observaciones": "",
-      "foto": "",
-      "foto_web": "",
+      "foto": "fotos_atletas/atleta_0153_lianger_rodriguez_quevedo.png",
+      "foto_web": "fotos_atletas/atleta_0153_lianger_rodriguez_quevedo.png",
       "activo": true
     },
     {
