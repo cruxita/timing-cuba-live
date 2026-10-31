@@ -1607,7 +1607,7 @@
     },
     {
       "id": 153,
-      "full_name": "LIANGER RODRIGUEZ QUEBEDO",
+      "full_name": "LIANGER RODRIGUEZ QUEVEDO",
       "public_name": "L. RODRIGUEZ",
       "sex": "M",
       "age_group": "U9/10",
@@ -1618,7 +1618,7 @@
       "municipality": "CH",
       "club": "",
       "tag": "CH",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0153_lianger_rodriguez_quevedo.png"
     },
     {
       "id": 154,
@@ -1757,5 +1757,5 @@
     }
   ],
   "count": 117,
-  "updated_at": "2026-10-30T13:49:03.070396+00:00"
+  "updated_at": "2026-10-31T15:25:04.776014+00:00"
 }
