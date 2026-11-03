@@ -1596,14 +1596,14 @@
       "public_name": "A. LOPEZ",
       "sex": "M",
       "age_group": "U11/12",
-      "weight": "",
+      "weight": "46",
       "style": "FS",
       "country": "CUB",
       "province": "LA HABANA",
       "municipality": "CH",
       "club": "",
       "tag": "CH",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0152_andriu_disney_lopez_garcia.png"
     },
     {
       "id": 153,
@@ -1757,5 +1757,5 @@
     }
   ],
   "count": 117,
-  "updated_at": "2026-11-03T12:04:36.565788+00:00"
+  "updated_at": "2026-11-03T17:09:22.179578+00:00"
 }
