@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-10-31 11:25:01",
+  "generado_en": "2026-11-03 12:09:20",
   "total_atletas": 117,
-  "total_fotos": 94,
-  "fotos_copiadas": 94,
+  "total_fotos": 95,
+  "fotos_copiadas": 95,
   "fotos_conservadas": 0,
   "atletas": [
     {
@@ -201,28 +201,6 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png",
       "foto_web": "fotos_atletas/atleta_0081_aldiel_marin_gonzalez.png",
-      "activo": true
-    },
-    {
-      "id": 152,
-      "ci": "",
-      "nombre": "ANDRIU DISNEY",
-      "apellidos": "LOPEZ GARCIA",
-      "nombre_publico": "A. LOPEZ",
-      "sexo": "M",
-      "fecha_nacimiento": "",
-      "grupo": "U11/12",
-      "peso": "",
-      "estilo": "FS",
-      "pais": "CUB",
-      "provincia": "LA HABANA",
-      "municipio": "CH",
-      "club": "",
-      "tag_publico": "CH",
-      "telefono": "",
-      "observaciones": "",
-      "foto": "",
-      "foto_web": "",
       "activo": true
     },
     {
@@ -1191,6 +1169,28 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0133_paola_de_la_caridad_martinez_martinez.png",
       "foto_web": "fotos_atletas/atleta_0133_paola_de_la_caridad_martinez_martinez.png",
+      "activo": true
+    },
+    {
+      "id": 152,
+      "ci": "",
+      "nombre": "ANDRIU DISNEY",
+      "apellidos": "LOPEZ GARCIA",
+      "nombre_publico": "A. LOPEZ",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U11/12",
+      "peso": "46",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "LA HABANA",
+      "municipio": "CH",
+      "club": "",
+      "tag_publico": "CH",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "fotos_atletas/atleta_0152_andriu_disney_lopez_garcia.png",
+      "foto_web": "fotos_atletas/atleta_0152_andriu_disney_lopez_garcia.png",
       "activo": true
     },
     {
