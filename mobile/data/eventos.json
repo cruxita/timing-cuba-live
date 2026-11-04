@@ -6,8 +6,11 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-11-03T12:04:36.380744+00:00",
-  "current_event": null,
+  "updated_at": "2026-11-04T16:36:22.665697+00:00",
+  "current_event": {
+    "id": 36,
+    "name": "LAST PROF"
+  },
   "count": 3,
   "events": [
     {
@@ -58,7 +61,7 @@
       "event_type": "oficial",
       "ranking_multiplier": 1.0,
       "legacy": false,
-      "active": false,
+      "active": true,
       "systems": [
         "panel"
       ],
