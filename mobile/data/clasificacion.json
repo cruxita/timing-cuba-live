@@ -3,11 +3,10 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\AppData\\Local\\Timing Cuba\\data\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-11-04T17:48:32.323397+00:00",
+  "updated_at": "2026-11-05T17:35:41.936463+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
-    "TODOS VS TODOS",
-    "LAST PROF"
+    "TODOS VS TODOS"
   ],
   "clasificaciones_por_evento": {
     "FESTIVAL ESCOLAR DE LUCHA": {
@@ -109,87 +108,6 @@
           "bronce": 0,
           "ganados": 5,
           "perdidos": 3
-        }
-      ]
-    },
-    "LAST PROF": {
-      "evento": "LAST PROF",
-      "total_equipos": 5,
-      "equipos": [
-        {
-          "lugar": 1,
-          "equipo_key": "CH",
-          "equipo": "CH",
-          "puntos_combate": 43,
-          "puntos_uww_posicion": 0,
-          "puntos_infantil_posicion": 0,
-          "total_uww": 43,
-          "total_infantil": 43,
-          "oro": 0,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 13,
-          "perdidos": 8
-        },
-        {
-          "lugar": 2,
-          "equipo_key": "10O",
-          "equipo": "10O",
-          "puntos_combate": 41,
-          "puntos_uww_posicion": 0,
-          "puntos_infantil_posicion": 0,
-          "total_uww": 41,
-          "total_infantil": 41,
-          "oro": 0,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 12,
-          "perdidos": 16
-        },
-        {
-          "lugar": 3,
-          "equipo_key": "CUB",
-          "equipo": "CUB",
-          "puntos_combate": 21,
-          "puntos_uww_posicion": 0,
-          "puntos_infantil_posicion": 0,
-          "total_uww": 21,
-          "total_infantil": 21,
-          "oro": 0,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 6,
-          "perdidos": 7
-        },
-        {
-          "lugar": 4,
-          "equipo_key": "HV",
-          "equipo": "HV",
-          "puntos_combate": 9,
-          "puntos_uww_posicion": 0,
-          "puntos_infantil_posicion": 0,
-          "total_uww": 9,
-          "total_infantil": 9,
-          "oro": 0,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 3,
-          "perdidos": 1
-        },
-        {
-          "lugar": 5,
-          "equipo_key": "CERRO",
-          "equipo": "CERRO",
-          "puntos_combate": 0,
-          "puntos_uww_posicion": 0,
-          "puntos_infantil_posicion": 0,
-          "total_uww": 0,
-          "total_infantil": 0,
-          "oro": 0,
-          "plata": 0,
-          "bronce": 0,
-          "ganados": 0,
-          "perdidos": 2
         }
       ]
     }
