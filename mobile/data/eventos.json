@@ -6,12 +6,9 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-11-04T17:48:31.586455+00:00",
-  "current_event": {
-    "id": 36,
-    "name": "LAST PROF"
-  },
-  "count": 3,
+  "updated_at": "2026-11-05T17:35:41.495223+00:00",
+  "current_event": null,
+  "count": 2,
   "events": [
     {
       "id": 5,
@@ -50,25 +47,6 @@
         "panel_evento.db:eventos"
       ],
       "data_file": "data/eventos/todos_vs_todos.json"
-    },
-    {
-      "id": 36,
-      "panel_id": 36,
-      "name": "LAST PROF",
-      "date": "",
-      "venue": "",
-      "status": "preparando",
-      "event_type": "oficial",
-      "ranking_multiplier": 1.0,
-      "legacy": false,
-      "active": true,
-      "systems": [
-        "panel"
-      ],
-      "sources": [
-        "panel_evento.db:eventos"
-      ],
-      "data_file": "data/eventos/last_prof.json"
     }
   ]
 }
