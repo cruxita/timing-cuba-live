@@ -1754,8 +1754,53 @@
       "club": "",
       "tag": "CH",
       "photo": "/fotos_atletas/atleta_0162_jairon_lerian_castillo_suarez.png"
+    },
+    {
+      "id": 163,
+      "full_name": "SABRINA ALONZO HERNANDEZ",
+      "public_name": "S. ALONZO",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "28",
+      "style": "WW",
+      "country": "CUB",
+      "province": "PINAR DEL RÍO",
+      "municipality": "PINAR DEL RÍO",
+      "club": "",
+      "tag": "PINAR DEL RÍO",
+      "photo": "/fotos_atletas/atleta_0163_sabrina_alonzo_hernandez.png"
+    },
+    {
+      "id": 164,
+      "full_name": "ALEJANDRO ALVAREZ RAMIREZ",
+      "public_name": "A. ALVAREZ",
+      "sex": "M",
+      "age_group": "U9/10",
+      "weight": "32",
+      "style": "FS",
+      "country": "CUB",
+      "province": "PINAR DEL RÍO",
+      "municipality": "PINAR DEL RÍO",
+      "club": "",
+      "tag": "PINAR DEL RÍO",
+      "photo": "/fotos_atletas/atleta_0164_alejandro_alvarez_ramirez.png"
+    },
+    {
+      "id": 165,
+      "full_name": "MERLIN DE LA CARIDAD CHAMIZO DELGADO",
+      "public_name": "M. CHAMIZO",
+      "sex": "F",
+      "age_group": "U11/12",
+      "weight": "31",
+      "style": "WW",
+      "country": "CUB",
+      "province": "PINAR DEL RÍO",
+      "municipality": "PINAR DEL RÍO",
+      "club": "",
+      "tag": "PINAR DEL RÍO",
+      "photo": "/fotos_atletas/atleta_0165_merlin_de_la_caridad_chamizo_delgado.png"
     }
   ],
-  "count": 117,
-  "updated_at": "2026-11-10T07:09:37.586569+00:00"
+  "count": 120,
+  "updated_at": "2026-11-11T17:04:31.361886+00:00"
 }
