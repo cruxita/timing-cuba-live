@@ -6,9 +6,12 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-11-13T12:34:55.163610+00:00",
-  "current_event": null,
-  "count": 2,
+  "updated_at": "2026-11-14T10:21:56.166600+00:00",
+  "current_event": {
+    "id": 41,
+    "name": "TOPE 1"
+  },
+  "count": 3,
   "events": [
     {
       "id": 5,
@@ -47,6 +50,25 @@
         "panel_evento.db:eventos"
       ],
       "data_file": "data/eventos/todos_vs_todos.json"
+    },
+    {
+      "data_file": "data/eventos/tope_1.json",
+      "id": 41,
+      "panel_id": 41,
+      "name": "TOPE 1",
+      "date": "",
+      "venue": "",
+      "status": "preparando",
+      "event_type": "oficial",
+      "ranking_multiplier": 1.0,
+      "legacy": false,
+      "active": true,
+      "systems": [
+        "panel"
+      ],
+      "sources": [
+        "panel_evento.db:eventos"
+      ]
     }
   ]
 }
