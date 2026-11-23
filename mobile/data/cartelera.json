@@ -5,7 +5,7 @@
     "name": "prueba m."
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-11-23T13:44:08.076997+00:00",
+  "updated_at": "2026-11-23T13:44:54.649253+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
@@ -13,53 +13,23 @@
   ],
   "total_combates": 3,
   "pendientes": 3,
-  "live_activo": false,
-  "live": {},
+  "live_activo": true,
+  "live": {
+    "timer": "04:00",
+    "red_pts": 0,
+    "blue_pts": 0,
+    "red_badges": "",
+    "blue_badges": "",
+    "highlight_win": "",
+    "highlight_adv": "",
+    "highlight_tied": true,
+    "activity_side": "",
+    "activity_left": null,
+    "mode": "fight",
+    "updated_at": 1795441453.6398022
+  },
   "por_mat": {
     "MAT A": [
-      {
-        "sistema": "Round Robin",
-        "division_key": "rr:88",
-        "bout_key": "fight:410",
-        "source_key": "Round Robin|rr:88|fight:410",
-        "estilo": "FS",
-        "categoria": "U13/15",
-        "peso": "65",
-        "fase": "Ronda 1",
-        "source_status": "pendiente",
-        "finalizado": false,
-        "activo": false,
-        "red": {
-          "atleta_db_id": 166,
-          "nombre": "A. GARCIA",
-          "nombre_descanso": "ADRIAN GARCIA CALA",
-          "tag": "PINAR DEL RÍO",
-          "pais": "CUB",
-          "provincia": "PINAR DEL RÍO",
-          "foto": "fotos_atletas/atleta_0166_adrian_garcia_cala.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "blue": {
-          "atleta_db_id": 171,
-          "nombre": "A. PERES",
-          "nombre_descanso": "ALAIN PEREZ PITA",
-          "tag": "PINAR DEL RÍO",
-          "pais": "CUB",
-          "provincia": "PINAR DEL RÍO",
-          "foto": "fotos_atletas/atleta_0171_alain_peres_pita.png",
-          "descanso_en_curso": false,
-          "descanso_segundos": 0,
-          "descanso_texto": ""
-        },
-        "stage": 1,
-        "ready": true,
-        "mat": "MAT A",
-        "orden": 3,
-        "public_bout_number": 1,
-        "display_status": "SIGUIENTE"
-      },
       {
         "sistema": "Round Robin",
         "division_key": "rr:90",
@@ -71,7 +41,7 @@
         "fase": "Ronda 1",
         "source_status": "pendiente",
         "finalizado": false,
-        "activo": false,
+        "activo": true,
         "red": {
           "atleta_db_id": 164,
           "nombre": "A. ALVAREZ",
@@ -101,7 +71,21 @@
         "mat": "MAT A",
         "orden": 1,
         "public_bout_number": 3,
-        "display_status": "EN ESPERA"
+        "live": {
+          "timer": "04:00",
+          "red_pts": 0,
+          "blue_pts": 0,
+          "red_badges": "",
+          "blue_badges": "",
+          "highlight_win": "",
+          "highlight_adv": "",
+          "highlight_tied": true,
+          "activity_side": "",
+          "activity_left": null,
+          "mode": "fight",
+          "updated_at": 1795441453.6398022
+        },
+        "display_status": "EN COLCHON"
       },
       {
         "sistema": "Round Robin",
@@ -144,6 +128,49 @@
         "mat": "MAT A",
         "orden": 2,
         "public_bout_number": 2,
+        "display_status": "SIGUIENTE"
+      },
+      {
+        "sistema": "Round Robin",
+        "division_key": "rr:88",
+        "bout_key": "fight:410",
+        "source_key": "Round Robin|rr:88|fight:410",
+        "estilo": "FS",
+        "categoria": "U13/15",
+        "peso": "65",
+        "fase": "Ronda 1",
+        "source_status": "pendiente",
+        "finalizado": false,
+        "activo": false,
+        "red": {
+          "atleta_db_id": 166,
+          "nombre": "A. GARCIA",
+          "nombre_descanso": "ADRIAN GARCIA CALA",
+          "tag": "PINAR DEL RÍO",
+          "pais": "CUB",
+          "provincia": "PINAR DEL RÍO",
+          "foto": "fotos_atletas/atleta_0166_adrian_garcia_cala.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "blue": {
+          "atleta_db_id": 171,
+          "nombre": "A. PERES",
+          "nombre_descanso": "ALAIN PEREZ PITA",
+          "tag": "PINAR DEL RÍO",
+          "pais": "CUB",
+          "provincia": "PINAR DEL RÍO",
+          "foto": "fotos_atletas/atleta_0171_alain_peres_pita.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "stage": 1,
+        "ready": true,
+        "mat": "MAT A",
+        "orden": 3,
+        "public_bout_number": 1,
         "display_status": "EN ESPERA"
       }
     ]
