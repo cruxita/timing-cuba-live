@@ -6,8 +6,8 @@
     "real": true
   },
   "summary": {
-    "divisions": 1,
-    "athlete_registrations": 2,
+    "divisions": 2,
+    "athlete_registrations": 4,
     "bouts": 1,
     "finished_bouts": 0,
     "systems": [
@@ -15,6 +15,64 @@
     ]
   },
   "divisions": [
+    {
+      "id": "rr-89",
+      "database_id": 89,
+      "system": "round_robin",
+      "system_label": "Round Robin",
+      "style": "FS",
+      "age_group": "U13/15",
+      "weight": "44",
+      "status": "abierta",
+      "athletes": [
+        {
+          "id": 297,
+          "name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+          "full_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+          "club": "LA HABANA",
+          "tag": "CH",
+          "draw": 1,
+          "group": "",
+          "athlete_db_id": 66,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "CH",
+          "original_event_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+          "identity_method": "atleta_db_id",
+          "master_id": 66,
+          "public_name": "A. RODRIGUEZ",
+          "photo": "/fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png"
+        },
+        {
+          "id": 298,
+          "name": "ALEXANDER CASTRO QUINTANA",
+          "full_name": "ALEXANDER CASTRO QUINTANA",
+          "club": "PINAR DEL RÍO",
+          "tag": "PINAR DEL RÍO",
+          "draw": 2,
+          "group": "",
+          "athlete_db_id": 175,
+          "country": "CUB",
+          "province": "PINAR DEL RÍO",
+          "municipality": "PINAR DEL RÍO",
+          "original_event_name": "ALEXANDER CASTRO QUINTANA",
+          "identity_method": "atleta_db_id",
+          "master_id": 175,
+          "public_name": "A. CASTRO",
+          "photo": "/fotos_atletas/atleta_0175_alexander_castro_quintana.png"
+        }
+      ],
+      "podium": {
+        "gold": [],
+        "silver": [],
+        "bronze": []
+      },
+      "bouts": [],
+      "group_bouts": [],
+      "playoffs": [],
+      "athlete_count": 2,
+      "bout_count": 0
+    },
     {
       "id": "rr-88",
       "database_id": 88,
@@ -26,7 +84,7 @@
       "status": "abierta",
       "athletes": [
         {
-          "id": 295,
+          "id": 299,
           "name": "ADRIAN GARCIA CALA",
           "full_name": "ADRIAN GARCIA CALA",
           "club": "PINAR DEL RÍO",
@@ -44,7 +102,7 @@
           "photo": "/fotos_atletas/atleta_0166_adrian_garcia_cala.png"
         },
         {
-          "id": 296,
+          "id": 300,
           "name": "ALAIN PEREZ PITA",
           "full_name": "ALAIN PEREZ PITA",
           "club": "PINAR DEL RÍO",
@@ -74,42 +132,8 @@
           "phase": "",
           "group": "",
           "status": "pendiente",
-          "red": {
-            "id": 295,
-            "name": "ADRIAN GARCIA CALA",
-            "full_name": "ADRIAN GARCIA CALA",
-            "club": "PINAR DEL RÍO",
-            "tag": "PINAR DEL RÍO",
-            "draw": 1,
-            "group": "",
-            "athlete_db_id": 166,
-            "country": "CUB",
-            "province": "PINAR DEL RÍO",
-            "municipality": "PINAR DEL RÍO",
-            "original_event_name": "ADRIAN GARCIA CALA",
-            "identity_method": "atleta_db_id",
-            "master_id": 166,
-            "public_name": "A. GARCIA",
-            "photo": "/fotos_atletas/atleta_0166_adrian_garcia_cala.png"
-          },
-          "blue": {
-            "id": 296,
-            "name": "ALAIN PEREZ PITA",
-            "full_name": "ALAIN PEREZ PITA",
-            "club": "PINAR DEL RÍO",
-            "tag": "PINAR DEL RÍO",
-            "draw": 2,
-            "group": "",
-            "athlete_db_id": 171,
-            "country": "CUB",
-            "province": "PINAR DEL RÍO",
-            "municipality": "PINAR DEL RÍO",
-            "original_event_name": "ALAIN PEREZ PITA",
-            "identity_method": "atleta_db_id",
-            "master_id": 171,
-            "public_name": "A. PERES",
-            "photo": "/fotos_atletas/atleta_0171_alain_peres_pita.png"
-          },
+          "red": null,
+          "blue": null,
           "winner_id": null,
           "winner_name": "",
           "victory_type": "",
@@ -126,9 +150,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-11-23T13:16:17.805691+00:00",
+  "updated_at": "2026-11-23T13:16:49.771323+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-11-23T13:16:16.931470+00:00",
+  "athlete_identity_updated_at": "2026-11-23T13:16:48.896414+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-11-23T13:16:17.843107+00:00"
+  "publisher_updated_at": "2026-11-23T13:16:49.818353+00:00"
 }
