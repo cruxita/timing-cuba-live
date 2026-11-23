@@ -6,9 +6,12 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-11-23T11:55:14.407363+00:00",
-  "current_event": null,
-  "count": 2,
+  "updated_at": "2026-11-23T11:58:14.275044+00:00",
+  "current_event": {
+    "id": 42,
+    "name": "prueba m."
+  },
+  "count": 3,
   "events": [
     {
       "id": 5,
@@ -47,6 +50,25 @@
         "panel_evento.db:eventos"
       ],
       "data_file": "data/eventos/todos_vs_todos.json"
+    },
+    {
+      "data_file": "data/eventos/prueba_m.json",
+      "id": 42,
+      "panel_id": 42,
+      "name": "prueba m.",
+      "date": "",
+      "venue": "",
+      "status": "preparando",
+      "event_type": "oficial",
+      "ranking_multiplier": 1.0,
+      "legacy": false,
+      "active": true,
+      "systems": [
+        "panel"
+      ],
+      "sources": [
+        "panel_evento.db:eventos"
+      ]
     }
   ]
 }
