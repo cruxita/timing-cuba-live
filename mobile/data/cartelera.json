@@ -5,14 +5,14 @@
     "name": "prueba m."
   },
   "source": "Timing Cuba Windows - cartelera_uww.json",
-  "updated_at": "2026-11-23T13:16:49.567344+00:00",
+  "updated_at": "2026-11-23T13:17:22.336069+00:00",
   "categoria_actual": "U13/15",
   "estilo_actual": "FS",
   "mats": [
     "MAT A"
   ],
-  "total_combates": 1,
-  "pendientes": 1,
+  "total_combates": 2,
+  "pendientes": 2,
   "live_activo": true,
   "live": {
     "timer": "04:00",
@@ -63,7 +63,7 @@
         "stage": 1,
         "ready": false,
         "mat": "MAT A",
-        "orden": 1,
+        "orden": 2,
         "public_bout_number": 1,
         "live": {
           "timer": "04:00",
@@ -80,6 +80,49 @@
           "updated_at": 1795435109.4977496
         },
         "display_status": "EN COLCHON"
+      },
+      {
+        "sistema": "Round Robin",
+        "division_key": "rr:89",
+        "bout_key": "fight:411",
+        "source_key": "Round Robin|rr:89|fight:411",
+        "estilo": "FS",
+        "categoria": "U13/15",
+        "peso": "44",
+        "fase": "Ronda 1",
+        "source_status": "pendiente",
+        "finalizado": false,
+        "activo": false,
+        "red": {
+          "atleta_db_id": 66,
+          "nombre": "A. RODRIGUEZ",
+          "nombre_descanso": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+          "tag": "CH",
+          "pais": "CUB",
+          "provincia": "LA HABANA",
+          "foto": "fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "blue": {
+          "atleta_db_id": 175,
+          "nombre": "A. CASTRO",
+          "nombre_descanso": "ALEXANDER CASTRO QUINTANA",
+          "tag": "PINAR DEL RÍO",
+          "pais": "CUB",
+          "provincia": "PINAR DEL RÍO",
+          "foto": "fotos_atletas/atleta_0175_alexander_castro_quintana.png",
+          "descanso_en_curso": false,
+          "descanso_segundos": 0,
+          "descanso_texto": ""
+        },
+        "stage": 1,
+        "ready": true,
+        "mat": "MAT A",
+        "orden": 1,
+        "public_bout_number": 2,
+        "display_status": "SIGUIENTE"
       }
     ]
   }
