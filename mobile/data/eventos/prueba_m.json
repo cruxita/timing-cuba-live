@@ -6,15 +6,73 @@
     "real": true
   },
   "summary": {
-    "divisions": 2,
-    "athlete_registrations": 4,
-    "bouts": 1,
+    "divisions": 3,
+    "athlete_registrations": 6,
+    "bouts": 2,
     "finished_bouts": 0,
     "systems": [
       "round_robin"
     ]
   },
   "divisions": [
+    {
+      "id": "rr-90",
+      "database_id": 90,
+      "system": "round_robin",
+      "system_label": "Round Robin",
+      "style": "FS",
+      "age_group": "U13/15",
+      "weight": "33",
+      "status": "abierta",
+      "athletes": [
+        {
+          "id": 301,
+          "name": "ALEJANDRO ALVAREZ RAMIREZ",
+          "full_name": "ALEJANDRO ALVAREZ RAMIREZ",
+          "club": "PINAR DEL RÍO",
+          "tag": "PINAR DEL RÍO",
+          "draw": 1,
+          "group": "",
+          "athlete_db_id": 164,
+          "country": "CUB",
+          "province": "PINAR DEL RÍO",
+          "municipality": "PINAR DEL RÍO",
+          "original_event_name": "ALEJANDRO ALVAREZ RAMIREZ",
+          "identity_method": "atleta_db_id",
+          "master_id": 164,
+          "public_name": "A. ALVAREZ",
+          "photo": "/fotos_atletas/atleta_0164_alejandro_alvarez_ramirez.png"
+        },
+        {
+          "id": 302,
+          "name": "ALEJANDRO MANUEL GONZALEZ RICARDO",
+          "full_name": "ALEJANDRO MANUEL GONZALEZ RICARDO",
+          "club": "LA HABANA",
+          "tag": "10O",
+          "draw": 2,
+          "group": "",
+          "athlete_db_id": 92,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "10O",
+          "original_event_name": "ALEJANDRO MANUEL GONZALEZ RICARDO",
+          "identity_method": "atleta_db_id",
+          "master_id": 92,
+          "public_name": "A. GONZALEZ",
+          "photo": ""
+        }
+      ],
+      "podium": {
+        "gold": [],
+        "silver": [],
+        "bronze": []
+      },
+      "bouts": [],
+      "group_bouts": [],
+      "playoffs": [],
+      "athlete_count": 2,
+      "bout_count": 0
+    },
     {
       "id": "rr-89",
       "database_id": 89,
@@ -67,11 +125,62 @@
         "silver": [],
         "bronze": []
       },
-      "bouts": [],
+      "bouts": [
+        {
+          "id": 411,
+          "round": 1,
+          "phase": "",
+          "group": "",
+          "status": "pendiente",
+          "red": {
+            "id": 297,
+            "name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+            "full_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+            "club": "LA HABANA",
+            "tag": "CH",
+            "draw": 1,
+            "group": "",
+            "athlete_db_id": 66,
+            "country": "CUB",
+            "province": "LA HABANA",
+            "municipality": "CH",
+            "original_event_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+            "identity_method": "atleta_db_id",
+            "master_id": 66,
+            "public_name": "A. RODRIGUEZ",
+            "photo": "/fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png"
+          },
+          "blue": {
+            "id": 298,
+            "name": "ALEXANDER CASTRO QUINTANA",
+            "full_name": "ALEXANDER CASTRO QUINTANA",
+            "club": "PINAR DEL RÍO",
+            "tag": "PINAR DEL RÍO",
+            "draw": 2,
+            "group": "",
+            "athlete_db_id": 175,
+            "country": "CUB",
+            "province": "PINAR DEL RÍO",
+            "municipality": "PINAR DEL RÍO",
+            "original_event_name": "ALEXANDER CASTRO QUINTANA",
+            "identity_method": "atleta_db_id",
+            "master_id": 175,
+            "public_name": "A. CASTRO",
+            "photo": "/fotos_atletas/atleta_0175_alexander_castro_quintana.png"
+          },
+          "winner_id": null,
+          "winner_name": "",
+          "victory_type": "",
+          "red_score": 0,
+          "blue_score": 0,
+          "criterion": "",
+          "winner_master_id": null
+        }
+      ],
       "group_bouts": [],
       "playoffs": [],
       "athlete_count": 2,
-      "bout_count": 0
+      "bout_count": 1
     },
     {
       "id": "rr-88",
@@ -150,9 +259,9 @@
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-11-23T13:16:49.771323+00:00",
+  "updated_at": "2026-11-23T13:17:22.505555+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-11-23T13:16:48.896414+00:00",
+  "athlete_identity_updated_at": "2026-11-23T13:17:21.677002+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-11-23T13:16:49.818353+00:00"
+  "publisher_updated_at": "2026-11-23T13:17:22.545789+00:00"
 }
