@@ -3,7 +3,7 @@
   "source": "Timing Cuba Windows",
   "logic": "clasificacion_equipos.py::resumen_total",
   "database": "C:\\Users\\ARROYOS\\AppData\\Local\\Timing Cuba\\data\\bd\\clasificacion_equipos.db",
-  "updated_at": "2026-11-23T10:45:03.571875+00:00",
+  "updated_at": "2026-11-23T10:47:49.105668+00:00",
   "eventos": [
     "FESTIVAL ESCOLAR DE LUCHA",
     "TODOS VS TODOS"
@@ -98,16 +98,16 @@
           "lugar": 2,
           "equipo_key": "10O",
           "equipo": "10O",
-          "puntos_combate": 23,
+          "puntos_combate": 18,
           "puntos_uww_posicion": 50,
           "puntos_infantil_posicion": 20,
-          "total_uww": 73,
-          "total_infantil": 43,
+          "total_uww": 68,
+          "total_infantil": 38,
           "oro": 2,
           "plata": 0,
           "bronce": 0,
-          "ganados": 5,
-          "perdidos": 3
+          "ganados": 4,
+          "perdidos": 0
         }
       ]
     }
