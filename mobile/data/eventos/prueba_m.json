@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "event": {
+    "name": "prueba m.",
+    "legacy": false,
+    "real": true
+  },
+  "summary": {
+    "divisions": 1,
+    "athlete_registrations": 2,
+    "bouts": 1,
+    "finished_bouts": 0,
+    "systems": [
+      "round_robin"
+    ]
+  },
+  "divisions": [
+    {
+      "id": "rr-88",
+      "database_id": 88,
+      "system": "round_robin",
+      "system_label": "Round Robin",
+      "style": "FS",
+      "age_group": "U13/15",
+      "weight": "65",
+      "status": "abierta",
+      "athletes": [
+        {
+          "id": 295,
+          "name": "ADRIAN GARCIA CALA",
+          "full_name": "ADRIAN GARCIA CALA",
+          "club": "PINAR DEL RÍO",
+          "tag": "PINAR DEL RÍO",
+          "draw": 1,
+          "group": "",
+          "athlete_db_id": 166,
+          "country": "CUB",
+          "province": "PINAR DEL RÍO",
+          "municipality": "PINAR DEL RÍO",
+          "original_event_name": "ADRIAN GARCIA CALA",
+          "identity_method": "atleta_db_id",
+          "master_id": 166,
+          "public_name": "A. GARCIA",
+          "photo": "/fotos_atletas/atleta_0166_adrian_garcia_cala.png"
+        },
+        {
+          "id": 296,
+          "name": "ALAIN PEREZ PITA",
+          "full_name": "ALAIN PEREZ PITA",
+          "club": "PINAR DEL RÍO",
+          "tag": "PINAR DEL RÍO",
+          "draw": 2,
+          "group": "",
+          "athlete_db_id": 171,
+          "country": "CUB",
+          "province": "PINAR DEL RÍO",
+          "municipality": "PINAR DEL RÍO",
+          "original_event_name": "ALAIN PEREZ PITA",
+          "identity_method": "atleta_db_id",
+          "master_id": 171,
+          "public_name": "A. PERES",
+          "photo": "/fotos_atletas/atleta_0171_alain_peres_pita.png"
+        }
+      ],
+      "podium": {
+        "gold": [],
+        "silver": [],
+        "bronze": []
+      },
+      "bouts": [
+        {
+          "id": 410,
+          "round": 1,
+          "phase": "",
+          "group": "",
+          "status": "pendiente",
+          "red": {
+            "id": 295,
+            "name": "ADRIAN GARCIA CALA",
+            "full_name": "ADRIAN GARCIA CALA",
+            "club": "PINAR DEL RÍO",
+            "tag": "PINAR DEL RÍO",
+            "draw": 1,
+            "group": "",
+            "athlete_db_id": 166,
+            "country": "CUB",
+            "province": "PINAR DEL RÍO",
+            "municipality": "PINAR DEL RÍO",
+            "original_event_name": "ADRIAN GARCIA CALA",
+            "identity_method": "atleta_db_id",
+            "master_id": 166,
+            "public_name": "A. GARCIA",
+            "photo": "/fotos_atletas/atleta_0166_adrian_garcia_cala.png"
+          },
+          "blue": {
+            "id": 296,
+            "name": "ALAIN PEREZ PITA",
+            "full_name": "ALAIN PEREZ PITA",
+            "club": "PINAR DEL RÍO",
+            "tag": "PINAR DEL RÍO",
+            "draw": 2,
+            "group": "",
+            "athlete_db_id": 171,
+            "country": "CUB",
+            "province": "PINAR DEL RÍO",
+            "municipality": "PINAR DEL RÍO",
+            "original_event_name": "ALAIN PEREZ PITA",
+            "identity_method": "atleta_db_id",
+            "master_id": 171,
+            "public_name": "A. PERES",
+            "photo": "/fotos_atletas/atleta_0171_alain_peres_pita.png"
+          },
+          "winner_id": null,
+          "winner_name": "",
+          "victory_type": "",
+          "red_score": 0,
+          "blue_score": 0,
+          "criterion": "",
+          "winner_master_id": null
+        }
+      ],
+      "group_bouts": [],
+      "playoffs": [],
+      "athlete_count": 2,
+      "bout_count": 1
+    }
+  ],
+  "source": "Timing Cuba Windows EXE",
+  "updated_at": "2026-11-23T11:58:15.363232+00:00",
+  "athlete_identity_version": 1,
+  "athlete_identity_updated_at": "2026-11-23T11:58:14.506297+00:00",
+  "_timing_cuba_dynamic_event_v1": true,
+  "publisher_updated_at": "2026-11-23T11:58:15.403900+00:00"
+}
