@@ -456,14 +456,14 @@
       "public_name": "J. ARIAS",
       "sex": "M",
       "age_group": "U11/12",
-      "weight": "",
+      "weight": "28",
       "style": "FS",
       "country": "CUB",
       "province": "LA HABANA",
       "municipality": "10O",
       "club": "",
       "tag": "CUB",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0075_jose_luis_arias_herdandez.png"
     },
     {
       "id": 76,
@@ -501,7 +501,7 @@
       "public_name": "N. TAMARIT",
       "sex": "M",
       "age_group": "U11/12",
-      "weight": "",
+      "weight": "46",
       "style": "FS",
       "country": "CUB",
       "province": "LA HABANA",
@@ -692,18 +692,18 @@
     },
     {
       "id": 91,
-      "full_name": "YURIANDY JOSUE LOPEZ MESA",
+      "full_name": "YURIANDRYS JOSUE LOPEZ MESA",
       "public_name": "Y. LOPEZ",
       "sex": "M",
       "age_group": "U11/12",
-      "weight": "",
+      "weight": "28",
       "style": "FS",
       "country": "CUB",
       "province": "LA HABANA",
       "municipality": "10O",
       "club": "",
       "tag": "10O",
-      "photo": ""
+      "photo": "/fotos_atletas/atleta_0091_yuriandy_josue_lopez_mesa.png"
     },
     {
       "id": 92,
@@ -2747,5 +2747,5 @@
     }
   ],
   "count": 183,
-  "updated_at": "2026-11-26T12:31:03.112081+00:00"
+  "updated_at": "2026-11-26T17:44:21.084170+00:00"
 }
