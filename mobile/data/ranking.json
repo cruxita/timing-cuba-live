@@ -2,7 +2,7 @@
   "version": 1,
   "source": "Timing Cuba Windows",
   "logic": "ranking_atletas.py",
-  "updated_at": "2026-11-26T12:01:26.528432+00:00",
+  "updated_at": "2026-11-26T12:01:54.511130+00:00",
   "eventos": [],
   "ranking_general": {
     "filtro": "TODOS LOS EVENTOS",
