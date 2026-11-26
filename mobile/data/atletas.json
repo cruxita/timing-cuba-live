@@ -2729,8 +2729,23 @@
       "club": "",
       "tag": "PINAR DEL RÍO",
       "photo": "/fotos_atletas/atleta_0228_daicelin_roja_rodriguez.png"
+    },
+    {
+      "id": 229,
+      "full_name": "YEIKO TORRIENTE OÑA",
+      "public_name": "Y. TORRIENTE",
+      "sex": "M",
+      "age_group": "U17",
+      "weight": "",
+      "style": "FS",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "",
+      "club": "",
+      "tag": "CUB",
+      "photo": ""
     }
   ],
-  "count": 182,
-  "updated_at": "2026-11-25T20:21:24.026655+00:00"
+  "count": 183,
+  "updated_at": "2026-11-26T11:09:29.959480+00:00"
 }
