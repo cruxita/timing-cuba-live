@@ -6,17 +6,78 @@
     "real": true
   },
   "summary": {
-    "divisions": 0,
-    "athlete_registrations": 0,
+    "divisions": 1,
+    "athlete_registrations": 2,
     "bouts": 0,
     "finished_bouts": 0,
-    "systems": []
+    "systems": [
+      "round_robin"
+    ]
   },
-  "divisions": [],
+  "divisions": [
+    {
+      "id": "rr-92",
+      "database_id": 92,
+      "system": "round_robin",
+      "system_label": "Round Robin",
+      "style": "FS",
+      "age_group": "U13/15",
+      "weight": "24",
+      "status": "abierta",
+      "athletes": [
+        {
+          "id": 306,
+          "name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+          "full_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+          "club": "LA HABANA",
+          "tag": "CH",
+          "draw": 1,
+          "group": "",
+          "athlete_db_id": 66,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "CH",
+          "original_event_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
+          "identity_method": "atleta_db_id",
+          "master_id": 66,
+          "public_name": "A. RODRIGUEZ",
+          "photo": "/fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png"
+        },
+        {
+          "id": 307,
+          "name": "DYLAN ALE GONZALEZ CAUSA",
+          "full_name": "DYLAN ALE GONZALEZ CAUSA",
+          "club": "LA HABANA",
+          "tag": "10O",
+          "draw": 2,
+          "group": "",
+          "athlete_db_id": 100,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "10O",
+          "original_event_name": "DYLAN ALE GONZALEZ CAUSA",
+          "identity_method": "atleta_db_id",
+          "master_id": 100,
+          "public_name": "D. GONZALEZ",
+          "photo": ""
+        }
+      ],
+      "podium": {
+        "gold": [],
+        "silver": [],
+        "bronze": []
+      },
+      "bouts": [],
+      "group_bouts": [],
+      "playoffs": [],
+      "athlete_count": 2,
+      "bout_count": 0
+    }
+  ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-11-27T11:50:22.238825+00:00",
+  "updated_at": "2026-11-27T11:50:55.248138+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-11-27T11:50:21.200640+00:00",
+  "athlete_identity_updated_at": "2026-11-27T11:50:54.043558+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-11-27T11:50:22.284309+00:00"
+  "publisher_updated_at": "2026-11-27T11:50:55.303691+00:00"
 }
