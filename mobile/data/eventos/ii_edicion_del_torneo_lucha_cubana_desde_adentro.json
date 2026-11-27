@@ -6,129 +6,17 @@
     "real": true
   },
   "summary": {
-    "divisions": 1,
-    "athlete_registrations": 2,
-    "bouts": 1,
+    "divisions": 0,
+    "athlete_registrations": 0,
+    "bouts": 0,
     "finished_bouts": 0,
-    "systems": [
-      "round_robin"
-    ]
+    "systems": []
   },
-  "divisions": [
-    {
-      "id": "rr-92",
-      "database_id": 92,
-      "system": "round_robin",
-      "system_label": "Round Robin",
-      "style": "FS",
-      "age_group": "U13/15",
-      "weight": "24",
-      "status": "abierta",
-      "athletes": [
-        {
-          "id": 306,
-          "name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
-          "full_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
-          "club": "LA HABANA",
-          "tag": "CH",
-          "draw": 1,
-          "group": "",
-          "athlete_db_id": 66,
-          "country": "CUB",
-          "province": "LA HABANA",
-          "municipality": "CH",
-          "original_event_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
-          "identity_method": "atleta_db_id",
-          "master_id": 66,
-          "public_name": "A. RODRIGUEZ",
-          "photo": "/fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png"
-        },
-        {
-          "id": 307,
-          "name": "DYLAN ALE GONZALEZ CAUSA",
-          "full_name": "DYLAN ALE GONZALEZ CAUSA",
-          "club": "LA HABANA",
-          "tag": "10O",
-          "draw": 2,
-          "group": "",
-          "athlete_db_id": 100,
-          "country": "CUB",
-          "province": "LA HABANA",
-          "municipality": "10O",
-          "original_event_name": "DYLAN ALE GONZALEZ CAUSA",
-          "identity_method": "atleta_db_id",
-          "master_id": 100,
-          "public_name": "D. GONZALEZ",
-          "photo": ""
-        }
-      ],
-      "podium": {
-        "gold": [],
-        "silver": [],
-        "bronze": []
-      },
-      "bouts": [
-        {
-          "id": 416,
-          "round": 1,
-          "phase": "",
-          "group": "",
-          "status": "pendiente",
-          "red": {
-            "id": 306,
-            "name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
-            "full_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
-            "club": "LA HABANA",
-            "tag": "CH",
-            "draw": 1,
-            "group": "",
-            "athlete_db_id": 66,
-            "country": "CUB",
-            "province": "LA HABANA",
-            "municipality": "CH",
-            "original_event_name": "ALES ALEJANDRO RODRIGUEZ MENENDEZ",
-            "identity_method": "atleta_db_id",
-            "master_id": 66,
-            "public_name": "A. RODRIGUEZ",
-            "photo": "/fotos_atletas/atleta_0066_ales_alejandro_rodriguez_menendez.png"
-          },
-          "blue": {
-            "id": 307,
-            "name": "DYLAN ALE GONZALEZ CAUSA",
-            "full_name": "DYLAN ALE GONZALEZ CAUSA",
-            "club": "LA HABANA",
-            "tag": "10O",
-            "draw": 2,
-            "group": "",
-            "athlete_db_id": 100,
-            "country": "CUB",
-            "province": "LA HABANA",
-            "municipality": "10O",
-            "original_event_name": "DYLAN ALE GONZALEZ CAUSA",
-            "identity_method": "atleta_db_id",
-            "master_id": 100,
-            "public_name": "D. GONZALEZ",
-            "photo": ""
-          },
-          "winner_id": null,
-          "winner_name": "",
-          "victory_type": "",
-          "red_score": 0,
-          "blue_score": 0,
-          "criterion": "",
-          "winner_master_id": null
-        }
-      ],
-      "group_bouts": [],
-      "playoffs": [],
-      "athlete_count": 2,
-      "bout_count": 1
-    }
-  ],
+  "divisions": [],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-11-27T11:55:02.237545+00:00",
+  "updated_at": "2026-11-27T11:55:39.691574+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-11-27T11:55:01.155491+00:00",
+  "athlete_identity_updated_at": "2026-11-27T11:55:38.668901+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-11-27T11:55:02.284394+00:00"
+  "publisher_updated_at": "2026-11-27T11:55:39.741879+00:00"
 }
