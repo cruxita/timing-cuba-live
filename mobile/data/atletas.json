@@ -587,11 +587,11 @@
     },
     {
       "id": 84,
-      "full_name": "ABDIEL MUÑOZ ROQUE",
+      "full_name": "ABDIEL ARTURO MUÑOZ ROQUE",
       "public_name": "A. MUÑOZ",
       "sex": "M",
       "age_group": "U7/8",
-      "weight": "",
+      "weight": "22",
       "style": "FS",
       "country": "CUB",
       "province": "LA HABANA",
@@ -2759,8 +2759,23 @@
       "club": "",
       "tag": "MATANZAS",
       "photo": "/fotos_atletas/atleta_0230_osniel_macias_arias.png"
+    },
+    {
+      "id": 231,
+      "full_name": "DILAN BRANDON SANCHEZ MENGUAR",
+      "public_name": "D. SANCHEZ",
+      "sex": "M",
+      "age_group": "U9/10",
+      "weight": "26",
+      "style": "FS",
+      "country": "CUB",
+      "province": "LA HABANA",
+      "municipality": "10O",
+      "club": "",
+      "tag": "10O",
+      "photo": ""
     }
   ],
-  "count": 184,
-  "updated_at": "2026-11-27T11:28:07.511134+00:00"
+  "count": 185,
+  "updated_at": "2026-11-27T11:44:03.804827+00:00"
 }
