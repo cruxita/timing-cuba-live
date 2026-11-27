@@ -1,9 +1,17 @@
 {
   "version": 4,
-  "has_public_event": false,
-  "event": null,
-  "windows_event": null,
-  "reason": "No hay evento oficial activo para Mobile.",
+  "has_public_event": true,
+  "event": {
+    "id": 44,
+    "name": "II EDICION DEL TORNEO LUCHA CUBANA DESDE ADENTRO",
+    "event_type": "ranking",
+    "ranking_multiplier": 1.5
+  },
+  "windows_event": {
+    "id": 44,
+    "name": "II EDICION DEL TORNEO LUCHA CUBANA DESDE ADENTRO"
+  },
+  "reason": "",
   "source": "Timing Cuba Windows - Panel de Eventos",
-  "updated_at": "2026-11-27T11:29:15.164422+00:00"
+  "updated_at": "2026-11-27T11:44:03.438443+00:00"
 }
