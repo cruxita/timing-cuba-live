@@ -6,9 +6,12 @@
     "oficial": true,
     "prueba": false
   },
-  "updated_at": "2026-11-27T11:29:15.164422+00:00",
-  "current_event": null,
-  "count": 2,
+  "updated_at": "2026-11-27T11:44:03.438443+00:00",
+  "current_event": {
+    "id": 44,
+    "name": "II EDICION DEL TORNEO LUCHA CUBANA DESDE ADENTRO"
+  },
+  "count": 3,
   "events": [
     {
       "id": 5,
@@ -47,6 +50,25 @@
         "panel_evento.db:eventos"
       ],
       "data_file": "data/eventos/todos_vs_todos.json"
+    },
+    {
+      "data_file": "data/eventos/ii_edicion_del_torneo_lucha_cubana_desde_adentro.json",
+      "id": 44,
+      "panel_id": 44,
+      "name": "II EDICION DEL TORNEO LUCHA CUBANA DESDE ADENTRO",
+      "date": "28/11/2026",
+      "venue": "SALA POLIVALENTE RAMON FONST",
+      "status": "preparando",
+      "event_type": "ranking",
+      "ranking_multiplier": 1.5,
+      "legacy": false,
+      "active": true,
+      "systems": [
+        "panel"
+      ],
+      "sources": [
+        "panel_evento.db:eventos"
+      ]
     }
   ]
 }
