@@ -6,8 +6,8 @@
     "real": true
   },
   "summary": {
-    "divisions": 1,
-    "athlete_registrations": 2,
+    "divisions": 2,
+    "athlete_registrations": 4,
     "bouts": 1,
     "finished_bouts": 0,
     "systems": [
@@ -123,12 +123,70 @@
       "playoffs": [],
       "athlete_count": 2,
       "bout_count": 1
+    },
+    {
+      "id": "rr-95",
+      "database_id": 95,
+      "system": "round_robin",
+      "system_label": "Round Robin",
+      "style": "FS",
+      "age_group": "U9/10",
+      "weight": "32",
+      "status": "abierta",
+      "athletes": [
+        {
+          "id": 312,
+          "name": "JEISHON ANTUAN MIRANDA GONZALEZ",
+          "full_name": "JEISHON ANTUAN MIRANDA GONZALEZ",
+          "club": "LA HABANA",
+          "tag": "CH",
+          "draw": 1,
+          "group": "",
+          "athlete_db_id": 50,
+          "country": "CUB",
+          "province": "LA HABANA",
+          "municipality": "CH",
+          "original_event_name": "JEISHON ANTUAN MIRANDA GONZALEZ",
+          "identity_method": "atleta_db_id",
+          "master_id": 50,
+          "public_name": "J. MIRANDA",
+          "photo": "/fotos_atletas/atleta_0050_jeishon_antuan_miranda_gonzalez.png"
+        },
+        {
+          "id": 313,
+          "name": "YESANDER CASTILLO BORRERO",
+          "full_name": "YESANDER CASTILLO BORRERO",
+          "club": "SANTIAGO DE CUBA",
+          "tag": "SANTIAGO DE CUBA",
+          "draw": 2,
+          "group": "",
+          "athlete_db_id": 160,
+          "country": "CUB",
+          "province": "SANTIAGO DE CUBA",
+          "municipality": "SANTIAGO DE CUBA",
+          "original_event_name": "YESANDER CASTILLO BORRERO",
+          "identity_method": "atleta_db_id",
+          "master_id": 160,
+          "public_name": "Y. CASTILLO",
+          "photo": "/fotos_atletas/atleta_0160_yesander_castillo_borrero.png"
+        }
+      ],
+      "podium": {
+        "gold": [],
+        "silver": [],
+        "bronze": []
+      },
+      "bouts": [],
+      "group_bouts": [],
+      "playoffs": [],
+      "athlete_count": 2,
+      "bout_count": 0
     }
   ],
   "source": "Timing Cuba Windows EXE",
-  "updated_at": "2026-11-27T11:58:23.137492+00:00",
+  "updated_at": "2026-11-27T11:58:55.804377+00:00",
   "athlete_identity_version": 1,
-  "athlete_identity_updated_at": "2026-11-27T11:58:21.834974+00:00",
+  "athlete_identity_updated_at": "2026-11-27T11:58:54.712321+00:00",
   "_timing_cuba_dynamic_event_v1": true,
-  "publisher_updated_at": "2026-11-27T11:58:23.191307+00:00"
+  "publisher_updated_at": "2026-11-27T11:58:55.922914+00:00"
 }
