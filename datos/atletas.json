@@ -1,6 +1,6 @@
 {
-  "generado_en": "2026-11-26 12:51:04",
-  "total_atletas": 183,
+  "generado_en": "2026-11-27 05:50:28",
+  "total_atletas": 184,
   "total_fotos": 155,
   "fotos_copiadas": 155,
   "fotos_conservadas": 0,
@@ -1301,6 +1301,28 @@
       "observaciones": "",
       "foto": "fotos_atletas/atleta_0141_manfrd_de_jesus_calzado_darroman.png",
       "foto_web": "fotos_atletas/atleta_0141_manfrd_de_jesus_calzado_darroman.png",
+      "activo": true
+    },
+    {
+      "id": 230,
+      "ci": "",
+      "nombre": "OSNIEL",
+      "apellidos": "MACIAS ARIAS",
+      "nombre_publico": "O. MACIAS",
+      "sexo": "M",
+      "fecha_nacimiento": "",
+      "grupo": "U11/12",
+      "peso": "32",
+      "estilo": "FS",
+      "pais": "CUB",
+      "provincia": "",
+      "municipio": "",
+      "club": "",
+      "tag_publico": "CUB",
+      "telefono": "",
+      "observaciones": "",
+      "foto": "",
+      "foto_web": "",
       "activo": true
     },
     {
