@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-11-27 05:50:28",
+  "generado_en": "2026-11-27 06:23:32",
   "total_atletas": 184,
-  "total_fotos": 155,
-  "fotos_copiadas": 155,
+  "total_fotos": 156,
+  "fotos_copiadas": 156,
   "fotos_conservadas": 0,
   "atletas": [
     {
@@ -1315,14 +1315,14 @@
       "peso": "32",
       "estilo": "FS",
       "pais": "CUB",
-      "provincia": "",
-      "municipio": "",
+      "provincia": "MATANZAS",
+      "municipio": "MATANZAS",
       "club": "",
-      "tag_publico": "CUB",
+      "tag_publico": "MATANZAS",
       "telefono": "",
       "observaciones": "",
-      "foto": "",
-      "foto_web": "",
+      "foto": "fotos_atletas/atleta_0230_osniel_macias_arias.png",
+      "foto_web": "fotos_atletas/atleta_0230_osniel_macias_arias.png",
       "activo": true
     },
     {
