@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "event": {
+    "name": "II EDICION DEL TORNEO LUCHA CUBANA DESDE ADENTRO",
+    "legacy": false,
+    "real": true
+  },
+  "summary": {
+    "divisions": 0,
+    "athlete_registrations": 0,
+    "bouts": 0,
+    "finished_bouts": 0,
+    "systems": []
+  },
+  "divisions": [],
+  "source": "Timing Cuba Windows EXE",
+  "updated_at": "2026-11-27T11:44:04.902793+00:00",
+  "athlete_identity_version": 1,
+  "athlete_identity_updated_at": "2026-11-27T11:44:03.804827+00:00",
+  "_timing_cuba_dynamic_event_v1": true,
+  "publisher_updated_at": "2026-11-27T11:44:04.950061+00:00"
+}
