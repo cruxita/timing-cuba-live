@@ -2744,8 +2744,23 @@
       "club": "",
       "tag": "CUB",
       "photo": ""
+    },
+    {
+      "id": 230,
+      "full_name": "OSNIEL MACIAS ARIAS",
+      "public_name": "O. MACIAS",
+      "sex": "M",
+      "age_group": "U11/12",
+      "weight": "32",
+      "style": "FS",
+      "country": "CUB",
+      "province": "",
+      "municipality": "",
+      "club": "",
+      "tag": "CUB",
+      "photo": ""
     }
   ],
-  "count": 183,
-  "updated_at": "2026-11-26T18:20:38.372470+00:00"
+  "count": 184,
+  "updated_at": "2026-11-27T10:48:19.015442+00:00"
 }
